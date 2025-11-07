@@ -13,7 +13,7 @@ import {
     Building2,
     Lock,
 } from "lucide-react";
-import ContactFormCRM from "@/components/ContactFormCRM";
+import ContactForm from "../../../components/ContactForm";
 
 const fadeUp = (i = 0) => ({
     initial: { opacity: 0, y: 28 },
@@ -141,7 +141,7 @@ export default function GeneralInquiryClient(): JSX.Element {
             {/* 🌿 CRM 폼 */}
             <section className="py-12 px-6 md:px-16">
                 <div className="max-w-4xl mx-auto">
-                    <ContactFormCRM defaultType="기타 일반 문의" />
+                    <ContactForm defaultType="기타 일반 문의" />
                 </div>
             </section>
 
