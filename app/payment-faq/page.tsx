@@ -17,7 +17,7 @@ import {
 /* ───────────────────────────────────────────────
    ✨ Metadata
 ────────────────────────────────────────────────── */
-export const metadata = {
+/*export const metadata = {
     title: "결제 FAQ | SFIN PAY",
     description:
         "SFIN PAY 결제 및 정산 관련 자주 묻는 질문 — 승인 실패, 환불, D+0/D+1 정산, 세금계산서, 보안 인증 등 모든 답변을 확인하세요.",
@@ -31,7 +31,7 @@ export const metadata = {
         url: "https://www.sfinpay.co.kr/payment-faq",
         type: "website",
     },
-};
+};*/
 
 /* ───────────────────────────────────────────────
    ✨ Animation Preset
