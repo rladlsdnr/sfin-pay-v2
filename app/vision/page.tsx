@@ -3,10 +3,10 @@ import React, { useEffect } from "react";
 import { motion } from "framer-motion";
 import { Target, Lightbulb, HeartHandshake, Rocket, Globe2, Users } from "lucide-react";
 
-export const metadata = {
+/*export const metadata = {
     title: "Vision | SFIN PAY",
     description: "SFIN PAY의 비전과 핵심 가치",
-};
+};*/
 
 const fadeUp = (i = 0) => ({
     initial: { opacity: 0, y: 25 },
