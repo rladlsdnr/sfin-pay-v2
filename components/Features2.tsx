@@ -32,9 +32,9 @@ export default function Features2(): JSX.Element {
         '/service',
         '/fb',
         '/b2b',
-        '/industries/hospitality',
-        '/industries/entertainment',
-        '/industries/healthcare',
+        '/hospitality',
+        '/entertainment',
+        '/healthcare',
         '/personal',
     ];
 
@@ -73,7 +73,7 @@ export default function Features2(): JSX.Element {
             sub: '호텔 · 여행사 · 액티비티',
             desc: '예약금, 취소, 부분환불 등 복잡한 결제 흐름을 자동으로 처리해 효율적인 운영 환경을 제공합니다.',
             keywords: ['부분환불', '예약금관리', '자동처리'],
-            href: '/industries/hospitality',
+            href: '/hospitality',
         },
         {
             lottie: entertainmentAnim,
@@ -81,7 +81,7 @@ export default function Features2(): JSX.Element {
             sub: '공연 · OTT · 게임 · 웹툰 · 티켓',
             desc: '정기결제, 환율 자동처리, 저작권 정산 등 콘텐츠 기반 비즈니스에 필요한 모든 기능을 제공합니다.',
             keywords: ['정기구독', '글로벌결제', '저작권정산'],
-            href: '/industries/entertainment',
+            href: '/entertainment',
         },
         {
             lottie: hospitalAnim,
@@ -89,7 +89,7 @@ export default function Features2(): JSX.Element {
             sub: '병의원 · 한의원 · 의료기기 · 헬스',
             desc: '비급여 결제, 의료기기 렌탈, 예약 진료 등 의료 서비스 환경에 최적화된 결제 시스템을 제공합니다.',
             keywords: ['비급여결제', '예약진료', '의료정산'],
-            href: '/industries/healthcare',
+            href: '/healthcare',
         },
         {
             lottie: b2bAnim,

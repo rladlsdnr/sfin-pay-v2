@@ -46,6 +46,7 @@ export default function Features1(): JSX.Element {
         '/service',
         '/fb',
         '/b2b',
+        '/moto',
     ];
 
     const goTo = (url: string): void => {
@@ -76,7 +77,7 @@ export default function Features1(): JSX.Element {
             title: '수기 결제(MOTO)',
             desc: '전화/원격 주문에 적합. 카드정보 입력 결제에 보안·리스크 모니터링을 더해 안전하게 운영합니다.',
             points: ['MOTO 지원', '보안 인증', '리스크 모니터링'],
-            href: '/payments/moto',
+            href: '/moto',
         },
         {
             icon: <MonitorSmartphone size={22} />,
