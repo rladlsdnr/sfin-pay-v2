@@ -1,19 +1,36 @@
 ﻿'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Menu, X, ChevronDown, ChevronUp } from 'lucide-react';
+import {
+    Menu,
+    X,
+    ChevronDown,
+    ChevronUp,
+    ArrowRight,
+    CreditCard,
+    QrCode,
+    MonitorSmartphone,
+    Building2,
+    ShieldCheck,
+    Server,
+    Users,
+    Wrench,
+} from 'lucide-react';
 
 interface SubMenuItem {
     label: string;
+    desc?: string;
     link: string;
+    icon?: JSX.Element;
 }
 
 interface MenuItem {
     label: string;
     link?: string;
     submenu?: SubMenuItem[];
+    categoryDesc?: string;
 }
 
 export default function Navbar(): JSX.Element {
@@ -24,9 +41,11 @@ export default function Navbar(): JSX.Element {
     const [flash, setFlash] = useState(false);
     const [showNav, setShowNav] = useState(true);
     const [lastScrollY, setLastScrollY] = useState(0);
+    const [hoveredMenu, setHoveredMenu] = useState<string | null>(null);
+    const hoverTimeout = useRef<NodeJS.Timeout | null>(null);
     const router = useRouter();
 
-    /** 스크롤 감지 */
+    /** ✅ 스크롤 감지 (Navbar 숨김/표시) */
     useEffect(() => {
         const controlNavbar = () => {
             const currentY = window.scrollY;
@@ -39,34 +58,98 @@ export default function Navbar(): JSX.Element {
         return () => window.removeEventListener('scroll', controlNavbar);
     }, [lastScrollY]);
 
-    /** 메뉴 정의 (Features 반영) */
+    /** ✅ 메뉴 항목 정의 */
     const menuItems: MenuItem[] = [
         {
             label: '결제 방식',
+            categoryDesc: '모든 결제 방식에 최적화된 솔루션',
             submenu: [
-                { label: '온라인 결제', link: '/online-pay' },
-                { label: '오프라인·QR 결제', link: '/qr-pay' },
-                { label: '수기 결제(MOTO)', link: '/payments/moto' },
-                { label: 'POS / MPOS 단말기', link: '/device' },
+                {
+                    label: '온라인 결제',
+                    desc: '쇼핑몰·예약·플랫폼용 통합 결제 환경',
+                    link: '/online-pay',
+                    icon: <CreditCard size={18} />,
+                },
+                {
+                    label: '오프라인·QR 결제',
+                    desc: 'POS·QR·단말 결제까지 한 번에',
+                    link: '/qr-pay',
+                    icon: <QrCode size={18} />,
+                },
+                {
+                    label: '수기 결제(MOTO)',
+                    desc: '전화·원격 주문용 안전한 결제 방식',
+                    link: '/payments/moto',
+                    icon: <ShieldCheck size={18} />,
+                },
+                {
+                    label: 'POS / MPOS 단말기',
+                    desc: '매장별 단말기·MPOS 관리 시스템',
+                    link: '/device',
+                    icon: <MonitorSmartphone size={18} />,
+                },
             ],
         },
         {
             label: '업종별 추천',
+            categoryDesc: '비즈니스 구조에 맞춘 결제 솔루션',
             submenu: [
-                { label: '커머스 · 리테일', link: '/distribution' },
-                { label: '서비스 · 라이프케어', link: '/service' },
-                { label: '음식 · 프랜차이즈', link: '/fb' },
-                { label: '숙박 · 여행 · 레저', link: '/industries/hospitality' },
-                { label: '엔터테인먼트 · 콘텐츠', link: '/industries/entertainment' },
-                { label: '금융 · B2B 서비스', link: '/b2b' },
+                {
+                    label: '온라인 쇼핑몰·판매업',
+                    desc: 'D+0 정산, 정기결제, 간편결제',
+                    link: '/distribution',
+                    icon: <Building2 size={18} />,
+                },
+                {
+                    label: '학원·피트니스·렌탈·미용',
+                    desc: '예약결제·자동청구·스케줄정산',
+                    link: '/service',
+                    icon: <Users size={18} />,
+                },
+                {
+                    label: '식당·카페·프랜차이즈',
+                    desc: 'POS 연동, 본사-매장 정산, 실시간 매출',
+                    link: '/fb',
+                    icon: <MonitorSmartphone size={18} />,
+                },
+                {
+                    label: '숙박·여행·레저',
+                    desc: '예약금, 부분환불, 자동처리 시스템',
+                    link: '/industries/hospitality',
+                    icon: <ShieldCheck size={18} />,
+                },
+                {
+                    label: '공연·게임·콘텐츠',
+                    desc: '정기구독, 환율자동처리, 저작권정산',
+                    link: '/industries/entertainment',
+                    icon: <Server size={18} />,
+                },
+                {
+                    label: '기업·광고·임대 서비스',
+                    desc: '세금계산서, 대량정산, B2B API',
+                    link: '/b2b',
+                    icon: <Building2 size={18} />,
+                },
             ],
         },
-        { label: '기술 지원', link: '/tech-support' },
-        { label: '고객 지원', link: '/support' },
-        { label: '회사 소개', link: '/company' },
+        {
+            label: '기술 지원',
+            link: '/tech-support',
+            categoryDesc: 'API 연동 / 개발자 문서 / 테스트 샌드박스',
+        },
+        {
+            label: '고객 지원',
+            link: '/support',
+            categoryDesc: '1:1 문의 / 장애 대응 / 공지사항',
+        },
+        {
+            label: '회사 소개',
+            link: '/company',
+            categoryDesc: 'SFIN PAY의 비전과 인증, 연혁',
+        },
     ];
 
-    /** 로고 클릭 */
+    /** ✅ 로고 클릭 */
     const handleLogoClick = (): void => {
         const isTop = window.scrollY <= 10;
         if (window.location.pathname !== '/') {
@@ -82,7 +165,16 @@ export default function Navbar(): JSX.Element {
         }
     };
 
-    /** 드롭다운 애니메이션 */
+    /** ✅ Hover Delay (대형 메뉴 안정화) */
+    const handleMouseEnter = (label: string) => {
+        if (hoverTimeout.current) clearTimeout(hoverTimeout.current);
+        setHoveredMenu(label);
+    };
+    const handleMouseLeave = () => {
+        hoverTimeout.current = setTimeout(() => setHoveredMenu(null), 180);
+    };
+
+    /** ✅ 드롭다운 애니메이션 정의 */
     const dropdownVariants = {
         hidden: { opacity: 0, y: -10 },
         visible: { opacity: 1, y: 0, transition: { duration: 0.25 } },
@@ -104,31 +196,22 @@ export default function Navbar(): JSX.Element {
                 )}
             </AnimatePresence>
 
-            {/* 🧭 네비게이션 */}
+            {/* 🧭 NAVBAR */}
             <motion.nav
                 initial={{ y: 0 }}
                 animate={{ y: showNav ? 0 : -100 }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-                        ? 'bg-white/80 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)]'
+                        ? 'bg-white/85 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)]'
                         : 'bg-transparent'
                     }`}
             >
                 <div className="flex justify-between items-center w-full px-6 md:px-16 py-4">
-                    {/* 🔵 로고 */}
+                    {/* 🔵 LOGO */}
                     <button
                         onClick={handleLogoClick}
-                        type="button"
-                        tabIndex={-1}
-                        className="flex items-center gap-2 select-none focus:outline-none active:outline-none ring-0 border-0 bg-transparent p-0 m-0"
-                        style={{
-                            WebkitTapHighlightColor: 'transparent',
-                            appearance: 'none',
-                            outline: 'none',
-                            boxShadow: 'none',
-                            background: 'none',
-                            cursor: 'pointer',
-                        }}
+                        className="flex items-center gap-2 select-none focus:outline-none"
+                        style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" className="w-10 h-10">
                             <defs>
@@ -141,9 +224,7 @@ export default function Navbar(): JSX.Element {
                             <circle cx="60" cy="60" r="50" stroke="url(#grad-mint)" strokeWidth="5" fill="none" />
                             <circle cx="60" cy="60" r="8" fill="url(#grad-mint)" />
                         </svg>
-                        <span className="text-2xl font-extrabold text-[#00b894] tracking-tight">
-                            SFIN PAY
-                        </span>
+                        <span className="text-2xl font-extrabold text-[#00b894] tracking-tight">SFIN PAY</span>
                     </button>
 
                     {/* 💻 데스크탑 메뉴 */}
@@ -152,35 +233,53 @@ export default function Navbar(): JSX.Element {
                             <div
                                 key={idx}
                                 className="relative group"
-                                onMouseEnter={() => setActiveMenu(item.label)}
-                                onMouseLeave={() => setActiveMenu(null)}
+                                onMouseEnter={() => handleMouseEnter(item.label)}
+                                onMouseLeave={handleMouseLeave}
                             >
                                 {item.submenu ? (
                                     <>
-                                        <button className="flex items-center gap-1 text-[#0f172a] font-medium hover:text-[#00b894] transition bg-transparent border-none outline-none focus:ring-0">
+                                        <button className="flex items-center gap-1 text-[#0f172a] font-medium hover:text-[#00b894] transition">
                                             {item.label}
                                             <ChevronDown size={16} className="ml-1" />
                                         </button>
 
                                         <AnimatePresence>
-                                            {activeMenu === item.label && (
+                                            {hoveredMenu === item.label && (
                                                 <motion.div
-                                                    key="dropdown"
+                                                    key="mega-menu"
                                                     variants={dropdownVariants}
                                                     initial="hidden"
                                                     animate="visible"
                                                     exit="exit"
-                                                    className="absolute left-0 top-10 bg-white shadow-xl rounded-xl border border-[rgba(0,200,155,0.25)] p-3 w-72"
+                                                    className="absolute left-0 top-10 bg-white shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-2xl border border-[#00b894]/20 w-[600px] p-6 grid grid-cols-2 gap-4"
                                                 >
                                                     {item.submenu.map((sub, i) => (
                                                         <Link
                                                             key={i}
                                                             href={sub.link}
-                                                            className="block px-4 py-2 rounded-lg text-sm text-[#334155] hover:bg-[rgba(0,200,155,0.05)] hover:text-[#00b894] transition"
+                                                            className="flex items-start gap-3 rounded-lg p-3 hover:bg-[#f6fffb] transition-all"
                                                         >
-                                                            {sub.label}
+                                                            <div className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-[#00b894]/10 text-[#00b894]">
+                                                                {sub.icon}
+                                                            </div>
+                                                            <div className="flex flex-col">
+                                                                <span className="text-[15px] font-semibold text-[#0f172a]">
+                                                                    {sub.label}
+                                                                </span>
+                                                                <span className="text-xs text-[#4b5563]/80">
+                                                                    {sub.desc}
+                                                                </span>
+                                                            </div>
                                                         </Link>
                                                     ))}
+
+                                                    {/* 우측 하단 브랜드 설명 */}
+                                                    {item.categoryDesc && (
+                                                        <div className="col-span-2 mt-4 border-t border-[#E2E8F0] pt-3 text-sm text-[#334155]/80 flex items-center gap-2">
+                                                            <ShieldCheck size={16} className="text-[#00b894]" />
+                                                            {item.categoryDesc}
+                                                        </div>
+                                                    )}
                                                 </motion.div>
                                             )}
                                         </AnimatePresence>
@@ -196,7 +295,7 @@ export default function Navbar(): JSX.Element {
                             </div>
                         ))}
 
-                        {/* 🟢 우상단 버튼 */}
+                        {/* 🟢 상단 우측 버튼 */}
                         <div className="flex items-center gap-3 ml-4">
                             <Link
                                 href="/inquiry/merchant"
@@ -224,7 +323,7 @@ export default function Navbar(): JSX.Element {
                 </div>
             </motion.nav>
 
-            {/* 📱 모바일 메뉴 Drawer */}
+            {/* 📱 모바일 메뉴 */}
             <AnimatePresence>
                 {menuOpen && (
                     <motion.div
@@ -273,6 +372,9 @@ export default function Navbar(): JSX.Element {
                                                                 className="block text-[#334155] py-2 text-sm hover:text-[#00b894]"
                                                             >
                                                                 {sub.label}
+                                                                <div className="text-xs text-[#64748b]/70">
+                                                                    {sub.desc}
+                                                                </div>
                                                             </Link>
                                                         ))}
                                                     </motion.div>
@@ -286,6 +388,7 @@ export default function Navbar(): JSX.Element {
                                             className="block text-lg font-semibold text-[#0f172a] py-2 hover:text-[#00b894]"
                                         >
                                             {item.label}
+                                            <div className="text-xs text-[#64748b]/70">{item.categoryDesc}</div>
                                         </Link>
                                     )}
                                 </div>

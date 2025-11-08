@@ -10,10 +10,18 @@ import { MessageSquare, SendHorizonal, X, HelpCircle } from "lucide-react";
 ────────────────────────────────────────────────── */
 const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
 
-/* ✅ Lottie JSON import */
-import posMachine from "../app/lottie/pos_machine.json";
-import dashboard from "../app/lottie/Dashboard Developer.json";
-import paymentSuccess from "../app/lottie/Payment Successful Animation.json";
+/* ✅ fetch 기반 LottieLoader (public/lottie/* 경로 사용) */
+function LottieLoader({ src, className }: { src: string; className?: string }) {
+    const [data, setData] = useState<object | null>(null);
+    useEffect(() => {
+        fetch(src)
+            .then((res) => res.json())
+            .then(setData)
+            .catch(console.error);
+    }, [src]);
+    if (!data) return null;
+    return <Lottie animationData={data} loop autoplay className={className} />;
+}
 
 /* ✅ FAQ 데이터베이스 */
 const FAQ_LIST = [
@@ -114,7 +122,6 @@ export default function Hero(): JSX.Element {
         setInput("");
         setTimeout(() => {
             setMessages((prev) => [...prev, { from: "bot", text: reply }]);
-            // 챗창 자동 스크롤
             const el = document.getElementById("chat-scroll-container");
             if (el) el.scrollTo({ top: el.scrollHeight, behavior: "smooth" });
         }, 600);
@@ -191,12 +198,7 @@ export default function Hero(): JSX.Element {
 
                     <div className="lg:hidden mt-14 flex justify-center">
                         {visible && (
-                            <Lottie
-                                animationData={paymentSuccess}
-                                loop
-                                autoplay
-                                className="w-4/5 max-w-[320px]"
-                            />
+                            <LottieLoader src="/lottie/payment_success.json" className="w-4/5 max-w-[320px]" />
                         )}
                     </div>
                 </div>
@@ -206,9 +208,9 @@ export default function Hero(): JSX.Element {
                     <div className="relative w-[540px] h-[420px] flex items-center justify-center">
                         {visible && (
                             <>
-                                <Lottie animationData={posMachine} className="absolute top-0 left-4 w-[240px]" loop autoplay />
-                                <Lottie animationData={dashboard} className="absolute top-10 right-0 w-[280px]" loop autoplay />
-                                <Lottie animationData={paymentSuccess} className="absolute bottom-0 left-[60px] w-[240px]" loop autoplay />
+                                <LottieLoader src="/lottie/pos_machine.json" className="absolute top-0 left-4 w-[240px]" />
+                                <LottieLoader src="/lottie/dashboard_developer.json" className="absolute top-10 right-0 w-[280px]" />
+                                <LottieLoader src="/lottie/payment_success.json" className="absolute bottom-0 left-[60px] w-[240px]" />
                             </>
                         )}
                     </div>

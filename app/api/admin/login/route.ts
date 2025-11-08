@@ -73,6 +73,12 @@ export async function POST(req: Request) {
       `,
         };
 
+        inline-flex items-center gap-2 mt-8 px-6 py-3 rounded-xl   
+        bg-gradient-to-r from-[#00c89b] to-[#00b894]   
+        hover:from-[#00b894] hover:to-[#00a884]   
+        text-white font-semibold shadow-[0_8px_20px_rgba(0,200,155,0.25)]   
+        transition-all
+
         // ✅ 이메일 발송
         await transporter.sendMail(mailOptions);
 

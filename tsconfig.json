@@ -18,6 +18,13 @@
     "isolatedModules": true,
     "jsx": "preserve",
     "incremental": true,
+    /* ✅ 여기 추가 */
+    "baseUrl": ".",
+    "paths": {
+      "@/*": [
+        "*"
+      ]
+    },
     "plugins": [
       {
         "name": "next"

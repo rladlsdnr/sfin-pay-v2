@@ -12,28 +12,41 @@ import {
 export default function Settlement(): JSX.Element {
     const [step, setStep] = useState(0);
     const [amount, setAmount] = useState(0);
+    const [gross, setGross] = useState(0); // 수수료 전 금액
+    const [net, setNet] = useState(0); // 수수료 차감 후 금액
+    const [feeRate, setFeeRate] = useState(0); // ✅ 수수료율 (%)
 
-    // 단계 순환
+    // 💫 단계 순환 (4초마다)
     useEffect(() => {
-        const loop = () => {
-            setStep((s) => (s + 1) % 3);
-        };
+        const loop = () => setStep((s) => (s + 1) % 3);
         const interval = setInterval(loop, 4000);
         return () => clearInterval(interval);
     }, []);
 
-    // 💸 금액 카운트업 (10원 단위)
+    // 💸 금액 및 수수료 반영
     useEffect(() => {
-        let newAmount = amount;
+        let newGross = gross;
+
         if (step === 0) {
-            // 10원 단위로 랜덤 금액 생성 (80,000 ~ 120,000원)
+            // ① 매출 금액 생성
             const min = 80000;
             const max = 120000;
-            newAmount = Math.floor(Math.random() * ((max - min) / 10 + 1)) * 10 + min;
+            newGross = Math.floor(Math.random() * ((max - min) / 10 + 1)) * 10 + min;
+            setGross(newGross);
+
+            // ② 수수료율 무작위 (0.8% ~ 2.5%)
+            const randomRate = (Math.random() * (2.5 - 0.8) + 0.8);
+            const rateRounded = Math.round(randomRate * 100) / 100; // 소수점 둘째 자리
+            setFeeRate(rateRounded);
+
+            // ③ 수수료 차감 후 입금액 계산
+            const newNet = Math.floor((newGross * (1 - rateRounded / 100)) / 10) * 10;
+            setNet(newNet);
         }
 
+        // ④ 애니메이션 처리
         const start = 0;
-        const end = newAmount;
+        const end = step === 2 ? net : newGross;
         const duration = 1500;
         const startTime = performance.now();
 
@@ -41,7 +54,7 @@ export default function Settlement(): JSX.Element {
         const animate = (time: number) => {
             const progress = Math.min((time - startTime) / duration, 1);
             const value = start + (end - start) * progress;
-            setAmount(Math.floor(value / 10) * 10); // 10원 단위 유지
+            setAmount(Math.floor(value / 10) * 10);
             if (progress < 1) frame = requestAnimationFrame(animate);
         };
 
@@ -75,7 +88,7 @@ export default function Settlement(): JSX.Element {
             id="settlement"
             className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#EFFFF9] via-[#F8FFFD] to-white overflow-hidden"
         >
-            {/* 💫 민트 데이터 흐름 배경 */}
+            {/* 💫 민트 배경 */}
             <motion.div
                 animate={{ backgroundPosition: ['0% 0%', '100% 50%', '0% 100%', '0% 0%'] }}
                 transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
@@ -117,8 +130,8 @@ export default function Settlement(): JSX.Element {
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.2 }}
                         className={`relative flex-1 p-6 rounded-2xl border transition-all duration-500 backdrop-blur-sm ${i === step
-                                ? 'border-[#00c8b4]/50 bg-white shadow-[0_8px_30px_rgba(0,200,155,0.18)]'
-                                : 'border-[#C4F7EC] bg-[#F8FFFD]'
+                            ? 'border-[#00c8b4]/50 bg-white shadow-[0_8px_30px_rgba(0,200,155,0.18)]'
+                            : 'border-[#C4F7EC] bg-[#F8FFFD]'
                             }`}
                     >
                         {i === step && (
@@ -138,6 +151,13 @@ export default function Settlement(): JSX.Element {
                         </div>
 
                         <p className="mt-3 text-[#2E5C54]/80 text-sm leading-relaxed">{s.desc}</p>
+
+                        {/* ✅ 3단계에만 수수료 안내 */}
+                        {i === 2 && (
+                            <p className="mt-2 text-[#00a884] text-xs font-semibold">
+                                ※ PG 수수료 {feeRate.toFixed(2)}% 차감 후 입금됩니다.
+                            </p>
+                        )}
 
                         {i === step && (
                             <motion.div

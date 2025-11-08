@@ -18,7 +18,6 @@ C:.
 +---.next
 |   |   app-build-manifest.json
 |   |   build-manifest.json
-|   |   fallback-build-manifest.json
 |   |   package.json
 |   |   react-loadable-manifest.json
 |   |   trace
@@ -45,6 +44,7 @@ C:.
 |   |       |       19.pack.gz
 |   |       |       2.pack.gz
 |   |       |       20.pack.gz
+|   |       |       21.pack.gz
 |   |       |       3.pack.gz
 |   |       |       4.pack.gz
 |   |       |       5.pack.gz
@@ -58,6 +58,7 @@ C:.
 |   |       +---client-development-fallback
 |   |       |       0.pack.gz
 |   |       |       1.pack.gz
+|   |       |       index.pack.gz
 |   |       |       index.pack.gz.old
 |   |       |       
 |   |       \---server-development
@@ -96,42 +97,86 @@ C:.
 |   |   |   pages-manifest.json
 |   |   |   server-reference-manifest.js
 |   |   |   server-reference-manifest.json
+|   |   |   webpack-runtime.js
 |   |   |   
-|   |   \---app
-|   |       \---_not-found
-|   |               page_client-reference-manifest.js
-|   |               
+|   |   +---app
+|   |   |   |   page.js
+|   |   |   |   page_client-reference-manifest.js
+|   |   |   |   
+|   |   |   \---_not-found
+|   |   |           page.js
+|   |   |           page_client-reference-manifest.js
+|   |   |           
+|   |   \---vendor-chunks
+|   |           @reduxjs.js
+|   |           @swc.js
+|   |           clsx.js
+|   |           d3-array.js
+|   |           d3-color.js
+|   |           d3-format.js
+|   |           d3-interpolate.js
+|   |           d3-path.js
+|   |           d3-scale.js
+|   |           d3-shape.js
+|   |           d3-time-format.js
+|   |           d3-time.js
+|   |           decimal.js-light.js
+|   |           es-toolkit.js
+|   |           eventemitter3.js
+|   |           framer-motion.js
+|   |           immer.js
+|   |           internmap.js
+|   |           lottie-react.js
+|   |           lottie-web.js
+|   |           lucide-react.js
+|   |           motion-dom.js
+|   |           motion-utils.js
+|   |           next.js
+|   |           react-is.js
+|   |           react-redux.js
+|   |           recharts.js
+|   |           redux-thunk.js
+|   |           redux.js
+|   |           reselect.js
+|   |           tiny-invariant.js
+|   |           use-sync-external-store.js
+|   |           victory-vendor.js
+|   |           
 |   +---static
 |   |   +---chunks
+|   |   |   |   app-pages-internals.js
 |   |   |   |   main-app.js
 |   |   |   |   polyfills.js
 |   |   |   |   webpack.js
 |   |   |   |   
-|   |   |   +---app
-|   |   |   |   \---_not-found
-|   |   |   |           page.js
-|   |   |   |           
-|   |   |   \---fallback
-|   |   |       |   amp.js
-|   |   |       |   main.js
-|   |   |       |   react-refresh.js
-|   |   |       |   webpack.js
+|   |   |   \---app
+|   |   |       |   layout.js
+|   |   |       |   page.js
 |   |   |       |   
-|   |   |       \---pages
-|   |   |               _app.js
-|   |   |               _error.js
+|   |   |       \---_not-found
+|   |   |               page.js
 |   |   |               
+|   |   +---css
+|   |   |   \---app
+|   |   |           layout.css
+|   |   |           
 |   |   +---development
 |   |   |       _buildManifest.js
 |   |   |       _ssgManifest.js
 |   |   |       
 |   |   \---webpack
+|   |           5ff02353e98b075c.webpack.hot-update.json
 |   |           633457081244afec._.hot-update.json
+|   |           webpack.5ff02353e98b075c.hot-update.js
 |   |           
 |   \---types
-|           cache-life.d.ts
-|           package.json
-|           
+|       |   cache-life.d.ts
+|       |   package.json
+|       |   
+|       \---app
+|               layout.ts
+|               page.ts
+|               
 +---app
 |   |   layout.tsx
 |   |   page.tsx
@@ -144,11 +189,9 @@ C:.
 |   |   |       
 |   |   +---login
 |   |   |       page.tsx
-|   |   |       route.ts
 |   |   |       
 |   |   \---verify-otp
 |   |           page.tsx
-|   |           route.ts
 |   |           
 |   +---api
 |   |   +---admin
@@ -183,9 +226,11 @@ C:.
 |   |       page.tsx
 |   |       
 |   +---careers
+|   |       metadata.ts
 |   |       page.tsx
 |   |       
 |   +---company
+|   |       metadata.ts
 |   |       page.tsx
 |   |       
 |   +---device
@@ -218,17 +263,15 @@ C:.
 |   |           page.tsx
 |   |           SettlementInquiryClient.tsx
 |   |           
-|   +---lottie
-|   |       Dashboard Developer.json
-|   |       Payment Successful Animation.json
-|   |       pos_machine.json
-|   |       
 |   +---online-pay
 |   |       page.tsx
 |   |       
 |   +---payment-faq
 |   |       layout.tsx
 |   |       page.tsx
+|   |       
+|   +---providers
+|   |       SeoProvider.tsx
 |   |       
 |   +---qr-pay
 |   |       page.tsx
@@ -265,11 +308,13 @@ C:.
 |       Compliance.tsx
 |       Contact.tsx
 |       ContactForm.tsx
-|       Features.tsx
+|       Features1.tsx
+|       Features2.tsx
 |       Footer.tsx
 |       Hero.tsx
 |       Insights.tsx
 |       Liquidity.tsx
+|       LottieLoader.tsx
 |       Navbar.tsx
 |       Partners.tsx
 |       ScrollToTop.tsx
@@ -291,8 +336,17 @@ C:.
 |               migration.sql
 |               
 +---public
-|       README.txt
-|       
+|   |   README.txt
+|   |   
+|   \---lottie
+|           Dashboard Developer.json
+|           device.json
+|           moto.json
+|           online-pay.json
+|           Payment Successful Animation.json
+|           pos_machine.json
+|           qr_pay.json
+|           
 \---styles
         globals.css
         

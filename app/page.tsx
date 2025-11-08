@@ -1,6 +1,7 @@
 ﻿import Hero from "../components/Hero";
 import Partners from "../components/Partners";
-import Features from "../components/Features";
+import Features1 from "../components/Features1";
+import Features2 from "../components/Features2";
 import Settlement from "../components/Settlement";
 import Liquidity from "../components/Liquidity";
 import Security from "../components/Security";
@@ -10,10 +11,12 @@ import Compliance from "../components/Compliance";
 import Contact from "../components/Contact";
 
 export default function HomePage(): JSX.Element {
+  /** ✅ Features1, Features2 로 분리 반영 */
   const sections = [
     Hero,
     Partners,
-    Features,
+    Features1,
+    Features2,
     Settlement,
     Liquidity,
     Security,
