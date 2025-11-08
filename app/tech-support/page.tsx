@@ -461,10 +461,10 @@ export default function TechSupportProMint(): JSX.Element {
                 </div>
 
                 <div className="mt-10 flex items-center justify-center gap-3">
-                    <Link href="/inquiry/integration" className="px-6 py-3 rounded-xl bg-[#10b981] text-white font-semibold hover:bg-[#059669] transition focus:outline-none focus:ring-2 focus:ring-[#bbf7f0]">
+                    <Link href="/inquiry/integration" className="px-6 py-3 rounded-xl bg-[#10b981] text-white font-semibold hover:bg-[#059669] transition focus:ring-2 focus:ring-[#bbf7f0]">
                         도입 상담 요청
                     </Link>
-                    <Link href="/support" className="px-6 py-3 rounded-xl bg-white border border-[#e6fff9] text-[#10b981] font-semibold hover:bg-[#f0fdfa] transition focus:outline-none focus:ring-2 focus:ring-[#bbf7f0]">
+                    <Link href="/support" className="px-6 py-3 rounded-xl bg-white border border-[#e6fff9] text-[#10b981] font-semibold hover:bg-[#f0fdfa] transition focus:ring-2 focus:ring-[#bbf7f0]">
                         기술 문의하기
                     </Link>
                 </div>
@@ -993,10 +993,10 @@ app.post('/webhook', (req, res) => {
                     템플릿 및 샘플 코드를 제공합니다.
                 </p>
                 <div className="flex justify-center gap-3">
-                    <Link href="/inquiry/integration" className="px-8 py-3 bg-[#10b981] text-white rounded-xl font-semibold hover:bg-[#059669] transition focus:outline-none focus:ring-2 focus:ring-[#bbf7f0]">
+                    <Link href="/inquiry/integration" className="px-8 py-3 bg-[#10b981] text-white rounded-xl font-semibold hover:bg-[#059669] transition focus:ring-2 focus:ring-[#bbf7f0]">
                         상담 요청하기
                     </Link>
-                    <Link href="/support" className="px-8 py-3 bg-white border border-[#e6fff9] text-[#10b981] rounded-xl font-semibold hover:bg-[#f0fdfa] transition focus:outline-none focus:ring-2 focus:ring-[#bbf7f0]">
+                    <Link href="/support" className="px-8 py-3 bg-white border border-[#e6fff9] text-[#10b981] rounded-xl font-semibold hover:bg-[#f0fdfa] transition focus:ring-2 focus:ring-[#bbf7f0]">
                         기술 문의하기
                     </Link>
                 </div>

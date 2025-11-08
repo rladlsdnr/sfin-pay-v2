@@ -1,5 +1,5 @@
 ﻿'use client';
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
 import {
     CreditCard,
@@ -11,24 +11,7 @@ import {
     Building2,
 } from 'lucide-react';
 import dynamic from 'next/dynamic';
-
-/* ────────────────────────────────────────────────
-   ✅ Lottie 동적 import (SSR 비활성)
-────────────────────────────────────────────────── */
-const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
-
-/* ✅ 공용 LottieLoader — public/lottie/ 경로 기반 fetch */
-function LottieLoader({ src, className }: { src: string; className?: string }) {
-    const [data, setData] = useState<object | null>(null);
-    useEffect(() => {
-        fetch(src)
-            .then((res) => res.json())
-            .then(setData)
-            .catch(console.error);
-    }, [src]);
-    if (!data) return null;
-    return <Lottie animationData={data} loop autoplay className={className} />;
-}
+import LottieOptimized from './LottieOptimized';
 
 const fadeUp = (i = 0) => ({
     initial: { opacity: 0, y: 20 },
@@ -126,7 +109,7 @@ export default function Features1(): JSX.Element {
                                     : 'opacity-60 pointer-events-none'}`}
                         >
                             <div className="w-full md:w-[38%] flex justify-center">
-                                <LottieLoader src={b.lottie} className="w-[130px] h-[130px] md:w-[150px] md:h-[150px]" />
+                                <LottieOptimized src={b.lottie} className="w-[130px] h-[130px] md:w-[150px] md:h-[150px]" />
                             </div>
 
                             <div className="flex-1 text-left">

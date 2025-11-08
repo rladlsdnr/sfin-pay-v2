@@ -202,15 +202,15 @@ export default function Navbar(): JSX.Element {
                 animate={{ y: showNav ? 0 : -100 }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
                 className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${scrolled
-                        ? 'bg-white/85 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)]'
-                        : 'bg-transparent'
+                    ? 'bg-white/85 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)]'
+                    : 'bg-transparent'
                     }`}
             >
                 <div className="flex justify-between items-center w-full px-6 md:px-16 py-4">
                     {/* 🔵 LOGO */}
                     <button
                         onClick={handleLogoClick}
-                        className="flex items-center gap-2 select-none focus:outline-none"
+                        className="flex items-center gap-2 select-none "
                         style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" className="w-10 h-10">
@@ -334,7 +334,20 @@ export default function Navbar(): JSX.Element {
                         transition={{ type: 'tween', duration: 0.3 }}
                         className="fixed top-0 right-0 w-[85%] h-screen bg-white z-[999] shadow-2xl flex flex-col justify-between"
                     >
-                        <div className="overflow-y-auto px-6 py-8 space-y-6">
+                        {/* 🧭 상단 헤더 (로고 + 닫기버튼) */}
+                        <div className="flex justify-between items-center px-6 py-5 border-b border-[#E2E8F0]">
+                            <span className="text-xl font-extrabold text-[#00b894] select-none">SFIN PAY</span>
+                            <button
+                                onClick={() => setMenuOpen(false)}
+                                className="text-[#0f172a] hover:text-[#00b894] transition"
+                                aria-label="Close menu"
+                            >
+                                <X size={26} />
+                            </button>
+                        </div>
+
+                        {/* 메뉴 리스트 */}
+                        <div className="overflow-y-auto px-6 py-8 space-y-6 flex-1">
                             {menuItems.map((item, idx) => (
                                 <div key={idx}>
                                     {item.submenu ? (
@@ -388,7 +401,9 @@ export default function Navbar(): JSX.Element {
                                             className="block text-lg font-semibold text-[#0f172a] py-2 hover:text-[#00b894]"
                                         >
                                             {item.label}
-                                            <div className="text-xs text-[#64748b]/70">{item.categoryDesc}</div>
+                                            <div className="text-xs text-[#64748b]/70">
+                                                {item.categoryDesc}
+                                            </div>
                                         </Link>
                                     )}
                                 </div>

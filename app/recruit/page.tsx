@@ -74,8 +74,8 @@ export default function Recruit(): JSX.Element {
                     <button
                         onClick={() => setTab("job")}
                         className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold transition-all ${tab === "job"
-                                ? "bg-gradient-to-r from-[#34d399] to-[#10b981] text-white shadow-md"
-                                : "bg-transparent text-[#1e3a34]/80 hover:bg-[#d1fae5]/60 hover:text-[#059669]"
+                            ? "bg-gradient-to-r from-[#34d399] to-[#10b981] text-white shadow-md"
+                            : "bg-transparent text-[#1e3a34]/80 hover:bg-[#d1fae5]/60 hover:text-[#059669]"
                             }`}
                     >
                         채용 문의
@@ -83,8 +83,8 @@ export default function Recruit(): JSX.Element {
                     <button
                         onClick={() => setTab("partner")}
                         className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold transition-all ${tab === "partner"
-                                ? "bg-gradient-to-r from-[#34d399] to-[#10b981] text-white shadow-md"
-                                : "bg-transparent text-[#1e3a34]/80 hover:bg-[#d1fae5]/60 hover:text-[#059669]"
+                            ? "bg-gradient-to-r from-[#34d399] to-[#10b981] text-white shadow-md"
+                            : "bg-transparent text-[#1e3a34]/80 hover:bg-[#d1fae5]/60 hover:text-[#059669]"
                             }`}
                     >
                         파트너 문의
@@ -119,7 +119,7 @@ export default function Recruit(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="회사 또는 단체명을 입력하세요"
-                                className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981] focus:outline-none"
+                                className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
                             />
                         </div>
                     )}
@@ -133,7 +133,7 @@ export default function Recruit(): JSX.Element {
                             onChange={handleChange}
                             required
                             placeholder="성함을 입력하세요"
-                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981] focus:outline-none"
+                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
                         />
                     </div>
 
@@ -146,7 +146,7 @@ export default function Recruit(): JSX.Element {
                             onChange={handleChange}
                             required
                             placeholder="example@sfinpay.com"
-                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981] focus:outline-none"
+                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
                         />
                     </div>
 
@@ -162,7 +162,7 @@ export default function Recruit(): JSX.Element {
                             placeholder={
                                 tab === "job" ? "예: 개발, 디자인, 운영 등" : "예: 금융기관, 가맹점, VAN 등"
                             }
-                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981] focus:outline-none"
+                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
                         />
                     </div>
 
@@ -181,7 +181,7 @@ export default function Recruit(): JSX.Element {
                                     ? "자신의 경력, 관심 분야 등을 간단히 소개해주세요."
                                     : "제안 또는 문의 내용을 작성해주세요."
                             }
-                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981] focus:outline-none resize-none"
+                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981] resize-none"
                         />
                     </div>
 

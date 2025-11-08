@@ -206,13 +206,7 @@ export default function Hero(): JSX.Element {
                 {/* 오른쪽 시각화 */}
                 <div className="relative hidden lg:flex w-1/2 justify-center items-center">
                     <div className="relative w-[540px] h-[420px] flex items-center justify-center">
-                        {visible && (
-                            <>
-                                <LottieLoader src="/lottie/pos_machine.json" className="absolute top-0 left-4 w-[240px]" />
-                                <LottieLoader src="/lottie/dashboard_developer.json" className="absolute top-10 right-0 w-[280px]" />
-                                <LottieLoader src="/lottie/payment_success.json" className="absolute bottom-0 left-[60px] w-[240px]" />
-                            </>
-                        )}
+                        { }
                     </div>
                 </div>
             </motion.section>
@@ -311,7 +305,7 @@ export default function Hero(): JSX.Element {
                                     onKeyDown={handleKeyPress}
                                     placeholder="문의 내용을 입력하세요..."
                                     className="flex-1 px-4 py-2.5 text-sm border border-[#a6f2df] rounded-lg
-              focus:outline-none focus:ring-1 focus:ring-[#36ffc6]/70"
+              focus:ring-1 focus:ring-[#36ffc6]/70"
                                 />
                                 <button
                                     onClick={() => {
