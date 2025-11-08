@@ -135,7 +135,7 @@ const FB: React.FC = () => {
                     className="text-center mb-10"
                 >
                     <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
-                        🍽 꼭 필요한 기능만 담았습니다
+                        꼭 필요한 기능만 담았습니다
                     </h2>
                     <p className="text-[#1e3a34]/80">
                         바쁜 점주님을 위해 실제 현장에서 가장 자주 쓰이는 기능만 모았습니다.
@@ -175,7 +175,7 @@ const FB: React.FC = () => {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.2 * i }}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] t1"
+                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
                         >
                             <div className="flex items-center gap-3 text-[#10b981] mb-4">
                                 {f.icon}
@@ -217,7 +217,7 @@ const FB: React.FC = () => {
                         {...fadeUp(0.4)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md t1"
+                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>

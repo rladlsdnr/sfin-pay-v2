@@ -101,7 +101,7 @@ export default function ManualPay(): JSX.Element {
             {/* 주요 기능 */}
             <section className="py-28 px-6 md:px-16 max-w-6xl mx-auto space-y-20">
                 <motion.div {...fadeUp(0)} className="text-center mb-10">
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">🧾 수기결제의 장점</h2>
+                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">수기결제의 장점</h2>
                     <p className="text-[#1e3a34]/80">
                         단 한 번의 입력으로 예약금·비대면 결제를 신속하고 안전하게 처리하세요.
                     </p>
@@ -143,7 +143,7 @@ export default function ManualPay(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.1)}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] t1"
+                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
                         >
                             <div className="flex items-center gap-3 text-[#10b981] mb-4">
                                 {f.icon}
@@ -174,7 +174,7 @@ export default function ManualPay(): JSX.Element {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#34d399] to-[#10b981] hover:from-[#10b981] hover:to-[#059669] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)] t1"
+                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)] "
                     >
                         도입 상담 받기 →
                     </motion.button>

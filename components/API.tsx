@@ -79,7 +79,7 @@ const StepCard = memo(function StepCard({
             tabIndex={0}
             role="article"
             aria-label={`${index + 1}단계: ${step.title}`}
-            className="group text-center rounded-2xl border border-brand-mint/40 bg-white/90 p-8 shadow-[0_8px_25px_rgba(16,185,129,0.08)] hover:shadow-[0_12px_35px_rgba(16,185,129,0.13)] t1 outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
+            className="group text-center rounded-2xl border border-brand-mint/40 bg-white/90 p-8 shadow-[0_8px_25px_rgba(16,185,129,0.08)] hover:shadow-[0_12px_35px_rgba(16,185,129,0.13)]  outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
         >
             <div className="flex justify-center mb-4 text-brand-mintDark">
                 {step.icon({ size: 28 })}
@@ -99,7 +99,7 @@ export default function API({
     id = "api",
     steps,
     badgeLabel = "도입 절차",
-    titleLines = ["누구나 바로 사용할 수 있는", "결제 인프라"],
+    titleLines = ["누구나 바로 쓸 수 있는", "결제 인프라"],
     description = "복잡한 서류나 별도 시스템 없이, 가입부터 결제 운영까지 단 하루면 충분합니다.",
     ctaHref = "#contact",
     ctaLabel = "도입 상담 신청하기",
@@ -135,8 +135,8 @@ export default function API({
                     className="mt-8 text-4xl md:text-5xl font-extrabold text-[#0b2723] leading-relaxed tracking-tight"
                 >
                     {titleLines[0]}
-                    <br className="hidden sm:block" />
-                    <span className="block mt-3 text-brand-mintDark">{titleLines[1]}</span>
+                    <br className="hidden md:block" />
+                    <span className="block md:mt-3 text-brand-mintDark">{titleLines[1]}</span>
                 </h2>
 
                 <p className="mt-8 text-[#1f3b37]/70 text-lg leading-relaxed">
@@ -164,6 +164,7 @@ export default function API({
             >
                 <p className="text-[#1f3b37]/70 text-lg leading-relaxed">
                     SFIN PAY는 가맹점 등록, 정산 관리, 결제 모듈 제공을 하나의 프로세스로 통합했습니다.
+                    <br />
                     별도 구축 없이, 안정적이고 빠르게 운영을 시작할 수 있습니다.
                 </p>
             </motion.div>
@@ -179,7 +180,8 @@ export default function API({
                     <a
                         href={ctaHref}
                         onClick={onCtaClick}
-                        className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-brand-mintDark to-emerald-400 hover:from-emerald-500 hover:to-emerald-400 text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)] t1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
+                        /*원본 from-brand-mintDark to-emerald-400 hover:from-emerald-500 hover:to-emerald-400 */
+                        className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)]  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
                     >
                         {ctaLabel}
                     </a>
@@ -187,7 +189,7 @@ export default function API({
                     <Link
                         href={ctaHref}
                         onClick={onCtaClick}
-                        className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-brand-mintDark to-emerald-400 hover:from-emerald-500 hover:to-emerald-400 text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)] t1 focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
+                        className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)]  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
                     >
                         {ctaLabel}
                     </Link>

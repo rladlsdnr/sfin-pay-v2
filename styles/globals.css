@@ -16,12 +16,14 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 body h1 span {
   letter-spacing: 0.05rem;
   line-height: 1.2;
-  word-break: keep-all;
+  /*word-break: keep-all;*/
 }
 
 /* 💜 스크롤바 스타일 (은은한 라벤더) */
@@ -90,7 +92,7 @@ a {
 }
 
 a:hover {
-  color: #7c3aed;
+  /*color: #7c3aed;*/
 }
 
 /* 📱 반응형 여백 */
@@ -99,12 +101,6 @@ a:hover {
     padding-left: 1.25rem;
     padding-right: 1.25rem;
   }*/
-}
-
-@media (min-width: 768px) {
-  .main_section {
-    height: 100vh;
-  }
 }
 
 /* 💻 코드 블록 (API 등) */

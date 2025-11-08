@@ -86,9 +86,9 @@ export default function Compliance(): JSX.Element {
                 </span>
 
                 <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-[#0b2723] leading-relaxed tracking-tight">
-                    <span className="text-emerald-600">신뢰 가능한 법적 기반</span> 위의
+                    <span className="text-[#00c89b]">신뢰 가능한 법적 기반</span> 위
                     <br className="hidden md:block" />
-                    <span className="block mt-3 text-[#0b2723]">투명한 결제 인프라</span>
+                    <span className="block md:mt-3 text-[#0b2723]">투명한 결제 인프라</span>
                 </h2>
 
                 <p className="mt-8 text-[#1f3b37]/70 text-lg leading-relaxed">
@@ -105,7 +105,7 @@ export default function Compliance(): JSX.Element {
                         {...fadeUp(i + 1)}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.08 * i }}
-                        className="group relative rounded-2xl border border-emerald-200/60 bg-white/90 p-7 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] hover:border-emerald-300 t1 duration-500"
+                        className="group relative rounded-2xl border border-emerald-200/60 bg-white/90 p-7 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] hover:border-emerald-300  duration-500"
                     >
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-xl bg-emerald-100 text-emerald-600">
@@ -133,7 +133,7 @@ export default function Compliance(): JSX.Element {
             >
                 <h3 className="text-2xl font-bold text-[#0b2723] mb-12">
                     SFIN PAY의{" "}
-                    <span className="text-emerald-600">내부통제 3단계 체계</span>
+                    <span className="text-[#00c89b]">내부통제 3단계 체계</span>
                 </h3>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -168,7 +168,7 @@ export default function Compliance(): JSX.Element {
                 </p>
                 <Link
                     href="/transparency-report"
-                    className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-400 text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)] t1"
+                    className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)] "
                 >
                     투명경영 보고서 보기
                 </Link>

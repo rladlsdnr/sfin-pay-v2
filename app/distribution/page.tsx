@@ -61,48 +61,53 @@ const Distribution: React.FC = () => {
 
                 <motion.div
                     {...fadeUp(0.2)}
-                    className="flex flex-col md:flex-row justify-center items-center gap-8 text-center"
+                    className="flex flex-wrap md:flex-nowrap justify-center items-center gap-6 text-center"
                 >
-                    {/* 출고 */}
-                    <div className="flex flex-col items-center gap-2">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                    {/* 상품 출고 */}
+                    <div className="flex flex-col items-center gap-2 w-24 md:w-28">
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white border border-[#a7f3d0]/70
+                    flex items-center justify-center text-[#10b981] text-2xl md:text-3xl shadow-md">
                             <Truck />
                         </div>
-                        <p className="font-semibold mt-2">상품 출고</p>
-                        <p className="text-sm text-[#1e3a34]/70">거래처 주문 접수</p>
+                        <p className="font-semibold mt-2 text-sm md:text-base">상품 출고</p>
+                        <p className="text-[11px] md:text-sm text-[#1e3a34]/70">거래처 주문 접수</p>
                     </div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-[#10b981] w-7 h-7 md:w-8 md:h-8 hidden md:block shrink-0" />
 
                     {/* 거래처 결제 */}
-                    <div className="flex flex-col items-center gap-2">
-                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-[#34d399] to-[#10b981] shadow-[0_0_25px_rgba(16,185,129,0.25)] flex items-center justify-center text-white text-3xl">
+                    <div className="flex flex-col items-center gap-2 w-24 md:w-28">
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-tr from-[#34d399] to-[#10b981]
+                    shadow-[0_0_18px_rgba(16,185,129,0.22)] flex items-center justify-center
+                    text-white text-2xl md:text-3xl">
                             <ShoppingBag />
                         </div>
-                        <p className="font-semibold mt-2">거래처 결제</p>
-                        <p className="text-sm text-[#1e3a34]/70">PG 연동 자동 결제</p>
+                        <p className="font-semibold mt-2 text-sm md:text-base">거래처 결제</p>
+                        <p className="text-[11px] md:text-sm text-[#1e3a34]/70">PG 연동 자동 결제</p>
                     </div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-[#10b981] w-7 h-7 md:w-8 md:h-8 hidden md:block shrink-0" />
 
                     {/* 도매 정산 */}
-                    <div className="flex flex-col items-center gap-2">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                    <div className="flex flex-col items-center gap-2 w-24 md:w-28">
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white border border-[#a7f3d0]/70
+                    flex items-center justify-center text-[#10b981] text-2xl md:text-3xl shadow-md">
                             <Wallet />
                         </div>
-                        <p className="font-semibold mt-2">도매 정산</p>
-                        <p className="text-sm text-[#1e3a34]/70">자동 입금 및 거래 기록</p>
+                        <p className="font-semibold mt-2 text-sm md:text-base">도매 정산</p>
+                        <p className="text-[11px] md:text-sm text-[#1e3a34]/70">자동 입금 및 거래 기록</p>
                     </div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-[#10b981] w-7 h-7 md:w-8 md:h-8 hidden md:block shrink-0" />
 
                     {/* 입금 완료 */}
-                    <div className="flex flex-col items-center gap-2">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                    <div className="flex flex-col items-center gap-2 w-24 md:w-28">
+                        <div className="w-16 h-16 md:w-20 md:h-20 rounded-2xl bg-white border border-[#a7f3d0]/70
+                    flex items-center justify-center text-[#10b981] text-2xl md:text-3xl shadow-md">
                             <Building2 />
                         </div>
-                        <p className="font-semibold mt-2">입금 완료</p>
-                        <p className="text-sm text-[#1e3a34]/70">D+0 또는 D+1 정산</p>
+                        <p className="font-semibold mt-2 text-sm md:text-base">입금 완료</p>
+                        <p className="text-[11px] md:text-sm text-[#1e3a34]/70">D+0 또는 D+1 정산</p>
                     </div>
                 </motion.div>
 
@@ -119,7 +124,7 @@ const Distribution: React.FC = () => {
             <section className="py-28 px-6 md:px-16 max-w-6xl mx-auto space-y-20">
                 <motion.div {...fadeUp(0)} className="text-center mb-10">
                     <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
-                        📦 유통업을 위한 스마트 기능
+                        유통업을 위한 스마트 기능
                     </h2>
                     <p className="text-[#1e3a34]/80">
                         출고, 결제, 정산까지 하나의 화면에서 관리됩니다.
@@ -157,7 +162,7 @@ const Distribution: React.FC = () => {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.15)}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] t1"
+                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
                         >
                             <div className="flex items-center gap-3 text-[#10b981] mb-4">
                                 {f.icon}
@@ -195,7 +200,7 @@ const Distribution: React.FC = () => {
                         {...fadeUp(0.4)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md t1"
+                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>

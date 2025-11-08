@@ -66,7 +66,7 @@ export default function CareersPage(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl shadow-sm hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] t1"
+                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl shadow-sm hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] "
                         >
                             <div className="text-[#10b981] mb-4">{item.icon}</div>
                             <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
@@ -107,7 +107,7 @@ export default function CareersPage(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl text-left hover:shadow-[0_8px_28px_rgba(16,185,129,0.12)] t1"
+                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl text-left hover:shadow-[0_8px_28px_rgba(16,185,129,0.12)] "
                         >
                             <div className="flex items-center justify-between mb-4">
                                 <h3 className="text-xl font-semibold text-[#0b2723]">{job.title}</h3>
@@ -149,7 +149,7 @@ export default function CareersPage(): JSX.Element {
                         {...fadeUp(0.4)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md t1"
+                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
                     >
                         채용 문의하기 →
                     </motion.button>

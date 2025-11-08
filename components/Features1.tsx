@@ -100,11 +100,13 @@ export default function Features1(): JSX.Element {
                     <Building2 size={16} /> 결제 방식별 솔루션
                 </span>
                 <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
-                    어떤 결제 방식이든 <span className="text-[#00b894]">한 플랫폼</span>에서
+                    어떤 결제 방식이든{" "}
+                    <br className="block md:hidden" />
+                    <span className="text-[#00b894]">한 플랫폼</span>에서
                 </h2>
                 <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
                     카드·간편결제·계좌이체·단말·QR을 한곳에.
-                    <br className="hidden sm:block" />
+                    <br />
                     정산(D+0/D+1)과 보안·리스크까지 기본 제공합니다.
                 </p>
             </motion.div>
@@ -120,7 +122,7 @@ export default function Features1(): JSX.Element {
                             onClick={() => goTo(b.href)}
                             className={`rounded-2xl border border-[rgba(0,200,155,0.22)]
                                 bg-white/95 backdrop-blur-sm p-7 flex flex-col md:flex-row items-center gap-6
-                                cursor-pointer group t1 shadow-[0_4px_16px_rgba(0,200,155,0.06)]
+                                cursor-pointer group  shadow-[0_4px_16px_rgba(0,200,155,0.06)]
                                 ${isActive
                                     ? 'hover:bg-[#f3fffc] hover:shadow-[0_10px_28px_rgba(0,200,155,0.15)] hover:-translate-y-0.5'
                                     : 'opacity-60 pointer-events-none'}`}

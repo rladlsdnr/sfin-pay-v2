@@ -89,11 +89,12 @@ export default function Partners(): JSX.Element {
                 </span>
                 <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
                     신뢰할 수 있는{' '}
+                    <br className="block md:hidden" />
                     <span className="text-[#00b894]">결제 생태계</span>
                 </h2>
                 <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
                     금융기관, 커머스, 기술기업과 함께
-                    <br className="hidden sm:block" /> 안정적이고 투명한 결제 환경을
+                    <br /> 안정적이고 투명한 결제 환경을
                     구축합니다.
                 </p>
             </motion.div>
@@ -190,7 +191,9 @@ export default function Partners(): JSX.Element {
                     <Handshake size={14} /> PARTNERSHIP PROGRAM
                 </div>
                 <h3 className="text-xl md:text-2xl font-semibold text-[#0f172a] mb-3">
-                    SFIN PAY와 함께 성장할 파트너를 찾습니다
+                    SFIN PAY와 함께 성장할
+                    <br className="block md:hidden" />
+                    파트너를 찾습니다
                 </h3>
                 <p className="text-[#334155]/80 text-base mb-6">
                     제휴 금융기관, 플랫폼, SaaS 파트너로 등록하여

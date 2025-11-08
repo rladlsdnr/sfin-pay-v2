@@ -120,11 +120,13 @@ export default function Features2(): JSX.Element {
                     <Building2 size={16} /> 업종별 맞춤 솔루션
                 </span>
                 <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
-                    업종에 맞는 <span className="text-[#00b894]">결제·정산 환경</span>
+                    업종에 맞는{" "}
+                    <br className="block md:hidden" />
+                    <span className="text-[#00b894]">결제·정산 환경</span>
                 </h2>
                 <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
                     쇼핑부터 의료까지, 모든 업종을 아우르는 유연한 결제 인프라를 제공합니다.
-                    <br className="hidden sm:block" />
+                    <br />
                     SFIN PAY는 업종별 결제 흐름에 최적화되어 있습니다.
                 </p>
             </motion.div>
@@ -140,7 +142,7 @@ export default function Features2(): JSX.Element {
                             onClick={() => goTo(c.href)}
                             className={`relative rounded-2xl border border-[rgba(0,200,155,0.25)]
                             bg-white/95 backdrop-blur-sm p-5 flex flex-col justify-between
-                            cursor-pointer group t1 duration-300
+                            cursor-pointer group  duration-300
                             shadow-[0_4px_14px_rgba(0,200,155,0.05)]
                             ${isActive
                                     ? 'hover:bg-[#f3fffc] hover:shadow-[0_10px_28px_rgba(0,200,155,0.12)] hover:-translate-y-0.5'

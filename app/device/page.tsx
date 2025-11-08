@@ -78,7 +78,7 @@ const Device: React.FC = () => {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.2)}
-                            className="bg-white border border-[#a7f3d0]/60 rounded-2xl shadow-sm hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] t1 max-w-sm"
+                            className="bg-white border border-[#a7f3d0]/60 rounded-2xl shadow-sm hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]  max-w-sm"
                         >
                             <img
                                 src={d.img}
@@ -100,7 +100,7 @@ const Device: React.FC = () => {
             <section className="py-28 px-6 md:px-16 max-w-6xl mx-auto space-y-20">
                 <motion.div {...fadeUp(0)} className="text-center mb-10">
                     <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
-                        ⚙️ 단말기 기술 사양
+                        단말기 기술 사양
                     </h2>
                     <p className="text-[#1e3a34]/80">
                         현장 결제에 필요한 속도, 안정성, 보안을 모두 갖췄습니다.
@@ -143,7 +143,7 @@ const Device: React.FC = () => {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.1)}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] t1"
+                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
                         >
                             <div className="flex items-center gap-3 text-[#10b981] mb-4">
                                 {f.icon}
@@ -213,7 +213,7 @@ const Device: React.FC = () => {
                         {...fadeUp(0.3)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md t1"
+                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>

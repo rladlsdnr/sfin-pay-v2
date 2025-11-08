@@ -77,9 +77,9 @@ export default function Insights(): JSX.Element {
                     className="mt-8 text-4xl md:text-5xl font-extrabold
                      text-[#0f172a] leading-relaxed tracking-tight"
                 >
-                    안정성과 성장을 함께 만드는
-                    <br className="hidden sm:block" />
-                    <span className="block mt-3 text-[#00c89b]">
+                    안정화와 성장을 함께하는
+                    <br className="hidden md:block" />
+                    <span className="block md:mt-3 text-[#00c89b]">
                         데이터 기반 정산 시스템
                     </span>
                 </h2>

@@ -113,7 +113,12 @@ export default function Settlement(): JSX.Element {
                     <Wallet size={16} /> 실시간 자동 정산
                 </span>
                 <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0C3C35] leading-tight">
-                    결제 후 <span className="text-[#00c8b4]">입금까지 단 15분</span>
+                    결제 후{" "}
+                    <span className="text-[#00c8b4]">
+                        입금까지{" "}
+                        <br className="block md:hidden" />
+                        단 15분
+                    </span>
                 </h2>
                 <p className="mt-5 text-[#2E5C54]/80 text-lg leading-relaxed">
                     결제 승인 → 검증 → 입금 <br /> 모든 과정이 자동으로 연결됩니다.
@@ -129,14 +134,14 @@ export default function Settlement(): JSX.Element {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: i * 0.2 }}
-                        className={`relative flex-1 p-6 rounded-2xl border t1 duration-500 backdrop-blur-sm ${i === step
+                        className={`relative flex-1 p-6 rounded-2xl border  duration-500 backdrop-blur-sm ${i === step
                             ? 'border-[#00c8b4]/50 bg-white shadow-[0_8px_30px_rgba(0,200,155,0.18)]'
-                            : 'border-[#C4F7EC] bg-[#F8FFFD]'
+                            : 'border-[#C4F7EC] bg-[#F8FFFD] min-h-[220px]'
                             }`}
                     >
                         {i === step && (
                             <motion.div
-                                initial={{ opacity: 1, scale: 0.95 }}
+                                initial={{ opacity: 0, scale: 0.95 }}
                                 animate={{ opacity: [0.2, 0.45, 0.2], scale: [1, 1.05, 1] }}
                                 transition={{ duration: 2.5, repeat: Infinity, ease: 'easeInOut' }}
                                 className="absolute inset-0 -z-10 rounded-2xl bg-[#00c8b4]/30 blur-2xl"
@@ -207,9 +212,12 @@ export default function Settlement(): JSX.Element {
                     <br />
                     현금 흐름을 끊김 없이 이어드립니다.
                 </p>
+                {/*
+                원본 bg-gradient-to-r from-[#00c8b4] to-[#00d0aa] hover:from-[#00a884] hover:to-[#00b894]
+                */}
                 <a
                     href="#contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00c8b4] to-[#00d0aa] hover:from-[#00a884] hover:to-[#00b894] text-white font-semibold shadow-[0_8px_20px_rgba(0,184,148,0.25)] t1"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_20px_rgba(0,184,148,0.25)] "
                 >
                     빠른 정산 문의하기 <ArrowRight size={16} />
                 </a>

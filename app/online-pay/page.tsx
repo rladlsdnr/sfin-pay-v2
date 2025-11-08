@@ -90,7 +90,7 @@ export default function OnlinePay(): JSX.Element {
                         <button
                             key={t}
                             onClick={() => setActiveTab(t)}
-                            className={`px-8 py-3 rounded-full text-lg font-medium t1 ${activeTab === t
+                            className={`px-8 py-3 rounded-full text-lg font-medium  ${activeTab === t
                                 ? "bg-[#10b981] text-white shadow-md"
                                 : "bg-white border border-[#a7f3d0]/70 text-[#1e3a34] hover:text-[#059669]"
                                 }`}
@@ -105,7 +105,7 @@ export default function OnlinePay(): JSX.Element {
                         <motion.div
                             key="auto"
                             {...fadeUp(0)}
-                            exit={{ opacity: 0 }}
+                            exit={{ opacity: 1 }}
                             className="max-w-4xl mx-auto p-8 bg-white rounded-2xl border border-[#a7f3d0]/60 shadow-sm text-left"
                         >
                             <h3 className="text-2xl font-bold text-[#059669] mb-4">
@@ -126,7 +126,7 @@ export default function OnlinePay(): JSX.Element {
                         <motion.div
                             key="manual"
                             {...fadeUp(0)}
-                            exit={{ opacity: 0 }}
+                            exit={{ opacity: 1 }}
                             className="max-w-4xl mx-auto p-8 bg-white rounded-2xl border border-[#a7f3d0]/60 shadow-sm text-left"
                         >
                             <h3 className="text-2xl font-bold text-[#059669] mb-4">
@@ -152,7 +152,7 @@ export default function OnlinePay(): JSX.Element {
       ──────────────────────────────── */}
             <section className="py-28 px-6 md:px-16 max-w-6xl mx-auto space-y-20">
                 <motion.div {...fadeUp(0)} className="text-center mb-10">
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">🌐 핵심 기능</h2>
+                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">핵심 기능</h2>
                     <p className="text-[#1e3a34]/80">
                         단일 API로 모든 결제 프로세스를 통합 관리하세요.
                     </p>
@@ -194,7 +194,7 @@ export default function OnlinePay(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.1)}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] t1"
+                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
                         >
                             <div className="flex items-center gap-3 text-[#10b981] mb-4">
                                 {f.icon}
@@ -234,7 +234,7 @@ export default function OnlinePay(): JSX.Element {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md t1"
+                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>

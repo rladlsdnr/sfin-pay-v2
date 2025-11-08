@@ -68,8 +68,8 @@ export default function Liquidity(): JSX.Element {
 
                 <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-relaxed tracking-tight">
                     <span className="text-[#00b894]">데이터가 자산이 되는 순간</span>
-                    <br className="hidden md:block" />
-                    <span className="block mt-3 text-[#00c89b]">
+                    <br className="hidden md:block " />
+                    <span className="block md:mt-3 text-[#00c89b]">
                         정산 흐름이 금융을 확장합니다
                     </span>
                 </h2>
@@ -159,7 +159,7 @@ export default function Liquidity(): JSX.Element {
                     {...fadeUp(3)}
                     className="rounded-2xl border border-[rgba(0,200,155,0.25)]
                      bg-white p-8 hover:shadow-[0_10px_30px_rgba(0,200,155,0.15)]
-                     t1 duration-500"
+                      duration-500"
                 >
                     <div className="flex items-center gap-3 mb-5 text-[#00b894]">
                         <TrendingUp size={22} />
@@ -169,6 +169,7 @@ export default function Liquidity(): JSX.Element {
                     </div>
                     <p className="text-[#334155]/80 text-sm leading-relaxed mb-6">
                         정산 데이터를 기반으로 자동 한도를 산출합니다.
+                        <br />
                         실시간 리스크 검증 후, 제휴 금융기관과 즉시 연동됩니다.
                     </p>
                     <ul className="space-y-2 text-[#334155]/70 text-sm">
@@ -182,7 +183,7 @@ export default function Liquidity(): JSX.Element {
                        bg-gradient-to-r from-[#00c89b] to-[#00b894]
                        hover:from-[#00b894] hover:to-[#00a884]
                        text-white font-semibold shadow-[0_8px_20px_rgba(0,200,155,0.25)]
-                       t1"
+                       "
                     >
                         한도 확인
                     </a>
@@ -193,7 +194,7 @@ export default function Liquidity(): JSX.Element {
                     {...fadeUp(4)}
                     className="rounded-2xl border border-[rgba(0,200,155,0.25)]
                      bg-white p-8 hover:shadow-[0_10px_30px_rgba(0,200,155,0.15)]
-                     t1 duration-500"
+                      duration-500"
                 >
                     <div className="flex items-center gap-3 mb-5 text-[#00b894]">
                         <RefreshCcw size={22} />
@@ -203,6 +204,7 @@ export default function Liquidity(): JSX.Element {
                     </div>
                     <p className="text-[#334155]/80 text-sm leading-relaxed mb-6">
                         정산 패턴이 일정하게 유지되면 한도가 자동 갱신됩니다.
+                        <br />
                         계절형 매장, 스타트업, 프로젝트성 매출에도 유연하게 대응합니다.
                     </p>
                     <ul className="space-y-2 text-[#334155]/70 text-sm">
@@ -216,7 +218,7 @@ export default function Liquidity(): JSX.Element {
                        bg-gradient-to-r from-[#00c89b] to-[#00b894]
                        hover:from-[#00b894] hover:to-[#00a884]
                        text-white font-semibold shadow-[0_8px_20px_rgba(0,200,155,0.25)]
-                       t1"
+                       "
                     >
                         상담 신청
                     </a>

@@ -73,7 +73,7 @@ export default function Recruit(): JSX.Element {
                 <div className="inline-flex bg-[#ffffff] border border-[#a7f3d0]/60 rounded-full p-1 shadow-sm">
                     <button
                         onClick={() => setTab("job")}
-                        className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold t1 ${tab === "job"
+                        className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold  ${tab === "job"
                             ? "bg-gradient-to-r from-[#34d399] to-[#10b981] text-white shadow-md"
                             : "bg-transparent text-[#1e3a34]/80 hover:bg-[#d1fae5]/60 hover:text-[#059669]"
                             }`}
@@ -82,7 +82,7 @@ export default function Recruit(): JSX.Element {
                     </button>
                     <button
                         onClick={() => setTab("partner")}
-                        className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold t1 ${tab === "partner"
+                        className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold  ${tab === "partner"
                             ? "bg-gradient-to-r from-[#34d399] to-[#10b981] text-white shadow-md"
                             : "bg-transparent text-[#1e3a34]/80 hover:bg-[#d1fae5]/60 hover:text-[#059669]"
                             }`}

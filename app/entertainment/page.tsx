@@ -113,7 +113,7 @@ export default function Contents(): JSX.Element {
             <section className="py-28 px-6 md:px-16 max-w-6xl mx-auto space-y-20">
                 <motion.div {...fadeUp(0)} className="text-center mb-10">
                     <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
-                        🎧 콘텐츠 업종 맞춤 기능
+                        콘텐츠 업종 맞춤 기능
                     </h2>
                     <p className="text-[#1e3a34]/80">
                         구독형 서비스부터 티켓, 웹툰, 게임까지 모든 결제 흐름을 자동화합니다.
@@ -166,7 +166,7 @@ export default function Contents(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.15)}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] t1"
+                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
                         >
                             <div className="flex items-center gap-3 text-[#10b981] mb-4">
                                 {f.icon}
@@ -204,7 +204,7 @@ export default function Contents(): JSX.Element {
                         {...fadeUp(0.4)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md t1"
+                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>

@@ -70,12 +70,14 @@ export default function Contact(): JSX.Element {
                 </span>
 
                 <h2 className="mt-6 text-4xl md:text-5xl font-extrabold text-[#0b2723] leading-tight">
-                    <span className="text-emerald-600">SFIN PAY</span>와 함께할 준비되셨나요?
+                    <span className="text-[#00c89b]">SFIN PAY</span>와{" "}
+                    <br className="hidden md:block" />
+                    <span className="block md:mt-3 text-[#0b2723]">함께할 준비되셨나요?</span>
                 </h2>
 
                 <p className="mt-5 text-[#1f3b37]/70 text-lg leading-relaxed">
-                    정산, 유동성, 계약, 기술 연동 등 필요한 문의를 남겨주시면
-                    <br className="hidden sm:block" />
+                    정산, 유동성, 계약, 기술 연동 등 필요한 문의를 남겨주시면{" "}
+                    <br className="hidden md:block" />
                     담당 매니저가 신속히 연락드립니다.
                 </p>
             </motion.div>
@@ -178,7 +180,7 @@ export default function Contact(): JSX.Element {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-400 text-white font-semibold shadow-[0_8px_25px_rgba(16,185,129,0.25)] t1"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_25px_rgba(16,185,129,0.25)] "
                 >
                     <Send size={18} /> 문의 보내기
                 </motion.button>
@@ -197,7 +199,7 @@ export default function Contact(): JSX.Element {
             >
                 <a
                     href="mailto:contact@sfinpay.co.kr"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-emerald-400 hover:from-emerald-600 hover:to-emerald-400 text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)] t1"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)] "
                 >
                     <Mail size={18} /> 이메일 문의
                 </a>
@@ -206,7 +208,7 @@ export default function Contact(): JSX.Element {
                     href="https://pf.kakao.com/_your_kakao_channel_id"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-emerald-200 bg-white/80 hover:bg-[#f0fdfa] text-emerald-700 font-semibold shadow-[0_6px_15px_rgba(16,185,129,0.08)] t1"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-emerald-200 bg-white/80 hover:bg-[#f0fdfa] text-emerald-700 font-semibold shadow-[0_6px_15px_rgba(16,185,129,0.08)] "
                 >
                     <MessageCircle size={18} /> 카카오톡 상담
                 </a>

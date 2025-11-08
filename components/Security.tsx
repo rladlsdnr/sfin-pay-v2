@@ -34,11 +34,13 @@ export default function Security(): JSX.Element {
 
                 <h2 className="mt-6 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-tight">
                     금융 보안 수준의{' '}
-                    <span className="text-[#00b894]">데이터 보호 체계</span>
+                    <br className="hidden md:block" />
+                    <span className="text-[#00b894] md:mt-3 block">데이터 보호 체계</span>
                 </h2>
 
                 <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
                     SFIN PAY는 전자금융거래법 및 ISMS 기준을 기반으로
+                    <br />
                     결제 데이터의 생성부터 저장, 전송까지 전 구간을 보호합니다.
                     <br />
                     단순한 암호화를 넘어, <b>체계적 보안 거버넌스</b>를 운영합니다.
@@ -84,7 +86,7 @@ export default function Security(): JSX.Element {
                         {...fadeUp(i + 1)}
                         className="group relative rounded-2xl border border-[rgba(0,200,155,0.25)]
                        bg-white p-6 hover:shadow-[0_10px_30px_rgba(0,200,155,0.15)]
-                       t1 duration-500"
+                        duration-500"
                     >
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-xl bg-[rgba(0,200,155,0.08)] text-[#00b894]">
@@ -147,6 +149,7 @@ export default function Security(): JSX.Element {
                 <p className="text-[#334155]/80 text-lg mb-4 leading-relaxed">
                     모든 결제 데이터는 암호화되어 저장되며,
                     API 및 접근 로그는 5년 이상 안전하게 보존됩니다.
+                    <br />
                     SFIN PAY는 금융 보안 표준을 넘어서는{' '}
                     <b>투명한 보안 체계</b>를 제공합니다.
                 </p>
@@ -156,7 +159,7 @@ export default function Security(): JSX.Element {
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
                      bg-gradient-to-r from-[#00c89b] to-[#00b894]
                      hover:from-[#00b894] hover:to-[#00a884]
-                     text-white font-semibold t1
+                     text-white font-semibold 
                      shadow-[0_8px_20px_rgba(0,200,155,0.25)]"
                 >
                     보안 정책 전문 보기

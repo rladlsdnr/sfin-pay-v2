@@ -144,7 +144,7 @@ export default function PaymentFAQ(): JSX.Element {
                 </p>
                 <a
                     href="/inquiry/integration"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold t1"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold "
                 >
                     기술 지원 문의하기 <ChevronRight size={18} />
                 </a>

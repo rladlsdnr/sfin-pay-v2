@@ -217,7 +217,7 @@ export default function Navbar(): JSX.Element {
                 initial={{ y: 0 }}
                 animate={{ y: showNav ? 0 : -100 }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className={`fixed top-0 left-0 w-full z-50 t1 duration-300 ${scrolled
+                className={`fixed top-0 left-0 w-full z-50  duration-300 ${scrolled
                     ? 'bg-white/85 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)]'
                     : 'bg-transparent'
                     }`}
@@ -273,7 +273,7 @@ export default function Navbar(): JSX.Element {
                                                         <Link
                                                             key={i}
                                                             href={sub.link}
-                                                            className="flex items-start gap-3 rounded-lg p-3 hover:bg-[#f6fffb] t1"
+                                                            className="flex items-start gap-3 rounded-lg p-3 hover:bg-[#f6fffb] "
                                                         >
                                                             <div className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-[#00b894]/10 text-[#00b894]">
                                                                 {sub.icon}
@@ -315,13 +315,13 @@ export default function Navbar(): JSX.Element {
                         <div className="flex items-center gap-3 ml-4">
                             <Link
                                 href="/inquiry/merchant"
-                                className="px-4 py-2 text-sm font-semibold rounded-lg border border-[#00b894] text-[#00b894] hover:bg-[#00b894] hover:text-white t1"
+                                className="px-4 py-2 text-sm font-semibold rounded-lg border border-[#00b894] text-[#00b894] hover:bg-[#00b894] hover:text-white "
                             >
                                 가맹 문의
                             </Link>
                             <Link
                                 href="/login"
-                                className="px-4 py-2 text-sm font-semibold rounded-lg bg-[#00b894] text-white hover:bg-[#00a884] t1"
+                                className="px-4 py-2 text-sm font-semibold rounded-lg bg-[#00b894] text-white hover:bg-[#059669] "
                             >
                                 파트너 로그인
                             </Link>
@@ -431,14 +431,14 @@ export default function Navbar(): JSX.Element {
                             <Link
                                 href="/inquiry/merchant"
                                 onClick={() => setMenuOpen(false)}
-                                className="w-full text-center py-3 rounded-lg border border-[#00b894] text-[#00b894] font-semibold hover:bg-[#00b894] hover:text-white t1"
+                                className="w-full text-center py-3 rounded-lg border border-[#00b894] text-[#00b894] font-semibold hover:bg-[#00b894] hover:text-white "
                             >
                                 가맹 문의
                             </Link>
                             <Link
                                 href="/login"
                                 onClick={() => setMenuOpen(false)}
-                                className="w-full text-center py-3 rounded-lg bg-[#00b894] text-white font-semibold hover:bg-[#00a884] t1"
+                                className="w-full text-center py-3 rounded-lg bg-[#00b894] text-white font-semibold hover:bg-[#059669] "
                             >
                                 파트너 로그인
                             </Link>
