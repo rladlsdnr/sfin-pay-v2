@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { PrismaClient } from "@prisma/client";
 
+export const runtime = "nodejs"; // ✅ Edge Runtime 방지 (Prisma, fetch 등 Node API 허용)
 const prisma = new PrismaClient();
 
 /**
@@ -11,9 +12,9 @@ const prisma = new PrismaClient();
  */
 export async function PATCH(
     req: Request,
-    { params }: { params: { id: string } }
+    { params }: { params: Record<string, string> }
 ) {
-    const { id } = params;
+    const id = params.id;
 
     try {
         if (!id) {
@@ -46,7 +47,10 @@ export async function PATCH(
             where: { id },
             data: {
                 status: status || inquiry.status,
-                note: note ? `${inquiry.note || ""}\n\n${new Date().toLocaleString("ko-KR")} — ${actor || "관리자"}: ${note}` : inquiry.note,
+                note: note
+                    ? `${inquiry.note || ""}\n\n${new Date().toLocaleString("ko-KR")} — ${actor || "관리자"
+                    }: ${note}`
+                    : inquiry.note,
                 updatedAt: new Date(),
             },
         });
@@ -89,7 +93,8 @@ export async function PATCH(
                     method: "POST",
                     headers: { "Content-Type": "application/json" },
                     body: JSON.stringify({
-                        text: `🔄 문의 상태 변경 알림\n━━━━━━━━━━━━━━━\n🏢 *회사명:* ${inquiry.company}\n📧 *이메일:* ${inquiry.email}\n💬 *유형:* ${inquiry.type}\n📌 *변경:* ${status || "메모 추가"}\n✏️ *담당자:* ${actor || "관리자"}`,
+                        text: `🔄 문의 상태 변경 알림\n━━━━━━━━━━━━━━━\n🏢 *회사명:* ${inquiry.company}\n📧 *이메일:* ${inquiry.email}\n💬 *유형:* ${inquiry.type}\n📌 *변경:* ${status || "메모 추가"
+                            }\n✏️ *담당자:* ${actor || "관리자"}`,
                     }),
                 });
                 console.log(`💬 Slack 업데이트 알림 완료 (${id})`);
