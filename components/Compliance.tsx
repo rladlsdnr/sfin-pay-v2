@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import React from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import {
     ShieldCheck,
@@ -15,15 +15,16 @@ import {
 } from "lucide-react";
 
 /* ─────────────────────────────────────────────────────────
-   타입 및 애니메이션 정의
+   ✨ Animation Preset (Framer Motion v11 호환)
 ────────────────────────────────────────────────────────── */
-const fadeUp = (i = 0): Variants => ({
+const fadeUp = (i = 0) => ({
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration: 0.6, delay: 0.08 * i },
 });
 
+/* ─────────────────────────────────────────────────────────
+   타입 정의
+────────────────────────────────────────────────────────── */
 type ComplianceCard = {
     icon: JSX.Element;
     title: string;
@@ -74,7 +75,12 @@ export default function Compliance(): JSX.Element {
             className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#ecfeff] via-[#f0fdfa] to-white overflow-hidden"
         >
             {/* 💎 헤더 */}
-            <motion.div {...fadeUp(0)} className="text-center max-w-3xl mx-auto mb-20">
+            <motion.div
+                {...fadeUp(0)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0 }}
+                className="text-center max-w-3xl mx-auto mb-20"
+            >
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">
                     <ShieldCheck size={16} /> 컴플라이언스 · 내부통제
                 </span>
@@ -97,6 +103,8 @@ export default function Compliance(): JSX.Element {
                     <motion.div
                         key={i}
                         {...fadeUp(i + 1)}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.6, delay: 0.08 * i }}
                         className="group relative rounded-2xl border border-emerald-200/60 bg-white/90 p-7 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] hover:border-emerald-300 transition-all duration-500"
                     >
                         <div className="flex items-start gap-4">
@@ -117,7 +125,12 @@ export default function Compliance(): JSX.Element {
             </div>
 
             {/* 🔄 내부통제 체계 다이어그램 */}
-            <motion.div {...fadeUp(6)} className="max-w-4xl mx-auto mt-28 text-center">
+            <motion.div
+                {...fadeUp(6)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="max-w-4xl mx-auto mt-28 text-center"
+            >
                 <h3 className="text-2xl font-bold text-[#0b2723] mb-12">
                     SFIN PAY의{" "}
                     <span className="text-emerald-600">내부통제 3단계 체계</span>
@@ -144,6 +157,8 @@ export default function Compliance(): JSX.Element {
             {/* 📘 하단 CTA */}
             <motion.div
                 {...fadeUp(8)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.6 }}
                 className="text-center max-w-3xl mx-auto mt-24 rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-white p-10 shadow-[0_6px_25px_rgba(16,185,129,0.08)]"
             >
                 <p className="text-[#1f3b37]/70 text-lg mb-8 leading-relaxed">

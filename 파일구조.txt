@@ -1,0 +1,386 @@
+OS SSD 볼륨에 대한 폴더 경로의 목록입니다.
+볼륨 일련 번호는 48E7-FC7B입니다.
+C:.
+|   .gitignore
+|   global.d.ts
+|   next-env.d.ts
+|   next-seo.config.ts
+|   next.config.js
+|   package-lock.json
+|   package.json
+|   postcss.config.js
+|   README.md
+|   tailwind.config.js
+|   tsconfig.json
+|   파일구조.txt
+|   
++---.next
+|   |   package.json
+|   |   trace
+|   |   
+|   +---cache
+|   |   |   .rscinfo
+|   |   |   .tsbuildinfo
+|   |   |   
+|   |   +---swc
+|   |   |   \---plugins
+|   |   |       \---v7_windows_x86_64_0.115.1
+|   |   \---webpack
+|   |       +---client-production
+|   |       |       0.pack
+|   |       |       1.pack
+|   |       |       2.pack
+|   |       |       index.pack
+|   |       |       index.pack.old
+|   |       |       
+|   |       +---edge-server-production
+|   |       |       0.pack
+|   |       |       index.pack
+|   |       |       
+|   |       \---server-production
+|   |               0.pack
+|   |               1.pack
+|   |               2.pack
+|   |               3.pack
+|   |               4.pack
+|   |               index.pack
+|   |               index.pack.old
+|   |               
+|   +---diagnostics
+|   |       build-diagnostics.json
+|   |       framework.json
+|   |       
+|   +---server
+|   |   |   app-paths-manifest.json
+|   |   |   pages-manifest.json
+|   |   |   server-reference-manifest.js
+|   |   |   server-reference-manifest.json
+|   |   |   webpack-runtime.js
+|   |   |   
+|   |   +---app
+|   |   |   |   page.js
+|   |   |   |   page.js.nft.json
+|   |   |   |   
+|   |   |   +---b2b
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---careers
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---company
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---device
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---distribution
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---fb
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---inquiry
+|   |   |   |   +---contract
+|   |   |   |   |       page.js
+|   |   |   |   |       page.js.nft.json
+|   |   |   |   |       
+|   |   |   |   +---general
+|   |   |   |   |       page.js
+|   |   |   |   |       page.js.nft.json
+|   |   |   |   |       
+|   |   |   |   +---integration
+|   |   |   |   |       page.js
+|   |   |   |   |       page.js.nft.json
+|   |   |   |   |       
+|   |   |   |   +---liquidity
+|   |   |   |   |       page.js
+|   |   |   |   |       page.js.nft.json
+|   |   |   |   |       
+|   |   |   |   \---settlement
+|   |   |   |           page.js
+|   |   |   |           page.js.nft.json
+|   |   |   |           
+|   |   |   +---online-pay
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---payment-faq
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---qr-pay
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---recruit
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---security-policy
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---service
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---support
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---tech-support
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---transparency-report
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   +---vision
+|   |   |   |       page.js
+|   |   |   |       page.js.nft.json
+|   |   |   |       
+|   |   |   \---_not-found
+|   |   |           page.js
+|   |   |           page.js.nft.json
+|   |   |           
+|   |   +---chunks
+|   |   |       153.js
+|   |   |       253.js
+|   |   |       380.js
+|   |   |       642.js
+|   |   |       682.js
+|   |   |       803.js
+|   |   |       839.js
+|   |   |       92.js
+|   |   |       
+|   |   \---pages
+|   |           _app.js
+|   |           _app.js.nft.json
+|   |           _document.js
+|   |           _document.js.nft.json
+|   |           _error.js
+|   |           _error.js.nft.json
+|   |           
+|   \---types
+|       |   cache-life.d.ts
+|       |   package.json
+|       |   
+|       \---app
+|           |   page.ts
+|           |   
+|           +---b2b
+|           |       page.ts
+|           |       
+|           +---careers
+|           |       page.ts
+|           |       
+|           +---company
+|           |       page.ts
+|           |       
+|           +---device
+|           |       page.ts
+|           |       
+|           +---distribution
+|           |       page.ts
+|           |       
+|           +---fb
+|           |       page.ts
+|           |       
+|           +---inquiry
+|           |   +---contract
+|           |   |       page.ts
+|           |   |       
+|           |   +---general
+|           |   |       page.ts
+|           |   |       
+|           |   +---integration
+|           |   |       page.ts
+|           |   |       
+|           |   +---liquidity
+|           |   |       page.ts
+|           |   |       
+|           |   \---settlement
+|           |           page.ts
+|           |           
+|           +---online-pay
+|           |       page.ts
+|           |       
+|           +---payment-faq
+|           |       layout.ts
+|           |       page.ts
+|           |       
+|           +---qr-pay
+|           |       page.ts
+|           |       
+|           +---recruit
+|           |       page.ts
+|           |       
+|           +---security-policy
+|           |       page.ts
+|           |       
+|           +---service
+|           |       page.ts
+|           |       
+|           +---support
+|           |       page.ts
+|           |       
+|           +---tech-support
+|           |       page.ts
+|           |       
+|           +---transparency-report
+|           |       page.ts
+|           |       
+|           \---vision
+|                   page.ts
+|                   
++---app
+|   |   layout.tsx
+|   |   page.tsx
+|   |   
+|   +---b2b
+|   |       page.tsx
+|   |       
+|   +---careers
+|   |       metadata.ts
+|   |       page.tsx
+|   |       
+|   +---company
+|   |       metadata.ts
+|   |       page.tsx
+|   |       
+|   +---device
+|   |       page.tsx
+|   |       
+|   +---distribution
+|   |       page.tsx
+|   |       
+|   +---fb
+|   |       page.tsx
+|   |       
+|   +---inquiry
+|   |   +---contract
+|   |   |       ContractInquiryClient.tsx
+|   |   |       page.tsx
+|   |   |       
+|   |   +---general
+|   |   |       GeneralInquiryClient.tsx
+|   |   |       page.tsx
+|   |   |       
+|   |   +---integration
+|   |   |       IntegrationInquiryClient.tsx
+|   |   |       page.tsx
+|   |   |       
+|   |   +---liquidity
+|   |   |       LiquidityInquiryClient.tsx
+|   |   |       page.tsx
+|   |   |       
+|   |   \---settlement
+|   |           page.tsx
+|   |           SettlementInquiryClient.tsx
+|   |           
+|   +---online-pay
+|   |       page.tsx
+|   |       
+|   +---payment-faq
+|   |       layout.tsx
+|   |       page.tsx
+|   |       
+|   +---qr-pay
+|   |       page.tsx
+|   |       
+|   +---recruit
+|   |       page.tsx
+|   |       
+|   +---security-policy
+|   |       page.tsx
+|   |       
+|   +---service
+|   |       page.tsx
+|   |       
+|   +---support
+|   |       page.tsx
+|   |       
+|   +---tech-support
+|   |       page.tsx
+|   |       
+|   +---transparency-report
+|   |       page.tsx
+|   |       
+|   \---vision
+|           page.tsx
+|           
++---asset
+|       P1.png
+|       P10.png
+|       P11.png
+|       P12.png
+|       P13.png
+|       P14.png
+|       P15.png
+|       P16.png
+|       P17.png
+|       P18.png
+|       P19.png
+|       P2.png
+|       P20.png
+|       P21.png
+|       P3.png
+|       P4.png
+|       P5.png
+|       P6.png
+|       P7.png
+|       P8.png
+|       P9.png
+|       
++---components
+|       API.tsx
+|       AuroraBackground.tsx
+|       Compliance.tsx
+|       Contact.tsx
+|       ContactForm.tsx
+|       Features1.tsx
+|       Features2.tsx
+|       Footer.tsx
+|       Hero.tsx
+|       Insights.tsx
+|       Liquidity.tsx
+|       LottieLoader.tsx
+|       Navbar.tsx
+|       Partners.tsx
+|       ScrollToTop.tsx
+|       Security.tsx
+|       SecurityPolicyPDFGenerator.tsx
+|       Settlement.tsx
+|       SettlementComparison.tsx
+|       
++---public
+|   |   README.txt
+|   |   
+|   \---lottie
+|           dashboard_developer.json
+|           device.json
+|           industry_b2b.json
+|           industry_commerce.json
+|           industry_entertainment.json
+|           industry_fb.json
+|           industry_hospital.json
+|           industry_personal.json
+|           industry_service.json
+|           industry_startup.json
+|           industry_travel.json
+|           moto.json
+|           online-pay.json
+|           payment_success.json
+|           pos_machine.json
+|           qr_pay.json
+|           
+\---styles
+        globals.css
+        

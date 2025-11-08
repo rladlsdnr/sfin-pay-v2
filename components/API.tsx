@@ -2,7 +2,7 @@
 
 import React, { memo, useMemo } from "react";
 import Link from "next/link";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import {
     FileCheck2,
     Settings,
@@ -21,34 +21,27 @@ type Step = {
 };
 
 type APISectionProps = {
-    /** 섹션 루트 요소 id (기본값 'api') */
     id?: string;
-    /** 단계 카드 데이터 커스터마이즈 */
     steps?: Step[];
-    /** 헤더 배지/타이틀/설명 커스터마이즈 */
     badgeLabel?: string;
-    titleLines?: [string, string]; // ["누구나 바로 사용할 수 있는", "결제 인프라"]
+    titleLines?: [string, string];
     description?: string;
-    /** CTA 링크/텍스트/핸들러 */
     ctaHref?: string;
     ctaLabel?: string;
     onCtaClick?: () => void;
-    /** 섹션 외부 className 확장 */
     className?: string;
 };
 
 /* ─────────────────────────────────────────────────────────
-   애니메이션 Variants
+   애니메이션 프리셋 (Framer Motion 11 호환)
 ────────────────────────────────────────────────────────── */
-const fadeUp = (i = 0): Variants => ({
+const fadeUp = (i = 0) => ({
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration: 0.6, delay: 0.08 * i },
 });
 
 /* ─────────────────────────────────────────────────────────
-   기본 스텝 정의 (필요 시 props로 대체 가능)
+   기본 스텝 정의
 ────────────────────────────────────────────────────────── */
 const DEFAULT_STEPS: Step[] = [
     {
@@ -69,7 +62,7 @@ const DEFAULT_STEPS: Step[] = [
 ];
 
 /* ─────────────────────────────────────────────────────────
-   접근성/키보드 배려 카드 컴포넌트
+   접근성 카드 컴포넌트
 ────────────────────────────────────────────────────────── */
 const StepCard = memo(function StepCard({
     index,
@@ -81,6 +74,8 @@ const StepCard = memo(function StepCard({
     return (
         <motion.article
             {...fadeUp(index + 1)}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.6, delay: 0.08 * index }}
             tabIndex={0}
             role="article"
             aria-label={`${index + 1}단계: ${step.title}`}
@@ -111,10 +106,7 @@ export default function API({
     onCtaClick,
     className = "",
 }: APISectionProps): JSX.Element {
-    const data = useMemo<Step[]>(
-        () => (steps && steps.length > 0 ? steps : DEFAULT_STEPS),
-        [steps]
-    );
+    const data = useMemo<Step[]>(() => (steps?.length ? steps : DEFAULT_STEPS), [steps]);
 
     return (
         <section
@@ -122,7 +114,6 @@ export default function API({
             aria-labelledby={`${id}-heading`}
             className={[
                 "relative py-28 px-6 md:px-16",
-                // 민트 베이스 그라데이션 (Tailwind 토큰 가정: brand.mintLight)
                 "bg-gradient-to-b from-brand-mintLight/60 to-white/60",
                 className,
             ].join(" ")}
@@ -130,6 +121,8 @@ export default function API({
             {/* 헤더 */}
             <motion.div
                 {...fadeUp(0)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0 }}
                 className="text-center max-w-3xl mx-auto mb-20"
             >
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-brand-mint/20 text-brand-mintDark text-sm font-medium">
@@ -165,6 +158,8 @@ export default function API({
             {/* 안내 문구 */}
             <motion.div
                 {...fadeUp(4)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.32 }}
                 className="max-w-3xl mx-auto text-center mt-16"
             >
                 <p className="text-[#1f3b37]/70 text-lg leading-relaxed">
@@ -174,7 +169,12 @@ export default function API({
             </motion.div>
 
             {/* CTA */}
-            <motion.div {...fadeUp(5)} className="text-center mt-12">
+            <motion.div
+                {...fadeUp(5)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                className="text-center mt-12"
+            >
                 {ctaHref.startsWith("#") ? (
                     <a
                         href={ctaHref}

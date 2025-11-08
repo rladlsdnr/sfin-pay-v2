@@ -3,16 +3,38 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import AuroraBackground from "../components/AuroraBackground";
 import ScrollToTop from "../components/ScrollToTop";
-import SeoProvider from "./providers/SeoProvider";
+
+/* ✅ Next.js 15 공식 metadata 기반 SEO 설정 (next-seo 제거 대체용) */
+export const metadata = {
+  title: {
+    default: "SFIN PAY",
+    template: "%s | SFIN PAY",
+  },
+  description:
+    "SFIN PAY — 빠르고 안전한 결제·정산 인프라. D+0/D+1 정산, 유동성, 보안, 컴플라이언스.",
+  metadataBase: new URL("https://www.sfinpay.co.kr"),
+  openGraph: {
+    type: "website",
+    url: "https://www.sfinpay.co.kr",
+    title: "SFIN PAY",
+    description:
+      "빠르고 안전한 결제·정산 인프라. D+0/D+1 정산, 유동성, 보안, 컴플라이언스.",
+    images: [
+      { url: "/og/sfinpay_og.png", width: 1200, height: 630, alt: "SFIN PAY" },
+    ],
+  },
+  icons: {
+    icon: "/favicon.ico",
+  },
+};
 
 /**
- * 🌐 RootLayout — SFIN PAY 전역 레이아웃
+ * 🌐 RootLayout — SFIN PAY 전역 레이아웃 (프론트엔드 전용)
  * ----------------------------------------------------
  * 구성요소:
  *  - AuroraBackground (민트톤 오로라 배경)
  *  - Navbar / Footer (전역 공용 UI)
  *  - ScrollToTop (UX 유틸)
- *  - SeoProvider (next-seo 클라이언트 SEO)
  * ----------------------------------------------------
  */
 export default function RootLayout({
@@ -23,7 +45,7 @@ export default function RootLayout({
   return (
     <html lang="ko" suppressHydrationWarning>
       <head>
-        {/* ✅ Schema.org 구조화 데이터 (Organization / WebSite / Breadcrumbs) */}
+        {/* ✅ Schema.org 구조화 데이터 (Organization / Website / Breadcrumb) */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -68,9 +90,6 @@ export default function RootLayout({
           antialiased transition-colors duration-700
         "
       >
-        {/* ✅ SEO 컴포넌트는 클라이언트 전용이므로 body 안에서 렌더링 */}
-        <SeoProvider />
-
         {/* 🌈 전역 Aurora Background */}
         <AuroraBackground />
 
@@ -80,7 +99,7 @@ export default function RootLayout({
         {/* ⬆️ 스크롤 복귀 */}
         <ScrollToTop />
 
-        {/* 📄 페이지별 콘텐츠 */}
+        {/* 📄 페이지 콘텐츠 */}
         <main className="relative z-10">{children}</main>
 
         {/* ⚓ 전역 푸터 */}

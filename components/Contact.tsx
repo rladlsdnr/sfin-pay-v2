@@ -1,7 +1,7 @@
 ﻿"use client";
 
 import React, { useState } from "react";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import {
     Send,
     Mail,
@@ -11,13 +11,11 @@ import {
 } from "lucide-react";
 
 /* ────────────────────────────────────────────────
-   🧩 애니메이션 Variants
+   🧩 애니메이션 프리셋 (Framer Motion 11 대응)
 ────────────────────────────────────────────────── */
-const fadeUp = (i = 0): Variants => ({
+const fadeUp = (i = 0) => ({
     initial: { opacity: 0, y: 20 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration: 0.6, delay: 0.08 * i },
 });
 
 /* ────────────────────────────────────────────────
@@ -42,7 +40,9 @@ export default function Contact(): JSX.Element {
     });
 
     const handleChange = (
-        e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>
+        e: React.ChangeEvent<
+            HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+        >
     ) => {
         setForm({ ...form, [e.target.name]: e.target.value });
     };
@@ -59,7 +59,12 @@ export default function Contact(): JSX.Element {
             className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#ecfeff] via-[#f0fdfa] to-white"
         >
             {/* ───────────── 헤더 ───────────── */}
-            <motion.div {...fadeUp(0)} className="text-center max-w-3xl mx-auto mb-16">
+            <motion.div
+                {...fadeUp(0)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0 }}
+                className="text-center max-w-3xl mx-auto mb-16"
+            >
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-emerald-100 text-emerald-700 text-sm font-medium">
                     <Mail size={16} /> 문의하기
                 </span>
@@ -69,7 +74,8 @@ export default function Contact(): JSX.Element {
                 </h2>
 
                 <p className="mt-5 text-[#1f3b37]/70 text-lg leading-relaxed">
-                    정산, 유동성, 계약, 기술 연동 등 필요한 문의를 남겨주시면<br className="hidden sm:block" />
+                    정산, 유동성, 계약, 기술 연동 등 필요한 문의를 남겨주시면
+                    <br className="hidden sm:block" />
                     담당 매니저가 신속히 연락드립니다.
                 </p>
             </motion.div>
@@ -77,6 +83,8 @@ export default function Contact(): JSX.Element {
             {/* ───────────── 폼 영역 ───────────── */}
             <motion.form
                 {...fadeUp(1)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.08 }}
                 onSubmit={handleSubmit}
                 className="max-w-3xl mx-auto rounded-2xl border border-emerald-200/70 bg-white/90 backdrop-blur-sm p-8 md:p-10 space-y-6 shadow-[0_8px_25px_rgba(16,185,129,0.12)]"
             >
@@ -183,6 +191,8 @@ export default function Contact(): JSX.Element {
             {/* 하단 CTA */}
             <motion.div
                 {...fadeUp(2)}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{ duration: 0.6, delay: 0.16 }}
                 className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
             >
                 <a

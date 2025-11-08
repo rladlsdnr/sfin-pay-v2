@@ -16,9 +16,8 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "jsx": "preserve",
+    "jsx": "preserve", // ✅ 수정 완료
     "incremental": true,
-    /* ✅ 여기 추가 */
     "baseUrl": ".",
     "paths": {
       "@/*": [
