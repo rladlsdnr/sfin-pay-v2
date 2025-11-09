@@ -31,9 +31,10 @@ export default function Contents(): JSX.Element {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     콘텐츠 정산,{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         구독과 저작권까지 자동으로
                     </span>
@@ -56,7 +57,7 @@ export default function Contents(): JSX.Element {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 text-[#0b2723]"
+                    className="text-4xl font-bold text-center mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
                     콘텐츠 결제 흐름
                 </motion.h2>
@@ -134,7 +135,7 @@ export default function Contents(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
+                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
                         콘텐츠 업종 맞춤 기능
                     </h2>
                     <p className="text-[#1e3a34]/80">
@@ -212,9 +213,10 @@ export default function Contents(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4"
+                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     콘텐츠 결제도{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         SFIN PAY 하나로
                     </span>

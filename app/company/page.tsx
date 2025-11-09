@@ -80,7 +80,7 @@ export default function CompanyIntro(): JSX.Element {
         <div className="min-h-screen bg-[#f9fafb] text-[#0b2723] pt-32">
             {/* HEADER */}
             <section className="text-center py-24 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f9fafb] border-b border-[#a7f3d0]">
-                <motion.h1 {...fadeUp(0)} className="text-5xl md:text-6xl font-extrabold mb-6">
+                <motion.h1 {...fadeUp(0)} className="text-5xl md:text-6xl font-extrabold mb-6 text-[clamp(30px,5vw,36px)]">
                     <span className="text-[#10b981]">SFIN PAY</span> 회사소개
                 </motion.h1>
                 <motion.p
@@ -95,7 +95,7 @@ export default function CompanyIntro(): JSX.Element {
 
             {/* VALUE */}
             <section className="py-24 px-6 md:px-16 max-w-6xl mx-auto text-center">
-                <motion.h2 {...fadeUp(0)} className="text-4xl font-bold mb-10">
+                <motion.h2 {...fadeUp(0)} className="text-4xl font-bold mb-10 text-[clamp(30px,5vw,36px)]">
                     핵심 가치
                 </motion.h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mt-10">
@@ -117,7 +117,7 @@ export default function CompanyIntro(): JSX.Element {
 
             {/* BUSINESS STRUCTURE */}
             <section className="py-28 px-6 md:px-16 bg-[#ffffff] border-t border-[#a7f3d0]">
-                <motion.h2 {...fadeUp(0)} className="text-4xl font-bold mb-12 text-center">
+                <motion.h2 {...fadeUp(0)} className="text-4xl font-bold mb-12 text-center text-[clamp(30px,5vw,36px)]">
                     사업 및 조직 구조
                 </motion.h2>
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
@@ -139,7 +139,7 @@ export default function CompanyIntro(): JSX.Element {
 
             {/* CERTIFICATIONS */}
             <section className="py-28 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] border-t border-[#a7f3d0] text-center">
-                <motion.h2 {...fadeUp(0)} className="text-4xl font-bold mb-8">
+                <motion.h2 {...fadeUp(0)} className="text-4xl font-bold mb-8 text-[clamp(30px,5vw,36px)]">
                     보안·인증 체계
                 </motion.h2>
                 <motion.p

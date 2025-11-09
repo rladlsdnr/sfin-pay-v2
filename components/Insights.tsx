@@ -75,7 +75,7 @@ export default function Insights(): JSX.Element {
 
                 <h2
                     className="mt-8 text-4xl md:text-5xl font-extrabold
-                     text-[#0f172a] leading-relaxed tracking-tight"
+                     text-[#0f172a] leading-relaxed tracking-tight text-[clamp(30px,5vw,36px)]"
                 >
                     안정화와 성장을 함께하는
                     <br className="hidden md:block" />

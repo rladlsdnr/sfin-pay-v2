@@ -29,9 +29,10 @@ export default function Service(): JSX.Element {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     서비스업 결제 관리,{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         고객 응대보다 쉬워집니다
                     </span>
@@ -54,9 +55,11 @@ export default function Service(): JSX.Element {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 text-[#0b2723]"
+                    className="text-4xl font-bold text-center mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
-                    서비스 결제 프로세스 한눈에 보기
+                    서비스 결제 프로세스{" "}
+                    <br className="block md:hidden" />
+                    한눈에 보기
                 </motion.h2>
 
                 <div
@@ -144,8 +147,10 @@ export default function Service(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
-                        서비스업을 위한 스마트 기능
+                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                        서비스업을 위한{" "}
+                        <br className="block md:hidden" />
+                        스마트 기능
                     </h2>
                     <p className="text-[#1e3a34]/80">
                         결제와 고객관리가 한 번에 이루어지는,
@@ -219,9 +224,10 @@ export default function Service(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4"
+                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     서비스업 매출 관리도{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         SFIN PAY 하나로
                     </span>

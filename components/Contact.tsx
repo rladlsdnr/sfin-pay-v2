@@ -69,7 +69,7 @@ export default function Contact(): JSX.Element {
                     <Mail size={16} /> 문의하기
                 </span>
 
-                <h2 className="mt-6 text-4xl md:text-5xl font-extrabold text-[#0b2723] leading-tight">
+                <h2 className="mt-6 text-4xl md:text-5xl font-extrabold text-[#0b2723] leading-tight text-[clamp(30px,5vw,36px)]">
                     <span className="text-[#00c89b]">SFIN PAY</span>와{" "}
                     <br className="hidden md:block" />
                     <span className="block md:mt-3 text-[#0b2723]">함께할 준비되셨나요?</span>

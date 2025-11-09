@@ -36,9 +36,10 @@ const FB: React.FC = () => {
             <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa]">
                 <motion.h1
                     {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     외식업 매출 관리,{' '}
+                    <br className='block md:hidden' />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         이제 자동으로
                     </span>
@@ -58,9 +59,11 @@ const FB: React.FC = () => {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 text-[#0b2723]"
+                    className="text-4xl font-bold text-center mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
-                    F&B 결제 흐름 한눈에 보기
+                    F&B 결제 흐름{' '}
+                    <br />
+                    한눈에 보기
                 </motion.h2>
 
                 <div className="flex flex-col md:flex-row justify-center items-center gap-12 text-center">
@@ -134,7 +137,7 @@ const FB: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
+                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
                         꼭 필요한 기능만 담았습니다
                     </h2>
                     <p className="text-[#1e3a34]/80">
@@ -195,9 +198,10 @@ const FB: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold mb-4 text-[#0b2723]"
+                    className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
                     결제부터 입금까지,{' '}
+                    <br className='block md:hidden' />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         SFIN PAY 하나로
                     </span>

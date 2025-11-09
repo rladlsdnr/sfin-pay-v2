@@ -67,9 +67,9 @@ export default function Liquidity(): JSX.Element {
                 </span>
 
                 <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-relaxed tracking-tight">
-                    <span className="text-[#00b894]">데이터가 자산이 되는 순간</span>
+                    <span className="text-[#00b894] text-[clamp(30px,5vw,36px)]">데이터가 자산이 되는 순간</span>
                     <br className="hidden md:block " />
-                    <span className="block md:mt-3 text-[#00c89b]">
+                    <span className="block md:mt-3 text-[#00c89b] text-[clamp(30px,5vw,36px)]">
                         정산 흐름이 금융을 확장합니다
                     </span>
                 </h2>

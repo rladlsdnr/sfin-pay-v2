@@ -85,8 +85,8 @@ export default function Compliance(): JSX.Element {
                     <ShieldCheck size={16} /> 컴플라이언스 · 내부통제
                 </span>
 
-                <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-[#0b2723] leading-relaxed tracking-tight">
-                    <span className="text-[#00c89b]">신뢰 가능한 법적 기반</span> 위
+                <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-[#0b2723] text-[clamp(30px,5vw,36px)] leading-relaxed tracking-tight">
+                    <span className="text-[#00c89b]">신뢰 가능한 법적 기반</span> 위의
                     <br className="hidden md:block" />
                     <span className="block md:mt-3 text-[#0b2723]">투명한 결제 인프라</span>
                 </h2>
@@ -133,6 +133,7 @@ export default function Compliance(): JSX.Element {
             >
                 <h3 className="text-2xl font-bold text-[#0b2723] mb-12">
                     SFIN PAY의{" "}
+                    <br className="block md:hidden" />
                     <span className="text-[#00c89b]">내부통제 3단계 체계</span>
                 </h3>
 

@@ -147,7 +147,7 @@ export default function Support(): JSX.Element {
             <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#f0fdfa] to-[#ecfdf5] border-b border-[#a7f3d0]/50">
                 <motion.h1
                     {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     고객 지원 센터
                 </motion.h1>
@@ -163,7 +163,7 @@ export default function Support(): JSX.Element {
             <section className="py-24 px-6 md:px-16 max-w-6xl mx-auto">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl font-bold text-center mb-12 text-[#0b2723]"
+                    className="text-3xl font-bold text-center mb-12 text-[#0b2723] "
                 >
                     문의 유형 선택
                 </motion.h2>
@@ -194,7 +194,7 @@ export default function Support(): JSX.Element {
             <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl font-bold text-center mb-10 text-[#0b2723]"
+                    className="text-3xl font-bold text-center mb-10 text-[#0b2723] "
                 >
                     자주 묻는 질문 (FAQ)
                 </motion.h2>

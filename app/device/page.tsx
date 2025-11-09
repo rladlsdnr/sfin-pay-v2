@@ -30,9 +30,10 @@ const Device: React.FC = () => {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     결제 단말기,{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         연결 그 이상의 가치
                     </span>
@@ -55,7 +56,7 @@ const Device: React.FC = () => {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold mb-12 text-[#0b2723]"
+                    className="text-4xl font-bold mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
                     단말기 라인업
                 </motion.h2>
@@ -111,7 +112,7 @@ const Device: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
+                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
                         단말기 기술 사양
                     </h2>
                     <p className="text-[#1e3a34]/80">
@@ -179,9 +180,11 @@ const Device: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold mb-10 text-[#0b2723]"
+                    className="text-4xl font-bold mb-10 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
-                    단말기 관리, 클라우드로 한눈에
+                    단말기 관리,{" "}
+                    <br className="block md:hidden" />
+                    클라우드로 한눈에
                 </motion.h2>
 
                 <motion.div
@@ -223,9 +226,10 @@ const Device: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4"
+                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     단말기 도입도{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         SFIN PAY 하나로
                     </span>

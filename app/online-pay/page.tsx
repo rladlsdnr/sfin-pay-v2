@@ -37,9 +37,10 @@ export default function OnlinePay(): JSX.Element {
             <section className="text-center px-6 md:px-16 py-20 bg-gradient-to-br from-[#ecfdf5] via-[#f0fdfa] to-[#d1fae5]">
                 <motion.h1
                     {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     온라인 결제,{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         한 번의 API로 끝
                     </span>
@@ -57,10 +58,10 @@ export default function OnlinePay(): JSX.Element {
                     className="flex flex-wrap justify-center gap-4 mt-10"
                 >
                     {[
-                        { icon: <CreditCard />, label: "카드 결제" },
+                        { icon: <CreditCard />, label: "카드결제" },
                         { icon: <Smartphone />, label: "간편결제" },
                         { icon: <PenLine />, label: "수기결제" },
-                        { icon: <Wallet />, label: "자동 정산" },
+                        { icon: <Wallet />, label: "자동정산" },
                     ].map((f, i) => (
                         <motion.div
                             key={i}
@@ -80,7 +81,7 @@ export default function OnlinePay(): JSX.Element {
             <section className="py-24 px-6 md:px-16 text-center bg-[#ecfdf5]">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold mb-10 text-[#0b2723]"
+                    className="text-4xl font-bold mb-10 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
                     결제 방식 선택
                 </motion.h2>
@@ -152,7 +153,7 @@ export default function OnlinePay(): JSX.Element {
       ──────────────────────────────── */}
             <section className="py-28 px-6 md:px-16 max-w-6xl mx-auto space-y-20">
                 <motion.div {...fadeUp(0)} className="text-center mb-10">
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">핵심 기능</h2>
+                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">핵심 기능</h2>
                     <p className="text-[#1e3a34]/80">
                         단일 API로 모든 결제 프로세스를 통합 관리하세요.
                     </p>
@@ -214,9 +215,10 @@ export default function OnlinePay(): JSX.Element {
             <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold text-[#0b2723] mb-4"
+                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     온라인 결제,{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         더 스마트하게
                     </span>

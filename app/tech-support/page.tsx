@@ -443,8 +443,10 @@ export default function TechSupportProMint(): JSX.Element {
             {/* HERO */}
             <div className="py-24 px-6 md:px-16 bg-gradient-to-b from-white via-[#f0fdfa] to-[#ecfdf3] text-center">
                 <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-                    className="text-[34px] md:text-5xl font-extrabold text-[#047857] tracking-tight">
-                    기술 지원 안내 — Mint Edition
+                    className="text-[34px] md:text-5xl font-extrabold text-[#047857] tracking-tight text-[clamp(30px,5vw,36px)]">
+                    기술 지원 안내 —{" "}
+                    <br className="block md:hidden" />
+                    Mint Edition
                 </motion.h1>
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.5 }}
                     className="mt-4 text-[15px] md:text-lg text-gray-700 max-w-3xl mx-auto">
@@ -985,7 +987,7 @@ app.post('/webhook', (req, res) => {
             {/* 최종 CTA */}
             <div className="text-center py-24 bg-gradient-to-r from-[#ecfdf5] to-[#bbf7f0]">
                 <motion.h3 initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}
-                    className="text-3xl font-bold text-[#059669] mb-4">
+                    className="text-3xl font-bold text-[#059669] mb-4 text-[clamp(30px,5vw,36px)]">
                     가맹점 운영과 기술, 함께 단순하게 — 그리고 실시간으로
                 </motion.h3>
                 <p className="text-[15px] text-gray-700 mb-8">

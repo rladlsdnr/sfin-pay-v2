@@ -28,7 +28,7 @@ const Distribution: React.FC = () => {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     쇼핑 · 판매 · 유통 정산,{" "}
                     <br className="block md:hidden" />
@@ -57,13 +57,15 @@ const Distribution: React.FC = () => {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 text-[#0b2723]"
+                    className="text-4xl font-bold text-center mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
-                    주문부터 정산까지, 흐름 한눈에 보기
+                    주문부터 정산까지,{" "}
+                    <br className="block md:hidden" />
+                    흐름 한눈에 보기
                 </motion.h2>
 
                 <div
-                    className="flex flex-wrap md:flex-nowrap justify-center items-center gap-12 text-center"
+                    className="flex flex-col md:flex-row justify-center items-center gap-12 text-center"
                 >
                     {/* 고객 주문/예약 */}
                     <motion.div
@@ -71,13 +73,13 @@ const Distribution: React.FC = () => {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.15 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-2xl md:text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
                             <ShoppingBag />
                         </div>
-                        <p className="font-semibold mt-2 text-sm md:text-base">
+                        <p className="font-semibold mt-2 text-base">
                             상품 주문 · 예약
                         </p>
-                        <p className="text-[11px] md:text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-[#1e3a34]/70">
                             온라인몰 · 오픈마켓 · 예약
                         </p>
                     </motion.div>
@@ -90,13 +92,13 @@ const Distribution: React.FC = () => {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-[#34d399] to-[#10b981] shadow-[0_0_18px_rgba(16,185,129,0.22)] flex items-center justify-center text-white text-2xl md:text-3xl">
+                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-[#34d399] to-[#10b981] shadow-[0_0_18px_rgba(16,185,129,0.22)] flex items-center justify-center text-white text-3xl">
                             <Wallet />
                         </div>
-                        <p className="font-semibold mt-2 text-sm md:text-base">
+                        <p className="font-semibold mt-2 text-base">
                             각종 결제 시퀀스
                         </p>
-                        <p className="text-[11px] md:text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-[#1e3a34]/70">
                             카드 · 간편결제 · 정기결제 지원
                         </p>
                     </motion.div>
@@ -109,13 +111,13 @@ const Distribution: React.FC = () => {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.45 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-2xl md:text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
                             <Building2 />
                         </div>
-                        <p className="font-semibold mt-2 text-sm md:text-base">
+                        <p className="font-semibold mt-2 text-base">
                             판매자 정산 관리
                         </p>
-                        <p className="text-[11px] md:text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-[#1e3a34]/70">
                             입점사 · 파트너별 자동 분배
                         </p>
                     </motion.div>
@@ -128,13 +130,13 @@ const Distribution: React.FC = () => {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-2xl md:text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
                             <Wallet />
                         </div>
-                        <p className="font-semibold mt-2 text-sm md:text-base">
+                        <p className="font-semibold mt-2 text-base">
                             D+0 · D+1 정산
                         </p>
-                        <p className="text-[11px] md:text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-[#1e3a34]/70">
                             빠른 입금 · 투명한 정산 내역
                         </p>
                     </motion.div>
@@ -161,8 +163,10 @@ const Distribution: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723]">
-                        쇼핑 · 판매 · 유통업을 위한 핵심 기능
+                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                        쇼핑 · 판매 · 유통업을{" "}
+                        <br className="block md:hidden" />
+                        위한 핵심 기능
                     </h2>
                     <p className="text-[#1e3a34]/80">
                         온라인몰, 오픈마켓, 예약 플랫폼, 입점형 서비스 모두 하나의 정산
@@ -230,11 +234,11 @@ const Distribution: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4"
+                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
                 >
-                    쇼핑 · 판매 · 유통 비즈니스,
+                    쇼핑 · 판매 · 유통 비즈니스,{" "}
+                    <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
-                        {" "}
                         SFIN PAY 하나로
                     </span>
                 </motion.h2>

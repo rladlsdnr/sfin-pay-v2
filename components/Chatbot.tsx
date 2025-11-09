@@ -172,7 +172,7 @@ export default function Chatbot(): JSX.Element {
                         animate={{ opacity: 1, scale: 1, y: 0 }}
                         exit={{ opacity: 0, scale: 0.9, y: 40 }}
                         transition={{ duration: 0.25 }}
-                        className="fixed bottom-28 right-6 w-[420px] max-h-[620px]
+                        className="fixed bottom-28 right-6 max-w-[420px] max-h-[620px]
               flex flex-col rounded-2xl bg-white border border-[#a6f2df]
               shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-hidden"
                     >
