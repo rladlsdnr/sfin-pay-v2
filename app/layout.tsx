@@ -4,7 +4,6 @@ import Footer from "../components/Footer";
 import AuroraBackground from "../components/AuroraBackground";
 import ScrollToTop from "../components/ScrollToTop";
 import Chatbot from "@/components/Chatbot";
-import { ViewportFix } from "@/components/ViewportFix";
 
 /* ✅ Next.js 15 공식 metadata 기반 SEO 설정 */
 export const metadata = {
@@ -131,8 +130,6 @@ export default function RootLayout({
 
         {/* ⬆️ 스크롤 복귀 */}
         <ScrollToTop />
-
-        <ViewportFix />
 
         {/* 📄 페이지 콘텐츠 */}
         <main className="relative z-10">{children}</main>
