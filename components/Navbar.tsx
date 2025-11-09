@@ -217,7 +217,7 @@ export default function Navbar(): JSX.Element {
                 //initial={{ y: 0 }}
                 //animate={{ y: showNav ? 0 : -100 }}
                 transition={{ duration: 0.4, ease: 'easeInOut' }}
-                className={`sticky top-0 left-0 w-full z-50  duration-300 ${scrolled
+                className={`fixed top-0 left-0 w-full z-50  duration-300 ${scrolled
                     ? 'bg-white/85 backdrop-blur-lg shadow-[0_4px_20px_rgba(0,0,0,0.05)]'
                     : 'bg-transparent'
                     }`}
