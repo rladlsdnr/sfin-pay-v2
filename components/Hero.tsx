@@ -73,7 +73,7 @@ export default function Hero(): JSX.Element {
 
             {/* 좌측 텍스트 영역 */}
             <div className="z-10 w-full lg:w-1/2 px-10 md:px-16 lg:px-24 py-24 lg:py-0 text-center lg:text-left">
-                <motion.p
+                <motion.h1
                     initial={{ opacity: 1, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
@@ -81,11 +81,11 @@ export default function Hero(): JSX.Element {
                 >
                     {/* 상단 서브 타이틀 */}
                     <span className="block mb-3 text-[#00997A] text-base md:text-lg font-semibold">
-                        신뢰로 연결되는 결제 경험
+                        PG · 결제 단말기 · 온라인 결제까지
                     </span>
 
                     {/* 메인 타이틀 */}
-                    <h1
+                    <span
                         className="block
                        text-transparent bg-clip-text
                        bg-gradient-to-r from-[#00B894] via-[#00997A] to-[#006F4F]"
@@ -93,8 +93,8 @@ export default function Hero(): JSX.Element {
                         비즈니스를 성장시키는
                         <br />
                         통합 결제 플랫폼
-                    </h1>
-                </motion.p>
+                    </span>
+                </motion.h1>
 
                 {/* 본문 설명 */}
                 <motion.p

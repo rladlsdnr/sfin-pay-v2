@@ -57,7 +57,7 @@ const FAQ_LIST: {
                 <>
                     고객센터는 평일 09:00~18:00 운영됩니다.
                     <br />
-                    채팅 또는 support@sfinpay.co.kr로 문의주세요.
+                    채팅 또는 <a href="mailto:contact@sfinpay.co.kr">contact@sfinpay.co.kr</a>로 문의주세요.
                 </>
             ),
         },
@@ -157,7 +157,7 @@ export default function Chatbot(): JSX.Element {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsChatOpen((prev) => !prev)}
-                className="w-16 h-16 rounded-full bg-gradient-to-br from-[#36ffc6] to-[#76ffe0]
+                className="w-16 h-16 rounded-full bg-[#00b894]
           flex items-center justify-center shadow-lg text-white hover:shadow-xl"
                 aria-label="SFIN PAY 상담 열기"
             >
@@ -177,7 +177,7 @@ export default function Chatbot(): JSX.Element {
               shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-hidden"
                     >
                         {/* Header */}
-                        <div className="bg-gradient-to-r from-[#36ffc6] to-[#76ffe0]
+                        <div className="bg-[#00b894]
                 text-white px-5 py-3 flex items-center justify-between text-base font-semibold">
                             <span>💬 SFIN PAY 자동상담</span>
                             <button
@@ -249,7 +249,7 @@ export default function Chatbot(): JSX.Element {
                             />
                             <button
                                 onClick={handleSend}
-                                className="p-3 rounded-full bg-[#36ffc6] hover:bg-[#00d8b8] text-white transition"
+                                className="p-3 rounded-full bg-[#00b894] hover:bg-[#00d8b8] text-white transition"
                             >
                                 <SendHorizonal size={20} />
                             </button>

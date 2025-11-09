@@ -1,5 +1,6 @@
 ﻿'use client';
-import React, { useEffect, useState, useRef } from 'react';
+
+import React, { useEffect, useState, useRef, useCallback } from 'react';
 import { motion } from 'framer-motion';
 import {
     CreditCard,
@@ -14,73 +15,104 @@ export default function Settlement(): JSX.Element {
     const [gross, setGross] = useState(0);
     const [net, setNet] = useState(0);
     const [feeRate, setFeeRate] = useState(0);
+    const [reduceMotion, setReduceMotion] = useState(false);
 
     const amountRef = useRef<HTMLSpanElement | null>(null);
-    const animationFrameRef = useRef<number | null>(null);
+    const animFrameRef = useRef<number | null>(null);
 
-    // 단계 순환 (4초마다)
+    // ✅ 환경 기반: 모바일 / 저사양 / prefers-reduced-motion 시 애니메이션 축소
     useEffect(() => {
-        const loop = () => {
-            setStep((prev) => (prev + 1) % 3);
-        };
-        const interval = setInterval(loop, 4000);
-        return () => clearInterval(interval);
+        if (typeof window === 'undefined') return;
+
+        const prefersReduced =
+            window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ?? false;
+        const isSmallScreen = window.innerWidth < 768; // md 미만
+        const lowCpu =
+            (navigator as any).hardwareConcurrency &&
+            (navigator as any).hardwareConcurrency <= 4;
+
+        setReduceMotion(prefersReduced || isSmallScreen || lowCpu);
     }, []);
 
-    // 공통 애니메이션 유틸 (requestAnimationFrame + 직접 DOM 업데이트)
-    const animateAmount = (
-        from: number,
-        to: number,
-        {
-            duration = 1000,
-            easing = 'outCubic', // 'linear' | 'outCubic' | 'outBack'
-        }: { duration?: number; easing?: 'linear' | 'outCubic' | 'outBack' } = {}
-    ) => {
-        if (!amountRef.current) return;
+    // ✅ 4초마다 단계 순환
+    useEffect(() => {
+        const id = setInterval(() => {
+            setStep((prev) => (prev + 1) % 3);
+        }, 4000);
+        return () => clearInterval(id);
+    }, []);
 
-        if (animationFrameRef.current) {
-            cancelAnimationFrame(animationFrameRef.current);
-        }
-
-        const startTime = performance.now();
-
-        const ease = (t: number) => {
-            if (easing === 'linear') return t;
-            if (easing === 'outCubic') return 1 - Math.pow(1 - t, 3);
-            if (easing === 'outBack') {
-                const c1 = 1.70158;
-                const c3 = c1 + 1;
-                return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
-            }
-            return t;
-        };
-
-        const tick = (now: number) => {
+    // ✅ 숫자 애니메이션 유틸 (리치 모드에서만 사용)
+    const animateAmount = useCallback(
+        (
+            from: number,
+            to: number,
+            {
+                duration = 900,
+                easing = 'outCubic', // 'linear' | 'outCubic' | 'outBack'
+            }: { duration?: number; easing?: 'linear' | 'outCubic' | 'outBack' } = {}
+        ) => {
             if (!amountRef.current) return;
 
-            const rawProgress = (now - startTime) / duration;
-            const clamped = Math.min(Math.max(rawProgress, 0), 1);
-            const eased = ease(clamped);
-
-            const current = from + (to - from) * eased;
-            const snapped = Math.floor(current / 10) * 10; // 10원 단위 스냅
-
-            amountRef.current.textContent = `₩${snapped.toLocaleString()}`;
-
-            if (clamped < 1) {
-                animationFrameRef.current = requestAnimationFrame(tick);
-            } else {
-                animationFrameRef.current = null;
+            // 경량 모드면 그냥 최종값만 찍고 종료
+            if (reduceMotion) {
+                amountRef.current.textContent = `₩${to.toLocaleString()}`;
+                return;
             }
-        };
 
-        animationFrameRef.current = requestAnimationFrame(tick);
-    };
+            if (animFrameRef.current) {
+                cancelAnimationFrame(animFrameRef.current);
+            }
 
-    // Step 변화에 따른 금액/애니메이션 제어
+            const startTime = performance.now();
+
+            const ease = (t: number) => {
+                if (easing === 'linear') return t;
+                if (easing === 'outCubic') return 1 - Math.pow(1 - t, 3);
+                if (easing === 'outBack') {
+                    const c1 = 1.70158;
+                    const c3 = c1 + 1;
+                    return 1 + c3 * Math.pow(t - 1, 3) + c1 * Math.pow(t - 1, 2);
+                }
+                return t;
+            };
+
+            const tick = (now: number) => {
+                if (!amountRef.current) return;
+
+                const raw = (now - startTime) / duration;
+                const p = Math.min(Math.max(raw, 0), 1);
+                const e = ease(p);
+
+                const current = from + (to - from) * e;
+                const snapped = Math.floor(current / 10) * 10;
+
+                amountRef.current.textContent = `₩${snapped.toLocaleString()}`;
+
+                if (p < 1) {
+                    animFrameRef.current = requestAnimationFrame(tick);
+                } else {
+                    animFrameRef.current = null;
+                }
+            };
+
+            animFrameRef.current = requestAnimationFrame(tick);
+        },
+        [reduceMotion]
+    );
+
+    // ✅ step이 바뀔 때만 로직 실행 (gross/net을 deps에 넣지 않는다)
     useEffect(() => {
-        // 0단계: 새로운 거래 발생 → gross/net/fee 재계산 + 0 → gross 카운트업
+        if (!amountRef.current) return;
+
+        // 이전 애니메이션 정리
+        if (animFrameRef.current) {
+            cancelAnimationFrame(animFrameRef.current);
+            animFrameRef.current = null;
+        }
+
         if (step === 0) {
+            // 새 거래 생성
             const min = 80000;
             const max = 120000;
             const newGross =
@@ -96,36 +128,39 @@ export default function Settlement(): JSX.Element {
             setNet(newNet);
             setFeeRate(rateRounded);
 
-            // 극적인 시작: 0 → gross 빠르게 치솟는 애니메이션
+            // 0 → 매출금액
             animateAmount(0, newGross, {
-                duration: 900,
+                duration: 800,
                 easing: 'outCubic',
             });
         }
 
-        // 1단계: 정산 검증 - 숫자 고정 (애니메이션 없음, 안정감)
         if (step === 1) {
-            if (amountRef.current && gross) {
+            // 정산 검증 단계: 값 고정 (애니메이션 없음)
+            if (gross && amountRef.current) {
                 amountRef.current.textContent = `₩${gross.toLocaleString()}`;
             }
         }
 
-        // 2단계: 입금 완료 - gross → net 으로 "툭 떨어지는" 연출
-        if (step === 2 && gross && net) {
-            // 살짝 튕겼다가(net에 안착) 하는 느낌
-            animateAmount(gross, net, {
-                duration: 900,
-                easing: 'outBack',
-            });
+        if (step === 2) {
+            // 입금 완료: gross → net
+            if (gross && net) {
+                animateAmount(gross, net, {
+                    duration: 800,
+                    easing: 'outBack',
+                });
+            }
         }
 
         return () => {
-            if (animationFrameRef.current) {
-                cancelAnimationFrame(animationFrameRef.current);
+            if (animFrameRef.current) {
+                cancelAnimationFrame(animFrameRef.current);
+                animFrameRef.current = null;
             }
         };
+        // 🚨 의도적으로 gross/net 미포함: step 변경에만 반응해서 "한 번씩만" 실행
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, [step]);
+    }, [step, animateAmount]);
 
     const stages = [
         {
@@ -153,12 +188,24 @@ export default function Settlement(): JSX.Element {
             id="settlement"
             className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#EFFFF9] via-[#F8FFFD] to-white overflow-hidden"
         >
-            {/* 💫 민트 배경 */}
+            {/* 배경: reduceMotion이면 정적 */}
             <motion.div
-                animate={{
-                    backgroundPosition: ['0% 0%', '100% 40%', '0% 80%', '0% 0%'],
-                }}
-                transition={{ duration: 35, repeat: Infinity, ease: 'linear' }}
+                animate={
+                    reduceMotion
+                        ? undefined
+                        : {
+                            backgroundPosition: ['0% 0%', '100% 40%', '0% 80%', '0% 0%'],
+                        }
+                }
+                transition={
+                    reduceMotion
+                        ? undefined
+                        : {
+                            duration: 35,
+                            repeat: Infinity,
+                            ease: 'linear',
+                        }
+                }
                 className="absolute inset-0 -z-10 opacity-60"
                 style={{
                     backgroundImage:
@@ -197,28 +244,32 @@ export default function Settlement(): JSX.Element {
             <div className="max-w-5xl mx-auto flex flex-col md:flex-row justify-between gap-10">
                 {stages.map((s, i) => {
                     const isActive = i === step;
+                    const cardClass = isActive
+                        ? 'border-[#00c8b4]/60 bg-white shadow-[0_10px_30px_rgba(0,200,155,0.14)] scale-[1.02]'
+                        : 'border-[#C4F7EC] bg-[#F8FFFD] min-h-[220px] opacity-85';
+
                     return (
                         <motion.div
                             key={i}
                             initial={{ opacity: 1, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            transition={{ delay: i * 0.15 }}
-                            className={`relative flex-1 p-6 rounded-2xl border backdrop-blur-sm duration-500 ${isActive
-                                    ? 'border-[#00c8b4]/60 bg-white shadow-[0_10px_36px_rgba(0,200,155,0.18)] scale-[1.02]'
-                                    : 'border-[#C4F7EC] bg-[#F8FFFD] min-h-[220px] opacity-80'
-                                }`}
+                            transition={{ delay: i * 0.12 }}
+                            className={`relative flex-1 p-6 rounded-2xl border backdrop-blur-sm duration-500 ${cardClass}`}
                         >
-                            {isActive && (
+                            {!reduceMotion && isActive && (
                                 <motion.div
                                     initial={{ opacity: 0.12, scale: 0.96 }}
-                                    animate={{ opacity: [0.15, 0.3, 0.15], scale: [0.98, 1.04, 0.98] }}
+                                    animate={{
+                                        opacity: [0.15, 0.3, 0.15],
+                                        scale: [0.98, 1.04, 0.98],
+                                    }}
                                     transition={{
-                                        duration: 2.5,
+                                        duration: 2.2,
                                         repeat: Infinity,
                                         ease: 'easeInOut',
                                     }}
-                                    className="absolute inset-0 -z-10 rounded-2xl bg-[#00c8b4]/26 blur-2xl"
+                                    className="absolute inset-0 -z-10 rounded-2xl bg-[#00c8b4]/24 blur-2xl"
                                 />
                             )}
 
@@ -246,13 +297,9 @@ export default function Settlement(): JSX.Element {
                             )}
 
                             {isActive && (
-                                <motion.div
-                                    initial={{ opacity: 1, y: 4 }}
-                                    animate={{ opacity: 1, y: 0 }}
-                                    className="mt-4 text-xs text-[#00c8b4] font-semibold tracking-wide"
-                                >
+                                <div className="mt-4 text-xs text-[#00c8b4] font-semibold tracking-wide">
                                     {s.sub}
-                                </motion.div>
+                                </div>
                             )}
 
                             {i < stages.length - 1 && (
@@ -270,15 +317,22 @@ export default function Settlement(): JSX.Element {
                 })}
             </div>
 
-            {/* 💰 금액 카운트업 (극적인 연출 + 성능 개선) */}
+            {/* 금액 표시 */}
             <div className="mt-16 text-center">
                 <motion.div
                     animate={
-                        step === 2
-                            ? { scale: [1, 1.05, 1], filter: ['brightness(1)', 'brightness(1.15)', 'brightness(1)'] }
+                        !reduceMotion && step === 2
+                            ? {
+                                scale: [1, 1.05, 1],
+                                filter: [
+                                    'brightness(1)',
+                                    'brightness(1.12)',
+                                    'brightness(1)',
+                                ],
+                            }
                             : { scale: 1, filter: 'brightness(1)' }
                     }
-                    transition={{ duration: 0.8 }}
+                    transition={{ duration: 0.7 }}
                     className="inline-block text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8b4] via-[#00d0aa] to-[#00a884] bg-clip-text text-transparent drop-shadow-sm"
                 >
                     <span ref={amountRef}>₩0</span>
@@ -292,7 +346,7 @@ export default function Settlement(): JSX.Element {
             <motion.div
                 initial={{ opacity: 1, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{ duration: 0.2 }}
                 viewport={{ once: true }}
                 className="mt-20 max-w-4xl mx-auto text-center rounded-2xl border border-[#C4F7EC] bg-gradient-to-r from-[#EFFFF9] to-white p-10 shadow-[0_6px_30px_rgba(0,200,155,0.08)]"
             >
