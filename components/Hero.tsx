@@ -61,8 +61,7 @@ export default function Hero(): JSX.Element {
         <section
             ref={ref}
             style={{ opacity, y } as any}
-            className="relative flex flex-col lg:flex-row items-center justify-between
-                 min-h-screen min-h-[calc(var(--vh,1vh)*100)] overflow-hidden"
+            className="relative flex flex-col lg:flex-row items-center justify-between min-h-screen min-h-[calc(var(--vh,1vh)*100)] overflow-hidden"
         /*bg-gradient-to-br from-[#CFFBF6] via-[#A3FFE8] to-white"*/
         >
             {/* 배경 효과 */}
