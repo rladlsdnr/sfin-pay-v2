@@ -55,7 +55,7 @@ const FB: React.FC = () => {
             {/* 🌿 결제 흐름 시각화 */}
             <section className="py-24 px-6 md:px-16 bg-[#ecfdf5] relative overflow-hidden">
                 <motion.h2
-                    initial={{ opacity: 0, y: 30 }}
+                    initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
                     className="text-4xl font-bold text-center mb-12 text-[#0b2723]"
@@ -63,13 +63,13 @@ const FB: React.FC = () => {
                     F&B 결제 흐름 한눈에 보기
                 </motion.h2>
 
-                <div className="flex flex-col md:flex-row justify-center items-center gap-8 text-center">
+                <div className="flex flex-col md:flex-row justify-center items-center gap-12 text-center">
                     {/* 매장 (POS) */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 1, y: 20 }}
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.5, delay: 0.1 }}
-                        className="flex flex-col items-center gap-2"
+                        className="flex flex-col items-center gap-2 w-32"
                     >
                         <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
                             <Coffee />
@@ -82,10 +82,10 @@ const FB: React.FC = () => {
 
                     {/* SFIN PAY */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 1, y: 20 }}
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
-                        className="flex flex-col items-center gap-2"
+                        className="flex flex-col items-center gap-2 w-32"
                     >
                         <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-[#34d399] to-[#10b981] shadow-[0_0_25px_rgba(16,185,129,0.25)] flex items-center justify-center text-white text-3xl">
                             <Wallet />
@@ -100,10 +100,10 @@ const FB: React.FC = () => {
 
                     {/* 가맹점 계좌 */}
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
+                        initial={{ opacity: 1, y: 20 }}
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.5, delay: 0.5 }}
-                        className="flex flex-col items-center gap-2"
+                        className="flex flex-col items-center gap-2 w-32"
                     >
                         <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
                             <Building2 />
@@ -116,7 +116,7 @@ const FB: React.FC = () => {
                 </div>
 
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
                     className="text-center mt-10 text-[#1e3a34]/70 max-w-3xl mx-auto leading-relaxed"
@@ -129,7 +129,7 @@ const FB: React.FC = () => {
             {/* 🌿 주요 기능 */}
             <section className="py-28 px-6 md:px-16 max-w-6xl mx-auto space-y-20">
                 <motion.div
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
@@ -172,7 +172,7 @@ const FB: React.FC = () => {
                     ].map((f, i) => (
                         <motion.div
                             key={i}
-                            initial={{ opacity: 0, y: 20 }}
+                            initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.2 * i }}
                             className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
@@ -192,7 +192,7 @@ const FB: React.FC = () => {
             {/* 🌿 CTA */}
             <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
                 <motion.h2
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
                     className="text-4xl font-bold mb-4 text-[#0b2723]"
@@ -203,7 +203,7 @@ const FB: React.FC = () => {
                     </span>
                 </motion.h2>
                 <motion.p
-                    initial={{ opacity: 0, y: 20 }}
+                    initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
                     className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"

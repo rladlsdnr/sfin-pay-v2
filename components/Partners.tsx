@@ -184,7 +184,7 @@ export default function Partners(): JSX.Element {
             <motion.div
                 {...fadeUp(2)}
                 className="max-w-5xl mx-auto mt-20 rounded-2xl border border-[rgba(0,200,155,0.25)]
-                    p-8 md:p-10 text-center
+                    p-8 md:p-10 text-center bg-[#FFFFFF]
                    shadow-[0_8px_30px_rgba(0,200,155,0.08)]"
             >
                 <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm mb-4">

@@ -246,7 +246,7 @@ export default function Settlement(): JSX.Element {
                     const isActive = i === step;
                     const cardClass = isActive
                         ? 'border-[#00c8b4]/60 bg-white shadow-[0_10px_30px_rgba(0,200,155,0.14)] scale-[1.02]'
-                        : 'border-[#C4F7EC] bg-[#F8FFFD] min-h-[220px] opacity-85';
+                        : 'border-[#C4F7EC] bg-[#F8FFFD] opacity-85';
 
                     return (
                         <motion.div
@@ -255,11 +255,11 @@ export default function Settlement(): JSX.Element {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ delay: i * 0.12 }}
-                            className={`relative flex-1 p-6 rounded-2xl border backdrop-blur-sm duration-500 ${cardClass}`}
+                            className={`relative flex-1 p-6 rounded-2xl border backdrop-blur-sm duration-500 md:min-h-[210px] ${cardClass}`}
                         >
                             {!reduceMotion && isActive && (
                                 <motion.div
-                                    initial={{ opacity: 0.12, scale: 0.96 }}
+                                    /*initial={{ opacity: 0.12, scale: 0.96 }}
                                     animate={{
                                         opacity: [0.15, 0.3, 0.15],
                                         scale: [0.98, 1.04, 0.98],
@@ -268,7 +268,7 @@ export default function Settlement(): JSX.Element {
                                         duration: 2.2,
                                         repeat: Infinity,
                                         ease: 'easeInOut',
-                                    }}
+                                    }}*/
                                     className="absolute inset-0 -z-10 rounded-2xl bg-[#00c8b4]/24 blur-2xl"
                                 />
                             )}
@@ -348,7 +348,7 @@ export default function Settlement(): JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
                 viewport={{ once: true }}
-                className="mt-20 max-w-4xl mx-auto text-center rounded-2xl border border-[#C4F7EC] bg-gradient-to-r from-[#EFFFF9] to-white p-10 shadow-[0_6px_30px_rgba(0,200,155,0.08)]"
+                className="mt-20 max-w-4xl mx-auto text-center rounded-2xl border border-[#C4F7EC] bg-[#FFFFFF] p-10 shadow-[0_6px_30px_rgba(0,200,155,0.08)]"
             >
                 <p className="text-[#2E5C54]/80 text-lg mb-5">
                     결제에서 입금까지 단 15분.

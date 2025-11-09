@@ -159,7 +159,7 @@ export default function Compliance(): JSX.Element {
                 {...fadeUp(8)}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-center max-w-3xl mx-auto mt-24 rounded-2xl border border-emerald-200 bg-gradient-to-r from-emerald-50 to-white p-10 shadow-[0_6px_25px_rgba(16,185,129,0.08)]"
+                className="text-center max-w-3xl mx-auto mt-24 rounded-2xl border border-emerald-200 bg-[#FFFFFF] p-10 shadow-[0_6px_25px_rgba(16,185,129,0.08)]"
             >
                 <p className="text-[#1f3b37]/70 text-lg mb-8 leading-relaxed">
                     모든 데이터와 정산 내역은 암호화되어 저장되며,
