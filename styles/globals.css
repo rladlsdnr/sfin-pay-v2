@@ -158,7 +158,7 @@ video {
 
 .App-header {
   background-color: #282c34;
-  min-height: 100dvh;
+  /*min-height: 100dvh;*/
   display: flex;
   flex-direction: column;
   align-items: center;
