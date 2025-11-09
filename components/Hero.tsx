@@ -50,6 +50,17 @@ export default function Hero(): JSX.Element {
         return () => observer.disconnect();
     }, []);
 
+    useEffect(() => {
+        const setVh = () => {
+            if (typeof window === "undefined") return;
+            const vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty("--vh", `${vh}px`);
+        };
+        setVh();
+        window.addEventListener("resize", setVh);
+        return () => window.removeEventListener("resize", setVh);
+    }, []);
+
     const scrollToFeatures = (): void => {
         const section = document.getElementById("features");
         if (section) {
@@ -60,7 +71,8 @@ export default function Hero(): JSX.Element {
     return (
         <section
             ref={ref}
-            style={{ opacity, y } as any}
+            //style={{ opacity, y } as any}
+            style={{ minHeight: "calc(var(--vh, 1vh)*100)" }}
             className="relative flex flex-col lg:flex-row items-center justify-between
                  h-[100lvh] overflow-hidden"
         /*bg-gradient-to-br from-[#CFFBF6] via-[#A3FFE8] to-white"*/
