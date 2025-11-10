@@ -26,7 +26,7 @@ export default function Footer(): JSX.Element {
                  bg-gradient-to-b from-[#e8fff6] to-[#f2fffb]"
             aria-label="사이트 하단 정보"
         >
-            {/* 🌫️ 민트 오로라 애니메이션 */}
+            {/* 🌫️ 민트 오로라 애니메이션
             <motion.div
                 className="absolute inset-0 pointer-events-none z-0"
                 animate={{
@@ -40,6 +40,7 @@ export default function Footer(): JSX.Element {
                     filter: 'blur(120px)',
                 }}
             />
+            */}
 
             <div className="relative z-10 max-w-6xl mx-auto">
                 {/* 📞 회사 정보 */}
