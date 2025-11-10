@@ -29,13 +29,13 @@ export default function IntegrationInquiryClient(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723]">
+        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] ">
             {/* 🌿 Hero */}
             <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] border-b border-[#a7f3d0]/40">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         {...fadeUp(0)}
-                        className="text-4xl md:text-6xl font-extrabold leading-tight"
+                        className="text-4xl md:text-6xl font-extrabold leading-tight text-[clamp(30px,5vw,36px)]"
                     >
                         기술 연동{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">

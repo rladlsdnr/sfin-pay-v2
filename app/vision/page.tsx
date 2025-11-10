@@ -24,7 +24,7 @@ export default function VisionPage(): JSX.Element {
             <section className="text-center px-6 md:px-16 py-20 border-b border-brand-mint">
                 <motion.h1
                     {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[#0f2b26]"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[#0f2b26] text-[clamp(30px,5vw,36px)]"
                 >
                     SFIN PAY <span className="text-brand-mintDark">VISION 2025</span>
                 </motion.h1>
@@ -43,7 +43,7 @@ export default function VisionPage(): JSX.Element {
             <section className="py-24 px-6 md:px-16 bg-white border-b border-brand-mint">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-[#0f2b26]"
+                    className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-[#0f2b26] "
                 >
                     우리의 미션
                 </motion.h2>

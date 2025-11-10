@@ -97,7 +97,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
                 onSubmit={handleSubmit}
                 className="max-w-3xl mx-auto rounded-2xl border border-brand-mint/30 bg-white/90 backdrop-blur-sm p-8 md:p-10 space-y-6 shadow-[0_8px_25px_rgba(16,185,129,0.10)]"
             >
-                <h2 className="text-3xl font-extrabold text-brand-mintDark text-center mb-6">
+                <h2 className="text-3xl font-extrabold text-brand-mintDark text-center mb-6 text-[clamp(30px,5vw,36px)]">
                     문의 접수
                 </h2>
 

@@ -15,10 +15,10 @@ export default function SecurityPolicy() {
         >
             {/* 제목 영역 */}
             <div className="max-w-4xl mx-auto text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d1fae5] text-[#10b981] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#d1fae5] text-[#10b981] text-sm font-medium ">
                     <ShieldCheck size={16} /> SFIN PAY 보안 정책
                 </span>
-                <h1 className="mt-6 text-4xl md:text-5xl font-extrabold leading-tight text-[#0b2723]">
+                <h1 className="mt-6 text-4xl md:text-5xl font-extrabold leading-tight text-[#0b2723] text-[clamp(30px,5vw,36px)]">
                     정보보호 및 개인정보처리방침
                 </h1>
                 <p className="mt-4 text-[#1e3a34]/80 text-lg leading-relaxed">

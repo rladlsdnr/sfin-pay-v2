@@ -163,7 +163,7 @@ export default function CompanyIntro(): JSX.Element {
 
                 <motion.div {...fadeUp(0.4)}>
                     <Link
-                        href="/careers"
+                        href="/recruit"
                         className="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-gradient-to-r from-[#34d399] to-[#10b981] hover:from-[#10b981] hover:to-[#059669] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)] "
                     >
                         채용 및 파트너 문의 →

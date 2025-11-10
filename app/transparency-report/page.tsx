@@ -47,7 +47,7 @@ export default function Page(): JSX.Element {
             <section className="text-center px-6 md:px-16 py-24 bg-gradient-to-b from-[#EFFFFA] to-[#F9FFFE] border-b border-[#C8FFF4]">
                 <motion.h1
                     {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     SFIN PAY{' '}
                     <span className="text-[#00C9A7]">투명경영 보고서 2025</span>

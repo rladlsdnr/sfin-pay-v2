@@ -69,7 +69,7 @@ export default function ContractInquiryClient(): JSX.Element {
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         {...fadeUp(0)}
-                        className="text-4xl md:text-6xl font-extrabold leading-tight"
+                        className="text-4xl md:text-6xl font-extrabold leading-tight text-[clamp(30px,5vw,36px)]"
                     >
                         가맹 계약 ·{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
@@ -198,7 +198,7 @@ export default function ContractInquiryClient(): JSX.Element {
                 >
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div>
-                            <h3 className="text-2xl font-extrabold text-[#0b2723]">
+                            <h3 className="text-2xl font-extrabold text-[#0b2723] ">
                                 요율 & 정산 조건, 이렇게 제안됩니다
                             </h3>
                             <p className="mt-1 text-[#1e3a34]/80">

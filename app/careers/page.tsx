@@ -18,7 +18,7 @@ export default function CareersPage(): JSX.Element {
             <section className="text-center py-20 px-6 md:px-16">
                 <motion.h1
                     {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     함께 만드는 결제 혁신,
                     <br />
@@ -40,7 +40,7 @@ export default function CareersPage(): JSX.Element {
             <section className="py-24 px-6 md:px-16 bg-[#ecfdf5]/80">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold text-center mb-16"
+                    className="text-4xl font-bold text-center mb-16 text-[clamp(30px,5vw,36px)]"
                 >
                     우리의 문화와 가치
                 </motion.h2>
@@ -80,7 +80,7 @@ export default function CareersPage(): JSX.Element {
             <section className="py-28 px-6 md:px-16 max-w-5xl mx-auto text-center">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold mb-10 text-[#0b2723]"
+                    className="text-4xl font-bold mb-10 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
                 >
                     현재 모집 중인 포지션
                 </motion.h2>
@@ -129,9 +129,10 @@ export default function CareersPage(): JSX.Element {
             <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold text-[#0b2723] mb-4"
+                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     당신의 전문성,{' '}
+                    <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         SFIN PAY에서 가치로
                     </span>
@@ -144,7 +145,7 @@ export default function CareersPage(): JSX.Element {
                     함께할 당신을 기다립니다.
                 </motion.p>
 
-                <Link href="/inquiry/careers">
+                <Link href="/recruit">
                     <motion.button
                         {...fadeUp(0.4)}
                         whileHover={{ scale: 1.05 }}

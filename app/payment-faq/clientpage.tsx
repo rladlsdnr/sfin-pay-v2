@@ -88,7 +88,7 @@ export default function PaymentFAQ(): JSX.Element {
                 <div className="max-w-4xl mx-auto">
                     <motion.h1
                         {...fadeUp(0.1)}
-                        className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight"
+                        className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-[clamp(30px,5vw,36px)]"
                     >
                         결제 관련{" "}
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">

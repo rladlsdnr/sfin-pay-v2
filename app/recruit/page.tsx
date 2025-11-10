@@ -47,12 +47,12 @@ export default function Recruit(): JSX.Element {
     };
 
     return (
-        <div className="min-h-screen bg-[#ecfdf5] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-[#ecfdf5] text-[#0b2723] pt-32 ">
             {/* HEADER */}
             <section className="text-center py-24 px-6 md:px-16 bg-gradient-to-b from-[#f0fdfa] to-[#ecfdf5] border-b border-[#a7f3d0]">
                 <motion.h1
                     {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     채용 및 파트너 문의
                 </motion.h1>
