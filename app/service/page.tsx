@@ -31,10 +31,10 @@ export default function Service(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
-                    서비스업 결제 관리,{" "}
+                    서비스업 관리,{" "}
                     <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
-                        고객 응대보다 쉬워집니다
+                        정확하고 신속하게
                     </span>
                 </motion.h1>
 

@@ -32,10 +32,10 @@ export default function B2B(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
-                    B2B 거래,{" "}
+                    B2B 비즈니스,{" "}
                     <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
-                        대량 정산도 간단하게
+                        정확하고 신속하게
                     </span>
                 </motion.h1>
 

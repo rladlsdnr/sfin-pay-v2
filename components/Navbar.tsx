@@ -229,6 +229,7 @@ export default function Navbar(): JSX.Element {
                         className="flex items-center gap-2 select-none "
                         style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
+                        {/*
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" className="w-10 h-10">
                             <defs>
                                 <linearGradient id="grad-mint" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -240,6 +241,8 @@ export default function Navbar(): JSX.Element {
                             <circle cx="60" cy="60" r="50" stroke="url(#grad-mint)" strokeWidth="5" fill="none" />
                             <circle cx="60" cy="60" r="8" fill="url(#grad-mint)" />
                         </svg>
+                        */}
+                        <img src='/logo.png' style={{ width: '40px' }} />
                         <span className="text-2xl font-extrabold text-[#00b894] tracking-tight">SFIN PAY</span>
                     </button>
 
@@ -314,7 +317,7 @@ export default function Navbar(): JSX.Element {
                         {/* 🟢 상단 우측 버튼 */}
                         <div className="flex items-center gap-3 ml-4">
                             <Link
-                                href="/inquiry/merchant"
+                                href="/inquiry/contract"
                                 className="px-4 py-2 text-sm font-semibold rounded-lg border border-[#00b894] text-[#00b894] hover:bg-[#00b894] hover:text-white "
                             >
                                 가맹 문의
@@ -429,7 +432,7 @@ export default function Navbar(): JSX.Element {
                         {/* 하단 버튼 */}
                         <div className="border-t border-[#E2E8F0] p-6 flex flex-col gap-3">
                             <Link
-                                href="/inquiry/merchant"
+                                href="/inquiry/contract"
                                 onClick={() => setMenuOpen(false)}
                                 className="w-full text-center py-3 rounded-lg border border-[#00b894] text-[#00b894] font-semibold hover:bg-[#00b894] hover:text-white "
                             >

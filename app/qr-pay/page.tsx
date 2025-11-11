@@ -34,7 +34,7 @@ export default function QrPay(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
-                    QR · 오프라인 결제,{" "}
+                    오프라인 · QR 결제,{" "}
                     <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         현장에서 더 빠르게

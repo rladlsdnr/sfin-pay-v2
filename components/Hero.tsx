@@ -123,7 +123,7 @@ export default function Hero(): JSX.Element {
                         </motion.button>
                     </Link>
 
-                    <Link href="/">
+                    <Link href="/tech-support">
                         <motion.button
                             whileHover={{ scale: 1.02 }}
                             whileTap={{ scale: 0.98 }}
