@@ -444,9 +444,8 @@ export default function TechSupportProMint(): JSX.Element {
             <div className="py-24 px-6 md:px-16 bg-gradient-to-b from-white via-[#f0fdfa] to-[#ecfdf3] text-center">
                 <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
                     className="text-[34px] md:text-5xl font-extrabold text-[#047857] tracking-tight text-[clamp(30px,5vw,36px)]">
-                    기술 지원 안내 —{" "}
+                    기술 지원 안내{" "}
                     <br className="block md:hidden" />
-                    Mint Edition
                 </motion.h1>
                 <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.15, duration: 0.5 }}
                     className="mt-4 text-[15px] md:text-lg text-gray-700 max-w-3xl mx-auto">

@@ -1,0 +1,797 @@
+OS SSD 볼륨에 대한 폴더 경로의 목록입니다.
+볼륨 일련 번호는 48E7-FC7B입니다.
+C:.
+|   .gitignore
+|   file_structure.txt
+|   global.d.ts
+|   next-env.d.ts
+|   next-seo.config.ts
+|   next.config.js
+|   package-lock.json
+|   package.json
+|   postcss.config.js
+|   README.md
+|   tailwind.config.js
+|   tsconfig.json
+|   
++---.next
+|   |   app-build-manifest.json
+|   |   build-manifest.json
+|   |   package.json
+|   |   react-loadable-manifest.json
+|   |   trace
+|   |   
+|   +---cache
+|   |   |   .rscinfo
+|   |   |   .tsbuildinfo
+|   |   |   
+|   |   +---swc
+|   |   |   \---plugins
+|   |   |       \---v7_windows_x86_64_0.115.1
+|   |   \---webpack
+|   |       +---client-development
+|   |       |       0.pack.gz
+|   |       |       1.pack.gz
+|   |       |       10.pack.gz
+|   |       |       11.pack.gz
+|   |       |       12.pack.gz
+|   |       |       13.pack.gz
+|   |       |       14.pack.gz
+|   |       |       15.pack.gz
+|   |       |       16.pack.gz
+|   |       |       17.pack.gz
+|   |       |       18.pack.gz
+|   |       |       19.pack.gz
+|   |       |       2.pack.gz
+|   |       |       20.pack.gz
+|   |       |       21.pack.gz
+|   |       |       22.pack.gz
+|   |       |       23.pack.gz
+|   |       |       24.pack.gz
+|   |       |       25.pack.gz
+|   |       |       26.pack.gz
+|   |       |       27.pack.gz
+|   |       |       28.pack.gz
+|   |       |       29.pack.gz
+|   |       |       3.pack.gz
+|   |       |       30.pack.gz
+|   |       |       31.pack.gz
+|   |       |       32.pack.gz
+|   |       |       4.pack.gz
+|   |       |       5.pack.gz
+|   |       |       6.pack.gz
+|   |       |       7.pack.gz
+|   |       |       8.pack.gz
+|   |       |       9.pack.gz
+|   |       |       index.pack.gz
+|   |       |       index.pack.gz.old
+|   |       |       
+|   |       +---client-development-fallback
+|   |       |       0.pack.gz
+|   |       |       index.pack.gz
+|   |       |       index.pack.gz.old
+|   |       |       
+|   |       +---client-production
+|   |       |       0.pack
+|   |       |       1.pack
+|   |       |       2.pack
+|   |       |       3.pack
+|   |       |       4.pack
+|   |       |       index.pack
+|   |       |       index.pack.old
+|   |       |       
+|   |       +---edge-server-production
+|   |       |       0.pack
+|   |       |       index.pack
+|   |       |       
+|   |       +---server-development
+|   |       |       0.pack.gz
+|   |       |       1.pack.gz
+|   |       |       10.pack.gz
+|   |       |       11.pack.gz
+|   |       |       12.pack.gz
+|   |       |       13.pack.gz
+|   |       |       14.pack.gz
+|   |       |       15.pack.gz
+|   |       |       16.pack.gz
+|   |       |       17.pack.gz
+|   |       |       18.pack.gz
+|   |       |       19.pack.gz
+|   |       |       2.pack.gz
+|   |       |       20.pack.gz
+|   |       |       21.pack.gz
+|   |       |       22.pack.gz
+|   |       |       23.pack.gz
+|   |       |       24.pack.gz
+|   |       |       25.pack.gz
+|   |       |       26.pack.gz
+|   |       |       27.pack.gz
+|   |       |       28.pack.gz
+|   |       |       29.pack.gz
+|   |       |       3.pack.gz
+|   |       |       30.pack.gz
+|   |       |       31.pack.gz
+|   |       |       32.pack.gz
+|   |       |       33.pack.gz
+|   |       |       34.pack.gz
+|   |       |       35.pack.gz
+|   |       |       36.pack.gz
+|   |       |       37.pack.gz
+|   |       |       4.pack.gz
+|   |       |       5.pack.gz
+|   |       |       6.pack.gz
+|   |       |       7.pack.gz
+|   |       |       8.pack.gz
+|   |       |       9.pack.gz
+|   |       |       index.pack.gz
+|   |       |       index.pack.gz.old
+|   |       |       
+|   |       \---server-production
+|   |               0.pack
+|   |               1.pack
+|   |               2.pack
+|   |               3.pack
+|   |               4.pack
+|   |               5.pack
+|   |               6.pack
+|   |               7.pack
+|   |               index.pack
+|   |               index.pack.old
+|   |               
+|   +---server
+|   |   |   app-paths-manifest.json
+|   |   |   interception-route-rewrite-manifest.js
+|   |   |   middleware-build-manifest.js
+|   |   |   middleware-manifest.json
+|   |   |   middleware-react-loadable-manifest.js
+|   |   |   next-font-manifest.js
+|   |   |   next-font-manifest.json
+|   |   |   pages-manifest.json
+|   |   |   server-reference-manifest.js
+|   |   |   server-reference-manifest.json
+|   |   |   webpack-runtime.js
+|   |   |   
+|   |   +---app
+|   |   |   |   page.js
+|   |   |   |   page_client-reference-manifest.js
+|   |   |   |   
+|   |   |   +---company
+|   |   |   |       page.js
+|   |   |   |       page_client-reference-manifest.js
+|   |   |   |       
+|   |   |   +---inquiry
+|   |   |   |   +---contract
+|   |   |   |   |       page.js
+|   |   |   |   |       page_client-reference-manifest.js
+|   |   |   |   |       
+|   |   |   |   +---general
+|   |   |   |   |       page.js
+|   |   |   |   |       page_client-reference-manifest.js
+|   |   |   |   |       
+|   |   |   |   +---integration
+|   |   |   |   |       page.js
+|   |   |   |   |       page_client-reference-manifest.js
+|   |   |   |   |       
+|   |   |   |   +---liquidity
+|   |   |   |   |       page.js
+|   |   |   |   |       page_client-reference-manifest.js
+|   |   |   |   |       
+|   |   |   |   \---settlement
+|   |   |   |           page.js
+|   |   |   |           page_client-reference-manifest.js
+|   |   |   |           
+|   |   |   +---online-pay
+|   |   |   |       page.js
+|   |   |   |       page_client-reference-manifest.js
+|   |   |   |       
+|   |   |   +---recruit
+|   |   |   |       page.js
+|   |   |   |       page_client-reference-manifest.js
+|   |   |   |       
+|   |   |   +---service
+|   |   |   |       page.js
+|   |   |   |       page_client-reference-manifest.js
+|   |   |   |       
+|   |   |   +---support
+|   |   |   |       page.js
+|   |   |   |       page_client-reference-manifest.js
+|   |   |   |       
+|   |   |   +---tech-support
+|   |   |   |       page.js
+|   |   |   |       page_client-reference-manifest.js
+|   |   |   |       
+|   |   |   +---termsofuse
+|   |   |   |       page.js
+|   |   |   |       page_client-reference-manifest.js
+|   |   |   |       
+|   |   |   +---transparency-report
+|   |   |   |       page.js
+|   |   |   |       page_client-reference-manifest.js
+|   |   |   |       
+|   |   |   \---_not-found
+|   |   |           page.js
+|   |   |           page_client-reference-manifest.js
+|   |   |           
+|   |   \---vendor-chunks
+|   |           @emailjs.js
+|   |           @reduxjs.js
+|   |           @swc.js
+|   |           clsx.js
+|   |           d3-array.js
+|   |           d3-color.js
+|   |           d3-format.js
+|   |           d3-interpolate.js
+|   |           d3-path.js
+|   |           d3-scale.js
+|   |           d3-shape.js
+|   |           d3-time-format.js
+|   |           d3-time.js
+|   |           decimal.js-light.js
+|   |           es-toolkit.js
+|   |           eventemitter3.js
+|   |           framer-motion.js
+|   |           immer.js
+|   |           internmap.js
+|   |           lucide-react.js
+|   |           motion-dom.js
+|   |           motion-utils.js
+|   |           next.js
+|   |           react-is.js
+|   |           react-redux.js
+|   |           recharts.js
+|   |           redux-thunk.js
+|   |           redux.js
+|   |           reselect.js
+|   |           tiny-invariant.js
+|   |           use-sync-external-store.js
+|   |           victory-vendor.js
+|   |           
+|   +---static
+|   |   +---chunks
+|   |   |   |   app-pages-internals.js
+|   |   |   |   main-app.js
+|   |   |   |   polyfills.js
+|   |   |   |   webpack.js
+|   |   |   |   _app-pages-browser_node_modules_lottie-react_build_index_umd_js.js
+|   |   |   |   
+|   |   |   \---app
+|   |   |       |   layout.js
+|   |   |       |   page.js
+|   |   |       |   
+|   |   |       +---company
+|   |   |       |       page.js
+|   |   |       |       
+|   |   |       +---inquiry
+|   |   |       |   +---contract
+|   |   |       |   |       page.js
+|   |   |       |   |       
+|   |   |       |   +---general
+|   |   |       |   |       page.js
+|   |   |       |   |       
+|   |   |       |   +---integration
+|   |   |       |   |       page.js
+|   |   |       |   |       
+|   |   |       |   +---liquidity
+|   |   |       |   |       page.js
+|   |   |       |   |       
+|   |   |       |   \---settlement
+|   |   |       |           page.js
+|   |   |       |           
+|   |   |       +---online-pay
+|   |   |       |       page.js
+|   |   |       |       
+|   |   |       +---recruit
+|   |   |       |       page.js
+|   |   |       |       
+|   |   |       +---service
+|   |   |       |       page.js
+|   |   |       |       
+|   |   |       +---support
+|   |   |       |       page.js
+|   |   |       |       
+|   |   |       +---tech-support
+|   |   |       |       page.js
+|   |   |       |       
+|   |   |       +---termsofuse
+|   |   |       |       page.js
+|   |   |       |       
+|   |   |       +---transparency-report
+|   |   |       |       page.js
+|   |   |       |       
+|   |   |       \---_not-found
+|   |   |               page.js
+|   |   |               
+|   |   +---css
+|   |   |   \---app
+|   |   |           layout.css
+|   |   |           
+|   |   +---development
+|   |   |       _buildManifest.js
+|   |   |       _ssgManifest.js
+|   |   |       
+|   |   \---webpack
+|   |       |   00488c28c5db7f26.webpack.hot-update.json
+|   |       |   02c13241d73103bb.webpack.hot-update.json
+|   |       |   04dc3cd6dff1e276.webpack.hot-update.json
+|   |       |   05cc31507b7c5c00.webpack.hot-update.json
+|   |       |   081b8f18bb3ad6dd.webpack.hot-update.json
+|   |       |   0e60b1c2fae54eba.webpack.hot-update.json
+|   |       |   130802fa9112176a.webpack.hot-update.json
+|   |       |   1a9c0f39c8c4da69.webpack.hot-update.json
+|   |       |   21bcb4cafe57869d.webpack.hot-update.json
+|   |       |   23096cca532285fc.webpack.hot-update.json
+|   |       |   25ccc4a751ad6176.webpack.hot-update.json
+|   |       |   28265a9ef10c9c96.webpack.hot-update.json
+|   |       |   2de9576e77a73c6c.webpack.hot-update.json
+|   |       |   3b3be46bb821f662.webpack.hot-update.json
+|   |       |   3b76a0c7b9c01636.webpack.hot-update.json
+|   |       |   40cbfa57b1f6572a.webpack.hot-update.json
+|   |       |   4787b0891d5d38d8.webpack.hot-update.json
+|   |       |   495bfa0b5aa7fd1e.webpack.hot-update.json
+|   |       |   4ab9d98311e7b323.webpack.hot-update.json
+|   |       |   4ad93a3b57da69d1.webpack.hot-update.json
+|   |       |   50ad8b760f9a3580.webpack.hot-update.json
+|   |       |   5c5b099d0185c4f1.webpack.hot-update.json
+|   |       |   6007adfb9a860e74.webpack.hot-update.json
+|   |       |   6139337aa3598985.webpack.hot-update.json
+|   |       |   62b72269c3a60ba0.webpack.hot-update.json
+|   |       |   633457081244afec._.hot-update.json
+|   |       |   67be426e1ca2aa8a.webpack.hot-update.json
+|   |       |   6c13b223b2a77c15.webpack.hot-update.json
+|   |       |   6cb680988255d7d1.webpack.hot-update.json
+|   |       |   6ef28808c696ba95.webpack.hot-update.json
+|   |       |   70dc4e73bfee7e40.webpack.hot-update.json
+|   |       |   70ed051405e3fddd.webpack.hot-update.json
+|   |       |   72f5ef1daaec13a6.webpack.hot-update.json
+|   |       |   74b1f23b699beb94.webpack.hot-update.json
+|   |       |   752e8364525949d6.webpack.hot-update.json
+|   |       |   79a91dc4c66fd2d9.webpack.hot-update.json
+|   |       |   7a6ba69c44974e3b.webpack.hot-update.json
+|   |       |   7f7cf42d35f4310b.webpack.hot-update.json
+|   |       |   8c5b69f965e39576.webpack.hot-update.json
+|   |       |   97678c5599fa6509.webpack.hot-update.json
+|   |       |   9a6508730f293acd.webpack.hot-update.json
+|   |       |   a0664dc7265c69ce.webpack.hot-update.json
+|   |       |   aa36d1dfbc2513a5.webpack.hot-update.json
+|   |       |   adf8bf24bcb3e99f.webpack.hot-update.json
+|   |       |   af139ffe0e21d48f.webpack.hot-update.json
+|   |       |   b0531c2901f73dd8.webpack.hot-update.json
+|   |       |   b6c15f237b37905f.webpack.hot-update.json
+|   |       |   b8d4eb9eacb5644f.webpack.hot-update.json
+|   |       |   c1884152fb816fe1.webpack.hot-update.json
+|   |       |   c289287359b1ac40.webpack.hot-update.json
+|   |       |   c2e3efa9e26734f0.webpack.hot-update.json
+|   |       |   ce79a913240540d1.webpack.hot-update.json
+|   |       |   d0decc37d3313db9.webpack.hot-update.json
+|   |       |   d5bbca2c195d10d4.webpack.hot-update.json
+|   |       |   dbb2b6617c319882.webpack.hot-update.json
+|   |       |   dfd35924d78705ed.webpack.hot-update.json
+|   |       |   e488f200e03756fe.webpack.hot-update.json
+|   |       |   e5c3b44f562702e9.webpack.hot-update.json
+|   |       |   e9e7390e0af028aa.webpack.hot-update.json
+|   |       |   f93914c6864b3846.webpack.hot-update.json
+|   |       |   fa1d6b3adc483782.webpack.hot-update.json
+|   |       |   fa93d12efe6e42fd.webpack.hot-update.json
+|   |       |   fc10165286652db8.webpack.hot-update.json
+|   |       |   webpack.00488c28c5db7f26.hot-update.js
+|   |       |   webpack.02c13241d73103bb.hot-update.js
+|   |       |   webpack.04dc3cd6dff1e276.hot-update.js
+|   |       |   webpack.05cc31507b7c5c00.hot-update.js
+|   |       |   webpack.081b8f18bb3ad6dd.hot-update.js
+|   |       |   webpack.0e60b1c2fae54eba.hot-update.js
+|   |       |   webpack.130802fa9112176a.hot-update.js
+|   |       |   webpack.1a9c0f39c8c4da69.hot-update.js
+|   |       |   webpack.21bcb4cafe57869d.hot-update.js
+|   |       |   webpack.23096cca532285fc.hot-update.js
+|   |       |   webpack.25ccc4a751ad6176.hot-update.js
+|   |       |   webpack.28265a9ef10c9c96.hot-update.js
+|   |       |   webpack.2de9576e77a73c6c.hot-update.js
+|   |       |   webpack.3b3be46bb821f662.hot-update.js
+|   |       |   webpack.3b76a0c7b9c01636.hot-update.js
+|   |       |   webpack.40cbfa57b1f6572a.hot-update.js
+|   |       |   webpack.4787b0891d5d38d8.hot-update.js
+|   |       |   webpack.495bfa0b5aa7fd1e.hot-update.js
+|   |       |   webpack.4ab9d98311e7b323.hot-update.js
+|   |       |   webpack.4ad93a3b57da69d1.hot-update.js
+|   |       |   webpack.50ad8b760f9a3580.hot-update.js
+|   |       |   webpack.5c5b099d0185c4f1.hot-update.js
+|   |       |   webpack.6007adfb9a860e74.hot-update.js
+|   |       |   webpack.6139337aa3598985.hot-update.js
+|   |       |   webpack.62b72269c3a60ba0.hot-update.js
+|   |       |   webpack.67be426e1ca2aa8a.hot-update.js
+|   |       |   webpack.6c13b223b2a77c15.hot-update.js
+|   |       |   webpack.6cb680988255d7d1.hot-update.js
+|   |       |   webpack.6ef28808c696ba95.hot-update.js
+|   |       |   webpack.70dc4e73bfee7e40.hot-update.js
+|   |       |   webpack.70ed051405e3fddd.hot-update.js
+|   |       |   webpack.72f5ef1daaec13a6.hot-update.js
+|   |       |   webpack.74b1f23b699beb94.hot-update.js
+|   |       |   webpack.752e8364525949d6.hot-update.js
+|   |       |   webpack.79a91dc4c66fd2d9.hot-update.js
+|   |       |   webpack.7a6ba69c44974e3b.hot-update.js
+|   |       |   webpack.7f7cf42d35f4310b.hot-update.js
+|   |       |   webpack.8c5b69f965e39576.hot-update.js
+|   |       |   webpack.97678c5599fa6509.hot-update.js
+|   |       |   webpack.9a6508730f293acd.hot-update.js
+|   |       |   webpack.a0664dc7265c69ce.hot-update.js
+|   |       |   webpack.aa36d1dfbc2513a5.hot-update.js
+|   |       |   webpack.adf8bf24bcb3e99f.hot-update.js
+|   |       |   webpack.af139ffe0e21d48f.hot-update.js
+|   |       |   webpack.b0531c2901f73dd8.hot-update.js
+|   |       |   webpack.b6c15f237b37905f.hot-update.js
+|   |       |   webpack.b8d4eb9eacb5644f.hot-update.js
+|   |       |   webpack.c1884152fb816fe1.hot-update.js
+|   |       |   webpack.c289287359b1ac40.hot-update.js
+|   |       |   webpack.c2e3efa9e26734f0.hot-update.js
+|   |       |   webpack.ce79a913240540d1.hot-update.js
+|   |       |   webpack.d0decc37d3313db9.hot-update.js
+|   |       |   webpack.d5bbca2c195d10d4.hot-update.js
+|   |       |   webpack.dbb2b6617c319882.hot-update.js
+|   |       |   webpack.dfd35924d78705ed.hot-update.js
+|   |       |   webpack.e488f200e03756fe.hot-update.js
+|   |       |   webpack.e5c3b44f562702e9.hot-update.js
+|   |       |   webpack.e9e7390e0af028aa.hot-update.js
+|   |       |   webpack.f93914c6864b3846.hot-update.js
+|   |       |   webpack.fa1d6b3adc483782.hot-update.js
+|   |       |   webpack.fa93d12efe6e42fd.hot-update.js
+|   |       |   webpack.fc10165286652db8.hot-update.js
+|   |       |   
+|   |       \---app
+|   |           |   layout.00488c28c5db7f26.hot-update.js
+|   |           |   layout.02c13241d73103bb.hot-update.js
+|   |           |   layout.04dc3cd6dff1e276.hot-update.js
+|   |           |   layout.05cc31507b7c5c00.hot-update.js
+|   |           |   layout.081b8f18bb3ad6dd.hot-update.js
+|   |           |   layout.0e60b1c2fae54eba.hot-update.js
+|   |           |   layout.130802fa9112176a.hot-update.js
+|   |           |   layout.1a9c0f39c8c4da69.hot-update.js
+|   |           |   layout.23096cca532285fc.hot-update.js
+|   |           |   layout.25ccc4a751ad6176.hot-update.js
+|   |           |   layout.2de9576e77a73c6c.hot-update.js
+|   |           |   layout.40cbfa57b1f6572a.hot-update.js
+|   |           |   layout.4787b0891d5d38d8.hot-update.js
+|   |           |   layout.495bfa0b5aa7fd1e.hot-update.js
+|   |           |   layout.50ad8b760f9a3580.hot-update.js
+|   |           |   layout.5c5b099d0185c4f1.hot-update.js
+|   |           |   layout.6007adfb9a860e74.hot-update.js
+|   |           |   layout.6139337aa3598985.hot-update.js
+|   |           |   layout.62b72269c3a60ba0.hot-update.js
+|   |           |   layout.67be426e1ca2aa8a.hot-update.js
+|   |           |   layout.6c13b223b2a77c15.hot-update.js
+|   |           |   layout.6cb680988255d7d1.hot-update.js
+|   |           |   layout.70dc4e73bfee7e40.hot-update.js
+|   |           |   layout.70ed051405e3fddd.hot-update.js
+|   |           |   layout.74b1f23b699beb94.hot-update.js
+|   |           |   layout.79a91dc4c66fd2d9.hot-update.js
+|   |           |   layout.97678c5599fa6509.hot-update.js
+|   |           |   layout.9a6508730f293acd.hot-update.js
+|   |           |   layout.af139ffe0e21d48f.hot-update.js
+|   |           |   layout.b8d4eb9eacb5644f.hot-update.js
+|   |           |   layout.c289287359b1ac40.hot-update.js
+|   |           |   layout.c2e3efa9e26734f0.hot-update.js
+|   |           |   layout.ce79a913240540d1.hot-update.js
+|   |           |   layout.d5bbca2c195d10d4.hot-update.js
+|   |           |   layout.dbb2b6617c319882.hot-update.js
+|   |           |   layout.dfd35924d78705ed.hot-update.js
+|   |           |   layout.e488f200e03756fe.hot-update.js
+|   |           |   layout.e5c3b44f562702e9.hot-update.js
+|   |           |   layout.fa1d6b3adc483782.hot-update.js
+|   |           |   layout.fa93d12efe6e42fd.hot-update.js
+|   |           |   layout.fc10165286652db8.hot-update.js
+|   |           |   page.05cc31507b7c5c00.hot-update.js
+|   |           |   page.130802fa9112176a.hot-update.js
+|   |           |   page.1a9c0f39c8c4da69.hot-update.js
+|   |           |   page.25ccc4a751ad6176.hot-update.js
+|   |           |   page.2de9576e77a73c6c.hot-update.js
+|   |           |   page.5c5b099d0185c4f1.hot-update.js
+|   |           |   page.6c13b223b2a77c15.hot-update.js
+|   |           |   page.6cb680988255d7d1.hot-update.js
+|   |           |   page.70ed051405e3fddd.hot-update.js
+|   |           |   page.ce79a913240540d1.hot-update.js
+|   |           |   page.fa1d6b3adc483782.hot-update.js
+|   |           |   
+|   |           +---inquiry
+|   |           |   +---contract
+|   |           |   |       page.00488c28c5db7f26.hot-update.js
+|   |           |   |       page.081b8f18bb3ad6dd.hot-update.js
+|   |           |   |       page.e5c3b44f562702e9.hot-update.js
+|   |           |   |       
+|   |           |   +---general
+|   |           |   |       page.af139ffe0e21d48f.hot-update.js
+|   |           |   |       
+|   |           |   +---integration
+|   |           |   |       page.dbb2b6617c319882.hot-update.js
+|   |           |   |       
+|   |           |   +---liquidity
+|   |           |   |       page.04dc3cd6dff1e276.hot-update.js
+|   |           |   |       page.40cbfa57b1f6572a.hot-update.js
+|   |           |   |       page.9a6508730f293acd.hot-update.js
+|   |           |   |       
+|   |           |   \---settlement
+|   |           |           page.0e60b1c2fae54eba.hot-update.js
+|   |           |           page.495bfa0b5aa7fd1e.hot-update.js
+|   |           |           page.74b1f23b699beb94.hot-update.js
+|   |           |           page.b8d4eb9eacb5644f.hot-update.js
+|   |           |           page.dfd35924d78705ed.hot-update.js
+|   |           |           
+|   |           +---tech-support
+|   |           |       page.62b72269c3a60ba0.hot-update.js
+|   |           |       page.d5bbca2c195d10d4.hot-update.js
+|   |           |       page.e488f200e03756fe.hot-update.js
+|   |           |       page.fa93d12efe6e42fd.hot-update.js
+|   |           |       
+|   |           \---transparency-report
+|   |                   page.79a91dc4c66fd2d9.hot-update.js
+|   |                   
+|   \---types
+|       |   cache-life.d.ts
+|       |   package.json
+|       |   
+|       \---app
+|           |   layout.ts
+|           |   page.ts
+|           |   
+|           +---company
+|           |       page.ts
+|           |       
+|           +---inquiry
+|           |   +---contract
+|           |   |       page.ts
+|           |   |       
+|           |   +---general
+|           |   |       page.ts
+|           |   |       
+|           |   +---integration
+|           |   |       page.ts
+|           |   |       
+|           |   +---liquidity
+|           |   |       page.ts
+|           |   |       
+|           |   \---settlement
+|           |           page.ts
+|           |           
+|           +---online-pay
+|           |       page.ts
+|           |       
+|           +---recruit
+|           |       page.ts
+|           |       
+|           +---service
+|           |       page.ts
+|           |       
+|           +---support
+|           |       page.ts
+|           |       
+|           +---tech-support
+|           |       page.ts
+|           |       
+|           +---termsofuse
+|           |       page.ts
+|           |       
+|           \---transparency-report
+|                   page.ts
+|                   
++---app
+|   |   layout.tsx
+|   |   page.tsx
+|   |   
+|   +---b2b
+|   |       page.tsx
+|   |       
+|   +---careers
+|   |       metadata.ts
+|   |       page.tsx
+|   |       
+|   +---company
+|   |       metadata.ts
+|   |       page.tsx
+|   |       
+|   +---device
+|   |       page.tsx
+|   |       
+|   +---distribution
+|   |       page.tsx
+|   |       
+|   +---entertainment
+|   |       page.tsx
+|   |       
+|   +---fb
+|   |       page.tsx
+|   |       
+|   +---healthcare
+|   |       page.tsx
+|   |       
+|   +---hospitality
+|   |       page.tsx
+|   |       
+|   +---inquiry
+|   |   +---contract
+|   |   |       ContractInquiryClient.tsx
+|   |   |       page.tsx
+|   |   |       
+|   |   +---general
+|   |   |       GeneralInquiryClient.tsx
+|   |   |       page.tsx
+|   |   |       
+|   |   +---integration
+|   |   |       IntegrationInquiryClient.tsx
+|   |   |       page.tsx
+|   |   |       
+|   |   +---liquidity
+|   |   |       LiquidityInquiryClient.tsx
+|   |   |       page.tsx
+|   |   |       
+|   |   \---settlement
+|   |           page.tsx
+|   |           SettlementInquiryClient.tsx
+|   |           
+|   +---moto
+|   |       page.tsx
+|   |       
+|   +---online-pay
+|   |       page.tsx
+|   |       
+|   +---payment-faq
+|   |       clientpage.tsx
+|   |       page.tsx
+|   |       
+|   +---personal
+|   |       page.tsx
+|   |       
+|   +---privacy
+|   |       page.tsx
+|   |       
+|   +---qr-pay
+|   |       page.tsx
+|   |       
+|   +---recruit
+|   |       page.tsx
+|   |       
+|   +---security
+|   |       page.tsx
+|   |       
+|   +---security-policy
+|   |       page.tsx
+|   |       
+|   +---service
+|   |       page.tsx
+|   |       
+|   +---support
+|   |       page.tsx
+|   |       
+|   +---tech-support
+|   |       page.tsx
+|   |       
+|   +---termsofuse
+|   |       page.tsx
+|   |       
+|   +---transparency-report
+|   |       page.tsx
+|   |       
+|   \---vision
+|           page.tsx
+|           
++---components
+|       API.tsx
+|       AuroraBackground.tsx
+|       Chatbot.tsx
+|       Compliance.tsx
+|       Contact.tsx
+|       ContactForm.tsx
+|       Features1.tsx
+|       Features2.tsx
+|       Footer.tsx
+|       Hero.tsx
+|       Insights.tsx
+|       Liquidity.tsx
+|       LottieLoader.tsx
+|       LottieOptimized.tsx
+|       Navbar.tsx
+|       Partners.tsx
+|       ScrollToTop.tsx
+|       Security.tsx
+|       SecurityPolicyPDFGenerator.tsx
+|       Settlement.tsx
+|       SettlementComparison.tsx
+|       
++---public
+|   |   file.svg
+|   |   logo.png
+|   |   README.txt
+|   |   계열사로고.zip
+|   |   
+|   +---images
+|   |   \---partners
+|   |           bnk.png
+|   |           hana.png
+|   |           ibk.png
+|   |           inicis.png
+|   |           kakaobank.png
+|   |           KB.jpg
+|   |           nhbank.gif
+|   |           tossbank.png
+|   |           woori.png
+|   |           
+|   +---lottie
+|   |       dashboard_developer.json
+|   |       device.json
+|   |       industry_b2b.json
+|   |       industry_commerce.json
+|   |       industry_entertainment.json
+|   |       industry_fb.json
+|   |       industry_hospital.json
+|   |       industry_personal.json
+|   |       industry_service.json
+|   |       industry_startup.json
+|   |       industry_travel.json
+|   |       moto.json
+|   |       online-pay.json
+|   |       payment_success.json
+|   |       pos_machine.json
+|   |       qr_pay.json
+|   |       
+|   \---계열사로고png
+|       |   .DS_Store
+|       |   ak몰.png
+|       |   kb캐피탈.png
+|       |   kcp.png
+|       |   kg모빌리언스.png
+|       |   kg이니시스.png
+|       |   kt.png
+|       |   ktskylife.png
+|       |   ns홈쇼핑.png
+|       |   N페이.png
+|       |   경기지방공사.png
+|       |   관세청.png
+|       |   교보생명.png
+|       |   교원구몬.png
+|       |   국군복지단.png
+|       |   국세청.png
+|       |   국토교통부.png
+|       |   나이스평가.png
+|       |   넥슨.png
+|       |   농협생명.png
+|       |   농협생명보험.png
+|       |   농협손해보험.png
+|       |   농협캐피탈.png
+|       |   다날.png
+|       |   대교.png
+|       |   대법원.png
+|       |   대한적십자.png
+|       |   라이나생명.png
+|       |   메리츠캐피탈.png
+|       |   모두투어.png
+|       |   반디앤루니스.png
+|       |   배달의-민족.png
+|       |   신한생명.png
+|       |   씨제이오쇼핑.png
+|       |   아주카피탈.png
+|       |   아프리카.png
+|       |   에스케이브로드밴드.png
+|       |   에스케이텔레콤.png
+|       |   엘지유플러스.png
+|       |   여기어때.png
+|       |   웅진싱크빅.png
+|       |   제로페이.png
+|       |   조달청.png
+|       |   조선읿.png
+|       |   중소기업벤처진흥공단.png
+|       |   지에스샵.png
+|       |   카카오페이.ai
+|       |   카카오페이.png
+|       |   컬쳐랜드.png
+|       |   코레일.png
+|       |   코웨이.png
+|       |   특허청.png
+|       |   페이코.png
+|       |   하나투어.png
+|       |   현대카드.png
+|       |   현대해상화재보험.png
+|       |   현대홈쇼핑.png
+|       |   
+|       \---한국전력
+|               .png
+|               
+\---styles
+        globals.css
+        

@@ -1,36 +1,306 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, {
+    useEffect,
+    useState,
+    ChangeEvent,
+    FormEvent,
+} from "react";
 import { motion } from "framer-motion";
 import {
     Cpu,
-    Code2,
     Network,
-    Zap,
     ShieldCheck,
     BookOpenCheck,
-    Wrench,
     Mail,
     Lock,
     Globe2,
     CheckCircle2,
     ChevronRight,
+    Loader2,
 } from "lucide-react";
-import ContactForm from "../../../components/ContactForm";
+import emailjs from "@emailjs/browser";
 
+/* ────────────────────────────────────────────────────────
+   ✨ 공통 애니메이션
+──────────────────────────────────────────────────────── */
 const fadeUp = (i = 0) => ({
     initial: { opacity: 1, y: 28 },
     whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0 },
+    viewport: { once: true },
     transition: { duration: 0.6, delay: i * 0.08 },
 });
+
+/* ────────────────────────────────────────────────────────
+   ✨ 기술연동 전용 폼 (외부 의존 없음)
+──────────────────────────────────────────────────────── */
+
+interface TechFormState {
+    company: string;
+    name: string;
+    email: string;
+    phone: string;
+    techStack: string;
+    integrationType: string;
+    message: string;
+}
+
+function IntegrationFormInline(): JSX.Element {
+    const [form, setForm] = useState<TechFormState>({
+        company: "",
+        name: "",
+        email: "",
+        phone: "",
+        techStack: "",
+        integrationType: "API 연동",
+        message: "",
+    });
+
+    const [sending, setSending] = useState(false);
+    const [sent, setSent] = useState(false);
+
+    const RECAPTCHA_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
+
+    const handleChange = (
+        e: ChangeEvent<
+            HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+        >
+    ) => {
+        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    async function getRecaptchaToken(): Promise<string> {
+        if (typeof window === "undefined") return "";
+        const w = window as any;
+        if (!w.grecaptcha || !RECAPTCHA_KEY) return "";
+        return await w.grecaptcha.execute(RECAPTCHA_KEY, {
+            action: "tech_inquiry",
+        });
+    }
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        if (sending) return;
+
+        setSending(true);
+
+        try {
+            const token = await getRecaptchaToken();
+
+            // 1) EmailJS
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+                { ...form, token },
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ""
+            );
+
+            // 2) Notion CRM API 저장
+            await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({
+                    ...form,
+                    type: "기술 연동 문의",
+                }),
+            });
+
+            setSent(true);
+        } catch (err) {
+            console.error(err);
+            alert("전송 실패. 잠시 후 다시 시도해주세요.");
+        } finally {
+            setSending(false);
+        }
+    };
+
+    return (
+        <section className="relative">
+            {/* reCAPTCHA script */}
+            {RECAPTCHA_KEY && (
+                <script
+                    src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_KEY}`}
+                    async
+                    defer
+                ></script>
+            )}
+
+            {sent ? (
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-2xl bg-[#ecfdf5] border border-[#a7f3d0] p-10 text-center"
+                >
+                    <CheckCircle2 className="w-12 h-12 text-[#10b981] mx-auto mb-3" />
+                    <h3 className="text-2xl font-bold text-[#0b2723]">
+                        기술 문의 접수 완료
+                    </h3>
+                    <p className="mt-2 text-[#1e3a34]/80 leading-relaxed">
+                        담당 개발팀이 확인 후
+                        <br /> 남겨주신 연락처로 기술 문서와 함께 회신드리겠습니다.
+                    </p>
+                </motion.div>
+            ) : (
+                <motion.form
+                    onSubmit={handleSubmit}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-2xl bg-white border border-[#a7f3d0]/60 p-8 md:p-10 shadow-sm"
+                >
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-2">
+                        기술 연동 / API 문의
+                    </h2>
+                    <p className="text-sm text-[#1e3a34]/70 mb-6">
+                        API, Webhook, 결제 모듈, 테스트 환경 등 기술 문의를 남겨주세요.
+                    </p>
+
+                    {/* 상단 2열 */}
+                    <div className="grid md:grid-cols-2 gap-5">
+                        <div>
+                            <label className="block text-sm font-semibold mb-1">
+                                회사명 / 서비스명
+                            </label>
+                            <input
+                                name="company"
+                                required
+                                placeholder="예: OO 서비스"
+                                value={form.company}
+                                onChange={handleChange}
+                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 focus:ring-2 focus:ring-[#34d399] outline-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-semibold mb-1">
+                                담당자 이름
+                            </label>
+                            <input
+                                name="name"
+                                required
+                                placeholder="홍길동"
+                                value={form.name}
+                                onChange={handleChange}
+                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 focus:ring-2 focus:ring-[#34d399] outline-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-semibold mb-1">
+                                이메일
+                            </label>
+                            <input
+                                name="email"
+                                required
+                                type="email"
+                                placeholder="dev@company.com"
+                                value={form.email}
+                                onChange={handleChange}
+                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 focus:ring-2 focus:ring-[#34d399] outline-none"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-semibold mb-1">
+                                연락처
+                            </label>
+                            <input
+                                name="phone"
+                                required
+                                placeholder="010-0000-0000"
+                                value={form.phone}
+                                onChange={handleChange}
+                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 focus:ring-2 focus:ring-[#34d399] outline-none"
+                            />
+                        </div>
+                    </div>
+
+                    {/* 기술스택 */}
+                    <div className="mt-5">
+                        <label className="block text-sm font-semibold mb-1">
+                            기술 스택 (선택)
+                        </label>
+                        <input
+                            name="techStack"
+                            placeholder="예: React, Node.js, Spring, Kotlin 등"
+                            value={form.techStack}
+                            onChange={handleChange}
+                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 focus:ring-2 focus:ring-[#34d399] outline-none"
+                        />
+                    </div>
+
+                    {/* 연동 방식 */}
+                    <div className="mt-5">
+                        <label className="block text-sm font-semibold mb-1">
+                            연동 방식
+                        </label>
+                        <select
+                            name="integrationType"
+                            value={form.integrationType}
+                            onChange={handleChange}
+                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 focus:ring-2 focus:ring-[#34d399] outline-none"
+                        >
+                            <option>API 연동</option>
+                            <option>Webhook / 이벤트 기반</option>
+                            <option>결제 모듈/SDK 연동</option>
+                            <option>테스트 환경 관련 문의</option>
+                            <option>보안/인증 관련 문의</option>
+                        </select>
+                    </div>
+
+                    {/* 상세 내용 */}
+                    <div className="mt-5">
+                        <label className="block text-sm font-semibold mb-1">
+                            상세 문의 내용
+                        </label>
+                        <textarea
+                            name="message"
+                            rows={5}
+                            required
+                            placeholder={
+                                "필요한 기능, 연동 방식, 테스트 요구사항, 서버 환경 등을 자세히 입력해 주세요."
+                            }
+                            value={form.message}
+                            onChange={handleChange}
+                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 resize-none focus:ring-2 focus:ring-[#34d399] outline-none"
+                        />
+                    </div>
+
+                    {/* 버튼 */}
+                    <button
+                        type="submit"
+                        disabled={sending}
+                        className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold shadow-[0_10px_30px_rgba(16,185,129,0.18)] transition disabled:opacity-60"
+                    >
+                        {sending ? (
+                            <>
+                                <Loader2 className="w-5 h-5 animate-spin" />
+                                전송 중…
+                            </>
+                        ) : (
+                            "문의 보내기"
+                        )}
+                    </button>
+
+                    <p className="mt-3 text-[12px] text-[#1e3a34]/60">
+                        기술 검토 및 회신 목적 외 다른 용도로는 사용되지 않습니다.
+                    </p>
+                </motion.form>
+            )}
+        </section>
+    );
+}
+
+/* ────────────────────────────────────────────────────────
+   ✨ 메인 페이지
+──────────────────────────────────────────────────────── */
 
 export default function IntegrationInquiryClient(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] ">
-            {/* 🌿 Hero */}
+        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723]">
+
+            {/* ========================== HERO ========================== */}
             <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] border-b border-[#a7f3d0]/40">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
@@ -44,33 +314,32 @@ export default function IntegrationInquiryClient(): JSX.Element {
                     </motion.h1>
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="mt-5 text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto"
+                        className="mt-6 text-lg md:text-xl text-[#145c54]/80 max-w-3xl mx-auto leading-relaxed"
                     >
-                        PG 연동, 결제 모듈, SDK, Webhook — 모든 기술 지원 문의를 한 곳에서.
-                        <br className="hidden md:block" />
-                        담당 개발자가 직접 확인 후 기술 문서와 함께 답변드립니다.
+                        PG 연동, 결제 모듈, Webhook, SDK, 테스트 환경 등
+                        <br />모든 기술 문의를 담당 개발팀이 직접 답변합니다.
                     </motion.p>
                 </div>
             </section>
 
-            {/* 🌿 기능 안내 */}
+            {/* ========================== FEATURE CARDS ========================== */}
             <section className="py-16 px-6 md:px-16">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                     {[
                         {
                             icon: <Cpu size={24} />,
                             title: "API 연동 지원",
-                            desc: "RESTful / GraphQL / Webhook 등 다양한 인터페이스 지원.",
+                            desc: "RESTful / Webhook 기반 결제·정산 연동.",
                         },
                         {
                             icon: <Network size={24} />,
                             title: "테스트 환경 제공",
-                            desc: "Sandbox 키, 가맹 인증, 실거래 모드 전환까지 빠르게 연결.",
+                            desc: "Sandbox 키 발급, 모의 결제/정산 테스트 제공.",
                         },
                         {
                             icon: <ShieldCheck size={24} />,
-                            title: "보안 가이드 문서",
-                            desc: "HMAC, JWT, AES256 기반 암호화 예시 제공.",
+                            title: "보안 가이드",
+                            desc: "HMAC, JWT, AES256 암호화 가이드 제공.",
                         },
                     ].map((item, i) => (
                         <motion.div
@@ -92,7 +361,7 @@ export default function IntegrationInquiryClient(): JSX.Element {
                 </div>
             </section>
 
-            {/* 🌿 FAQ */}
+            {/* ========================== FAQ ========================== */}
             <section className="py-10 px-6 md:px-16">
                 <div className="max-w-6xl mx-auto">
                     <motion.h2
@@ -104,35 +373,36 @@ export default function IntegrationInquiryClient(): JSX.Element {
                     <div className="grid md:grid-cols-2 gap-6">
                         {[
                             {
-                                q: "API 키 발급은 어떻게 하나요?",
-                                a: "가맹 승인 후 관리자 페이지에서 `개발자 메뉴 → API 인증키` 항목에서 즉시 발급받을 수 있습니다.",
+                                q: "API 키는 어떻게 발급되나요?",
+                                a: "가맹 심사 승인 후 관리자 페이지에서 즉시 발급됩니다.",
                             },
                             {
-                                q: "Webhook 테스트 환경이 제공되나요?",
-                                a: "네. `/sandbox/webhook` 엔드포인트로 이벤트를 모의 전송해 확인 가능합니다.",
+                                q: "Webhook 테스트가 가능한가요?",
+                                a: "네, Sandbox Webhook 엔드포인트를 제공합니다.",
                             },
                             {
-                                q: "SDK 언어 지원 범위는?",
-                                a: "현재 JavaScript, Python, Node.js, Kotlin을 공식 지원하며, 추가 언어는 순차적으로 확장 중입니다.",
+                                q: "지원하는 SDK 언어는 무엇인가요?",
+                                a: "JavaScript / Node.js / Python / Kotlin 지원.",
                             },
                             {
-                                q: "SSL/TLS 인증서가 필수인가요?",
-                                a: "네. 모든 연동 요청은 TLS 1.2 이상을 요구합니다. 자체 서명 인증서는 허용되지 않습니다.",
+                                q: "보안 요구사항이 있나요?",
+                                a: "TLS 1.2 이상, HMAC 검증, IP 화이트리스트 등 적용됩니다.",
                             },
                         ].map((faq, i) => (
                             <motion.details
                                 key={i}
                                 {...fadeUp(i * 0.1)}
-                                className="group rounded-2xl bg-white border border-[#a7f3d0]/60 p-5 open:shadow-[0_10px_30px_rgba(16,185,129,0.10)] transition"
+                                className="group rounded-2xl bg-white border border-[#a7f3d0]/60 p-5 open:shadow-[0_8px_26px_rgba(16,185,129,0.10)] transition"
                             >
-                                <summary className="flex items-center justify-between cursor-pointer select-none text-[#0b2723] font-semibold">
+                                <summary className="flex items-center justify-between cursor-pointer font-semibold text-[#0b2723]">
                                     <span className="flex items-center gap-2">
-                                        <CheckCircle2 className="text-[#10b981]" size={18} />
+                                        <CheckCircle2 size={18} className="text-[#10b981]" />
                                         {faq.q}
                                     </span>
-                                    <span className="text-[#10b981] group-open:rotate-90 transition">
-                                        <ChevronRight size={18} />
-                                    </span>
+                                    <ChevronRight
+                                        size={18}
+                                        className="text-[#10b981] group-open:rotate-90 transition"
+                                    />
                                 </summary>
                                 <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">{faq.a}</p>
                             </motion.details>
@@ -141,24 +411,25 @@ export default function IntegrationInquiryClient(): JSX.Element {
                 </div>
             </section>
 
-            {/* 🌿 CRM 폼 */}
+            {/* ========================== 기술 연동 전용 폼 ========================== */}
             <section className="py-12 px-6 md:px-16">
                 <div className="max-w-4xl mx-auto">
-                    <ContactForm defaultType="기술 연동 문의" />
+                    <IntegrationFormInline />
                 </div>
             </section>
 
-            {/* 🌿 연락 안내 */}
+            {/* ========================== CONTACT ========================== */}
             <section className="py-14 px-6 md:px-16 bg-[#ecfdf5] border-t border-[#a7f3d0]/40">
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                     {[
                         {
                             icon: <Mail size={18} />,
-                            title: "이메일",
+                            title: "기술 문의",
                             desc: (
                                 <>
-                                    기술 문의:{" "}
-                                    <span className="font-semibold">tech@sfinpay.co.kr</span>
+                                    <span className="font-semibold text-[#0b2723]">
+                                        tech@sfinpay.co.kr
+                                    </span>
                                 </>
                             ),
                         },
@@ -166,26 +437,24 @@ export default function IntegrationInquiryClient(): JSX.Element {
                             icon: <BookOpenCheck size={18} />,
                             title: "개발 문서",
                             desc: (
-                                <>
-                                    <a
-                                        href="https://docs.sfinpay.co.kr"
-                                        target="_blank"
-                                        className="text-[#10b981] font-medium underline"
-                                    >
-                                        개발자 포털에서 API 문서 보기
-                                    </a>
-                                </>
+                                <a
+                                    href="https://docs.sfinpay.co.kr"
+                                    target="_blank"
+                                    className="text-[#10b981] underline font-medium"
+                                >
+                                    개발자 포털 바로가기
+                                </a>
                             ),
                         },
                         {
                             icon: <Globe2 size={18} />,
                             title: "서버 상태",
-                            desc: "status.sfinpay.co.kr — 실시간 API 운영 상태 확인 가능",
+                            desc: "status.sfinpay.co.kr — 실시간 API 상태 확인",
                         },
                     ].map((c, i) => (
                         <motion.div
                             key={i}
-                            {...fadeUp(i * 0.1)}
+                            {...fadeUp(i)}
                             className="p-6 rounded-2xl bg-white border border-[#a7f3d0]/60"
                         >
                             <div className="flex items-center gap-2 text-[#10b981]">
@@ -198,13 +467,12 @@ export default function IntegrationInquiryClient(): JSX.Element {
                 </div>
             </section>
 
-            {/* 🌿 개인정보 안내 */}
+            {/* ========================== 개인정보 안내 ========================== */}
             <section className="py-8 px-6 md:px-16 bg-[#f0fdfa]">
                 <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-[#1e3a34]/70">
                     <p className="flex items-center gap-2">
                         <Lock size={14} className="text-[#10b981]" />
-                        문의 시 제공된 정보는 기술 검토 및 답변 목적에만 사용되며, 법령에 따라
-                        안전하게 관리됩니다.
+                        모든 정보는 기술 연동 검토 및 안내 목적에만 사용되며, 관련 법령에 따라 보호됩니다.
                     </p>
                 </div>
             </section>

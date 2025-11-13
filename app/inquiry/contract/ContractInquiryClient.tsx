@@ -1,6 +1,11 @@
 ﻿"use client";
 
-import React, { useEffect } from "react";
+import React, {
+    useEffect,
+    useState,
+    ChangeEvent,
+    FormEvent,
+} from "react";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import {
@@ -18,9 +23,13 @@ import {
     Wallet,
     Lock,
     Globe2,
+    Loader2,
 } from "lucide-react";
-import ContactForm from "../../../components/ContactForm";
+import emailjs from "@emailjs/browser";
 
+/* ────────────────────────────────────────────────
+   공통 애니메이션
+────────────────────────────────────────────────── */
 const fadeUp = (i = 0) => ({
     initial: { opacity: 1, y: 28 },
     whileInView: { opacity: 1, y: 0 },
@@ -28,12 +37,267 @@ const fadeUp = (i = 0) => ({
     transition: { duration: 0.6, delay: i * 0.08 },
 });
 
+/* ────────────────────────────────────────────────
+   이 페이지 전용 가맹 계약/수수료 문의 폼
+   - EmailJS + reCAPTCHA + /api/contact 연동
+   - 디자인은 이 페이지 톤에 맞춰 통일
+────────────────────────────────────────────────── */
+
+interface ContractFormState {
+    company: string;
+    name: string;
+    phone: string;
+    email: string;
+    type: string;
+    message: string;
+}
+
+function ContractFormInline(): JSX.Element {
+    const [form, setForm] = useState<ContractFormState>({
+        company: "",
+        name: "",
+        phone: "",
+        email: "",
+        type: "가맹점 계약 / 수수료 협의",
+        message: "",
+    });
+    const [sending, setSending] = useState(false);
+    const [sent, setSent] = useState(false);
+
+    const RECAPTCHA_KEY = process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY ?? "";
+
+    const handleChange = (
+        e: ChangeEvent<
+            HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement
+        >
+    ) => {
+        setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    };
+
+    async function getRecaptchaToken(): Promise<string> {
+        if (typeof window === "undefined") return "";
+        const w = window as any;
+        if (!w.grecaptcha || !RECAPTCHA_KEY) return "";
+        return await w.grecaptcha.execute(RECAPTCHA_KEY, {
+            action: "contract_inquiry",
+        });
+    }
+
+    const handleSubmit = async (e: FormEvent) => {
+        e.preventDefault();
+        if (sending) return;
+        setSending(true);
+
+        try {
+            const token = await getRecaptchaToken();
+
+            // 1️⃣ EmailJS 발송
+            await emailjs.send(
+                process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID ?? "",
+                process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID ?? "",
+                {
+                    ...form,
+                    token,
+                },
+                process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY ?? ""
+            );
+
+            // 2️⃣ 내부 CRM(/api/contact) 저장
+            await fetch("/api/contact", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(form),
+            });
+
+            setSent(true);
+        } catch (err) {
+            console.error(err);
+            alert("문의 전송에 실패했습니다. 잠시 후 다시 시도해주세요.");
+        } finally {
+            setSending(false);
+        }
+    };
+
+    return (
+        <section className="relative">
+            {/* reCAPTCHA v3 스크립트 */}
+            {RECAPTCHA_KEY && (
+                <script
+                    src={`https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_KEY}`}
+                    async
+                    defer
+                ></script>
+            )}
+
+            {sent ? (
+                <motion.div
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-2xl bg-[#ecfdf5] border border-[#a7f3d0]/60 p-10 text-center"
+                >
+                    <CheckCircle2 className="w-12 h-12 text-[#10b981] mx-auto mb-3" />
+                    <h3 className="text-2xl font-bold text-[#0b2723]">
+                        문의가 접수되었습니다
+                    </h3>
+                    <p className="mt-2 text-[#1e3a34]/80">
+                        담당 매니저가 내용을 확인한 뒤,
+                        <br className="hidden md:block" />
+                        남겨주신 연락처로 빠르게 연락드리겠습니다.
+                    </p>
+                </motion.div>
+            ) : (
+                <motion.form
+                    onSubmit={handleSubmit}
+                    initial={{ opacity: 0, y: 16 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="rounded-2xl bg-white border border-[#a7f3d0]/60 p-8 md:p-10 shadow-sm"
+                >
+                    <h2 className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-2">
+                        가맹 계약 / 수수료 협의 문의서
+                    </h2>
+                    <p className="text-sm text-[#1e3a34]/70 mb-6">
+                        아래 정보를 입력해주시면, 업종·매출 규모·리스크를 종합하여
+                        <br className="hidden md:block" />
+                        최적의 수수료 및 정산 조건을 제안드립니다.
+                    </p>
+
+                    {/* 상단 2열 */}
+                    <div className="grid md:grid-cols-2 gap-5">
+                        <div>
+                            <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                                상호명 / 회사명
+                            </label>
+                            <input
+                                name="company"
+                                value={form.company}
+                                onChange={handleChange}
+                                required
+                                placeholder="예: 주식회사 에스핀, SFIN 학원"
+                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                                담당자 이름
+                            </label>
+                            <input
+                                name="name"
+                                value={form.name}
+                                onChange={handleChange}
+                                required
+                                placeholder="홍길동"
+                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                                연락처
+                            </label>
+                            <input
+                                name="phone"
+                                value={form.phone}
+                                onChange={handleChange}
+                                required
+                                placeholder="010-0000-0000"
+                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                            />
+                        </div>
+
+                        <div>
+                            <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                                이메일
+                            </label>
+                            <input
+                                name="email"
+                                type="email"
+                                value={form.email}
+                                onChange={handleChange}
+                                required
+                                placeholder="you@company.co.kr"
+                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                            />
+                        </div>
+                    </div>
+
+                    {/* 문의 유형 */}
+                    <div className="mt-5">
+                        <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                            문의 유형
+                        </label>
+                        <select
+                            name="type"
+                            value={form.type}
+                            onChange={handleChange}
+                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                        >
+                            <option>가맹점 계약 / 수수료 협의</option>
+                            <option>D+0 / D+1 정산 조건 문의</option>
+                            <option>온라인 · 오프라인 동시 도입</option>
+                            <option>특수 업종 (프랜차이즈 / 병원 / 교육 등)</option>
+                            <option>기타</option>
+                        </select>
+                    </div>
+
+                    {/* 메시지 */}
+                    <div className="mt-5">
+                        <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                            상세 문의 내용
+                        </label>
+                        <textarea
+                            name="message"
+                            rows={5}
+                            value={form.message}
+                            onChange={handleChange}
+                            required
+                            placeholder={
+                                "업종, 월 매출(대략), 주요 결제수단, 희망 수수료/정산 조건 등\n자유롭게 작성해 주세요."
+                            }
+                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition resize-none"
+                        />
+                        <p className="mt-2 text-xs text-[#1e3a34]/60">
+                            예) 월 매출 1억 내외, 온라인 70% / 오프라인 30%, D+0 정산 위주,
+                            기존 PG사 대비 요율 비교 등
+                        </p>
+                    </div>
+
+                    {/* 제출 버튼 */}
+                    <button
+                        type="submit"
+                        disabled={sending}
+                        className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold shadow-[0_10px_30px_rgba(16,185,129,0.18)] transition disabled:opacity-60"
+                    >
+                        {sending ? (
+                            <>
+                                <Loader2 className="w-5 h-5 animate-spin" />
+                                전송 중입니다...
+                            </>
+                        ) : (
+                            "가맹 계약 / 수수료 문의 보내기"
+                        )}
+                    </button>
+
+                    <p className="mt-3 text-[12px] text-[#1e3a34]/60">
+                        입력하신 연락처로만 회신드리며, 상담 목적 외 다른 용도로는
+                        사용되지 않습니다.
+                    </p>
+                </motion.form>
+            )}
+        </section>
+    );
+}
+
+/* ────────────────────────────────────────────────
+   메인 페이지
+────────────────────────────────────────────────── */
+
 export default function ContractInquiryClient(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
     return (
         <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723]">
-            {/* 🌿 Breadcrumb + JSON-LD (invisible but SEO-helpful) */}
+            {/* 🌿 Breadcrumb + JSON-LD (SEO) */}
             <script
                 type="application/ld+json"
                 dangerouslySetInnerHTML={{
@@ -172,7 +436,7 @@ export default function ContractInquiryClient(): JSX.Element {
 
                     <motion.div
                         {...fadeUp(0.15)}
-                        className="p-8 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        className="p-8 rounded-2xl bg:white bg-white border border-[#a7f3d0]/60"
                     >
                         <h2 className="text-2xl font-bold text-[#0b2723] flex items-center gap-2">
                             <ShieldCheck className="text-[#10b981]" /> 보안 · 컴플라이언스
@@ -216,7 +480,7 @@ export default function ContractInquiryClient(): JSX.Element {
                 </motion.div>
             </section>
 
-            {/* 🌿 FAQ (details 원소로 의존성 없이 구현) */}
+            {/* 🌿 FAQ */}
             <section className="py-10 px-6 md:px-16">
                 <div className="max-w-6xl mx-auto">
                     <motion.h2
@@ -265,10 +529,10 @@ export default function ContractInquiryClient(): JSX.Element {
                 </div>
             </section>
 
-            {/* 🌿 본문의 핵심: CRM 폼 (reCAPTCHA + Notion + Slack 이미 연동됨) */}
+            {/* 🌿 이 페이지 전용 ContactForm (내장) */}
             <section className="py-12 px-6 md:px-16">
                 <div className="max-w-4xl mx-auto">
-                    <ContactForm defaultType="가맹점 계약 / 수수료 협의" />
+                    <ContractFormInline />
                 </div>
             </section>
 
@@ -281,7 +545,10 @@ export default function ContractInquiryClient(): JSX.Element {
                             title: "이메일",
                             desc: (
                                 <>
-                                    계약/수수료: <span className="font-semibold">contract@sfinpay.co.kr</span>
+                                    계약/수수료:{" "}
+                                    <span className="font-semibold">
+                                        contract@sfinpay.co.kr
+                                    </span>
                                 </>
                             ),
                         },
