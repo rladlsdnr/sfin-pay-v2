@@ -21,7 +21,7 @@ export default function HomePage(): JSX.Element {
     Liquidity,
     Security,
     API,
-    Insights,
+    //Insights,
     Compliance,
     Contact,
   ];

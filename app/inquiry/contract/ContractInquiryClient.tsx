@@ -471,12 +471,16 @@ export default function ContractInquiryClient(): JSX.Element {
                                 D+0 · D+1 정산 가용성 및 주말/공휴일 옵션 상담 가능.
                             </p>
                         </div>
-                        <Link
+                        {
+                            /*
+                            <Link
                             href="/online-pay"
                             className="inline-flex items-center gap-2 self-start md:self-auto px-5 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold shadow-md transition"
                         >
                             결제수단 & API 살펴보기 <ChevronRight size={18} />
                         </Link>
+                            */
+                        }
                     </div>
                 </motion.div>
             </section>

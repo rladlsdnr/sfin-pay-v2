@@ -8,7 +8,7 @@ import Chatbot from "@/components/Chatbot";
 /* ✅ Next.js 15 공식 metadata 기반 SEO 설정 */
 export const metadata = {
   title: {
-    default: "SFIN PAY",
+    default: "스핀페이 SFIN PAY | 무선단말기·카드결제기·POS 포스 단말기 결제 솔루션",
     template: "SFIN PAY | %s",
   },
   description:
