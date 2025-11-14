@@ -68,7 +68,7 @@ export default function Liquidity(): JSX.Element {
                     <span className="text-[#00b894]">
                         매출이 흔들리는 시기에도
                     </span>
-                    <br className="hidden md:block" />
+                    <br />
                     <span className="text-[#00c89b]">
                         운영에 숨통을 틔우는 유연한 도움
                     </span>

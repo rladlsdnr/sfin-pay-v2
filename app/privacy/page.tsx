@@ -15,7 +15,7 @@ import { ShieldCheck, FileText, Lock, Shield, BookOpen } from "lucide-react";
 
 export default function PrivacyPolicy(): JSX.Element {
     const fadeUp = (i = 0, d = 0.45) => ({
-        initial: { opacity: 0, y: 14 },
+        initial: { opacity: 1, y: 14 },
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true, amount: 0.2 },
         transition: { duration: d, delay: 0.05 * i },
@@ -71,7 +71,7 @@ export default function PrivacyPolicy(): JSX.Element {
         <section className="min-h-screen bg-gradient-to-b from-white via-[#f0fdfa] to-[#ecfdf3] px-6 md:px-14 py-20">
             {/* HEADER */}
             <motion.div
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 1, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
                 className="text-center mb-14"
@@ -284,13 +284,13 @@ export default function PrivacyPolicy(): JSX.Element {
                         <p>개인정보 관련 문의는 아래 채널을 통해 가능합니다:</p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
                             <li>
-                                <b>이메일:</b> support@sfinpay.co.kr
+                                <b>이메일:</b> woojinplatform@gmail.com
                             </li>
                             <li>
-                                <b>대표번호:</b> 02-1234-5678
+                                <b>대표번호:</b> 010-2952-2667
                             </li>
                             <li>
-                                <b>주소:</b> 서울특별시 강남구 테헤란로 77, SFIN Tower 12F
+                                <b>주소:</b> 서울특별시 영등포구 여의대방로 67길11 5층 에이 5-41호
                             </li>
                         </ul>
                     </Block>

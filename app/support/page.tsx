@@ -10,6 +10,8 @@ import {
     Clock3,
     Headphones,
     ChevronDown,
+    Mail,
+    MessageCircle,
 } from "lucide-react";
 
 export default function Support(): JSX.Element {
@@ -224,18 +226,55 @@ export default function Support(): JSX.Element {
                     추가 문의나 상세 상담이 필요하신가요?
                     담당자가 직접 빠르게 도와드립니다.
                 </motion.p>
-                <motion.button
+                {/* 하단 CTA */}
+                <motion.div
                     {...fadeUp(0.2)}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    onClick={() => router.push("/inquiry/general")}
-                    className="px-8 py-4 rounded-xl bg-gradient-to-r from-[#34d399] to-[#10b981] hover:from-[#10b981] hover:to-[#059669] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)] "
+                    className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
                 >
-                    상담 요청하기 →
-                </motion.button>
+                    {/* Gmail */}
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                    hover:from-[#00b894] hover:to-[#00a884]
+                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    >
+                        <Mail size={18} /> Gmail로 문의하기
+                    </a>
+
+                    {/* Outlook */}
+                    <a
+                        href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                    hover:from-[#00b894] hover:to-[#00a884]
+                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    >
+                        <Mail size={18} /> Outlook으로 문의하기
+                    </a>
+
+                    {/* 카카오톡 */}
+                    <a
+                        href="http://pf.kakao.com/_eftHn/chat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                    border border-emerald-300 bg-white/80 
+                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    >
+                        <MessageCircle size={18} /> 카카오톡 상담
+                    </a>
+                </motion.div>
             </section>
 
-            {/* CONTACT INFO */}
+            {/* CONTACT INFO
             <section className="py-16 bg-[#f0fdfa] text-center border-t border-[#a7f3d0]/50">
                 <div className="flex flex-col items-center gap-3 text-[#1e3a34]/80">
                     <Headphones size={32} className="text-[#10b981]" />
@@ -247,6 +286,7 @@ export default function Support(): JSX.Element {
                     </p>
                 </div>
             </section>
+            */}
         </div>
     );
 }

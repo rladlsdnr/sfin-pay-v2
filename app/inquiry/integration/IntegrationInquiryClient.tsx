@@ -18,6 +18,7 @@ import {
     CheckCircle2,
     ChevronRight,
     Loader2,
+    MessageCircle,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
@@ -411,59 +412,58 @@ export default function IntegrationInquiryClient(): JSX.Element {
                 </div>
             </section>
 
-            {/* ========================== 기술 연동 전용 폼 ========================== */}
-            <section className="py-12 px-6 md:px-16">
-                <div className="max-w-4xl mx-auto">
-                    <IntegrationFormInline />
-                </div>
-            </section>
+            <section className="py-10 px-6 md:px-16">
+                <div className="max-w-6xl mx-auto text-center">
+                    <h2
 
-            {/* ========================== CONTACT ========================== */}
-            <section className="py-14 px-6 md:px-16 bg-[#ecfdf5] border-t border-[#a7f3d0]/40">
-                <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-                    {[
-                        {
-                            icon: <Mail size={18} />,
-                            title: "기술 문의",
-                            desc: (
-                                <>
-                                    <span className="font-semibold text-[#0b2723]">
-                                        tech@sfinpay.co.kr
-                                    </span>
-                                </>
-                            ),
-                        },
-                        {
-                            icon: <BookOpenCheck size={18} />,
-                            title: "개발 문서",
-                            desc: (
-                                <a
-                                    href="https://docs.sfinpay.co.kr"
-                                    target="_blank"
-                                    className="text-[#10b981] underline font-medium"
-                                >
-                                    개발자 포털 바로가기
-                                </a>
-                            ),
-                        },
-                        {
-                            icon: <Globe2 size={18} />,
-                            title: "서버 상태",
-                            desc: "status.sfinpay.co.kr — 실시간 API 상태 확인",
-                        },
-                    ].map((c, i) => (
-                        <motion.div
-                            key={i}
-                            {...fadeUp(i)}
-                            className="p-6 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+                    >
+                        문의하실 내용이 있으신가요?
+                    </h2>
+                    {/* 하단 CTA */}
+                    <div
+                        className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
+                    >
+                        {/* Gmail */}
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                                hover:from-[#00b894] hover:to-[#00a884]
+                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
                         >
-                            <div className="flex items-center gap-2 text-[#10b981]">
-                                {c.icon}
-                                <h3 className="font-semibold text-[#0b2723]">{c.title}</h3>
-                            </div>
-                            <p className="mt-2 text-[#1e3a34]/80">{c.desc}</p>
-                        </motion.div>
-                    ))}
+                            <Mail size={18} /> Gmail로 문의하기
+                        </a>
+
+                        {/* Outlook */}
+                        <a
+                            href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                                hover:from-[#00b894] hover:to-[#00a884]
+                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                        >
+                            <Mail size={18} /> Outlook으로 문의하기
+                        </a>
+
+                        {/* 카카오톡 */}
+                        <a
+                            href="http://pf.kakao.com/_eftHn/chat"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                border border-emerald-300 bg-white/80 
+                                hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
+                                shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                        >
+                            <MessageCircle size={18} /> 카카오톡 상담
+                        </a>
+                    </div>
+
                 </div>
             </section>
 

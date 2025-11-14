@@ -14,7 +14,7 @@ import { ShieldCheck, FileText, BookOpen } from "lucide-react";
 
 export default function TermsOfService(): JSX.Element {
     const fadeUp = (i = 0, d = 0.45) => ({
-        initial: { opacity: 0, y: 14 },
+        initial: { opacity: 1, y: 14 },
         whileInView: { opacity: 1, y: 0 },
         viewport: { once: true, amount: 0.2 },
         transition: { duration: d, delay: 0.05 * i },
@@ -66,7 +66,7 @@ export default function TermsOfService(): JSX.Element {
         <section className="min-h-screen bg-gradient-to-b from-white via-[#f0fdfa] to-[#ecfdf3] px-6 md:px-14 py-20">
             {/* HEADER */}
             <motion.div
-                initial={{ opacity: 0, y: 14 }}
+                initial={{ opacity: 1, y: 14 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.45 }}
                 className="text-center mb-14"

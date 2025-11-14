@@ -13,6 +13,8 @@ import {
     ActivitySquare,
     CalendarClock,
     Microscope,
+    Mail,
+    MessageCircle,
 } from "lucide-react";
 
 export default function Medical(): JSX.Element {
@@ -227,6 +229,7 @@ export default function Medical(): JSX.Element {
                     비급여부터 렌탈 정산까지 완전 자동화하세요.
                 </motion.p>
 
+                {/*
                 <Link href="/inquiry/contract">
                     <motion.button
                         initial={{ opacity: 1, y: 20 }}
@@ -239,6 +242,52 @@ export default function Medical(): JSX.Element {
                         도입 상담 받기 →
                     </motion.button>
                 </Link>
+                */}
+
+                {/* 하단 CTA */}
+                <div
+                    className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
+                >
+                    {/* Gmail */}
+                    <a
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                    hover:from-[#00b894] hover:to-[#00a884]
+                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    >
+                        <Mail size={18} /> Gmail로 문의하기
+                    </a>
+
+                    {/* Outlook */}
+                    <a
+                        href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                    hover:from-[#00b894] hover:to-[#00a884]
+                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    >
+                        <Mail size={18} /> Outlook으로 문의하기
+                    </a>
+
+                    {/* 카카오톡 */}
+                    <a
+                        href="http://pf.kakao.com/_eftHn/chat"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                    border border-emerald-300 bg-white/80 
+                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    >
+                        <MessageCircle size={18} /> 카카오톡 상담
+                    </a>
+                </div>
+
             </section>
         </div>
     );

@@ -82,7 +82,7 @@ export default function Contact(): JSX.Element {
                 </p>
             </motion.div>
 
-            {/* ───────────── 폼 영역 ───────────── */}
+            {/*
             <motion.form
                 {...fadeUp(1)}
                 viewport={{ once: true, amount: 0.2 }}
@@ -90,7 +90,7 @@ export default function Contact(): JSX.Element {
                 onSubmit={handleSubmit}
                 className="max-w-3xl mx-auto rounded-2xl border border-emerald-200/70 bg-white/90 backdrop-blur-sm p-8 md:p-10 space-y-6 shadow-[0_8px_25px_rgba(16,185,129,0.12)]"
             >
-                {/* 회사명 */}
+                
                 <div>
                     <label
                         htmlFor="company"
@@ -110,7 +110,7 @@ export default function Contact(): JSX.Element {
                     />
                 </div>
 
-                {/* 이메일 */}
+               
                 <div>
                     <label
                         htmlFor="email"
@@ -130,7 +130,7 @@ export default function Contact(): JSX.Element {
                     />
                 </div>
 
-                {/* 문의 유형 */}
+                
                 <div>
                     <label
                         htmlFor="category"
@@ -155,7 +155,7 @@ export default function Contact(): JSX.Element {
                     </select>
                 </div>
 
-                {/* 세부 내용 */}
+                
                 <div>
                     <label
                         htmlFor="message"
@@ -175,7 +175,7 @@ export default function Contact(): JSX.Element {
                     />
                 </div>
 
-                {/* 전송 버튼 */}
+                
                 <motion.button
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
@@ -189,36 +189,34 @@ export default function Contact(): JSX.Element {
                     모든 문의 내용은 암호화되어 전송되며, 영업일 기준 24시간 이내 회신드립니다.
                 </p>
             </motion.form>
+            */}
 
             {/* 하단 CTA */}
-            <motion.div
-                {...fadeUp(2)}
-                viewport={{ once: true, amount: 0.2 }}
-                transition={{ duration: 0.6, delay: 0.16 }}
+            <div
                 className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
             >
                 {/* Gmail */}
                 <a
-                    href="https://mail.google.com/mail/?view=cm&fs=1&to=contact@sfinpay.co.kr&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                    href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-        bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-        hover:from-[#00b894] hover:to-[#00a884]
-        text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                    hover:from-[#00b894] hover:to-[#00a884]
+                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
                 >
                     <Mail size={18} /> Gmail로 문의하기
                 </a>
 
                 {/* Outlook */}
                 <a
-                    href="https://outlook.office.com/mail/deeplink/compose?to=contact@sfinpay.co.kr&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                    href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-        bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-        hover:from-[#00b894] hover:to-[#00a884]
-        text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                    hover:from-[#00b894] hover:to-[#00a884]
+                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
                 >
                     <Mail size={18} /> Outlook으로 문의하기
                 </a>
@@ -229,13 +227,13 @@ export default function Contact(): JSX.Element {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-        border border-emerald-300 bg-white/80 
-        hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-        shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    border border-emerald-300 bg-white/80 
+                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
                 >
                     <MessageCircle size={18} /> 카카오톡 상담
                 </a>
-            </motion.div>
+            </div>
 
         </section>
     );

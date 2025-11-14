@@ -20,6 +20,7 @@ import {
     CheckCircle2,
     ChevronRight,
     Loader2,
+    MessageCircle,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
@@ -281,19 +282,19 @@ export default function SettlementInquiryClient(): JSX.Element {
                                 "@type": "ListItem",
                                 position: 1,
                                 name: "SFIN PAY",
-                                item: "https://www.sfinpay.co.kr",
+                                item: "http://sfinpayment.com/",
                             },
                             {
                                 "@type": "ListItem",
                                 position: 2,
                                 name: "문의",
-                                item: "https://www.sfinpay.co.kr/inquiry",
+                                item: "http://sfinpayment.com/inquiry/support",
                             },
                             {
                                 "@type": "ListItem",
                                 position: 3,
                                 name: "정산 문의",
-                                item: "https://www.sfinpay.co.kr/inquiry/settlement",
+                                item: "http://sfinpayment.com/inquiry/settlement",
                             },
                         ],
                     }),
@@ -460,54 +461,58 @@ export default function SettlementInquiryClient(): JSX.Element {
                     </div>
                 </div>
             </section>
-            {/* 🌿 내장 ContactFormInline (정산문의 전용 폼) */}
-            <section className="py-12 px-6 md:px-16">
-                <div className="max-w-4xl mx-auto">
-                    <SettlementFormInline />
+            <section className="py-10 px-6 md:px-16">
+                <div className="max-w-6xl mx-auto text-center">
+                    <h2
 
-
-                </div>
-            </section>
-
-            {/* 🌿 연락 안내 */}
-            <section className="py-14 px-6 md:px-16 bg-[#ecfdf5] border-t border-[#a7f3d0]/40">
-                <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-                    {[
-                        {
-                            icon: <Mail size={18} />,
-                            title: "이메일",
-                            desc: (
-                                <>
-                                    정산 문의:{" "}
-                                    <span className="font-semibold">
-                                        settlement@sfinpay.co.kr
-                                    </span>
-                                </>
-                            ),
-                        },
-                        {
-                            icon: <CreditCard size={18} />,
-                            title: "관련 메뉴",
-                            desc: "관리자 대시보드 → 정산 내역 / 세금계산서",
-                        },
-                        {
-                            icon: <Building2 size={18} />,
-                            title: "정산팀",
-                            desc: "서울 본사 4F 정산실 — 평일 10:00~18:00",
-                        },
-                    ].map((info, i) => (
-                        <motion.div
-                            key={i}
-                            {...fadeUp(i * 0.1)}
-                            className="p-6 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+                    >
+                        추가로 문의하실 내용이 있으신가요?
+                    </h2>
+                    {/* 하단 CTA */}
+                    <div
+                        className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
+                    >
+                        {/* Gmail */}
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                                hover:from-[#00b894] hover:to-[#00a884]
+                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
                         >
-                            <div className="flex items-center gap-2 text-[#10b981]">
-                                {info.icon}
-                                <h3 className="font-semibold text-[#0b2723]">{info.title}</h3>
-                            </div>
-                            <p className="mt-2 text-[#1e3a34]/80">{info.desc}</p>
-                        </motion.div>
-                    ))}
+                            <Mail size={18} /> Gmail로 문의하기
+                        </a>
+
+                        {/* Outlook */}
+                        <a
+                            href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                                hover:from-[#00b894] hover:to-[#00a884]
+                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                        >
+                            <Mail size={18} /> Outlook으로 문의하기
+                        </a>
+
+                        {/* 카카오톡 */}
+                        <a
+                            href="http://pf.kakao.com/_eftHn/chat"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                border border-emerald-300 bg-white/80 
+                                hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
+                                shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                        >
+                            <MessageCircle size={18} /> 카카오톡 상담
+                        </a>
+                    </div>
+
                 </div>
             </section>
 

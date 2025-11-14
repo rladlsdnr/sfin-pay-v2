@@ -24,6 +24,7 @@ import {
     Clock3,
     Activity,
     Mail,
+    MessageCircle,
 } from 'lucide-react';
 
 /**
@@ -666,22 +667,53 @@ export default function Page(): JSX.Element {
                         <br className="hidden md:block" />
                         전담 매니저를 통해 별도의 설명·자료 제공 미팅을 요청하실 수 있습니다.
                     </p>
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-3 mt-4">
+
+                    {/* 하단 CTA */}
+                    <motion.div
+                        {...fadeUp(2)}
+                        viewport={{ once: true, amount: 0.2 }}
+                        transition={{ duration: 0.6, delay: 0.16 }}
+                        className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
+                    >
+                        {/* Gmail */}
                         <a
-                            href="/inquiry/contract"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#00B894] hover:bg-[#059669] text-white text-sm font-semibold shadow-[0_8px_25px_rgba(16,185,129,0.25)]"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+        bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+        hover:from-[#00b894] hover:to-[#00a884]
+        text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
                         >
-                            <Handshake className="w-4 h-4" />
-                            도입·계약 상담 요청
+                            <Mail size={18} /> Gmail로 문의하기
                         </a>
+
+                        {/* Outlook */}
                         <a
-                            href="/support"
-                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-[#34D399] bg-white/80 hover:bg-[#ECFDF5] text-[#047857] text-sm font-semibold"
+                            href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+        bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+        hover:from-[#00b894] hover:to-[#00a884]
+        text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
                         >
-                            <Mail className="w-4 h-4" />
-                            투명경영·보안 관련 문의
+                            <Mail size={18} /> Outlook으로 문의하기
                         </a>
-                    </div>
+
+                        {/* 카카오톡 */}
+                        <a
+                            href="http://pf.kakao.com/_eftHn/chat"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+        border border-emerald-300 bg-white/80 
+        hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
+        shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                        >
+                            <MessageCircle size={18} /> 카카오톡 상담
+                        </a>
+                    </motion.div>
                 </motion.div>
             </section>
         </div>

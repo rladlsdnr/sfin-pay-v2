@@ -103,8 +103,8 @@ export default function SecurityPolicy() {
                     </p>
                     <ul className="list-disc list-inside mt-2 text-[#1e3a34]/85">
                         <li>보안 책임자: 보안관리팀장 김도윤</li>
-                        <li>이메일: security@sfinpay.co.kr</li>
-                        <li>전화: 02-1234-5678 (내선 2)</li>
+                        <li>이메일: woojinplatform@gmail.com</li>
+                        {/*<li>전화: 02-1234-5678 (내선 2)</li>*/}
                     </ul>
                 </section>
 

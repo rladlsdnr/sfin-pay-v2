@@ -17,50 +17,52 @@ interface Partner {
 
 export default function Partners(): JSX.Element {
     const partners: Partner[] = [
+        { name: 'KB국민은행', logo: '/images/partners/KB.png' },
+        { name: 'NH농협', logo: '/images/partners/nhbank.png' },
         { name: '신한은행', logo: '/images/partners/shinhan.png' },
-        { name: 'KB국민은행', logo: '/images/partners/KB.jpg' },
-        { name: 'NH농협', logo: '/images/partners/nhbank.gif' },
         { name: '우리은행', logo: '/images/partners/woori.png' },
+        { name: '신한은행', logo: '/images/partners/shinhan.png' },
         { name: 'IBK기업은행', logo: '/images/partners/ibk.png' },
         { name: '하나은행', logo: '/images/partners/hana.png' },
+        { name: '수협은행', logo: '/images/partners/Sh.png' },
+        { name: '전북은행', logo: '/images/partners/JB.png' },
         { name: 'BNK부산은행', logo: '/images/partners/bnk.png' },
+        { name: 'KDB산업은행', logo: '/images/partners/kdb.png' },
+        { name: '저축은행중앙회', logo: '/images/partners/SB.png' },
+        { name: 'OK저축은행', logo: '/images/partners/OK.png' },
+        { name: '케이뱅크', logo: '/images/partners/kbank.png' },
         { name: '카카오뱅크', logo: '/images/partners/kakaobank.png' },
-        { name: '토스뱅크', logo: '/images/partners/tossbank.png' },
-        { name: '이니시스', logo: '/images/partners/inicis.png' },
-        { name: '나이스페이', logo: '/images/partners/nicepay.png' },
-        { name: '다날', logo: '/images/partners/danal.png' },
-        { name: 'KG모빌리언스', logo: '/images/partners/kgmobilians.png' },
-        { name: 'KCP', logo: '/images/partners/kcp.png' },
-        { name: 'KSNET', logo: '/images/partners/ksnet.png' },
-        { name: '네이버페이', logo: '/images/partners/naverpay.png' },
+        { name: '신한카드', logo: '/images/partners/shinhancard.png' },
+        { name: '현대카드', logo: '/images/partners/hyundaicard.png' },
+        { name: 'KB국민카드', logo: '/images/partners/kbcard.png' },
+        { name: '롯데카드', logo: '/images/partners/lottecard.png' },
+        { name: 'BC카드', logo: '/images/partners/bccard.png' },
+        { name: 'NH농협카드', logo: '/images/partners/nhcard.png' },
+        { name: '우리카드', logo: '/images/partners/wooricard.png' },
+        { name: '삼성생명', logo: '/images/partners/samsunglife.png' },
+        { name: '삼성화재', logo: '/images/partners/samsungfire.png' },
+        { name: '한화생명', logo: '/images/partners/hanwhalife.png' },
+        { name: '교보생명', logo: '/images/partners/kyobolife.png' },
+        { name: 'DB손해보험', logo: '/images/partners/db.png' },
+        { name: '현대해상', logo: '/images/partners/hyundaimarine.png' },
+        { name: '라이나생명', logo: '/images/partners/linalife.png' },
+        { name: 'KCB', logo: '/images/partners/kcb.png' },
+
         { name: '카카오페이', logo: '/images/partners/kakaopay.png' },
         { name: '토스', logo: '/images/partners/toss.png' },
+        { name: '우아한형제들', logo: '/images/partners/wooah.png' },
+        { name: '당근페이', logo: '/images/partners/karrot.png' },
+        { name: 'SSGPAY', logo: '/images/partners/ssgpay.png' },
+        { name: '쿠팡페이', logo: '/images/partners/coupangpay.png' },
         { name: '페이코', logo: '/images/partners/payco.png' },
-        { name: '쿠팡', logo: '/images/partners/coupang.png' },
-        { name: '스마트스토어', logo: '/images/partners/smartstore.png' },
-        { name: '카페24', logo: '/images/partners/cafe24.png' },
-        { name: '메이크샵', logo: '/images/partners/makeshop.png' },
-        { name: '아임웹', logo: '/images/partners/imweb.png' },
-        { name: '위메프', logo: '/images/partners/wmp.png' },
-        { name: '11번가', logo: '/images/partners/11st.png' },
-        { name: '티몬', logo: '/images/partners/tmon.png' },
-        { name: 'G마켓', logo: '/images/partners/gmarket.png' },
-        { name: '옥션', logo: '/images/partners/auction.png' },
-        { name: 'Stripe', logo: '/images/partners/stripe.png' },
-        { name: 'Adyen', logo: '/images/partners/adyen.png' },
-        { name: 'PayPal', logo: '/images/partners/paypal.png' },
-        { name: 'Square', logo: '/images/partners/square.png' },
-        { name: 'Amazon Pay', logo: '/images/partners/amazonpay.png' },
-        { name: 'Google Pay', logo: '/images/partners/googlepay.png' },
-        { name: 'Apple Pay', logo: '/images/partners/applepay.png' },
-        { name: 'Alipay', logo: '/images/partners/alipay.png' },
-        { name: 'WeChat Pay', logo: '/images/partners/wechatpay.png' },
-        { name: 'Shopify', logo: '/images/partners/shopify.png' },
-        { name: 'WooCommerce', logo: '/images/partners/woo.png' },
-        { name: 'Magento', logo: '/images/partners/magento.png' },
-        { name: 'Salesforce', logo: '/images/partners/salesforce.png' },
-        { name: 'Zendesk', logo: '/images/partners/zendesk.png' },
-        { name: 'HubSpot', logo: '/images/partners/hubspot.png' },
+        { name: '뱅크샐러드', logo: '/images/partners/banksalad.png' },
+        { name: 'SK플래닛', logo: '/images/partners/skplanet.png' },
+        { name: '코나카드', logo: '/images/partners/konacard.png' },
+        { name: '야놀자', logo: '/images/partners/yanolja.png' },
+        { name: 'finda', logo: '/images/partners/finda.png' },
+        { name: 'KG모빌리언스', logo: '/images/partners/kgmobilians.png' },
+        { name: 'KIS정보통신', logo: '/images/partners/kis.png' },
+        { name: '티머니', logo: '/images/partners/tmoney.png' },
     ];
 
     const row1 = partners.slice(0, 15);
@@ -106,7 +108,7 @@ export default function Partners(): JSX.Element {
                             <img
                                 src={p.logo}
                                 alt={p.name}
-                                className="max-h-[36px] w-auto object-contain opacity-80 hover:opacity-100 transition"
+                                className="max-h-[70px] max-w-[150px] w-auto object-cover opacity-80 hover:opacity-100 transition"
                             />
                         </div>
                     ))}
@@ -129,7 +131,7 @@ export default function Partners(): JSX.Element {
                             <img
                                 src={p.logo}
                                 alt={p.name}
-                                className="max-h-[36px] w-auto object-contain opacity-80 hover:opacity-100 transition"
+                                className="max-h-[70px] max-w-[150px] w-auto object-cover opacity-80 hover:opacity-100 transition"
                             />
                         </div>
                     ))}
@@ -152,7 +154,7 @@ export default function Partners(): JSX.Element {
                             <img
                                 src={p.logo}
                                 alt={p.name}
-                                className="max-h-[36px] w-auto object-contain opacity-80 hover:opacity-100 transition"
+                                className="max-h-[70px] max-w-[150px] w-auto object-cover opacity-80 hover:opacity-100 transition"
                             />
                         </div>
                     ))}

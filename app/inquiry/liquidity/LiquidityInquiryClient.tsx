@@ -16,6 +16,7 @@ import {
     CheckCircle2,
     ChevronRight,
     Loader2,
+    MessageCircle,
 } from "lucide-react";
 
 const fadeUp = (i = 0) => ({
@@ -246,192 +247,58 @@ export default function LiquidityInquiryClient(): JSX.Element {
                 </div>
             </section>
 
-            {/* 🌿 Contact Form (통일 버전) */}
-            <section className="py-16 px-6 md:px-16">
-                <div className="max-w-4xl mx-auto rounded-2xl bg-white border border-[#a7f3d0]/60 p-8 md:p-10 shadow-sm">
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#0b2723] flex items-center gap-2 mb-2">
-                        <PiggyBank className="text-[#10b981]" /> 유동성 / 운영 여유 상담 신청
+            <section className="py-10 px-6 md:px-16">
+                <div className="max-w-6xl mx-auto text-center">
+                    <h2
+
+                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+                    >
+                        문의하실 내용이 있으신가요?
                     </h2>
-                    <p className="text-sm text-[#1e3a34]/70 mb-6">
-                        대략적인 희망 규모, 매출 흐름, 필요 시점 등을 편하게 남겨주시면
-                        내용을 확인한 뒤, 가능한 방향을 함께 고민해 드립니다.
-                    </p>
-
-                    {/* 상태 메시지 */}
-                    {success && (
-                        <div className="mb-6 p-4 rounded-xl bg-[#ecfdf5] border border-[#a7f3d0]/60 text-[#0b2723] text-sm flex items-center gap-2">
-                            <CheckCircle2 className="text-[#10b981]" /> 상담 요청이 접수되었습니다. 담당자가 순차적으로 연락드립니다.
-                        </div>
-                    )}
-                    {error && (
-                        <div className="mb-6 p-4 rounded-xl bg-red-50 border border-red-200 text-red-700 text-sm">
-                            {error}
-                        </div>
-                    )}
-
-                    <form onSubmit={submitForm} className="space-y-5">
-                        <input
-                            type="text"
-                            name="honeypot"
-                            value={form.honeypot}
-                            onChange={handleChange}
-                            className="hidden"
-                        />
-
-                        {/* 2열 구조 */}
-                        <div className="grid md:grid-cols-2 gap-5">
-                            <div>
-                                <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
-                                    담당자명 *
-                                </label>
-                                <input
-                                    name="name"
-                                    value={form.name}
-                                    onChange={handleChange}
-                                    required
-                                    placeholder="홍길동"
-                                    className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 
-                                    outline-none focus:ring-2 focus:ring-[#34d399]"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
-                                    가맹점명 / 회사명
-                                </label>
-                                <input
-                                    name="company"
-                                    value={form.company}
-                                    onChange={handleChange}
-                                    placeholder="예: SFIN 카페 / OO 업체"
-                                    className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 
-                                    outline-none focus:ring-2 focus:ring-[#34d399]"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
-                                    연락처 *
-                                </label>
-                                <input
-                                    name="phone"
-                                    value={form.phone}
-                                    onChange={handleChange}
-                                    required
-                                    placeholder="010-0000-0000"
-                                    className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 
-                                    outline-none focus:ring-2 focus:ring-[#34d399]"
-                                />
-                            </div>
-
-                            <div>
-                                <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
-                                    이메일
-                                </label>
-                                <input
-                                    name="email"
-                                    type="email"
-                                    value={form.email}
-                                    onChange={handleChange}
-                                    placeholder="you@company.com"
-                                    className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 
-                                    outline-none focus:ring-2 focus:ring-[#34d399]"
-                                />
-                            </div>
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
-                                희망 규모 (선택)
-                            </label>
-                            <input
-                                name="amount"
-                                value={form.amount}
-                                onChange={handleChange}
-                                placeholder="예: 300~800만원 정도를 고려 중입니다."
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 
-                                outline-none focus:ring-2 focus:ring-[#34d399]"
-                            />
-                        </div>
-
-                        <div>
-                            <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
-                                상세 문의 내용 *
-                            </label>
-                            <textarea
-                                name="message"
-                                rows={5}
-                                required
-                                value={form.message}
-                                onChange={handleChange}
-                                placeholder="현재 매출 흐름, 필요 시기, 예상 사용처 등 편하게 적어주세요."
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 
-                                outline-none resize-none focus:ring-2 focus:ring-[#34d399]"
-                            />
-                        </div>
-
-                        <button
-                            type="submit"
-                            disabled={loading}
-                            className="mt-4 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl 
-                            bg-[#10b981] hover:bg-[#059669] text-white font-semibold shadow-[0_10px_30px_rgba(16,185,129,0.18)]
-                            disabled:opacity-60"
+                    {/* 하단 CTA */}
+                    <div
+                        className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
+                    >
+                        {/* Gmail */}
+                        <a
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                                hover:from-[#00b894] hover:to-[#00a884]
+                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
                         >
-                            {loading ? (
-                                <>
-                                    <Loader2 className="w-5 h-5 animate-spin" />
-                                    전송 중입니다...
-                                </>
-                            ) : (
-                                "상담 신청하기"
-                            )}
-                        </button>
+                            <Mail size={18} /> Gmail로 문의하기
+                        </a>
 
-                        <p className="text-[12px] text-[#1e3a34]/60 mt-2">
-                            입력된 정보는 상담 및 내부 검토 목적 외에는 사용되지 않으며,
-                            관련 법령과 내부 기준에 따라 안전하게 관리됩니다.
-                        </p>
-                    </form>
-                </div>
-            </section>
-
-            {/* 🌿 연락 안내 */}
-            <section className="py-14 px-6 md:px-16 bg-[#ecfdf5] border-t border-[#a7f3d0]/40">
-                <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
-                    {[
-                        {
-                            icon: <Mail size={18} />,
-                            title: "이메일",
-                            desc: (
-                                <>
-                                    유동성 관련 문의:{" "}
-                                    <span className="font-semibold">fund@sfinpay.co.kr</span>
-                                </>
-                            ),
-                        },
-                        {
-                            icon: <PiggyBank size={18} />,
-                            title: "안내 자료",
-                            desc: "상담 시 필요에 따라 구조·사례·유의사항 등을 정리한 자료를 함께 안내드립니다.",
-                        },
-                        {
-                            icon: <Building2 size={18} />,
-                            title: "상담 창구",
-                            desc: "운영상 궁금하신 점은 별도 상담을 통해 보다 상세히 조율하실 수 있습니다.",
-                        },
-                    ].map((c, i) => (
-                        <motion.div
-                            key={i}
-                            {...fadeUp(i * 0.1)}
-                            className="p-6 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        {/* Outlook */}
+                        <a
+                            href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
+                                hover:from-[#00b894] hover:to-[#00a884]
+                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
                         >
-                            <div className="flex items-center gap-2 text-[#10b981]">
-                                {c.icon}
-                                <h3 className="font-semibold text-[#0b2723]">{c.title}</h3>
-                            </div>
-                            <p className="mt-2 text-[#1e3a34]/80">{c.desc}</p>
-                        </motion.div>
-                    ))}
+                            <Mail size={18} /> Outlook으로 문의하기
+                        </a>
+
+                        {/* 카카오톡 */}
+                        <a
+                            href="http://pf.kakao.com/_eftHn/chat"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
+                                border border-emerald-300 bg-white/80 
+                                hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
+                                shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                        >
+                            <MessageCircle size={18} /> 카카오톡 상담
+                        </a>
+                    </div>
+
                 </div>
             </section>
 

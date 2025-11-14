@@ -148,11 +148,11 @@ export default function Navbar(): JSX.Element {
                 },
             ],
         },
-        {
+        /*{
             label: '기술 지원',
             link: '/tech-support',
             categoryDesc: 'API 연동 / 개발자 문서 / 테스트 샌드박스',
-        },
+        },*/
         {
             label: '고객 지원',
             link: '/support',

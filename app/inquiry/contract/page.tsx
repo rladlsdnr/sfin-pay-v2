@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         description:
             "SFIN PAY 신규 가맹점 등록, 수수료 조건, 서비스 이용 계약 관련 문의를 남겨주세요.",
         type: "website",
-        url: "https://www.sfinpay.co.kr/inquiry/contract",
+        url: "http://sfinpayment.com//inquiry/contract",
         images: [{ url: "/og/contract-mint.png" }],
     },
     twitter: {
@@ -22,7 +22,7 @@ export const metadata: Metadata = {
         images: ["/og/contract-mint.png"],
     },
     alternates: {
-        canonical: "https://www.sfinpay.co.kr/inquiry/contract",
+        canonical: "http://sfinpayment.com//inquiry/contract",
     },
 };
 

@@ -155,7 +155,7 @@ export default function Security(): JSX.Element {
                 </p>
 
                 <Link
-                    href="/security-policy"
+                    href="/security"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
                      bg-gradient-to-r from-[#00c89b] to-[#00b894]
                      hover:from-[#00b894] hover:to-[#00a884]

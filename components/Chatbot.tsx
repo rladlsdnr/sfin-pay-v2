@@ -57,7 +57,7 @@ const FAQ_LIST: {
                 <>
                     고객센터는 평일 09:00~18:00 운영됩니다.
                     <br />
-                    채팅 또는 <a href="mailto:contact@sfinpay.co.kr">contact@sfinpay.co.kr</a>로 문의주세요.
+                    채팅 또는 <a href="mailto:woojinplatform@gmail.com">woojinplatform@gmail.com</a>로 문의주세요.
                 </>
             ),
         },
@@ -89,7 +89,7 @@ const findBestMatch = (text: string): React.ReactNode => {
             <br />
             👉 <a href="/inquiry/contract">가맹 문의 바로가기</a>
             <br />
-            또는 <a href="mailto:contact@sfinpay.co.kr">contact@sfinpay.co.kr</a> 로 문의해 주세요.
+            또는 <a href="mailto:woojinplatform@gmail.com">woojinplatform@gmail.com</a> 로 문의해 주세요.
         </>
     );
 };

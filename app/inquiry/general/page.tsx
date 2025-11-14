@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         description:
             "광고, 제휴, 기타 일반적인 문의사항을 남겨주세요. 담당자가 확인 후 연락드립니다.",
         type: "website",
-        url: "https://www.sfinpay.co.kr/inquiry/general",
+        url: "http://sfinpayment.com/inquiry/general",
     },
 };
 
