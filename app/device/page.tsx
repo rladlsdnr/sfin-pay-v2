@@ -66,17 +66,17 @@ const Device: React.FC = () => {
                 <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
                     {[
                         {
-                            img: "/images/devices/pos-terminal.jpg",
+                            img: "/images/devices/9.png",
                             title: "스탠다드 POS 단말기",
                             desc: "매장 결제의 표준. 모든 카드 및 QR 결제 호환",
                         },
                         {
-                            img: "/images/devices/tablet-kiosk.jpg",
-                            title: "태블릿 키오스크",
-                            desc: "셀프주문 · 무인결제용 클라우드 기반 키오스크",
+                            img: "/images/devices/6.png",
+                            title: "유선 단말기",
+                            desc: "고정형 매장에 적합. LAN/USB 연결로 안정적 결제 환경 제공",
                         },
                         {
-                            img: "/images/devices/handheld.jpg",
+                            img: "/images/devices/3.png",
                             title: "휴대형 무선 단말기",
                             desc: "이동식 매장, 테이블 오더용 경량 무선 리더기",
                         },
@@ -88,12 +88,14 @@ const Device: React.FC = () => {
                             transition={{ duration: 0.6, delay: 0.15 * (i + 1) }}
                             className="bg-white border border-[#a7f3d0]/60 rounded-2xl shadow-sm hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] max-w-sm"
                         >
-                            <img
-                                src={d.img}
-                                alt={d.title}
-                                className="w-full h-56 object-cover rounded-t-2xl"
-                            />
-                            <div className="p-6">
+                            <div className="flex justify-center">
+                                <img
+                                    src={d.img}
+                                    alt={d.title}
+                                    className="max-w-300 max-h-56 object-cover rounded-t-2xl"
+                                />
+                            </div>
+                            <div className="p-6 pt-2">
                                 <h3 className="text-xl font-semibold text-[#10b981] mb-2">
                                     {d.title}
                                 </h3>
