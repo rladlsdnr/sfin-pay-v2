@@ -33,7 +33,7 @@ export default function Travel(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
-                    여행 서비스 정산,{" "}
+                    여행 서비스,{" "}
                     <br className="block md:hidden" />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         예약부터 환불까지 자동화
