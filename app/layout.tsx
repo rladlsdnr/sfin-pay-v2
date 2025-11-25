@@ -78,7 +78,9 @@ export default function RootLayout({
         {/* ✅ 사이트 검증용 (Google / Naver Search Console) */}
         <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" />
         <meta name="naver-site-verification" content="YOUR_NAVER_CODE" />
-
+        <link rel="icon" href="/icon.png" sizes="32x32" />
+        <link rel="icon" href="/icon.png" sizes="16x16" />
+        <link rel="apple-touch-icon" href="/icon.png" />
         {/* ✅ Schema.org 구조화 데이터 */}
         <script
           type="application/ld+json"
