@@ -282,19 +282,19 @@ export default function SettlementInquiryClient(): JSX.Element {
                                 "@type": "ListItem",
                                 position: 1,
                                 name: "SFIN PAY",
-                                item: "http://sfinpayment.com/",
+                                item: "https://sfinpayment.com/",
                             },
                             {
                                 "@type": "ListItem",
                                 position: 2,
                                 name: "문의",
-                                item: "http://sfinpayment.com/inquiry/support",
+                                item: "https://sfinpayment.com/inquiry/support",
                             },
                             {
                                 "@type": "ListItem",
                                 position: 3,
                                 name: "정산 문의",
-                                item: "http://sfinpayment.com/inquiry/settlement",
+                                item: "https://sfinpayment.com/inquiry/settlement",
                             },
                         ],
                     }),
@@ -475,7 +475,7 @@ export default function SettlementInquiryClient(): JSX.Element {
                     >
                         {/* Gmail */}
                         <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=sfinpay@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
@@ -488,7 +488,7 @@ export default function SettlementInquiryClient(): JSX.Element {
 
                         {/* Outlook */}
                         <a
-                            href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            href="https://outlook.office.com/mail/deeplink/compose?to=sfinpay@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 

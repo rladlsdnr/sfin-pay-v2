@@ -17,10 +17,10 @@ import hospitalAnim from '@/public/lottie/industry_hospital.json';
 import personalAnim from '@/public/lottie/industry_personal.json';
 
 const fadeUp = (i = 0) => ({
-    initial: { opacity: 1, y: 25 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration: 0.55, delay: 0.07 * i },
+    //initial: { opacity: 1, y: 25 },
+    //whileInView: { opacity: 1, y: 0 },
+    //viewport: { once: true, amount: 0.2 },
+    //transition: { duration: 0.55, delay: 0.07 * i },
 });
 
 export default function Features2(): JSX.Element {

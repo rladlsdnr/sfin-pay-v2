@@ -73,9 +73,9 @@ export default function Hero(): JSX.Element {
             {/* 좌측 텍스트 영역 */}
             <div className="z-10 w-full lg:w-1/2 px-10 md:px-16 lg:px-24 py-24 lg:py-0 text-center lg:text-left">
                 <motion.h1
-                    initial={{ opacity: 1, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5 }}
+                    //initial={{ opacity: 1, y: 10 }}
+                    //animate={{ opacity: 1, y: 0 }}
+                    //transition={{ duration: 0.5 }}
                     className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#0b3c34]"
                 >
                     {/* 상단 서브 타이틀 */}
@@ -97,9 +97,9 @@ export default function Hero(): JSX.Element {
 
                 {/* 본문 설명 */}
                 <motion.p
-                    initial={{ opacity: 1, y: 10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ delay: 0.2, duration: 0.5 }}
+                    //initial={{ opacity: 1, y: 10 }}
+                    //animate={{ opacity: 1, y: 0 }}
+                    //transition={{ delay: 0.2, duration: 0.5 }}
                     className="mt-6 text-base md:text-lg text-[#045a4d]/90 leading-relaxed max-w-md mx-auto lg:mx-0"
                 >
                     SFIN PAY는 <strong>보안·안정성·확장성</strong>을 기반으로

@@ -31,10 +31,10 @@ function LottieLoader({ src, className }: { src: string; className?: string }) {
 }
 
 const fadeUp = (i = 0) => ({
-    initial: { opacity: 1, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration: 0.6, delay: 0.08 * i },
+    //initial: { opacity: 1, y: 20 },
+    //whileInView: { opacity: 1, y: 0 },
+    //viewport: { once: true, amount: 0.2 },
+    //transition: { duration: 0.6, delay: 0.08 * i },
 });
 
 export default function Features1(): JSX.Element {

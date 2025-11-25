@@ -338,7 +338,7 @@ export default function CompanyIntro(): JSX.Element {
                     <p>상호명: (주)SFIN PAY | 대표이사: 고영빈</p>
                     <p>사업자등록번호: 421-88-02504</p>
                     <p>주소: 서울특별시 영등포구 여의대방로 67길11 5층 에이 5-41호</p>
-                    <p>대표번호: 010-2952-2667 | 이메일: woojinplatform@gmail.com</p>
+                    <p>대표번호: 010-6672-3499 | 이메일: sfinpay@gmail.com</p>
                     <p>Copyright © 2025 SFIN PAY Co., Ltd. All rights reserved.</p>
                 </div>
             </section>

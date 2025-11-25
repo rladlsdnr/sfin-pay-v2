@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         description:
             "API, SDK, 결제 모듈 연동 및 기술 지원 문의를 남겨주세요. 담당 개발자가 직접 답변드립니다.",
         type: "website",
-        url: "http://sfinpayment.com/inquiry/integration",
+        url: "https://sfinpayment.com/inquiry/integration",
     },
 };
 

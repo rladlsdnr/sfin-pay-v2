@@ -13,7 +13,7 @@ export const metadata = {
   },
   description:
     "SFIN PAY — 빠르고 안전한 결제·정산 인프라. D+0/D+1 정산, 유동성, 보안, 컴플라이언스.",
-  metadataBase: new URL("http://sfinpayment.com/"),
+  metadataBase: new URL("https://sfinpayment.com/"),
   keywords: [
     "SFIN PAY",
     "PG사",
@@ -30,7 +30,7 @@ export const metadata = {
   ],
   openGraph: {
     type: "website",
-    url: "http://sfinpayment.com/",
+    url: "https://sfinpayment.com/",
     title: "SFIN PAY | 통합 결제 · 정산 플랫폼",
     description:
       "빠르고 안전한 결제·정산 인프라. D+0/D+1 정산, 유동성, 보안, 컴플라이언스.",
@@ -89,8 +89,8 @@ export default function RootLayout({
                 {
                   "@type": "Organization",
                   name: "SFIN PAY",
-                  url: "http://sfinpayment.com/",
-                  logo: "http://sfinpayment.com//og/sfinpay_logo_mint.png",
+                  url: "https://sfinpayment.com/",
+                  logo: "https://sfinpayment.com//og/sfinpay_logo_mint.png",
                   sameAs: [
                     "https://www.instagram.com/sfinpay",
                     "https://www.linkedin.com/company/sfinpay",
@@ -99,11 +99,11 @@ export default function RootLayout({
                 {
                   "@type": "WebSite",
                   name: "SFIN PAY",
-                  url: "http://sfinpayment.com/",
+                  url: "https://sfinpayment.com/",
                   potentialAction: {
                     "@type": "SearchAction",
                     target:
-                      "http://sfinpayment.com//search?q={search_term_string}",
+                      "https://sfinpayment.com//search?q={search_term_string}",
                     "query-input": "required name=search_term_string",
                   },
                 },
@@ -151,13 +151,13 @@ export default function RootLayout({
                   "@type": "ListItem",
                   position: 1,
                   name: "홈",
-                  item: "http://sfinpayment.com/",
+                  item: "https://sfinpayment.com/",
                 },
                 {
                   "@type": "ListItem",
                   position: 2,
                   name: "서비스",
-                  item: "http://sfinpayment.com//features",
+                  item: "https://sfinpayment.com//features",
                 },
               ],
             }),

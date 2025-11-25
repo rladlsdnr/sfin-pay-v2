@@ -145,7 +145,7 @@ export default function Recruit(): JSX.Element {
                             value={form.email}
                             onChange={handleChange}
                             required
-                            placeholder="woojinplatform@gmail.com"
+                            placeholder="sfinpay@gmail.com"
                             className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
                         />
                     </div>
@@ -219,11 +219,11 @@ export default function Recruit(): JSX.Element {
                     <div className="flex flex-wrap justify-center gap-8 text-[#1e3a34]/85 text-lg">
                         <div className="flex items-center gap-3">
                             <Mail className="text-[#10b981]" size={22} />
-                            <span>woojinplatform@gmail.com</span>
+                            <span>sfinpay@gmail.com</span>
                         </div>
                         <div className="flex items-center gap-3">
                             <Phone className="text-[#10b981]" size={22} />
-                            <span>010-2952-2667</span>
+                            <span>010-6672-3499</span>
                         </div>
                     </div>
                 </motion.div>

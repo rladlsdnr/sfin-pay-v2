@@ -11,7 +11,7 @@ export const metadata: Metadata = {
         description:
             "입금 지연, 정산 내역, 세금계산서, 정산 정책 관련 문의를 남겨주세요.",
         type: "website",
-        url: "http://sfinpayment.com/inquiry/settlement",
+        url: "https://sfinpayment.com/inquiry/settlement",
     },
 };
 

@@ -45,7 +45,7 @@ export default function Footer(): JSX.Element {
                             <Mail size={18} aria-hidden />
                             문의 메일
                         </div>
-                        <p className="text-sm leading-relaxed">woojinplatfrom@gmail.com</p>
+                        <p className="text-sm leading-relaxed">sfinpay@gmail.com</p>
                     </div>
 
                     <div>
@@ -53,7 +53,7 @@ export default function Footer(): JSX.Element {
                             <Phone size={18} aria-hidden />
                             대표 번호
                         </div>
-                        <p className="text-sm leading-relaxed">010-2952-2667</p>
+                        <p className="text-sm leading-relaxed">010-6672-3499</p>
                     </div>
                 </motion.div>
 

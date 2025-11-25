@@ -4,10 +4,10 @@ import { motion } from 'framer-motion';
 import { Building2, Handshake } from 'lucide-react';
 
 const fadeUp = (i = 0) => ({
-    initial: { opacity: 1, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true, amount: 0.2 },
-    transition: { duration: 0.6, delay: 0.08 * i },
+    //initial: { opacity: 1, y: 20 },
+    //whileInView: { opacity: 1, y: 0 },
+    //viewport: { once: true, amount: 0.2 },
+    //transition: { duration: 0.6, delay: 0.08 * i },
 });
 
 interface Partner {
@@ -93,9 +93,9 @@ export default function Partners(): JSX.Element {
             <div className="flex flex-col gap-8 md:gap-10">
                 {/* 1행 */}
                 <motion.div
-                    initial={{ x: 0 }}
-                    animate={{ x: ['0%', '-33.3333%'] }}
-                    transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
+                    //initial={{ x: 0 }}
+                    //animate={{ x: ['0%', '-33.3333%'] }}
+                    //transition={{ duration: 40, repeat: Infinity, ease: 'linear' }}
                     className="flex gap-10 whitespace-nowrap opacity-90 will-change-transform"
                 >
                     {[...row1, ...row1, ...row1].map((p, i) => (
@@ -116,9 +116,9 @@ export default function Partners(): JSX.Element {
 
                 {/* 2행 */}
                 <motion.div
-                    initial={{ x: 0 }}
-                    animate={{ x: ['-33.3333%', '0%'] }}
-                    transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
+                    //initial={{ x: 0 }}
+                    //animate={{ x: ['-33.3333%', '0%'] }}
+                    //transition={{ duration: 45, repeat: Infinity, ease: 'linear' }}
                     className="hidden sm:flex gap-10 whitespace-nowrap opacity-90 will-change-transform"
                 >
                     {[...row2, ...row2, ...row2].map((p, i) => (
@@ -139,9 +139,9 @@ export default function Partners(): JSX.Element {
 
                 {/* 3행 */}
                 <motion.div
-                    initial={{ x: 0 }}
-                    animate={{ x: ['0%', '-33.3333%'] }}
-                    transition={{ duration: 42, repeat: Infinity, ease: 'linear' }}
+                    //initial={{ x: 0 }}
+                    //animate={{ x: ['0%', '-33.3333%'] }}
+                    //transition={{ duration: 42, repeat: Infinity, ease: 'linear' }}
                     className="hidden sm:flex gap-10 whitespace-nowrap opacity-90 will-change-transform"
                 >
                     {[...row3, ...row3, ...row3].map((p, i) => (

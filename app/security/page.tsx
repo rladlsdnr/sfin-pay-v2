@@ -295,10 +295,10 @@ export default function SecurityPolicy(): JSX.Element {
                         <p>보안 관련 문의·신고는 아래 채널을 통해 가능합니다:</p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
                             <li>
-                                <b>이메일:</b> woojinplatform@gmail.com
+                                <b>이메일:</b> sfinpay@gmail.com
                             </li>
                             <li>
-                                <b>대표번호:</b> 010-2952-2667
+                                <b>대표번호:</b> 010-6672-3499
                             </li>
                             <li>
                                 <b>주소:</b> 서울특별시 영등포구 여의대방로 67길11 5층 에이 5-41호

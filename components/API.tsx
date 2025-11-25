@@ -36,8 +36,8 @@ type APISectionProps = {
    애니메이션 프리셋 (Framer Motion 11 호환)
 ────────────────────────────────────────────────────────── */
 const fadeUp = (i = 0) => ({
-    initial: { opacity: 1, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
+    //initial: { opacity: 1, y: 20 },
+    //whileInView: { opacity: 1, y: 0 },
 });
 
 /* ─────────────────────────────────────────────────────────
