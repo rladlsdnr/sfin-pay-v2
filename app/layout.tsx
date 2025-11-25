@@ -36,10 +36,10 @@ export const metadata = {
       "빠르고 안전한 결제·정산 인프라. D+0/D+1 정산, 유동성, 보안, 컴플라이언스.",
     images: [
       {
-        url: "/og/sfinpay_og.png",
+        url: "/sfinpay.png",
         width: 1200,
-        height: 630,
-        alt: "SFIN PAY 메인 OG 이미지",
+        //height: 630,
+        alt: "SFIN PAY",
       },
     ],
   },
@@ -48,7 +48,7 @@ export const metadata = {
     title: "SFIN PAY",
     description:
       "SFIN PAY — D+0/D+1 정산, 수기결제, 유동성 솔루션을 제공하는 통합 결제 플랫폼.",
-    images: ["/og/sfinpay_og.png"],
+    images: ["/sfinpay.png"],
   },
   icons: {
     icon: "/favicon.ico",
