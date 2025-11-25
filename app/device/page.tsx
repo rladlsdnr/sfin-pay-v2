@@ -66,19 +66,19 @@ const Device: React.FC = () => {
                 <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
                     {[
                         {
-                            img: "/images/devices/9.png",
-                            title: "스탠다드 POS 단말기",
-                            desc: "매장 결제의 표준. 모든 카드 및 QR 결제 호환",
+                            img: "/images/devices/terminal.png",
+                            title: "단말기",
+                            desc: "고성능 5.5인치 대형 터치 화면, 다양한 결제가 지원되는 모바일 단말기",
                         },
                         {
-                            img: "/images/devices/6.png",
-                            title: "유선 단말기",
-                            desc: "고정형 매장에 적합. LAN/USB 연결로 안정적 결제 환경 제공",
+                            img: "/images/devices/pos.png",
+                            title: "포스",
+                            desc: "14인치 멀티 터치 전기 용량 터치스크린, 세련되고 인체공학적인 안드로이드 POS",
                         },
                         {
-                            img: "/images/devices/3.png",
-                            title: "휴대형 무선 단말기",
-                            desc: "이동식 매장, 테이블 오더용 경량 무선 리더기",
+                            img: "/images/devices/kiosk.png",
+                            title: "키오스크",
+                            desc: "21.5인치 FHD 터치스크린, 깔끔한 디자인의 고품격 키오스크",
                         },
                     ].map((d, i) => (
                         <motion.div
@@ -269,7 +269,7 @@ const Device: React.FC = () => {
                 >
                     {/* Gmail */}
                     <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=sfinpay@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                        href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
@@ -282,7 +282,7 @@ const Device: React.FC = () => {
 
                     {/* Outlook */}
                     <a
-                        href="https://outlook.office.com/mail/deeplink/compose?to=sfinpay@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                        href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 

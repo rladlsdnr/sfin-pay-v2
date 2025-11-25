@@ -18,8 +18,8 @@ import {
    ✨ Animation Preset (Framer Motion v11 호환)
 ────────────────────────────────────────────────────────── */
 const fadeUp = (i = 0) => ({
-    //initial: { opacity: 1, y: 20 },
-    //whileInView: { opacity: 1, y: 0 },
+    initial: { opacity: 1, y: 20 },
+    whileInView: { opacity: 1, y: 0 },
 });
 
 /* ─────────────────────────────────────────────────────────

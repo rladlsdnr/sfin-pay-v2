@@ -284,7 +284,7 @@ export default function PrivacyPolicy(): JSX.Element {
                         <p>개인정보 관련 문의는 아래 채널을 통해 가능합니다:</p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
                             <li>
-                                <b>이메일:</b> sfinpay@gmail.com
+                                <b>이메일:</b> woojinplatform@gmail.com
                             </li>
                             <li>
                                 <b>대표번호:</b> 010-6672-3499

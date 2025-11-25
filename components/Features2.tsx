@@ -17,10 +17,10 @@ import hospitalAnim from '@/public/lottie/industry_hospital.json';
 import personalAnim from '@/public/lottie/industry_personal.json';
 
 const fadeUp = (i = 0) => ({
-    //initial: { opacity: 1, y: 25 },
-    //whileInView: { opacity: 1, y: 0 },
-    //viewport: { once: true, amount: 0.2 },
-    //transition: { duration: 0.55, delay: 0.07 * i },
+    initial: { opacity: 1, y: 25 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.2 },
+    transition: { duration: 0.55, delay: 0.07 * i },
 });
 
 export default function Features2(): JSX.Element {
@@ -116,15 +116,15 @@ export default function Features2(): JSX.Element {
         >
             {/* 💫 헤더 */}
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-20">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#000000] text-sm font-medium">
                     <Building2 size={16} /> 업종별 맞춤 솔루션
                 </span>
-                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
+                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#000000] leading-snug">
                     업종에 맞는{" "}
                     <br className="block md:hidden" />
-                    <span className="text-[#00b894]">결제·정산 환경</span>
+                    <span className="text-[#000000]">결제·정산 환경</span>
                 </h2>
-                <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
+                <p className="mt-5 text-[#000000]/80 text-lg leading-relaxed">
                     쇼핑부터 의료까지, 모든 업종을 아우르는 유연한 결제 인프라를 제공합니다.
                     <br />
                     SFIN PAY는 업종별 결제 흐름에 최적화되어 있습니다.
@@ -156,16 +156,16 @@ export default function Features2(): JSX.Element {
                                     autoplay
                                     className="w-[100px] h-[100px] mb-4 opacity-90"
                                 />
-                                <h4 className="text-lg font-semibold text-[#0C3C35] mb-1">{c.title}</h4>
-                                <p className="text-sm text-[#2E5C54]/70 mb-2">{c.sub}</p>
-                                <p className="text-sm text-[#2E5C54]/80 leading-relaxed mb-4">{c.desc}</p>
+                                <h4 className="text-lg font-semibold text-[#000000] mb-1">{c.title}</h4>
+                                <p className="text-sm text-[#000000]/70 mb-2">{c.sub}</p>
+                                <p className="text-sm text-[#000000]/80 leading-relaxed mb-4">{c.desc}</p>
 
                                 {/* ✳️ 키워드 */}
                                 <div className="flex flex-wrap gap-2 justify-center mb-5">
                                     {c.keywords.map((k, idx) => (
                                         <span
                                             key={idx}
-                                            className="px-3 py-1 rounded-lg text-xs font-medium bg-[#EFFFF9] border border-[#00b894]/20 text-[#008c73]"
+                                            className="px-3 py-1 rounded-lg text-xs font-medium bg-[#EFFFF9] border border-[#00b894]/20 text-[#000000]"
                                         >
                                             {k}
                                         </span>
@@ -174,7 +174,7 @@ export default function Features2(): JSX.Element {
                             </div>
 
                             {/* CTA */}
-                            <div className="text-center inline-flex items-center justify-center gap-1 text-[#00b894] font-semibold group-hover:underline">
+                            <div className="text-center inline-flex items-center justify-center gap-1 text-[#000000] font-semibold group-hover:underline">
                                 자세히 보기 <ArrowRight size={14} />
                             </div>
                         </motion.div>

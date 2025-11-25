@@ -229,8 +229,12 @@ export default function Navbar(): JSX.Element {
                         className="flex items-center gap-2 select-none "
                         style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
-                        <img src='/sfinpay.png' style={{ width: '40px' }} />
-                        <span className="text-2xl font-extrabold text-[#00b894] tracking-tight">SFIN PAY</span>
+                        <img src='/sfinpay.png' style={{ width: '120px' }} />
+                        {
+                            /*
+                            <span className="text-2xl font-extrabold text-[#00b894] tracking-tight">SFIN PAY</span>
+                            */
+                        }
                     </button>
 
                     {/* 💻 데스크탑 메뉴 */}

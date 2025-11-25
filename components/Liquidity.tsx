@@ -6,9 +6,9 @@ import { motion, type Transition } from "framer-motion";
 const EASE_OUT: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
 const fadeUp = (i = 0) => ({
-    //initial: { opacity: 0, y: 24 },
-    //whileInView: { opacity: 1, y: 0 },
-    //viewport: { once: true, amount: 0.2 },
+    initial: { opacity: 0, y: 24 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true, amount: 0.2 },
     transition: {
         type: "tween",
         duration: 0.6,

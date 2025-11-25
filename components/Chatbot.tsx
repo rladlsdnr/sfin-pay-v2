@@ -9,7 +9,7 @@ const FAQ_LIST: { keywords: string[]; answer: React.ReactNode }[] = [
     { keywords: ["수수료"], answer: <>결제 수수료는 업종·거래량에 따라 상이하며 평균 0.5~2.5% 수준입니다.<br />정확한 견적은 가맹 문의 시 안내드립니다.</> },
     { keywords: ["가맹 문의", "가맹", "제휴"], answer: <>SFIN PAY 가맹은 온라인 간편 신청이 가능합니다.<br />상단 메뉴 또는 아래 링크에서 신청서를 제출해주세요.<br />👉 <a href="/inquiry/contract">가맹 문의 바로가기</a></> },
     { keywords: ["보안"], answer: <>모든 결제 데이터는 PCI-DSS 및 ISMS 인증 체계로 관리되며,<br />실시간 위험 탐지 시스템이 적용됩니다.</> },
-    { keywords: ["고객센터", "문의", "전화"], answer: <>고객센터는 평일 09:00~18:00 운영됩니다.<br />채팅 또는 <a href="mailto:sfinpay@gmail.com">sfinpay@gmail.com</a>로 문의주세요.</> },
+    { keywords: ["고객센터", "문의", "전화"], answer: <>고객센터는 평일 09:00~18:00 운영됩니다.<br />채팅 또는 <a href="mailto:woojinplatform@gmail.com">woojinplatform@gmail.com</a>로 문의주세요.</> },
 ];
 
 interface ChatMessage { from: "user" | "bot"; text: React.ReactNode; }
@@ -18,7 +18,7 @@ const findBestMatch = (text: string): React.ReactNode => {
     const lower = text.toLowerCase();
     const matched = FAQ_LIST.find(f => f.keywords.some(k => lower.includes(k.toLowerCase())));
     if (matched) return matched.answer;
-    return <>이 주제에 대한 답변은 당장 안내드리기 어려워요. 😊<br />하지만 걱정 마세요.<br />가맹팀이 신속히 안내드릴 수 있도록 도와드릴게요.<br />👉 <a href="/inquiry/contract">가맹 문의 바로가기</a><br />또는 <a href="mailto:sfinpay@gmail.com">sfinpay@gmail.com</a> 로 문의해 주세요.</>;
+    return <>이 주제에 대한 답변은 당장 안내드리기 어려워요. 😊<br />하지만 걱정 마세요.<br />가맹팀이 신속히 안내드릴 수 있도록 도와드릴게요.<br />👉 <a href="/inquiry/contract">가맹 문의 바로가기</a><br />또는 <a href="mailto:woojinplatform@gmail.com">woojinplatform@gmail.com</a> 로 문의해 주세요.</>;
 };
 
 export default function Chatbot(): JSX.Element {

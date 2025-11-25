@@ -357,15 +357,15 @@ export default function GeneralInquiryClient(): JSX.Element {
                         {[
                             {
                                 q: "제휴 제안은 어디로 연락하나요?",
-                                a: "sfinpay@gmail.com으로 제안서를 전달하면 됩니다.",
+                                a: "woojinplatform@gmail.com으로 제안서를 전달하면 됩니다.",
                             },
                             {
                                 q: "언론 / 미디어 요청은 어떻게 접수하나요?",
-                                a: "sfinpay@gmail.com 또는 카카오톡 채널로 보도자료 또는 인터뷰 요청을 보내주세요.",
+                                a: "woojinplatform@gmail.com 또는 카카오톡 채널로 보도자료 또는 인터뷰 요청을 보내주세요.",
                             },
                             {
                                 q: "기타 일반 운영 문의는 어디서 처리하나요?",
-                                a: "sfinpay@gmail.com 또는 카카오톡 채널로 문의해주세요",
+                                a: "woojinplatform@gmail.com 또는 카카오톡 채널로 문의해주세요",
                             },
                             {
                                 q: "회신까지 얼마나 걸리나요?",
@@ -409,7 +409,7 @@ export default function GeneralInquiryClient(): JSX.Element {
                     >
                         {/* Gmail */}
                         <a
-                            href="https://mail.google.com/mail/?view=cm&fs=1&to=sfinpay@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            href="https://mail.google.com/mail/?view=cm&fs=1&to=woojinplatform@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
@@ -422,7 +422,7 @@ export default function GeneralInquiryClient(): JSX.Element {
 
                         {/* Outlook */}
                         <a
-                            href="https://outlook.office.com/mail/deeplink/compose?to=sfinpay@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
+                            href="https://outlook.office.com/mail/deeplink/compose?to=woojinplatform@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
