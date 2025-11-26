@@ -74,17 +74,17 @@ export default function Partners(): JSX.Element {
             <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_60%_40%,rgba(0,200,155,0.08),transparent_10%)]" />
 
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#000000] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm font-medium">
                     <Building2 size={16} /> 함께하는 파트너
                 </span>
 
-                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#000000] leading-snug">
+                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
                     신뢰할 수 있는{' '}
                     <br className="block md:hidden" />
-                    <span className="text-[#000000]">결제 생태계</span>
+                    <span className="text-[#00b894]">결제 생태계</span>
                 </h2>
 
-                <p className="mt-5 text-[#000000]/80 text-lg leading-relaxed">
+                <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
                     금융기관, 커머스, 기술기업과 함께
                     <br /> 안정적이고 투명한 결제 환경을 구축합니다.
                 </p>
@@ -173,12 +173,12 @@ export default function Partners(): JSX.Element {
                 </div>
                 */}
 
-                <h3 className="text-xl md:text-2xl font-semibold text-[#000000] mb-3">
+                <h3 className="text-xl md:text-2xl font-semibold text-[#0f172a] mb-3">
                     SFIN PAY와 함께 성장할 <br className="block md:hidden" />
                     파트너를 찾습니다
                 </h3>
 
-                <p className="text-[#000000]/80 text-base mb-6">
+                <p className="text-[#334155]/80 text-base mb-6">
                     제휴 금융기관, 플랫폼, SaaS 파트너로 등록하여
                     함께 시장을 확장하고 리워드를 공유하세요.
                 </p>
@@ -186,8 +186,8 @@ export default function Partners(): JSX.Element {
                 <a
                     href="#contact"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
-                     bg-gradient-to-r from-[#000000] to-[#000000]
-                     hover:from-[#000000] hover:to-[#000000]
+                     bg-gradient-to-r from-[#00c89b] to-[#00b894]
+                     hover:from-[#00b894] hover:to-[#00a884]
                      text-white font-semibold shadow-[0_8px_20px_rgba(0,200,155,0.25)] t1"
                 >
                     제휴 문의하기 →

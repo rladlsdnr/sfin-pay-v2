@@ -47,7 +47,7 @@ export default function Hero(): JSX.Element {
                     className="hero-fade-up text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-[#0b3c34]"
                 >
                     {/* 상단 서브 타이틀 */}
-                    <span className="block mb-3 text-[#000000] text-base md:text-lg font-semibold">
+                    <span className="block mb-3 text-[#00997a] text-base md:text-lg font-semibold">
                         PG · 결제 단말기 · 온라인 결제까지
                     </span>
 
@@ -55,7 +55,7 @@ export default function Hero(): JSX.Element {
                     <span
                         className="block
               text-transparent bg-clip-text
-              bg-gradient-to-r from-[#000000] via-[#000000] to-[#000000]"
+              bg-gradient-to-r from-[#00b894] via-[#00997a] to-[#006f4f]"
                     >
                         비즈니스를 성장시키는
                         <br />
@@ -65,7 +65,7 @@ export default function Hero(): JSX.Element {
 
                 {/* 본문 설명 */}
                 <p
-                    className="hero-fade-up-delay mt-6 text-base md:text-lg text-[#000000]/90 leading-relaxed max-w-md mx-auto lg:mx-0"
+                    className="hero-fade-up-delay mt-6 text-base md:text-lg text-[#045a4d]/90 leading-relaxed max-w-md mx-auto lg:mx-0"
                 >
                     SFIN PAY는 <strong>보안·안정성·확장성</strong>을 기반으로
                     온라인과 오프라인을 아우르는 결제 환경을 제공합니다.
@@ -78,8 +78,8 @@ export default function Hero(): JSX.Element {
                     <Link href="/inquiry/contract">
                         <button
                             className="px-9 py-4 rounded-xl font-semibold shadow-lg
-                bg-gradient-to-r from-[#000000] to-[#000000]
-                hover:from-[#000000] hover:to-[#000000]
+                bg-gradient-to-r from-[#10b981] to-[#00b894]
+                hover:from-[#00b894] hover:to-[#00a884]
                 text-white text-base md:text-lg
                 transition-transform transition-colors duration-200
                 hover:scale-[1.02]"
@@ -91,8 +91,8 @@ export default function Hero(): JSX.Element {
                     <button
                         onClick={scrollToFeatures}
                         className="px-9 py-4 rounded-xl font-medium
-              border border-[#000000]/40 hover:border-[#000000]
-              text-[#000000] text-base md:text-lg
+              border border-[#00d8b8]/40 hover:border-[#00b8a0]
+              text-[#0b3c34] text-base md:text-lg
               transition-transform transition-colors duration-200
               hover:scale-[1.02]"
                     >

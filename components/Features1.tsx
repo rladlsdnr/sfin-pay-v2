@@ -96,15 +96,15 @@ export default function Features1(): JSX.Element {
         >
             {/* 💫 상단 시그니처 */}
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-20">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#000000] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm font-medium">
                     <Building2 size={16} /> 결제 방식별 솔루션
                 </span>
-                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#000000] leading-snug">
+                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
                     어떤 결제 방식이든{" "}
                     <br className="block md:hidden" />
-                    <span className="text-[#000000]">한 플랫폼</span>에서
+                    <span className="text-[#00b894]">한 플랫폼</span>에서
                 </h2>
-                <p className="mt-5 text-[#000000]/80 text-lg leading-relaxed">
+                <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
                     카드·간편결제·계좌이체·단말·QR을 한곳에.
                     <br />
                     정산(D+0/D+1)과 보안·리스크까지 기본 제공합니다.
@@ -133,13 +133,13 @@ export default function Features1(): JSX.Element {
 
                             <div className="flex-1 text-left">
                                 <div className="flex items-center gap-2 mb-3">
-                                    <div className="p-2 rounded-lg bg-[#00b894]/10 text-[#000000]">
+                                    <div className="p-2 rounded-lg bg-[#00b894]/10 text-[#00b894]">
                                         {b.icon}
                                     </div>
                                     <h3 className="text-xl font-bold text-[#0C3C35]">{b.title}</h3>
                                 </div>
 
-                                <p className="text-[15px] text-[#000000]/80 leading-relaxed mb-4">
+                                <p className="text-[15px] text-[#2e5c54]/80 leading-relaxed mb-4">
                                     {b.desc}
                                 </p>
 
@@ -147,14 +147,14 @@ export default function Features1(): JSX.Element {
                                     {b.points.map((p) => (
                                         <span
                                             key={p}
-                                            className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-md bg-[#EFFFF9] border border-[#C4F7EC] text-[#000000]"
+                                            className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-md bg-[#EFFFF9] border border-[#C4F7EC] text-[#0b4d45]"
                                         >
                                             <CheckCircle2 size={13} /> {p}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="inline-flex items-center gap-1 text-[#000000] font-semibold group-hover:underline">
+                                <div className="inline-flex items-center gap-1 text-[#00b894] font-semibold group-hover:underline">
                                     자세히 보기 <ArrowRight size={14} />
                                 </div>
                             </div>
