@@ -9,31 +9,29 @@ import Chatbot from "@/components/Chatbot";
 export const metadata = {
   title: {
     default: "스핀페이 SFIN PAY | 무선단말기·카드결제기·POS 포스 단말기 결제 솔루션",
-    template: "SFIN PAY | %s",
+    template: "스핀페이 SFIN PAY | %s",
   },
   description:
-    "SFIN PAY — 빠르고 안전한 결제·정산 인프라. D+0/D+1 정산, 유동성, 보안, 컴플라이언스.",
+    "스핀페이는 오프라인·온라인·QR 결제를 모두 지원하는 통합 결제 플랫폼입니다. 빠르고 안전한 결제 인프라, 안정적인 D+0/D+1 정산, 유동성, 보안, 컴플라이언스 솔루션을 제공합니다.",
   metadataBase: new URL("https://sfinpayment.com/"),
   keywords: [
-    "SFIN PAY",
-    "PG사",
-    "결제",
-    "정산",
+    "통합 결제 플랫폼",
+    "무선단말기",
+    "카드결제기",
+    "POS 단말기",
+    "온라인 결제",
+    "QR 결제",
     "D+0 정산",
     "D+1 정산",
-    "비대면 결제",
-    "수기결제",
-    "간편결제",
-    "유동성",
-    "보안",
-    "컴플라이언스",
+    "결제 인프라",
+    "스핀페이",
   ],
   openGraph: {
     type: "website",
     url: "https://sfinpayment.com/",
-    title: "SFIN PAY | 통합 결제 · 정산 플랫폼",
+    title: "스핀페이 SFIN PAY | 무선단말기·카드결제기·POS 포스 단말기 결제 솔루션",//"SFIN PAY | 통합 결제 · 정산 플랫폼",
     description:
-      "빠르고 안전한 결제·정산 인프라. D+0/D+1 정산, 유동성, 보안, 컴플라이언스.",
+      "스핀페이는 오프라인·온라인·QR 결제를 모두 지원하는 통합 결제 플랫폼입니다. 빠르고 안전한 결제 인프라, 안정적인 D+0/D+1 정산, 유동성, 보안, 컴플라이언스 솔루션을 제공합니다.",
     images: [
       {
         url: "/sfinpay.png",
@@ -47,7 +45,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "SFIN PAY",
     description:
-      "SFIN PAY — D+0/D+1 정산, 수기결제, 유동성 솔루션을 제공하는 통합 결제 플랫폼.",
+      "스핀페이는 오프라인·온라인·QR 결제를 모두 지원하는 통합 결제 플랫폼입니다. 빠르고 안전한 결제 인프라, 안정적인 D+0/D+1 정산, 유동성, 보안, 컴플라이언스 솔루션을 제공합니다.",
     images: ["/sfinpay.png"],
   },
   icons: {
@@ -78,9 +76,9 @@ export default function RootLayout({
         {/* ✅ 사이트 검증용 (Google / Naver Search Console) */}
         <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" />
         <meta name="naver-site-verification" content="YOUR_NAVER_CODE" />
-        <link rel="icon" href="/icon.png" sizes="32x32" />
-        <link rel="icon" href="/icon.png" sizes="16x16" />
-        <link rel="apple-touch-icon" href="/icon.png" />
+        <link rel="icon" href="/favicon.ico" />
+        <link rel="shortcut icon" href="/favicon.ico" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         {/* ✅ Schema.org 구조화 데이터 */}
         <script
           type="application/ld+json"
