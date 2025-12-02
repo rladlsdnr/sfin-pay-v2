@@ -40,7 +40,7 @@ const FB: React.FC = () => {
                     {...fadeUp(0)}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
-                    콘텐츠 사업,{' '}
+                    F&B 사업,{' '}
                     <br className='block md:hidden' />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
                         결제와 정산을 더욱 빠르게
