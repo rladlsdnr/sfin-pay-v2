@@ -22,7 +22,6 @@ import {
     Building,
     FileUser
 } from 'lucide-react';
-import dynamic from 'next/dynamic';
 
 interface SubMenuItem {
     label: string;
@@ -36,22 +35,6 @@ interface MenuItem {
     link?: string;
     submenu?: SubMenuItem[];
     categoryDesc?: string;
-}
-
-const Lottie = dynamic(() => import("lottie-react"), { ssr: false });
-
-function LottieLoader({ src, className }: { src: string; className?: string }) {
-    const [data, setData] = React.useState<object | null>(null);
-
-    React.useEffect(() => {
-        fetch(src)
-            .then((res) => res.json())
-            .then(setData)
-            .catch(console.error);
-    }, [src]);
-
-    if (!data) return null;
-    return <Lottie animationData={data} loop autoplay className={className} />;
 }
 
 export default function Navbar(): JSX.Element {
@@ -131,49 +114,37 @@ export default function Navbar(): JSX.Element {
                     label: '외식·프랜차이즈업',
                     desc: 'POS연동, 매출리포트, 본사정산',
                     link: '/fb',
-                    icon: <LottieLoader
-                        src="/lottie/f&b.json"
-                        className="w-4/5 max-w-[320px]" />,
+                    icon: <Building2 size={18} />,
                 },
                 {
                     label: '숙박·여행·레저업',
                     desc: '부분환불, 예약금관리, 자동처리',
                     link: '/hospitality',
-                    icon: <LottieLoader
-                        src="/lottie/travel.json"
-                        className="w-4/5 max-w-[320px]" />,
+                    icon: <ShieldCheck size={18} />,
                 },
                 {
                     label: '콘텐츠·엔터테인먼트',
                     desc: '정기구독, 글로벌결제, 저작권정산',
                     link: '/entertainment',
-                    icon: <LottieLoader
-                        src="/lottie/Entertainment.json"
-                        className="w-4/5 max-w-[320px]" />,
+                    icon: <Server size={18} />,
                 },
                 {
                     label: '병원·의료·헬스케어',
                     desc: '정기구독, 환율자동처리, 저작권정산',
                     link: '/healthcare',
-                    icon: <LottieLoader
-                        src="/lottie/Hospital.json"
-                        className="w-4/5 max-w-[320px]" />,
+                    icon: <Hospital size={18} />,
                 },
                 {
                     label: '기업·광고·임대 서비스',
                     desc: '세금계산서, 대량정산, B2B결제',
                     link: '/b2b',
-                    icon: <LottieLoader
-                        src="/lottie/b2b.json"
-                        className="w-4/5 max-w-[320px]" />,
+                    icon: <Building size={18} />,
                 },
                 {
                     label: '개인·프리랜서',
                     desc: '결제링크, 비사업자결제, 1인창작자',
                     link: '/personal',
-                    icon: <LottieLoader
-                        src="/lottie/freelancer.json"
-                        className="w-4/5 max-w-[320px]" />,
+                    icon: <FileUser size={18} />,
                 },
             ],
         },

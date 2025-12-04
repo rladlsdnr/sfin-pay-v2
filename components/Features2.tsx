@@ -9,12 +9,12 @@ const Lottie = dynamic(() => import('lottie-react'), { ssr: false });
 /* ✅ Lottie 파일 경로 (public/lottie/) */
 import commerceAnim from '@/public/lottie/industry_commerce.json';
 import serviceAnim from '@/public/lottie/industry_service.json';
-import fbAnim from '@/public/lottie/industry_fb.json';
-import travelAnim from '@/public/lottie/industry_travel.json';
-import entertainmentAnim from '@/public/lottie/industry_entertainment.json';
-import b2bAnim from '@/public/lottie/industry_b2b.json';
-import hospitalAnim from '@/public/lottie/industry_hospital.json';
-import personalAnim from '@/public/lottie/industry_personal.json';
+import fbAnim from '@/public/lottie/f&b.json';
+import travelAnim from '@/public/lottie/travel.json';
+import entertainmentAnim from '@/public/lottie/Entertainment.json';
+import b2bAnim from '@/public/lottie/b2b.json';
+import hospitalAnim from '@/public/lottie/Hospital.json';
+import personalAnim from '@/public/lottie/freelancer.json';
 
 const fadeUp = (i = 0) => ({
     initial: { opacity: 1, y: 25 },

@@ -88,16 +88,18 @@ export default function Hero(): JSX.Element {
                         </button>
                     </Link>
 
-                    <button
-                        onClick={scrollToFeatures}
-                        className="px-9 py-4 rounded-xl font-medium
+                    <Link href="/inquiry/integration">
+                        <button
+                            onClick={scrollToFeatures}
+                            className="px-9 py-4 rounded-xl font-medium
               border border-[#00d8b8]/40 hover:border-[#00b8a0]
               text-[#0b3c34] text-base md:text-lg
               transition-transform transition-colors duration-200
               hover:scale-[1.02]"
-                    >
-                        기능 보기
-                    </button>
+                        >
+                            기능 보기
+                        </button>
+                    </Link>
                 </div>
 
                 {/* 필요하면 Lottie를 다시 쓰되, 데스크탑 전용으로만 두는 것도 방법 */}
