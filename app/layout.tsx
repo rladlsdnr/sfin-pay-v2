@@ -75,9 +75,9 @@ export default function RootLayout({
     <html lang="ko" suppressHydrationWarning>
       <head>
         {/* ✅ 사이트 검증용 (Google / Naver Search Console) */}
-        <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" />
         {
           /*
+          <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" />
           <meta name="naver-site-verification" content="YOUR_NAVER_CODE" />
           */
         }
