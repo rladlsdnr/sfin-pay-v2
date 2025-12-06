@@ -76,10 +76,16 @@ export default function RootLayout({
       <head>
         {/* ✅ 사이트 검증용 (Google / Naver Search Console) */}
         <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" />
-        <meta name="naver-site-verification" content="YOUR_NAVER_CODE" />
+        {
+          /*
+          <meta name="naver-site-verification" content="YOUR_NAVER_CODE" />
+          */
+        }
+        {/*
         <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/favicon.ico" />
+        */}
         {/* ✅ Schema.org 구조화 데이터 */}
         <script
           type="application/ld+json"
