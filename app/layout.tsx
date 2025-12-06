@@ -76,6 +76,7 @@ export default function RootLayout({
         {/* ✅ 사이트 검증용 (Google / Naver Search Console) */}
         <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" />
         <meta name="naver-site-verification" content="YOUR_NAVER_CODE" />
+        <title>스핀페이</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
