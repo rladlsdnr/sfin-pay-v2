@@ -29,6 +29,7 @@ export const metadata = {
   openGraph: {
     type: "website",
     url: "https://sfinpayment.com/",
+    siteName: "스핀페이 SFIN PAY",
     title: "스핀페이 SFIN PAY | 무선단말기·카드결제기·POS 포스 단말기 결제 솔루션",//"SFIN PAY | 통합 결제 · 정산 플랫폼",
     description:
       "스핀페이는 오프라인·온라인·QR 결제를 모두 지원하는 통합 결제 플랫폼입니다. 빠르고 안전한 결제 인프라, 안정적인 D+0/D+1 정산, 유동성, 보안, 컴플라이언스 솔루션을 제공합니다.",
@@ -76,7 +77,6 @@ export default function RootLayout({
         {/* ✅ 사이트 검증용 (Google / Naver Search Console) */}
         <meta name="google-site-verification" content="YOUR_GOOGLE_CODE" />
         <meta name="naver-site-verification" content="YOUR_NAVER_CODE" />
-        <title>스핀페이</title>
         <link rel="icon" href="/favicon.ico" />
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
@@ -99,7 +99,8 @@ export default function RootLayout({
                 },
                 {
                   "@type": "WebSite",
-                  name: "SFIN PAY",
+                  name: "스핀페이 SFIN PAY",
+                  alternateName: ["SFIN PAY", "스핀페이"],
                   url: "https://sfinpayment.com/",
                   potentialAction: {
                     "@type": "SearchAction",
