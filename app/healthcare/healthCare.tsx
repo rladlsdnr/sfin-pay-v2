@@ -261,7 +261,7 @@ export default function Medical(): JSX.Element {
                         <Mail size={18} /> Gmail로 문의하기
                     </a>
 
-                    {/* Outlook */}
+                    {/* Outlook 
                     <a
                         href="https://outlook.office.com/mail/deeplink/compose?to=sfinpay@gmail.com&subject=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:"
                         target="_blank"
@@ -273,10 +273,11 @@ export default function Medical(): JSX.Element {
                     >
                         <Mail size={18} /> Outlook으로 문의하기
                     </a>
+                    */}
 
                     {/* 카카오톡 */}
                     <a
-                        href="http://pf.kakao.com/_eftHn/chat"
+                        href="http://pf.kakao.com/_dqyYn/friend"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
