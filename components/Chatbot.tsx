@@ -5,11 +5,31 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X, MessageSquare, HelpCircle, SendHorizonal } from "lucide-react";
 
 const FAQ_LIST: { keywords: string[]; answer: React.ReactNode }[] = [
-    { keywords: ["정산 주기"], answer: <>SFIN PAY는 D+0(당일) 및 D+1(익일) 정산을 지원합니다.<br />사업자 유형에 따라 계약 시 선택 가능합니다.</> },
-    { keywords: ["수수료"], answer: <>결제 수수료는 업종·거래량에 따라 상이하며 평균 0.5~2.5% 수준입니다.<br />정확한 견적은 가맹 문의 시 안내드립니다.</> },
-    { keywords: ["가맹 문의", "가맹", "제휴"], answer: <>SFIN PAY 가맹은 온라인 간편 신청이 가능합니다.<br />상단 메뉴 또는 아래 링크에서 신청서를 제출해주세요.<br />👉 <a href="/inquiry/contract">가맹 문의 바로가기</a></> },
+    { keywords: ["정산 주기"], answer: <>SFIN PAY는 기본적으로 D+1(익일) 정산을 지원하며, 협의에 따라 D+0(당일) 정산도 가능합니다.</> },
+    { keywords: ["수수료"], answer: <>결제 수수료는 업종·거래량에 따라 상이하며 평균 1~3% 수준입니다.<br />정확한 견적은 가맹 문의 시 안내드립니다.</> },
+    {
+        keywords: ["가맹 문의", "가맹", "제휴"],
+        answer: <>
+            SFIN PAY 가맹 문의는 아래 방법으로 접수하실 수 있어요.
+            <br />
+            📩 <a href="https://mail.google.com/mail/?view=cm&fs=1&to=sfinpay@gmail.com&su=SFIN%20PAY%20문의&body=회사명:%0A문의유형:%0A문의내용:" target="_blank" rel="noopener noreferrer" className="text-decoration-line: underline" >메일로 문의하기</a>
+            <br />
+            💬 <a href="http://pf.kakao.com/_dqyYn/friend" target="_blank" rel="noopener noreferrer" className="text-decoration-line: underline">카카오톡 상담하기</a>
+            <br />
+            ☎️ <>대표 전화  : 010-6672-3499</>
+        </>
+    },
     { keywords: ["보안"], answer: <>모든 결제 데이터는 PCI-DSS 및 ISMS 인증 체계로 관리되며,<br />실시간 위험 탐지 시스템이 적용됩니다.</> },
-    { keywords: ["고객센터", "문의", "전화"], answer: <>고객센터는 평일 09:00~18:00 운영됩니다.<br />채팅 또는 <a href="mailto:sfinpay@gmail.com">sfinpay@gmail.com</a>로 문의주세요.</> },
+    {
+        keywords: ["고객센터", "문의", "전화"],
+        answer: <>
+            고객센터는 평일 09:00~18:00 운영됩니다.
+            <br />
+            <a href="mailto:sfinpay@gmail.com">sfinpay@gmail.com</a> 또는
+            <br />
+            <a href="http://pf.kakao.com/_dqyYn/friend" target="_blank" rel="noopener noreferrer" >카카오톡 스핀페이 채널</a>로 문의주세요.
+        </>
+    },
 ];
 
 interface ChatMessage { from: "user" | "bot"; text: React.ReactNode; }
@@ -94,10 +114,9 @@ export default function Chatbot(): JSX.Element {
                             ref={chatRef}
                             className="
                 flex-1 overflow-y-auto space-y-3
-                px-3 sm:px-5 pt-3 sm:pt-4
+                px-3 sm:px-5 py-3 sm:py-4
                 text-[13px] sm:text-[15px] leading-relaxed
                 scrollbar-thin scrollbar-thumb-[#36ffc6]/50 scrollbar-track-transparent
-                pb-[140px] sm:pb-0  
               "
                         >
                             {messages.map((msg, idx) => (
@@ -118,7 +137,7 @@ export default function Chatbot(): JSX.Element {
                         </div>
 
                         {/* 하단 고정 푸터: FAQ + 입력 (모바일에서 항상 표시/고정) */}
-                        <div className="absolute bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-gray-200">
+                        <div className="static bottom-0 left-0 right-0 bg-white/95 backdrop-blur-sm border-t border-gray-200">
                             {/* FAQ 영역 (모바일만 약간 줄인 높이 / 버튼은 모바일에서 더 큼) */}
                             <div
                                 className="

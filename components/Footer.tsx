@@ -51,7 +51,7 @@ export default function Footer(): JSX.Element {
                     <div>
                         <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-[#00b894] font-semibold">
                             <Phone size={18} aria-hidden />
-                            대표 번호
+                            대표 전화
                         </div>
                         <p className="text-sm leading-relaxed">010-6672-3499</p>
                     </div>

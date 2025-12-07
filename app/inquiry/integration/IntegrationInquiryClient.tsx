@@ -19,6 +19,7 @@ import {
     ChevronRight,
     Loader2,
     MessageCircle,
+    ChevronDown,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
@@ -291,6 +292,50 @@ function IntegrationFormInline(): JSX.Element {
     );
 }
 
+const faqs = [
+    {
+        q: "API 키는 어떻게 발급되나요?",
+        a: (
+            <>
+                가맹 심사 승인 후 관리자에서 <b>운영/테스트 키</b>를 즉시 발급 받을 수 있습니다.
+                <br /><br />
+                • <b>환경 분리</b>: Sandbox/Production 키 별도<br />
+                • <b>회전(로테이션)</b>: 키 재발급 및 만료 설정 지원<br />
+                • <b>권한</b>: 최소 권한 원칙으로 범위 제한 가능
+            </>
+        ),
+    },
+    {
+        q: "Webhook 테스트가 가능한가요?",
+        a: (
+            <>
+                가능합니다. <b>Sandbox Webhook 엔드포인트</b>와 <b>시뮬레이터</b>를 제공합니다.
+                <br /><br />
+                • 서명 검증(HMAC) 샘플, 재시도 정책(백오프), 실패 로그 확인<br />
+                • 로컬 터널(ngrok 등) 사용 가이드 제공
+            </>
+        ),
+    },
+    {
+        q: "지원하는 SDK 언어는 무엇인가요?",
+        a: (
+            <>
+                JavaScript/Node.js, Python, Kotlin 등을 지원하며 <b>표준 REST API</b>와
+                <b> Postman 컬렉션</b>도 제공합니다.
+            </>
+        ),
+    },
+    {
+        q: "보안 요구사항이 있나요?",
+        a: (
+            <>
+                <b>TLS 1.2+</b> 통신, <b>서명 검증</b>(HMAC), <b>IP 화이트리스트</b>, <b>비식별화·암호화</b>
+                등 요구사항을 적용합니다. ISMS/PCI-DSS 기준으로 관리됩니다.
+            </>
+        ),
+    },
+]
+
 /* ────────────────────────────────────────────────────────
    ✨ 메인 페이지
 ──────────────────────────────────────────────────────── */
@@ -363,53 +408,29 @@ export default function IntegrationInquiryClient(): JSX.Element {
             </section>
 
             {/* ========================== FAQ ========================== */}
-            <section className="py-10 px-6 md:px-16">
-                <div className="max-w-6xl mx-auto">
-                    <motion.h2
-                        {...fadeUp(0)}
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+            <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
+                <motion.h2
+                    {...fadeUp(0)}
+                    className="text-3xl font-bold text-center mb-10 text-[#0b2723]"
+                >
+                    자주 묻는 질문 (FAQ)
+                </motion.h2>
+
+                {faqs.map((f, i) => (
+                    <motion.details
+                        key={i}
+                        {...fadeUp(i * 0.1)}
+                        className="group border-b border-[#a7f3d0]/50 py-6"
                     >
-                        자주 묻는 질문
-                    </motion.h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {[
-                            {
-                                q: "API 키는 어떻게 발급되나요?",
-                                a: "가맹 심사 승인 후 관리자 페이지에서 즉시 발급됩니다.",
-                            },
-                            {
-                                q: "Webhook 테스트가 가능한가요?",
-                                a: "네, Sandbox Webhook 엔드포인트를 제공합니다.",
-                            },
-                            {
-                                q: "지원하는 SDK 언어는 무엇인가요?",
-                                a: "JavaScript / Node.js / Python / Kotlin 지원.",
-                            },
-                            {
-                                q: "보안 요구사항이 있나요?",
-                                a: "TLS 1.2 이상, HMAC 검증, IP 화이트리스트 등 적용됩니다.",
-                            },
-                        ].map((faq, i) => (
-                            <motion.details
-                                key={i}
-                                {...fadeUp(i * 0.1)}
-                                className="group rounded-2xl bg-white border border-[#a7f3d0]/60 p-5 open:shadow-[0_8px_26px_rgba(16,185,129,0.10)] transition"
-                            >
-                                <summary className="flex items-center justify-between cursor-pointer font-semibold text-[#0b2723]">
-                                    <span className="flex items-center gap-2">
-                                        <CheckCircle2 size={18} className="text-[#10b981]" />
-                                        {faq.q}
-                                    </span>
-                                    <ChevronRight
-                                        size={18}
-                                        className="text-[#10b981] group-open:rotate-90 transition"
-                                    />
-                                </summary>
-                                <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">{faq.a}</p>
-                            </motion.details>
-                        ))}
-                    </div>
-                </div>
+                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#0b2723] hover:text-[#10b981]">
+                            {f.q}
+                            <ChevronDown className="text-[#10b981] group-open:rotate-180 transition-transform" />
+                        </summary>
+                        <div className="mt-3 text-[#1e3a34]/80 leading-relaxed text-[15px] space-y-2">
+                            {f.a}
+                        </div>
+                    </motion.details>
+                ))}
             </section>
 
             <section className="py-10 px-6 md:px-16">

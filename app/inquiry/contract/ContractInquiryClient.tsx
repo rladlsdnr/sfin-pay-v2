@@ -25,6 +25,7 @@ import {
     Globe2,
     Loader2,
     MessageCircle,
+    ChevronDown,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
@@ -289,6 +290,58 @@ function ContractFormInline(): JSX.Element {
     );
 }
 
+const faqs = [
+    {
+        q: "수수료는 어떻게 책정되나요?",
+        a: (
+            <>
+                업종, 월 매출 규모, 결제수단 비율(카드·간편), 환불/차지백 지표 등 <b>리스크/운영 지표</b>를 반영해
+                개별 협의로 책정합니다.
+                <br /><br />
+                • <b>기본 범위</b>: 수단·업종별 가이드 레인지 제시 후 거래량에 따라 조정<br />
+                • <b>프로모션</b>: 신규/성수기/대형 가맹 우대 정책 운영<br />
+                • <b>견적</b>: 온라인 접수 후 담당 매니저가 구조에 맞춰 제안
+            </>
+        ),
+    },
+    {
+        q: "정산 주기는 D+0와 D+1 모두 가능한가요?",
+        a: (
+            <>
+                표준은 <b>D+1(익일 정산)</b>이며, 요건 충족 시 <b>D+0(당일 정산)</b> 옵션도 제공합니다.
+                <br /><br />
+                • <b>D+1</b>: 안정적/기본 권장. 주말·공휴일은 익영업일 처리<br />
+                • <b>D+0</b>: 매출 패턴·보증/담보·기관 연동 조건 충족 시 제공(시간대 운영)<br />
+                • <b>주말 커버</b>: 협의에 따라 일부 커버 가능(기관 점검 시 제한)
+            </>
+        ),
+    },
+    {
+        q: "온라인·오프라인을 모두 지원하나요?",
+        a: (
+            <>
+                네. <b>온라인(카드·간편·수기)</b>와 <b>오프라인(POS/MPOS/QR/단말)</b>을 모두 지원하며,
+                <b>통합 리포트/정산</b>으로 묶어서 관리할 수 있습니다.
+                <br /><br />
+                • 쇼핑몰·예약·플랫폼 결제 / 매장 POS·무선 단말 / QR 고정형<br />
+                • 채널 통합 매출/정산 리포트, 권한별 대시보드 제공
+            </>
+        ),
+    },
+    {
+        q: "개통까지 어느 정도 소요되나요?",
+        a: (
+            <>
+                업종별로 상이하지만 보통 <b>영업일 기준 1~2일</b> 내외입니다.
+                <br /><br />
+                1) 온라인 신청서 → 2) 서류/신용 심사 → 3) 전자계약 → 4) 가맹 ID 발급/테스트 → 5) 오픈
+                <br />
+                테스트용 계정/키를 함께 제공하며, 연동 가이드/샘플도 드립니다.
+            </>
+        ),
+    },
+]
+
 /* ────────────────────────────────────────────────
    메인 페이지
 ────────────────────────────────────────────────── */
@@ -486,52 +539,29 @@ export default function ContractInquiryClient(): JSX.Element {
             </section>
 
             {/* 🌿 FAQ */}
-            <section className="py-10 px-6 md:px-16">
-                <div className="max-w-6xl mx-auto">
-                    <motion.h2
-                        {...fadeUp(0)}
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+            <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
+                <motion.h2
+                    {...fadeUp(0)}
+                    className="text-3xl font-bold text-center mb-10 text-[#0b2723]"
+                >
+                    자주 묻는 질문 (FAQ)
+                </motion.h2>
+
+                {faqs.map((f, i) => (
+                    <motion.details
+                        key={i}
+                        {...fadeUp(i * 0.1)}
+                        className="group border-b border-[#a7f3d0]/50 py-6"
                     >
-                        자주 묻는 질문
-                    </motion.h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {[
-                            {
-                                q: "수수료는 어떻게 책정되나요?",
-                                a: "업종, 월 매출 규모, 결제수단 비율(카드·간편), 리스크 지표(환불·차지백) 등을 반영해 협의합니다. 견적은 접수 후 담당 매니저가 제안드립니다.",
-                            },
-                            {
-                                q: "정산 주기는 D+0와 D+1 모두 가능한가요?",
-                                a: "네. 표준은 D+1이며, 매출 패턴/리스크/기관 연동 조건 충족 시 D+0 옵션을 제공합니다. 주말·공휴일 커버도 협의 가능합니다.",
-                            },
-                            {
-                                q: "온라인·오프라인을 모두 지원하나요?",
-                                a: "가능합니다. 온라인 결제(카드/간편/수기)와 오프라인(단말기·QR) 모두 지원하며, 통합 리포트·정산을 제공합니다.",
-                            },
-                            {
-                                q: "개통까지 어느 정도 소요되나요?",
-                                a: "서류 접수와 심사, 테스트 환경 확인 후 전자계약을 진행합니다. 업종별로 상이하지만, 필요한 사항을 신속히 안내드립니다.",
-                            },
-                        ].map((f, i) => (
-                            <motion.details
-                                key={i}
-                                {...fadeUp(i * 0.1)}
-                                className="group rounded-2xl bg-white border border-[#a7f3d0]/60 p-5 open:shadow-[0_10px_30px_rgba(16,185,129,0.10)] transition"
-                            >
-                                <summary className="flex items-center justify-between cursor-pointer select-none text-[#0b2723] font-semibold">
-                                    <span className="flex items-center gap-2">
-                                        <CheckCircle2 className="text-[#10b981]" size={18} />
-                                        {f.q}
-                                    </span>
-                                    <span className="text-[#10b981] group-open:rotate-90 transition">
-                                        <ChevronRight size={18} />
-                                    </span>
-                                </summary>
-                                <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">{f.a}</p>
-                            </motion.details>
-                        ))}
-                    </div>
-                </div>
+                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#0b2723] hover:text-[#10b981]">
+                            {f.q}
+                            <ChevronDown className="text-[#10b981] group-open:rotate-180 transition-transform" />
+                        </summary>
+                        <div className="mt-3 text-[#1e3a34]/80 leading-relaxed text-[15px] space-y-2">
+                            {f.a}
+                        </div>
+                    </motion.details>
+                ))}
             </section>
 
             <section className="py-10 px-6 md:px-16">

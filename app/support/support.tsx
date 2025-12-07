@@ -34,13 +34,13 @@ export default function Support(): JSX.Element {
         },
         {
             icon: <FileSignature size={28} />,
-            title: "가맹 계약 / 수수료 협의",
+            title: <>가맹 계약 /<br /> 수수료 협의</>,
             link: "/inquiry/contract",
             desc: "계약 진행 및 조건 협의 문의",
         },
         {
             icon: <Cpu size={28} />,
-            title: "시스템 연동 / 기술 지원",
+            title: <>기술 지원 /<br />시스템 연동</>,
             link: "/inquiry/integration",
             desc: "POS, API, 웹훅 등 기술 문의",
         },

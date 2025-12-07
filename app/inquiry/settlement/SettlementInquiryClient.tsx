@@ -21,6 +21,7 @@ import {
     ChevronRight,
     Loader2,
     MessageCircle,
+    ChevronDown,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
@@ -264,6 +265,66 @@ function SettlementFormInline(): JSX.Element {
         </section>
     );
 }
+
+const faqs = [
+    {
+        q: "입금이 지연되는 사유는 무엇인가요?",
+        a: (
+            <>
+                정산(입금) 지연은 보통 아래 원인으로 발생합니다.
+                <br /><br />
+                ① <b>은행 점검·영업일 제한</b> — 주말·공휴일 또는 심야 점검 시간에는 송금이
+                일시 중단되며, 익영업일 오전에 일괄 처리됩니다.
+                <br />
+                ② <b>가맹점 계좌 인증 실패</b> — 예금주 실명 불일치·휴면계좌·해지 계좌 등으로
+                자동 송금이 차단될 수 있습니다. 관리자에서 계좌 재등록 후 재시도하거나, 고객센터로 문의해주세요.
+                <br />
+                ③ <b>한도 초과·이상거래(FDS) 보류</b> — 거래 금액·빈도·반환 이력 등 리스크 지표에 따라
+                일시 보류될 수 있으며, 영업일 기준 신속히 안내드립니다.
+                <br /><br />
+                ※ 처리 현황은 관리자 &gt; 정산 내역에서 건별 상태/사유를 확인할 수 있습니다.
+            </>
+        ),
+    },
+    {
+        q: "세금계산서 재발행도 가능한가요?",
+        a: (
+            <>
+                가능합니다. 관리자 페이지에서 발행 이력 조회 및 PDF 다운로드가 가능하고,
+                필요 시 <b>정정·재발행 요청</b>을 접수할 수 있습니다.
+                <br /><br />
+                • <b>재다운로드</b>: 발행 완료 건은 즉시 PDF/전송 이력을 확인 가능<br />
+                • <b>정정/재발행</b>: 공급가·수량 오류 등 사유 입력 후 검토 절차 진행<br />
+                • <b>기한</b>: 전자세금계산서 법정 기한·월 마감 일정에 따라 제한될 수 있음
+            </>
+        ),
+    },
+    {
+        q: "정산 내역은 어디서 조회하나요?",
+        a: (
+            <>
+                관리자 대시보드 &gt; <b>정산 내역</b>에서 기간·거래처·결제수단 등으로 필터링 조회가 가능합니다.
+                <br /><br />
+                • <b>검색/필터</b>: 날짜, 상태(대기·완료·보류), 금액 구간, 수단(카드/계좌/간편)<br />
+                • <b>엑셀/CSV</b> 내보내기: 회계/세무 공유용으로 다운로드 지원<br />
+                • <b>상세보기</b>: 공제 내역(수수료·부가세·기타)과 입금 계좌, 메모 확인
+            </>
+        ),
+    },
+    {
+        q: "수수료는 어떤 방식으로 공제되나요?",
+        a: (
+            <>
+                기본은 <b>거래 건별 실시간 공제(네팅)</b> 후 정산되며, 월말 집계표도 제공합니다.
+                <br /><br />
+                • <b>건별 공제</b>: 승인 금액에서 수수료/부가세를 차감한 순입금<br />
+                • <b>월간 리포트</b>: 기간별 총 매출·총 공제·순입금 요약<br />
+                • <b>조정 항목</b>: 환불·부분취소·차지백 발생 시 자동 반영
+            </>
+        ),
+    },
+]
+
 export default function SettlementInquiryClient(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
@@ -413,54 +474,31 @@ export default function SettlementInquiryClient(): JSX.Element {
             </section>
 
             {/* 🌿 FAQ */}
-            <section className="py-10 px-6 md:px-16">
-                <div className="max-w-6xl mx-auto">
-                    <motion.h2
-                        {...fadeUp(0)}
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
-                    >
-                        자주 묻는 질문
-                    </motion.h2>
+            <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
+                <motion.h2
+                    {...fadeUp(0)}
+                    className="text-3xl font-bold text-center mb-10 text-[#0b2723]"
+                >
+                    자주 묻는 질문 (FAQ)
+                </motion.h2>
 
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {[
-                            {
-                                q: "입금이 지연되는 사유는 무엇인가요?",
-                                a: "은행 전산 점검, 공휴일 일정, 계좌 불일치 등 다양한 사유가 있습니다. 자동 감지 후 재처리됩니다.",
-                            },
-                            {
-                                q: "세금계산서 재발행도 가능한가요?",
-                                a: "네. 관리자 페이지에서 PDF 재다운로드 및 재발행 요청이 모두 가능합니다.",
-                            },
-                            {
-                                q: "정산 내역은 어디서 조회하나요?",
-                                a: "SFIN PAY 관리자 대시보드 → ‘정산 내역’ 메뉴에서 기간별 조회 가능.",
-                            },
-                            {
-                                q: "수수료는 어떤 방식으로 공제되나요?",
-                                a: "거래 건별 실시간 공제 후 입금되며, 월 단위 내역도 자동 정리됩니다.",
-                            },
-                        ].map((faq, i) => (
-                            <motion.details
-                                key={i}
-                                {...fadeUp(i * 0.1)}
-                                className="group rounded-2xl bg-white border border-[#a7f3d0]/60 p-5 open:shadow-[0_10px_30px_rgba(16,185,129,0.10)] transition"
-                            >
-                                <summary className="flex items-center justify-between cursor-pointer select-none text-[#0b2723] font-semibold">
-                                    <span className="flex items-center gap-2">
-                                        <CheckCircle2 className="text-[#10b981]" size={18} />
-                                        {faq.q}
-                                    </span>
-                                    <ChevronRight className="text-[#10b981] group-open:rotate-90 transition" />
-                                </summary>
-                                <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">
-                                    {faq.a}
-                                </p>
-                            </motion.details>
-                        ))}
-                    </div>
-                </div>
+                {faqs.map((f, i) => (
+                    <motion.details
+                        key={i}
+                        {...fadeUp(i * 0.1)}
+                        className="group border-b border-[#a7f3d0]/50 py-6"
+                    >
+                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#0b2723] hover:text-[#10b981]">
+                            {f.q}
+                            <ChevronDown className="text-[#10b981] group-open:rotate-180 transition-transform" />
+                        </summary>
+                        <div className="mt-3 text-[#1e3a34]/80 leading-relaxed text-[15px] space-y-2">
+                            {f.a}
+                        </div>
+                    </motion.details>
+                ))}
             </section>
+
             <section className="py-10 px-6 md:px-16">
                 <div className="max-w-6xl mx-auto text-center">
                     <h2

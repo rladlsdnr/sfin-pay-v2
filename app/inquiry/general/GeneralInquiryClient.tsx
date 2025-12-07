@@ -19,6 +19,7 @@ import {
     Lock,
     Loader2,
     MessageCircle,
+    ChevronDown,
 } from "lucide-react";
 import emailjs from "@emailjs/browser";
 
@@ -275,6 +276,52 @@ function GeneralFormInline(): JSX.Element {
     );
 }
 
+
+const faqs = [
+    {
+        q: "제휴 제안은 어디로 연락하나요?",
+        a: (
+            <>
+                <b>이메일(sfinpay@gmail.com)</b> 또는 <b>카카오톡 스핀페이 채널</b>로 제안서를 보내주세요.
+                <br /><br />
+                포함 권장: 회사/서비스 소개, 제휴 모델, 예상 물량·일정, 기술 요구사항, 담당자 연락처
+            </>
+        ),
+    },
+    {
+        q: "언론 / 미디어 요청은 어떻게 접수하나요?",
+        a: (
+            <>
+                <b>이메일(sfinpay@gmail.com)</b> 또는 <b>카카오톡 스핀페이 채널</b>로 보도자료/질문지를 보내주세요.
+                <br /><br />
+                • 최소 1~2영업일의 사전 문의 권장(자료·인터뷰 준비)<br />
+                • 로고/브랜드 키트, 제품 이미지 제공 가능
+            </>
+        ),
+    },
+    {
+        q: "기타 일반 운영 문의는 어디서 처리하나요?",
+        a: (
+            <>
+                <b>이메일(sfinpay@gmail.com)</b>, <b>카카오톡 채널</b>,
+                또는 대표 전화(<b>010-6672-3499</b>)로 접수해 주세요. 문의 유형별로 담당자가 배정됩니다.
+                <br />
+                운영 시간: 평일 09:00~18:00 (점심 12:00~13:00)
+            </>
+        ),
+    },
+    {
+        q: "회신까지 얼마나 걸리나요?",
+        a: (
+            <>
+                일반 문의는 <b>평일 기준 24시간 이내 1차 회신</b>을 드립니다.
+                긴급 장애는 우선순위로 즉시 확인하며, 상태는 공지/대시보드로 안내됩니다.
+            </>
+        ),
+    },
+]
+
+
 /* ────────────────────────────────────────────────
    📌 메인 페이지
 ────────────────────────────────────────────────── */
@@ -345,54 +392,29 @@ export default function GeneralInquiryClient(): JSX.Element {
             </section>
 
             {/* ========================== FAQ ========================== */}
-            <section className="py-10 px-6 md:px-16">
-                <div className="max-w-6xl mx-auto">
-                    <motion.h2
-                        {...fadeUp(0)}
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+            <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
+                <motion.h2
+                    {...fadeUp(0)}
+                    className="text-3xl font-bold text-center mb-10 text-[#0b2723]"
+                >
+                    자주 묻는 질문 (FAQ)
+                </motion.h2>
+
+                {faqs.map((f, i) => (
+                    <motion.details
+                        key={i}
+                        {...fadeUp(i * 0.1)}
+                        className="group border-b border-[#a7f3d0]/50 py-6"
                     >
-                        자주 묻는 질문
-                    </motion.h2>
-                    <div className="grid md:grid-cols-2 gap-6">
-                        {[
-                            {
-                                q: "제휴 제안은 어디로 연락하나요?",
-                                a: "sfinpay@gmail.com으로 제안서를 전달하면 됩니다.",
-                            },
-                            {
-                                q: "언론 / 미디어 요청은 어떻게 접수하나요?",
-                                a: "sfinpay@gmail.com 또는 카카오톡 채널로 보도자료 또는 인터뷰 요청을 보내주세요.",
-                            },
-                            {
-                                q: "기타 일반 운영 문의는 어디서 처리하나요?",
-                                a: "sfinpay@gmail.com 또는 카카오톡 채널로 문의해주세요",
-                            },
-                            {
-                                q: "회신까지 얼마나 걸리나요?",
-                                a: "평일 기준 24시간 이내에 1차 회신을 드립니다.",
-                            },
-                        ].map((faq, i) => (
-                            <motion.details
-                                key={i}
-                                {...fadeUp(i * 0.1)}
-                                className="group rounded-2xl bg-white border border-[#a7f3d0]/60 p-5 open:shadow-[0_10px_30px_rgba(16,185,129,0.10)] transition"
-                            >
-                                <summary className="flex items-center justify-between cursor-pointer select-none text-[#0b2723] font-semibold">
-                                    <span className="flex items-center gap-2">
-                                        <CheckCircle2 className="text-[#10b981]" size={18} />
-                                        {faq.q}
-                                    </span>
-                                    <span className="text-[#10b981] group-open:rotate-90 transition">
-                                        <ChevronRight size={18} />
-                                    </span>
-                                </summary>
-                                <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">
-                                    {faq.a}
-                                </p>
-                            </motion.details>
-                        ))}
-                    </div>
-                </div>
+                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#0b2723] hover:text-[#10b981]">
+                            {f.q}
+                            <ChevronDown className="text-[#10b981] group-open:rotate-180 transition-transform" />
+                        </summary>
+                        <div className="mt-3 text-[#1e3a34]/80 leading-relaxed text-[15px] space-y-2">
+                            {f.a}
+                        </div>
+                    </motion.details>
+                ))}
             </section>
 
             <section className="py-10 px-6 md:px-16">
