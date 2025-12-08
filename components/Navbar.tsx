@@ -159,6 +159,11 @@ export default function Navbar(): JSX.Element {
             categoryDesc: '1:1 문의 / 장애 대응 / 공지사항',
         },
         {
+            label: '고객 후기',
+            link: '/story',
+            categoryDesc: '고객 실사용 후기',
+        },
+        {
             label: '회사 소개',
             link: '/company',
             categoryDesc: 'SFIN PAY의 비전과 인증, 연혁',
