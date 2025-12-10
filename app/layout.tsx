@@ -86,6 +86,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
         */}
+        <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
         {/* ✅ Schema.org 구조화 데이터 */}
         <script
           type="application/ld+json"
