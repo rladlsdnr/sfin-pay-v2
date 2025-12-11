@@ -112,7 +112,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
                         value={form.company}
                         onChange={handleChange}
                         required
-                        placeholder="예: 주식회사 에스핀"
+                        placeholder="예: 스핀페이"
                         className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-[#0b2723] px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none transition"
                     />
                 </div>

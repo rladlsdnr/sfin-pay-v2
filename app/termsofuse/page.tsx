@@ -89,7 +89,7 @@ export default function TermsOfService(): JSX.Element {
 
                 <motion.div {...fadeUp(0)}>
                     <Article title="제1조 목적">
-                        본 약관은 주식회사 SFIN(이하 “회사”)가 제공하는 결제·정산·납부 서비스
+                        본 약관은 스핀페이 SFIN PAY(이하 “회사”)가 제공하는 결제·정산·납부 서비스
                         (이하 “서비스”)의 이용과 관련하여 회사와 가맹점(또는 이용자) 간의 권리,
                         의무, 책임, 기타 필요한 사항을 규정하는 것을 목적으로 합니다.
                     </Article>
