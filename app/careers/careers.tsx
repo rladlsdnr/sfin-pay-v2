@@ -114,12 +114,16 @@ export default function CareersPage(): JSX.Element {
                                 <Briefcase className="text-[#10b981]" />
                             </div>
                             <p className="text-[#1e3a34]/80 leading-relaxed">{job.desc}</p>
-                            <Link
+                            {
+                                /*
+                                <Link
                                 href="/inquiry/careers"
                                 className="inline-flex items-center gap-1 text-[#10b981] font-semibold mt-4 hover:underline"
                             >
                                 지원하기 <ArrowRight size={16} />
                             </Link>
+                                */
+                            }
                         </motion.div>
                     ))}
                 </div>
