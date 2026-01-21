@@ -8,11 +8,11 @@ import Chatbot from "@/components/Chatbot";
 /* ✅ Next.js 15 공식 metadata 기반 SEO 설정 */
 export const metadata = {
   title: {
-    default: "스핀페이 SFIN PAY | 무선단말기·카드결제기·POS 포스 단말기 결제 솔루션",
+    default: "스핀페이 SFIN PAY | 무선단말기·카드결제기·POS 포스 단말기·결제 솔루션 | 결제단말기·결제대행사·PG·카드단말기",
     template: "스핀페이 SFIN PAY | %s",
   },
   description:
-    "스핀페이는 오프라인·온라인·QR 결제를 모두 지원하는 통합 결제 플랫폼입니다. 빠르고 안전한 결제 인프라, 안정적인 D+0/D+1 정산, 유동성, 보안, 컴플라이언스 솔루션을 제공합니다.",
+    "스핀페이는 오프라인·온라인·QR 결제를 모두 지원하는 통합 결제 플랫폼입니다. 결제단말기 및 카드단말기 환경부터 결제대행사(PG) 연동까지 지원하며, 빠르고 안전한 결제 인프라와 안정적인 D+0/D+1 정산, 유동성, 보안, 컴플라이언스 솔루션을 제공합니다.",
   metadataBase: new URL("https://sfinpayment.com/"),
   keywords: [
     "통합 결제 플랫폼",
@@ -25,12 +25,16 @@ export const metadata = {
     "D+1 정산",
     "결제 인프라",
     "스핀페이",
+    "결제단말기",
+    "결제대행사",
+    "PG",
+    "카드단말기"
   ],
   openGraph: {
     type: "website",
     url: "https://sfinpayment.com/",
     siteName: "스핀페이 SFIN PAY",
-    title: "스핀페이 SFIN PAY | 무선단말기·카드결제기·POS 포스 단말기 결제 솔루션",//"SFIN PAY | 통합 결제 · 정산 플랫폼",
+    title: "스핀페이 SFIN PAY | 무선단말기·카드결제기·POS 포스 단말기·결제 솔루션 | 결제단말기·결제대행사·PG·카드단말기",//"SFIN PAY | 통합 결제 · 정산 플랫폼",
     description:
       "스핀페이는 오프라인·온라인·QR 결제를 모두 지원하는 통합 결제 플랫폼입니다. 빠르고 안전한 결제 인프라, 안정적인 D+0/D+1 정산, 유동성, 보안, 컴플라이언스 솔루션을 제공합니다.",
     images: [
