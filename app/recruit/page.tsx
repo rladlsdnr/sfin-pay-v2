@@ -223,7 +223,7 @@ export default function Recruit(): JSX.Element {
                         </div>
                         <div className="flex items-center gap-3">
                             <Phone className="text-[#10b981]" size={22} />
-                            <span>010-6672-3499</span>
+                            <span>010-2740-1530</span>
                         </div>
                     </div>
                 </motion.div>

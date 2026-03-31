@@ -53,7 +53,7 @@ export default function Footer(): JSX.Element {
                             <Phone size={18} aria-hidden />
                             대표 전화
                         </div>
-                        <p className="text-sm leading-relaxed">010-6672-3499</p>
+                        <p className="text-sm leading-relaxed">010-2740-1530</p>
                     </div>
                 </motion.div>
 

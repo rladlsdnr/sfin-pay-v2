@@ -16,7 +16,7 @@ const FAQ_LIST: { keywords: string[]; answer: React.ReactNode }[] = [
             <br />
             💬 <a href="http://pf.kakao.com/_dqyYn/friend" target="_blank" rel="noopener noreferrer" className="text-decoration-line: underline">카카오톡 상담하기</a>
             <br />
-            ☎️ <>대표 전화  : 010-6672-3499</>
+            ☎️ <>대표 전화  : 010-2740-1530</>
         </>
     },
     { keywords: ["보안"], answer: <>모든 결제 데이터는 PCI-DSS 및 ISMS 인증 체계로 관리되며,<br />실시간 위험 탐지 시스템이 적용됩니다.</> },
