@@ -95,7 +95,7 @@ export default function Footer(): JSX.Element {
                     pt-6 text-center text-[#475569]/70 text-sm flex flex-col 
                     md:flex-row items-center justify-center gap-2">
                     <Copyright size={14} aria-hidden />
-                    <span>2025 SFIN PAY · All Rights Reserved</span>
+                    <span>2026 SFIN PAY · All Rights Reserved</span>
                 </div>
             </div>
         </footer>

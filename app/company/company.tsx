@@ -305,7 +305,7 @@ export default function CompanyIntro(): JSX.Element {
                 {/* ────────────── ④ FOOTNOTE ────────────── */}
                 <div className="text-center py-16 text-[#145C52]/75 text-sm">
                     <motion.p {...fadeUp(0)}>
-                        © 2025 SFIN PAY — 모든 비전은 <strong>신뢰</strong>에서 출발합니다.
+                        © 2026 SFIN PAY — 모든 비전은 <strong>신뢰</strong>에서 출발합니다.
                     </motion.p>
                 </div>
 
@@ -339,7 +339,7 @@ export default function CompanyIntro(): JSX.Element {
                     <p>사업자등록번호: 421-88-02504</p>
                     <p>주소: 서울특별시 영등포구 여의대방로 67길11 5층 에이 5-41호</p>
                     <p>대표번호: 010-2740-1530 | 이메일: sfinpay@gmail.com</p>
-                    <p>Copyright © 2025 SFIN PAY Co., Ltd. All rights reserved.</p>
+                    <p>Copyright © 2026 SFIN PAY Co., Ltd. All rights reserved.</p>
                 </div>
             </section>
         </div>

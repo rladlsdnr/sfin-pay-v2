@@ -158,7 +158,7 @@ export default function VisionPage(): JSX.Element {
             {/* ────────────── ④ FOOTNOTE ────────────── */}
             <footer className="text-center py-16 text-[#145C52]/75 text-sm">
                 <motion.p {...fadeUp(0)}>
-                    © 2025 SFIN PAY — 모든 비전은 <strong>신뢰</strong>에서 출발합니다.
+                    © 2026 SFIN PAY — 모든 비전은 <strong>신뢰</strong>에서 출발합니다.
                 </motion.p>
             </footer>
         </div>
