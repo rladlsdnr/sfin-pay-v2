@@ -35,9 +35,9 @@ export default function Footer(): JSX.Element {
                             <Building2 size={18} aria-hidden />
                             SFIN PAY
                         </div>
-                        <p className="text-sm leading-relaxed">
+                        {/*<p className="text-sm leading-relaxed">
                             서울특별시 영등포구 여의대방로 67길11 <br /> 5층 에이 5-41호
-                        </p>
+                        </p>*/}
                     </div>
 
                     <div>

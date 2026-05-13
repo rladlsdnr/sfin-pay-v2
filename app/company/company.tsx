@@ -335,9 +335,9 @@ export default function CompanyIntro(): JSX.Element {
             <section className="py-16 px-6 md:px-16 bg-white border-t border-[#a7f3d0]/60 text-center text-sm text-[#1e3a34]/75">
                 <div className="max-w-4xl mx-auto leading-relaxed space-y-2">
                     <p className="font-semibold text-[#0b2723]">법인 정보</p>
-                    <p>상호명: 스핀페이 SFIN PAY | 대표이사: 장지영</p>
-                    <p>사업자등록번호: 421-88-02504</p>
-                    <p>주소: 서울특별시 영등포구 여의대방로 67길11 5층 에이 5-41호</p>
+                    <p>상호명: 스핀페이 SFIN PAY {/*| 대표이사: 장지영*/}</p>
+                    {/*<p>사업자등록번호: 421-88-02504</p>*/}
+                    {/*<p>주소: 서울특별시 영등포구 여의대방로 67길11 5층 에이 5-41호</p>*/}
                     <p>대표번호: 010-2740-1530 | 이메일: sfinpay@gmail.com</p>
                     <p>Copyright © 2026 SFIN PAY Co., Ltd. All rights reserved.</p>
                 </div>
