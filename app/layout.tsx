@@ -54,9 +54,9 @@ export const metadata = {
     images: ["/sfinpay.png"],
   },
   icons: {
-    icon: "/favicon.ico",
-    shortcut: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/new_logo.png",
+    shortcut: "/new_logo.png",
+    apple: "/new_logo.png",
   },
 };
 
@@ -90,7 +90,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
         */}
-        <link rel="icon" type="image/png" sizes="48x48" href="/favicon.png" />
+        <link rel="icon" type="image/png" href="/new_logo.png" />
         {/* ✅ Schema.org 구조화 데이터 */}
         <script
           type="application/ld+json"
@@ -129,9 +129,9 @@ export default function RootLayout({
       <body
         className="
           relative min-h-screen overflow-x-hidden
-          text-[#0b2723]
+          text-navy-900
           font-['Pretendard','Inter','sans-serif']
-          bg-gradient-to-br from-[#ecfeff] via-[#f0fdfa] to-white
+          bg-gradient-to-br from-paper via-paper to-white
           antialiased transition-colors duration-700
         "
       >

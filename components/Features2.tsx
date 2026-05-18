@@ -112,17 +112,17 @@ export default function Features2(): JSX.Element {
     return (
         <section
             id="features2"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#F9FFFD] via-[#EFFFF9] to-[#F8FFFD] overflow-hidden"
+            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-paper overflow-hidden"
         >
             {/* 💫 헤더 */}
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-20">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy/[0.1] text-navy text-sm font-medium">
                     <Building2 size={16} /> 업종별 맞춤 솔루션
                 </span>
-                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
+                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-navy-900 leading-snug">
                     업종에 맞는{" "}
                     <br className="block md:hidden" />
-                    <span className="text-[#00b894]">결제·정산 환경</span>
+                    <span className="text-navy">결제·정산 환경</span>
                 </h2>
                 <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
                     쇼핑부터 의료까지, 모든 업종을 아우르는 유연한 결제 인프라를 제공합니다.
@@ -140,12 +140,12 @@ export default function Features2(): JSX.Element {
                             key={c.title}
                             {...fadeUp(i + 1)}
                             onClick={() => goTo(c.href)}
-                            className={`relative rounded-2xl border border-[rgba(0,200,155,0.25)]
+                            className={`relative rounded-2xl border border-navy/[0.25]
                             bg-white/95 backdrop-blur-sm p-5 flex flex-col justify-between
                             cursor-pointer group  duration-300
-                            shadow-[0_4px_14px_rgba(0,200,155,0.05)]
+                            shadow-[0_4px_14px_rgba(0,51,102,0.05)]
                             ${isActive
-                                    ? 'hover:bg-[#f3fffc] hover:shadow-[0_10px_28px_rgba(0,200,155,0.12)] hover:-translate-y-0.5'
+                                    ? 'hover:bg-paper hover:shadow-[0_10px_28px_rgba(0,51,102,0.12)] hover:-translate-y-0.5'
                                     : 'opacity-60 pointer-events-none'}`}
                         >
                             <div className="flex flex-col items-center text-center">
@@ -156,16 +156,16 @@ export default function Features2(): JSX.Element {
                                     autoplay
                                     className="w-[100px] h-[100px] mb-4 opacity-90"
                                 />
-                                <h4 className="text-lg font-semibold text-[#0c3c35] mb-1">{c.title}</h4>
-                                <p className="text-sm text-[#2e5c54]/70 mb-2">{c.sub}</p>
-                                <p className="text-sm text-[#2e5c54]/80 leading-relaxed mb-4">{c.desc}</p>
+                                <h4 className="text-lg font-semibold text-navy-800 mb-1">{c.title}</h4>
+                                <p className="text-sm text-navy-700/70 mb-2">{c.sub}</p>
+                                <p className="text-sm text-navy-700/80 leading-relaxed mb-4">{c.desc}</p>
 
                                 {/* ✳️ 키워드 */}
                                 <div className="flex flex-wrap gap-2 justify-center mb-5">
                                     {c.keywords.map((k, idx) => (
                                         <span
                                             key={idx}
-                                            className="px-3 py-1 rounded-lg text-xs font-medium bg-[#EFFFF9] border border-[#00b894]/20 text-[#008c73]"
+                                            className="px-3 py-1 rounded-lg text-xs font-medium bg-paper border border-navy/20 text-navy-700"
                                         >
                                             {k}
                                         </span>
@@ -174,7 +174,7 @@ export default function Features2(): JSX.Element {
                             </div>
 
                             {/* CTA */}
-                            <div className="text-center inline-flex items-center justify-center gap-1 text-[#00b894] font-semibold group-hover:underline">
+                            <div className="text-center inline-flex items-center justify-center gap-1 text-navy font-semibold group-hover:underline">
                                 자세히 보기 <ArrowRight size={14} />
                             </div>
                         </motion.div>
@@ -187,7 +187,7 @@ export default function Features2(): JSX.Element {
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
                 transition={{ duration: 1 }}
-                className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_60%_80%,rgba(0,200,155,0.06),transparent_70%)]"
+                className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_60%_80%,rgba(0,51,102,0.06),transparent_70%)]"
             />
         </section>
     );

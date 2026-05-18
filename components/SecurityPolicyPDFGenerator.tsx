@@ -54,7 +54,7 @@ export default function SecurityPolicyPDFGenerator({
         <button
             onClick={handleGenerate}
             disabled={busy}
-            className="bg-[#00b894] text-white px-4 py-2 rounded-lg hover:bg-[#00a884] disabled:opacity-60 transition"
+            className="bg-navy text-white px-4 py-2 rounded-lg hover:bg-navy disabled:opacity-60 transition"
         >
             {busy ? '생성 중...' : 'PDF로 저장'}
         </button>

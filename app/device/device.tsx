@@ -25,9 +25,9 @@ const Device: React.FC = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* 🌿 Hero Section */}
-            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa]">
+            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-paper to-paper">
                 <motion.h1
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
@@ -36,7 +36,7 @@ const Device: React.FC = () => {
                 >
                     결제 단말기,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         연결 그 이상의 가치
                     </span>
                 </motion.h1>
@@ -45,7 +45,7 @@ const Device: React.FC = () => {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     모든 환경에서 완벽히 작동하는 결제 하드웨어.
                     POS, 키오스크, 태블릿 — 어떤 형태든 SFIN PAY가 연결합니다.
@@ -53,12 +53,12 @@ const Device: React.FC = () => {
             </section>
 
             {/* 🌿 단말기 라인업 */}
-            <section className="py-24 px-6 md:px-16 bg-[#ecfdf5] relative overflow-hidden text-center">
+            <section className="py-24 px-6 md:px-16 bg-paper relative overflow-hidden text-center">
                 <motion.h2
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold mb-12 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     단말기 라인업
                 </motion.h2>
@@ -86,7 +86,7 @@ const Device: React.FC = () => {
                             initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.15 * (i + 1) }}
-                            className="bg-white border border-[#a7f3d0]/60 rounded-2xl shadow-sm hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] max-w-sm"
+                            className="bg-white border border-mist/60 rounded-2xl shadow-sm hover:shadow-[0_0_25px_rgba(0,51,102,0.15)] max-w-sm"
                         >
                             <div className="flex justify-center">
                                 <img
@@ -96,10 +96,10 @@ const Device: React.FC = () => {
                                 />
                             </div>
                             <div className="p-6 pt-2">
-                                <h3 className="text-xl font-semibold text-[#10b981] mb-2">
+                                <h3 className="text-xl font-semibold text-navy mb-2">
                                     {d.title}
                                 </h3>
-                                <p className="text-[#1e3a34]/80 leading-relaxed">
+                                <p className="text-navy-800/80 leading-relaxed">
                                     {d.desc}
                                 </p>
                             </div>
@@ -116,10 +116,10 @@ const Device: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                    <h2 className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]">
                         단말기 기술 사양
                     </h2>
-                    <p className="text-[#1e3a34]/80">
+                    <p className="text-navy-800/80">
                         현장 결제에 필요한 속도, 안정성, 보안을 모두 갖췄습니다.
                     </p>
                 </motion.div>
@@ -162,15 +162,15 @@ const Device: React.FC = () => {
                             initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.15 * (i + 1) }}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
+                            className="p-8 bg-white border border-mist/60 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.15)] "
                         >
-                            <div className="flex items-center gap-3 text-[#10b981] mb-4">
+                            <div className="flex items-center gap-3 text-navy mb-4">
                                 {f.icon}
-                                <h3 className="text-xl font-semibold text-[#0b2723]">
+                                <h3 className="text-xl font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">
+                            <p className="text-navy-800/80 leading-relaxed">
                                 {f.desc}
                             </p>
                         </motion.div>
@@ -179,12 +179,12 @@ const Device: React.FC = () => {
             </section>
 
             {/* 🌿 인프라 및 관리 */}
-            <section className="py-24 px-6 md:px-16 bg-[#ecfdf5] text-center">
+            <section className="py-24 px-6 md:px-16 bg-paper text-center">
                 <motion.h2
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold mb-10 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold mb-10 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     단말기 관리,{" "}
                     <br className="block md:hidden" />
@@ -195,28 +195,28 @@ const Device: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="max-w-4xl mx-auto bg-white border border-[#a7f3d0]/60 rounded-2xl shadow-sm p-8"
+                    className="max-w-4xl mx-auto bg-white border border-mist/60 rounded-2xl shadow-sm p-8"
                 >
-                    <p className="text-[#1e3a34]/80 mb-6 leading-relaxed">
+                    <p className="text-navy-800/80 mb-6 leading-relaxed">
                         각 매장의 단말기 상태를 원격에서 모니터링하고
                         업데이트를 자동 배포합니다. 유지보수 비용을 획기적으로 절감하세요.
                     </p>
-                    <div className="flex justify-center gap-10 flex-wrap mt-6 text-[#10b981]">
+                    <div className="flex justify-center gap-10 flex-wrap mt-6 text-navy">
                         <div className="flex flex-col items-center">
                             <MonitorSmartphone size={36} />
-                            <p className="mt-2 text-sm font-medium text-[#1e3a34]/80">
+                            <p className="mt-2 text-sm font-medium text-navy-800/80">
                                 실시간 상태 모니터링
                             </p>
                         </div>
                         <div className="flex flex-col items-center">
                             <Zap size={36} />
-                            <p className="mt-2 text-sm font-medium text-[#1e3a34]/80">
+                            <p className="mt-2 text-sm font-medium text-navy-800/80">
                                 원격 펌웨어 업데이트
                             </p>
                         </div>
                         <div className="flex flex-col items-center">
                             <Building2 size={36} />
-                            <p className="mt-2 text-sm font-medium text-[#1e3a34]/80">
+                            <p className="mt-2 text-sm font-medium text-navy-800/80">
                                 본사 통합 관리
                             </p>
                         </div>
@@ -225,16 +225,16 @@ const Device: React.FC = () => {
             </section>
 
             {/* 🌿 CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center">
                 <motion.h2
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     단말기 도입도{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY 하나로
                     </span>
                 </motion.h2>
@@ -243,7 +243,7 @@ const Device: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     안정성, 속도, 관리까지 완벽한 통합 단말기 솔루션을 경험하세요.
                 </motion.p>
@@ -256,7 +256,7 @@ const Device: React.FC = () => {
                         transition={{ duration: 0.6, delay: 0.25 }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>
@@ -273,9 +273,9 @@ const Device: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Gmail로 문의하기
                     </a>
@@ -286,9 +286,9 @@ const Device: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Outlook으로 문의하기
                     </a>
@@ -301,8 +301,8 @@ const Device: React.FC = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                     border border-emerald-300 bg-white/80 
-                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    hover:bg-paper text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                     >
                         <MessageCircle size={18} /> 카카오톡 상담
                     </a>

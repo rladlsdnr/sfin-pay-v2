@@ -123,11 +123,11 @@ function SettlementFormInline(): JSX.Element {
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-[#ecfdf5] border border-[#a7f3d0]/60 p-10 text-center"
+                    className="rounded-2xl bg-paper border border-mist/60 p-10 text-center"
                 >
-                    <CheckCircle2 className="w-12 h-12 text-[#10b981] mx-auto mb-3" />
-                    <h3 className="text-2xl font-bold text-[#0b2723]">문의가 접수되었습니다</h3>
-                    <p className="mt-2 text-[#1e3a34]/80">
+                    <CheckCircle2 className="w-12 h-12 text-navy mx-auto mb-3" />
+                    <h3 className="text-2xl font-bold text-navy-900">문의가 접수되었습니다</h3>
+                    <p className="mt-2 text-navy-800/80">
                         정산팀 담당자가 입력하신 연락처로 빠르게 회신드립니다.
                     </p>
                 </motion.div>
@@ -136,19 +136,19 @@ function SettlementFormInline(): JSX.Element {
                     onSubmit={handleSubmit}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-white border border-[#a7f3d0]/60 p-8 md:p-10 shadow-sm"
+                    className="rounded-2xl bg-white border border-mist/60 p-8 md:p-10 shadow-sm"
                 >
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-2">
                         정산 문의 접수
                     </h2>
-                    <p className="text-sm text-[#1e3a34]/70 mb-6">
+                    <p className="text-sm text-navy-800/70 mb-6">
                         정산 내역, 입금 확인, 세금계산서, 수수료 공제 등 모든 문의를 남겨주세요.
                     </p>
 
                     {/* 2열 */}
                     <div className="grid md:grid-cols-2 gap-5">
                         <div>
-                            <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
+                            <label className="block text-sm font-semibold mb-1 text-navy-900">
                                 상호명 / 가맹점명
                             </label>
                             <input
@@ -157,12 +157,12 @@ function SettlementFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="예: SFIN 카페 / OO 학원"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 outline-none focus:ring-2 focus:ring-[#34d399]"
+                                className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 outline-none focus:ring-2 focus:ring-navy"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
+                            <label className="block text-sm font-semibold mb-1 text-navy-900">
                                 담당자명
                             </label>
                             <input
@@ -171,12 +171,12 @@ function SettlementFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="홍길동"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 outline-none focus:ring-2 focus:ring-[#34d399]"
+                                className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 outline-none focus:ring-2 focus:ring-navy"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
+                            <label className="block text-sm font-semibold mb-1 text-navy-900">
                                 연락처
                             </label>
                             <input
@@ -185,12 +185,12 @@ function SettlementFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="010-0000-0000"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 outline-none focus:ring-2 focus:ring-[#34d399]"
+                                className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 outline-none focus:ring-2 focus:ring-navy"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
+                            <label className="block text-sm font-semibold mb-1 text-navy-900">
                                 이메일
                             </label>
                             <input
@@ -200,21 +200,21 @@ function SettlementFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="you@company.co.kr"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 outline-none focus:ring-2 focus:ring-[#34d399]"
+                                className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 outline-none focus:ring-2 focus:ring-navy"
                             />
                         </div>
                     </div>
 
                     {/* 유형 */}
                     <div className="mt-5">
-                        <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
+                        <label className="block text-sm font-semibold mb-1 text-navy-900">
                             문의 유형
                         </label>
                         <select
                             name="type"
                             value={form.type}
                             onChange={handleChange}
-                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 outline-none focus:ring-2 focus:ring-[#34d399]"
+                            className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 outline-none focus:ring-2 focus:ring-navy"
                         >
                             <option>정산 문의</option>
                             <option>입금 지연 문의</option>
@@ -227,7 +227,7 @@ function SettlementFormInline(): JSX.Element {
 
                     {/* 메시지 */}
                     <div className="mt-5">
-                        <label className="block text-sm font-semibold mb-1 text-[#0b2723]">
+                        <label className="block text-sm font-semibold mb-1 text-navy-900">
                             상세 문의 내용
                         </label>
                         <textarea
@@ -237,7 +237,7 @@ function SettlementFormInline(): JSX.Element {
                             onChange={handleChange}
                             required
                             placeholder={"정산 내역 / 입금 시간 / 금액 불일치 / 세금계산서 등 상세 내용을 작성해주세요."}
-                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 outline-none resize-none focus:ring-2 focus:ring-[#34d399]"
+                            className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 outline-none resize-none focus:ring-2 focus:ring-navy"
                         />
                     </div>
 
@@ -245,7 +245,7 @@ function SettlementFormInline(): JSX.Element {
                     <button
                         type="submit"
                         disabled={sending}
-                        className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold shadow-[0_10px_30px_rgba(16,185,129,0.18)] disabled:opacity-60"
+                        className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-semibold shadow-[0_10px_30px_rgba(255,184,0,0.28)] disabled:opacity-60"
                     >
                         {sending ? (
                             <>
@@ -257,7 +257,7 @@ function SettlementFormInline(): JSX.Element {
                         )}
                     </button>
 
-                    <p className="mt-3 text-[12px] text-[#1e3a34]/60">
+                    <p className="mt-3 text-[12px] text-navy-800/60">
                         입력하신 정보는 정산 문의 처리 외에는 사용되지 않습니다.
                     </p>
                 </motion.form>
@@ -329,7 +329,7 @@ export default function SettlementInquiryClient(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723]">
+        <div className="min-h-screen bg-paper text-navy-900">
 
             {/* JSON-LD SEO */}
             <script
@@ -363,21 +363,21 @@ export default function SettlementInquiryClient(): JSX.Element {
             />
 
             {/* 🌿 Hero */}
-            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] border-b border-[#a7f3d0]/40">
+            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/40">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         {...fadeUp(0)}
                         className="text-4xl md:text-6xl font-extrabold leading-tight text-[clamp(30px,5vw,36px)]"
                     >
                         정산{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                             문의 / 입금 안내
                         </span>
                     </motion.h1>
 
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="mt-5 text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto"
+                        className="mt-5 text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto"
                     >
                         D+0 · D+1 정산, 입금 지연, 세금계산서 발행, 수수료 공제
                         <br className="hidden md:block" />
@@ -409,15 +409,15 @@ export default function SettlementInquiryClient(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-6 rounded-2xl bg-white border border-[#a7f3d0]/60 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] transition"
+                            className="p-6 rounded-2xl bg-white border border-mist/60 hover:shadow-[0_10px_30px_rgba(0,51,102,0.12)] transition"
                         >
-                            <div className="flex items-center gap-3 text-[#10b981]">
+                            <div className="flex items-center gap-3 text-navy">
                                 {item.icon}
-                                <h3 className="text-lg font-semibold text-[#0b2723]">
+                                <h3 className="text-lg font-semibold text-navy-900">
                                     {item.title}
                                 </h3>
                             </div>
-                            <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">
+                            <p className="mt-3 text-navy-800/80 leading-relaxed">
                                 {item.desc}
                             </p>
                         </motion.div>
@@ -432,20 +432,20 @@ export default function SettlementInquiryClient(): JSX.Element {
                     {/* 정산 절차 */}
                     <motion.div
                         {...fadeUp(0)}
-                        className="p-8 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        className="p-8 rounded-2xl bg-white border border-mist/60"
                     >
-                        <h2 className="text-2xl font-bold text-[#0b2723] flex items-center gap-2">
-                            <Wallet className="text-[#10b981]" /> 정산 절차 안내
+                        <h2 className="text-2xl font-bold text-navy-900 flex items-center gap-2">
+                            <Wallet className="text-navy" /> 정산 절차 안내
                         </h2>
 
-                        <ul className="mt-4 space-y-2 text-[#1e3a34]/80">
+                        <ul className="mt-4 space-y-2 text-navy-800/80">
                             <li>• 결제 승인 후 → 자동 정산 스케줄 등록</li>
                             <li>• D+0 / D+1 기준 입금 처리</li>
                             <li>• 입금 지연 시 자동 알림 + 재전송 시스템 작동</li>
                             <li>• 정산 완료 후 세금계산서 자동 발행</li>
                         </ul>
 
-                        <p className="mt-4 text-sm text-[#1e3a34]/60">
+                        <p className="mt-4 text-sm text-navy-800/60">
                             모든 정산 내역은 관리자 페이지 또는 Slack 알림을 통해 실시간 확인하실 수 있습니다.
                         </p>
                     </motion.div>
@@ -453,20 +453,20 @@ export default function SettlementInquiryClient(): JSX.Element {
                     {/* 유의사항 */}
                     <motion.div
                         {...fadeUp(0.1)}
-                        className="p-8 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        className="p-8 rounded-2xl bg-white border border-mist/60"
                     >
-                        <h2 className="text-2xl font-bold text-[#0b2723] flex items-center gap-2">
-                            <FileText className="text-[#10b981]" /> 유의사항
+                        <h2 className="text-2xl font-bold text-navy-900 flex items-center gap-2">
+                            <FileText className="text-navy" /> 유의사항
                         </h2>
 
-                        <ul className="mt-4 space-y-2 text-[#1e3a34]/80">
+                        <ul className="mt-4 space-y-2 text-navy-800/80">
                             <li>• 정산 계좌 변경은 사전 서면 신청이 필요합니다.</li>
                             <li>• 공휴일 입금 옵션은 별도 설정이 필요합니다.</li>
                             <li>• 법인 통장만 정산 계좌로 등록 가능합니다.</li>
                             <li>• 세금계산서는 매월 1회 자동 정리됩니다.</li>
                         </ul>
 
-                        <p className="mt-4 text-sm text-[#1e3a34]/60">
+                        <p className="mt-4 text-sm text-navy-800/60">
                             접수 후 정산팀 담당자가 직접 확인하여 안내드립니다.
                         </p>
                     </motion.div>
@@ -477,7 +477,7 @@ export default function SettlementInquiryClient(): JSX.Element {
             <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl font-bold text-center mb-10 text-[#0b2723]"
+                    className="text-3xl font-bold text-center mb-10 text-navy-900"
                 >
                     자주 묻는 질문 (FAQ)
                 </motion.h2>
@@ -486,13 +486,13 @@ export default function SettlementInquiryClient(): JSX.Element {
                     <motion.details
                         key={i}
                         {...fadeUp(i * 0.1)}
-                        className="group border-b border-[#a7f3d0]/50 py-6"
+                        className="group border-b border-mist/50 py-6"
                     >
-                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#0b2723] hover:text-[#10b981]">
+                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-navy-900 hover:text-navy">
                             {f.q}
-                            <ChevronDown className="text-[#10b981] group-open:rotate-180 transition-transform" />
+                            <ChevronDown className="text-navy group-open:rotate-180 transition-transform" />
                         </summary>
-                        <div className="mt-3 text-[#1e3a34]/80 leading-relaxed text-[15px] space-y-2">
+                        <div className="mt-3 text-navy-800/80 leading-relaxed text-[15px] space-y-2">
                             {f.a}
                         </div>
                     </motion.details>
@@ -503,7 +503,7 @@ export default function SettlementInquiryClient(): JSX.Element {
                 <div className="max-w-6xl mx-auto text-center">
                     <h2
 
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+                        className="text-2xl md:text-3xl font-bold text-navy-900 mb-6"
                     >
                         추가로 문의하실 내용이 있으신가요?
                     </h2>
@@ -517,9 +517,9 @@ export default function SettlementInquiryClient(): JSX.Element {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                                hover:from-[#00b894] hover:to-[#00a884]
-                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                                bg-gradient-to-r from-navy to-navy 
+                                hover:from-navy hover:to-navy
+                                text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                         >
                             <Mail size={18} /> Gmail로 문의하기
                         </a>
@@ -530,9 +530,9 @@ export default function SettlementInquiryClient(): JSX.Element {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                                hover:from-[#00b894] hover:to-[#00a884]
-                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                                bg-gradient-to-r from-navy to-navy 
+                                hover:from-navy hover:to-navy
+                                text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                         >
                             <Mail size={18} /> Outlook으로 문의하기
                         </a>
@@ -545,8 +545,8 @@ export default function SettlementInquiryClient(): JSX.Element {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                                 border border-emerald-300 bg-white/80 
-                                hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                                shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                                hover:bg-paper text-emerald-700 font-semibold 
+                                shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                         >
                             <MessageCircle size={18} /> 카카오톡 상담
                         </a>
@@ -556,10 +556,10 @@ export default function SettlementInquiryClient(): JSX.Element {
             </section>
 
             {/* 🌿 개인정보 안내 */}
-            <section className="py-8 px-6 md:px-16 bg-[#f0fdfa] border-t border-[#a7f3d0]/40">
-                <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-[#1e3a34]/70">
+            <section className="py-8 px-6 md:px-16 bg-paper border-t border-mist/40">
+                <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-navy-800/70">
                     <p className="flex items-center gap-2">
-                        <Lock size={14} className="text-[#10b981]" />
+                        <Lock size={14} className="text-navy" />
                         문의 시 제공된 정보는 정산 검토 및 회계 처리를 위해서만 활용되며,
                         법령 및 내부 규정에 따라 안전하게 관리됩니다.
                         또한, 관련 정보는 목적 달성 후 즉시 파기됩니다.

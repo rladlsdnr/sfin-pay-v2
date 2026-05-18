@@ -24,9 +24,9 @@ export default function Personal(): JSX.Element {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* 💼 Header */}
-            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa]">
+            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-paper to-paper">
                 <motion.h1
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
@@ -35,7 +35,7 @@ export default function Personal(): JSX.Element {
                 >
                     개인 결제,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         링크 하나로 끝
                     </span>
                 </motion.h1>
@@ -44,7 +44,7 @@ export default function Personal(): JSX.Element {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     사업자등록 없이도 결제 링크를 생성해 <br />
                     대금을 받을 수 있는 비사업자 맞춤형 결제 솔루션입니다.
@@ -52,12 +52,12 @@ export default function Personal(): JSX.Element {
             </section>
 
             {/* 💳 Flow */}
-            <section className="py-24 px-6 md:px-16 bg-[#ecfdf5]">
+            <section className="py-24 px-6 md:px-16 bg-paper">
                 <motion.h2
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-center mb-12 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     결제 흐름
                 </motion.h2>
@@ -70,16 +70,16 @@ export default function Personal(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-white border border-[#a7f3d0]/70 rounded-2xl flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 bg-white border border-mist/70 rounded-2xl flex items-center justify-center text-navy text-3xl shadow-md">
                             <Link2 />
                         </div>
                         <p className="font-semibold mt-2">결제링크 생성</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             금액·상품 입력 후 링크 발행
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 고객 결제 */}
                     <motion.div
@@ -88,16 +88,16 @@ export default function Personal(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-gradient-to-tr from-[#34d399] to-[#10b981] rounded-2xl flex justify-center items-center text-white text-3xl shadow-[0_0_25px_rgba(16,185,129,0.25)]">
+                        <div className="w-24 h-24 bg-gradient-to-tr from-navy to-navy rounded-2xl flex justify-center items-center text-white text-3xl shadow-[0_0_25px_rgba(0,51,102,0.25)]">
                             <Smartphone />
                         </div>
                         <p className="font-semibold mt-2">고객 결제</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             링크 클릭으로 간편 결제
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 정산 완료 */}
                     <motion.div
@@ -106,11 +106,11 @@ export default function Personal(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-white border border-[#a7f3d0]/70 rounded-2xl flex justify-center items-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 bg-white border border-mist/70 rounded-2xl flex justify-center items-center text-navy text-3xl shadow-md">
                             <Wallet />
                         </div>
                         <p className="font-semibold mt-2">정산 완료</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             D+0 또는 D+1 자동 입금
                         </p>
                     </motion.div>
@@ -120,7 +120,7 @@ export default function Personal(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.45 }}
-                    className="text-center mt-10 text-[#1e3a34]/70 max-w-3xl mx-auto leading-relaxed"
+                    className="text-center mt-10 text-navy-800/70 max-w-3xl mx-auto leading-relaxed"
                 >
                     인플루언서, 프리랜서, 1인 창작자도 링크 한 번으로 결제·정산을 받을 수
                     있습니다.
@@ -135,10 +135,10 @@ export default function Personal(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                    <h2 className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]">
                         개인 · 프리랜서를 위한 결제 솔루션
                     </h2>
-                    <p className="text-[#1e3a34]/80">
+                    <p className="text-navy-800/80">
                         비사업자부터 소상공인까지, 수익 창출을 위한 다양한 결제 방식을
                         지원합니다.
                     </p>
@@ -192,15 +192,15 @@ export default function Personal(): JSX.Element {
                             initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.15 * (i + 1) }}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]"
+                            className="p-8 bg-white border border-mist/60 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.15)]"
                         >
-                            <div className="flex items-center gap-3 text-[#10b981] mb-4">
+                            <div className="flex items-center gap-3 text-navy mb-4">
                                 {f.icon}
-                                <h3 className="text-xl font-semibold text-[#0b2723]">
+                                <h3 className="text-xl font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">
+                            <p className="text-navy-800/80 leading-relaxed">
                                 {f.desc}
                             </p>
                         </motion.div>
@@ -209,16 +209,16 @@ export default function Personal(): JSX.Element {
             </section>
 
             {/* CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center">
                 <motion.h2
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     프리랜서 결제도{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY 하나로
                     </span>
                 </motion.h2>
@@ -227,7 +227,7 @@ export default function Personal(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     결제링크, 비사업자 정산, SNS 결제까지 —<br />
                     창작자와 1인 사업자를 위한 완벽한 솔루션입니다.
@@ -240,7 +240,7 @@ export default function Personal(): JSX.Element {
                         transition={{ duration: 0.6, delay: 0.25 }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md"
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-md"
                     >
                         도입 상담 받기 →
                     </motion.button>

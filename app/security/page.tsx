@@ -44,11 +44,11 @@ export default function SecurityPolicy(): JSX.Element {
     }) => (
         <div className="text-center mb-10">
             {kicker && (
-                <div className="text-xs font-semibold tracking-wider text-[#059669] uppercase">
+                <div className="text-xs font-semibold tracking-wider text-navy-700 uppercase">
                     {kicker}
                 </div>
             )}
-            <h2 className="text-[26px] md:text-3xl font-bold text-[#0f766e] mt-1">
+            <h2 className="text-[26px] md:text-3xl font-bold text-navy-700 mt-1">
                 {title}
             </h2>
             {sub && (
@@ -68,10 +68,10 @@ export default function SecurityPolicy(): JSX.Element {
         icon: React.ReactNode;
         children: React.ReactNode;
     }) => (
-        <div className="rounded-2xl border border-[#e6fff9] bg-white p-6 md:p-7 mb-8 shadow-sm">
+        <div className="rounded-2xl border border-paper bg-white p-6 md:p-7 mb-8 shadow-sm">
             <div className="flex items-center gap-2 mb-3">
                 {icon}
-                <div className="font-semibold text-[#042f2e] text-[17px]">
+                <div className="font-semibold text-navy-900 text-[17px]">
                     {title}
                 </div>
             </div>
@@ -82,7 +82,7 @@ export default function SecurityPolicy(): JSX.Element {
     );
 
     return (
-        <section className="min-h-screen bg-gradient-to-b from-white via-[#f0fdfa] to-[#ecfdf3] px-6 md:px-14 py-20">
+        <section className="min-h-screen bg-gradient-to-b from-white via-paper to-paper px-6 md:px-14 py-20">
             {/* HEADER */}
             <motion.div
                 initial={{ opacity: 1, y: 14 }}
@@ -90,11 +90,11 @@ export default function SecurityPolicy(): JSX.Element {
                 transition={{ duration: 0.45 }}
                 className="text-center mb-14"
             >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#ecfdf5] text-[#0f766e] text-xs font-semibold mb-3 border border-[#bbf7f0]">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-paper text-navy-700 text-xs font-semibold mb-3 border border-mist">
                     <ShieldCheck className="w-4 h-4" />
                     SFIN PAY 보안정책
                 </div>
-                <h1 className="text-[32px] md:text-[40px] font-extrabold text-[#047857] tracking-tight">
+                <h1 className="text-[32px] md:text-[40px] font-extrabold text-navy-700 tracking-tight">
                     Security Policy
                 </h1>
                 <p className="text-gray-700 mt-3 text-[15px] max-w-2xl mx-auto">
@@ -114,7 +114,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(0)}>
                     <Block
                         title="정책 목적"
-                        icon={<Shield className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Shield className="w-5 h-5 text-navy" />}
                     >
                         본 보안정책은 SFIN PAY가 제공하는 결제/정산/납부 서비스와 관련하여
                         회사가 준수하는 보안 기준, 역할, 책임, 기술적 조치를 정의합니다.
@@ -127,7 +127,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(1)}>
                     <Block
                         title="1) 권한 분리 및 최소 권한 원칙"
-                        icon={<KeyRound className="w-5 h-5 text-[#10b981]" />}
+                        icon={<KeyRound className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>업무 역할에 따른 최소 권한 원칙 적용</li>
@@ -140,7 +140,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(2)}>
                     <Block
                         title="2) 관리자 인증 절차"
-                        icon={<Fingerprint className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Fingerprint className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>MFA(2단계 인증) 적용</li>
@@ -156,7 +156,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(3)}>
                     <Block
                         title="1) 개인정보·거래정보 암호화"
-                        icon={<Lock className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Lock className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>전송 구간 TLS/HTTPS 암호화</li>
@@ -169,7 +169,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(4)}>
                     <Block
                         title="2) 데이터 분리 저장"
-                        icon={<Server className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Server className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>업무 데이터·로그·결제 정보 물리적/논리적 분리</li>
@@ -184,7 +184,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(5)}>
                     <Block
                         title="1) 실시간 관제"
-                        icon={<Eye className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Eye className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>오류율·지연율·웹훅 실패율 실시간 모니터링</li>
@@ -197,7 +197,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(6)}>
                     <Block
                         title="2) 로그 무결성 보장"
-                        icon={<Cpu className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Cpu className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>중요 로그 위·변조 방지 저장</li>
@@ -216,7 +216,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(7)}>
                     <Block
                         title="1) 취약점 점검"
-                        icon={<Bug className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Bug className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>정기적 취약점 스캔 및 패치</li>
@@ -229,7 +229,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(8)}>
                     <Block
                         title="2) 장애 대응 및 SEV 관리"
-                        icon={<ShieldCheck className="w-5 h-5 text-[#10b981]" />}
+                        icon={<ShieldCheck className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>SEV-1/2/3 기준의 인시던트 대응 체계 유지</li>
@@ -245,7 +245,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(9)}>
                     <Block
                         title="1) 네트워크 보안"
-                        icon={<Server className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Server className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>WAF(Web Application Firewall) 적용</li>
@@ -258,7 +258,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(10)}>
                     <Block
                         title="2) 백업 및 재해복구"
-                        icon={<Shield className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Shield className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>DB 정기 백업 및 암호화 저장</li>
@@ -274,7 +274,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(11)}>
                     <Block
                         title="내부 보안 규정"
-                        icon={<FileText className="w-5 h-5 text-[#10b981]" />}
+                        icon={<FileText className="w-5 h-5 text-navy" />}
                     >
                         <ul className="list-disc list-inside space-y-1">
                             <li>보안 서약서/기밀 유지 서약서 작성 의무</li>
@@ -290,7 +290,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(12)}>
                     <Block
                         title="문의 및 신고"
-                        icon={<ShieldCheck className="w-5 h-5 text-[#10b981]" />}
+                        icon={<ShieldCheck className="w-5 h-5 text-navy" />}
                     >
                         <p>보안 관련 문의·신고는 아래 채널을 통해 가능합니다:</p>
                         <ul className="list-disc list-inside mt-2 space-y-1">
@@ -312,7 +312,7 @@ export default function SecurityPolicy(): JSX.Element {
                 <motion.div {...fadeUp(13)}>
                     <Block
                         title="시행일"
-                        icon={<Shield className="w-5 h-5 text-[#10b981]" />}
+                        icon={<Shield className="w-5 h-5 text-navy" />}
                     >
                         본 보안정책은 <b>2025년 1월 1일</b>부터 시행합니다.
                     </Block>
@@ -327,7 +327,7 @@ export default function SecurityPolicy(): JSX.Element {
             <div className="text-center mt-20">
                 <Link
                     href="/"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#10b981] text-white rounded-xl font-semibold hover:bg-[#059669] transition"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white rounded-xl font-semibold hover:bg-navy-700 transition"
                 >
                     <BookOpen className="w-4 h-4" />
                     메인으로 돌아가기

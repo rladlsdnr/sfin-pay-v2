@@ -231,15 +231,17 @@ export default function Navbar(): JSX.Element {
                     {/* 🔵 LOGO */}
                     <button
                         onClick={handleLogoClick}
-                        className="flex items-center gap-2 select-none "
+                        className="flex items-center gap-2.5 select-none group"
                         style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
-                        <img src='/sfinpay.png' style={{ width: '120px' }} />
-                        {
-                            /*
-                            <span className="text-2xl font-extrabold text-[#00b894] tracking-tight">SFIN PAY</span>
-                            */
-                        }
+                        <img
+                            src='/new_logo.png'
+                            alt="SFIN PAY"
+                            className="w-11 h-11 object-contain"
+                        />
+                        <span className="text-2xl font-extrabold text-navy tracking-tight transition-colors group-hover:text-navy-700">
+                            SFIN PAY
+                        </span>
                     </button>
 
                     {/* 💻 데스크탑 메뉴 */}
@@ -253,7 +255,7 @@ export default function Navbar(): JSX.Element {
                             >
                                 {item.submenu ? (
                                     <>
-                                        <button className="flex items-center gap-1 text-[#0f172a] font-medium hover:text-[#00b894] transition">
+                                        <button className="flex items-center gap-1 text-navy-900 font-medium hover:text-navy transition">
                                             {item.label}
                                             <ChevronDown size={16} className="ml-1" />
                                         </button>
@@ -267,7 +269,7 @@ export default function Navbar(): JSX.Element {
                                                     animate="visible"
                                                     exit="exit"
                                                     className={[
-                                                        "absolute top-10 bg-white shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-2xl border border-[#00b894]/20 p-6 gap-4",
+                                                        "absolute top-10 bg-white shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-2xl border border-navy/20 p-6 gap-4",
                                                         item.label == '결제 방식' ? "w-[320px] max-w-[92vw]" : "w-[600px] max-w-[90vw]",
                                                         item.label == '결제 방식' ? "flex flex-col" : "grid grid-cols-2"
                                                     ].join(" ")}
@@ -281,13 +283,13 @@ export default function Navbar(): JSX.Element {
                                                         <Link
                                                             key={i}
                                                             href={sub.link}
-                                                            className="flex items-start gap-3 rounded-lg p-3 hover:bg-[#f6fffb] "
+                                                            className="flex items-start gap-3 rounded-lg p-3 hover:bg-paper "
                                                         >
-                                                            <div className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-[#00b894]/10 text-[#00b894]">
+                                                            <div className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-navy/10 text-navy">
                                                                 {sub.icon}
                                                             </div>
                                                             <div className="flex flex-col">
-                                                                <span className="text-[15px] font-semibold text-[#0f172a]">
+                                                                <span className="text-[15px] font-semibold text-navy-900">
                                                                     {sub.label}
                                                                 </span>
                                                                 <span className="text-xs text-[#4b5563]/80">
@@ -299,8 +301,8 @@ export default function Navbar(): JSX.Element {
 
                                                     {/* 우측 하단 브랜드 설명 */}
                                                     {item.categoryDesc && (
-                                                        <div className="col-span-2 mt-4 border-t border-[#E2E8F0] pt-3 text-sm text-[#334155]/80 flex items-center gap-2">
-                                                            <ShieldCheck size={16} className="text-[#00b894]" />
+                                                        <div className="col-span-2 mt-4 border-t border-surface-2 pt-3 text-sm text-[#334155]/80 flex items-center gap-2">
+                                                            <ShieldCheck size={16} className="text-navy" />
                                                             {item.categoryDesc}
                                                         </div>
                                                     )}
@@ -311,7 +313,7 @@ export default function Navbar(): JSX.Element {
                                 ) : (
                                     <Link
                                         href={item.link ?? '/'}
-                                        className="text-[#0f172a] font-medium hover:text-[#00b894] transition"
+                                        className="text-navy-900 font-medium hover:text-navy transition"
                                     >
                                         {item.label}
                                     </Link>
@@ -323,7 +325,7 @@ export default function Navbar(): JSX.Element {
                         <div className="flex items-center gap-3 ml-4">
                             <Link
                                 href="/inquiry/contract"
-                                className="px-4 py-2 text-sm font-semibold rounded-lg border border-[#00b894] text-[#00b894] hover:bg-[#00b894] hover:text-white "
+                                className="px-4 py-2 text-sm font-semibold rounded-lg border border-navy text-navy hover:bg-navy hover:text-white "
                             >
                                 가맹 문의
                             </Link>
@@ -333,7 +335,7 @@ export default function Navbar(): JSX.Element {
 
                     {/* 📱 모바일 메뉴 버튼 */}
                     <button
-                        className="md:hidden text-[#0f172a]"
+                        className="md:hidden text-navy-900"
                         onClick={() => setMenuOpen(!menuOpen)}
                         style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
@@ -354,11 +356,11 @@ export default function Navbar(): JSX.Element {
                         className="fixed top-0 right-0 w-[85%] h-screen bg-white z-[999] shadow-2xl flex flex-col justify-between"
                     >
                         {/* 🧭 상단 헤더 (로고 + 닫기버튼) */}
-                        <div className="flex justify-between items-center px-6 py-5 border-b border-[#E2E8F0]">
-                            <span className="text-xl font-extrabold text-[#00b894] select-none">SFIN PAY</span>
+                        <div className="flex justify-between items-center px-6 py-5 border-b border-surface-2">
+                            <span className="text-xl font-extrabold text-navy select-none">SFIN PAY</span>
                             <button
                                 onClick={() => setMenuOpen(false)}
-                                className="text-[#0f172a] hover:text-[#00b894] transition"
+                                className="text-navy-900 hover:text-navy transition"
                                 aria-label="Close menu"
                             >
                                 <X size={26} />
@@ -377,7 +379,7 @@ export default function Navbar(): JSX.Element {
                                                         activeMobileMenu === item.label ? null : item.label
                                                     )
                                                 }
-                                                className="w-full flex justify-between items-center text-left text-lg font-semibold text-[#0f172a] py-2"
+                                                className="w-full flex justify-between items-center text-left text-lg font-semibold text-navy-900 py-2"
                                             >
                                                 {item.label}
                                                 {activeMobileMenu === item.label ? (
@@ -394,14 +396,14 @@ export default function Navbar(): JSX.Element {
                                                         animate={{ height: 'auto', opacity: 1 }}
                                                         exit={{ height: 0, opacity: 0 }}
                                                         transition={{ duration: 0.25 }}
-                                                        className="pl-3 border-l border-[#00b894]/30 mt-2 space-y-2"
+                                                        className="pl-3 border-l border-navy/30 mt-2 space-y-2"
                                                     >
                                                         {item.submenu.map((sub) => (
                                                             <Link
                                                                 key={sub.link}
                                                                 href={sub.link}
                                                                 onClick={() => setMenuOpen(false)}
-                                                                className="block text-[#334155] py-2 text-sm hover:text-[#00b894]"
+                                                                className="block text-[#334155] py-2 text-sm hover:text-navy"
                                                             >
                                                                 {sub.label}
                                                                 <div className="text-xs text-[#64748b]/70">
@@ -417,7 +419,7 @@ export default function Navbar(): JSX.Element {
                                         <Link
                                             href={item.link ?? '/'}
                                             onClick={() => setMenuOpen(false)}
-                                            className="block text-lg font-semibold text-[#0f172a] py-2 hover:text-[#00b894]"
+                                            className="block text-lg font-semibold text-navy-900 py-2 hover:text-navy"
                                         >
                                             {item.label}
                                             <div className="text-xs text-[#64748b]/70">
@@ -430,11 +432,11 @@ export default function Navbar(): JSX.Element {
                         </div>
 
                         {/* 하단 버튼 */}
-                        <div className="border-t border-[#E2E8F0] p-6 flex flex-col gap-3">
+                        <div className="border-t border-surface-2 p-6 flex flex-col gap-3">
                             <Link
                                 href="/inquiry/contract"
                                 onClick={() => setMenuOpen(false)}
-                                className="w-full text-center py-3 rounded-lg border border-[#00b894] text-[#00b894] font-semibold hover:bg-[#00b894] hover:text-white "
+                                className="w-full text-center py-3 rounded-lg border border-navy text-navy font-semibold hover:bg-navy hover:text-white "
                             >
                                 가맹 문의
                             </Link>

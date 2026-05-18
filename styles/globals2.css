@@ -3,46 +3,17 @@
 @tailwind utilities;
 
 :root {
-  /* ================== COLOR TOKENS ==================
-     테마 색상의 단일 출처. 색을 바꾸려면 여기 + tailwind.config.js만 수정.
-     tailwind 클래스(text-navy 등)는 tailwind.config.js의 colors와 연동됨. */
-
-  /* 표면 */
-  --color-paper: #fbfcfd;       /* 페이지 배경 */
-  --color-surface: #ffffff;     /* 카드 표면 */
-  --color-surface-2: #f2f6fb;   /* 보조 패널 / 스크롤바 트랙 */
-  --color-mist: #d6e2ee;        /* 옅은 네이비 틴트 보더 */
-
-  /* 네이비 (주도색) */
-  --color-navy: #003366;
-  --color-navy-700: #002b57;
-  --color-navy-800: #001a33;
-  --color-navy-900: #000a1a;
-  --rgb-navy: 0, 51, 102;       /* rgba() 투명도 변형용 */
-
-  /* 골드 (CTA / 포인트) */
-  --color-gold: #ffb800;
-  --color-gold-light: #ffd24a;
-  --color-gold-dark: #e89a00;
-  --color-gold-deep: #c88500;
-  --rgb-gold: 255, 184, 0;
-
-  /* 텍스트 */
-  --color-ink: #003366;
-  --color-ink-muted: #475569;
-  --color-ink-soft: #64748b;
-
-  /* 이징 시스템 */
-  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-snap: cubic-bezier(0.22, 0.61, 0.36, 1);
-
+  /* 이징 시스템 — 사장님이 선호하는 스프링 패턴 */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);     /* 부드러운 스프링 (out-expo 변형) */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);      /* 표준 */
+  --ease-snap: cubic-bezier(0.22, 0.61, 0.36, 1);   /* 빠른 결정감 */
+  
   /* 표준 지속시간 */
   --t-fast: 0.18s;
   --t-base: 0.32s;
   --t-slow: 0.6s;
-
-  /* 깊이 그림자 */
+  
+  /* 깊이 그림자 (편집물 톤에 맞춰 절제) */
   --depth-1: 0 1px 2px rgba(0, 26, 51, 0.04), 0 0 0 1px rgba(0, 51, 102, 0.06);
   --depth-2: 0 6px 16px -4px rgba(0, 26, 51, 0.08), 0 2px 4px rgba(0, 26, 51, 0.04);
   --depth-3: 0 18px 40px -12px rgba(0, 26, 51, 0.18), 0 6px 12px rgba(0, 26, 51, 0.06);
@@ -53,8 +24,8 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: var(--color-paper);
-  color: var(--color-ink);
+  background-color: #fbfcfd;
+  color: #003366;
   font-family: "Pretendard", "Inter", "sans-serif";
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
@@ -73,20 +44,16 @@ body p, body h1, body h2, body h3 {
 
 /* 네이비 스크롤바 */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
-::-webkit-scrollbar-track { background: var(--color-surface-2); }
-::-webkit-scrollbar-thumb { background-color: var(--color-navy); border-radius: 4px; }
-::-webkit-scrollbar-thumb:hover { background-color: var(--color-navy-800); }
-* { scrollbar-width: thin; scrollbar-color: var(--color-navy) var(--color-surface-2); }
+::-webkit-scrollbar-track { background: #F2F6FB; }
+::-webkit-scrollbar-thumb { background-color: #003366; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background-color: #001A33; }
+* { scrollbar-width: thin; scrollbar-color: #003366 #F2F6FB; }
 
 /* 골드 셀렉션 */
-::selection { background: rgba(var(--rgb-gold), 0.28); color: var(--color-navy); }
+::selection { background: rgba(255, 184, 0, 0.28); color: #003366; }
 
 main, section { position: relative; z-index: 10; }
 a { color: inherit; text-decoration: none; }
-
-img, video { max-width: 100%; height: auto; display: block; }
-
-button { transition: all 0.25s ease; }
 
 /* ================== EDITORIAL TYPOGRAPHY ==================  */
 .display-1 {
@@ -130,23 +97,23 @@ button { transition: all 0.25s ease; }
 /* 라인 */
 .editorial-rule {
   height: 1px;
-  background: rgba(var(--rgb-navy), 0.18);
+  background: rgba(0, 51, 102, 0.18);
 }
 .editorial-rule-thick {
   height: 2px;
-  background: var(--color-navy);
+  background: #003366;
 }
 
 /* 그라데이션 (골드) */
 .heading-gradient {
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 50%, var(--color-gold-deep) 100%);
+  background: linear-gradient(135deg, #FFB800 0%, #E89A00 50%, #C88500 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 .heading-gradient-light {
-  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+  background: linear-gradient(135deg, #FFD24A 0%, #FFB800 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -161,21 +128,13 @@ button { transition: all 0.25s ease; }
 
 .paper-texture {
   background-image:
-    radial-gradient(rgba(var(--rgb-navy), 0.025) 1px, transparent 1px);
+    radial-gradient(rgba(0, 51, 102, 0.025) 1px, transparent 1px);
   background-size: 24px 24px;
 }
 
 /* 다크 패널 (네이비) */
 .dark-panel {
-  background: linear-gradient(155deg, var(--color-navy) 0%, var(--color-navy-800) 60%, var(--color-navy-900) 100%);
-}
-
-/* 카드 그림자 */
-.card-shadow {
-  box-shadow: var(--depth-2);
-  border: 1px solid rgba(var(--rgb-navy), 0.08);
-  background: rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(12px);
+  background: linear-gradient(155deg, #003366 0%, #001A33 60%, #000A1A 100%);
 }
 
 /* editorial link — underline redraw */
@@ -204,9 +163,9 @@ button { transition: all 0.25s ease; }
   to { transform-origin: left; transform: scaleX(1); }
 }
 
-/* 카드 hover 인터랙션 */
+/* 카드 hover 인터랙션 — 미세 lift + border 강조 */
 .card-interactive {
-  transition:
+  transition: 
     transform var(--t-base) var(--ease-spring),
     box-shadow var(--t-base) var(--ease-spring),
     border-color var(--t-base) var(--ease-smooth);
@@ -218,7 +177,7 @@ button { transition: all 0.25s ease; }
 
 /* 버튼 인터랙션 */
 .btn-primary {
-  transition:
+  transition: 
     background-color var(--t-fast) var(--ease-smooth),
     transform var(--t-fast) var(--ease-spring),
     box-shadow var(--t-base) var(--ease-spring),
@@ -233,7 +192,7 @@ button { transition: all 0.25s ease; }
   transition-duration: 80ms;
 }
 
-/* viewport 진입 페이드 */
+/* 키 카운터 — viewport 진입 시 페이드 */
 .fade-in-up {
   opacity: 0;
   transform: translateY(14px);
@@ -244,7 +203,7 @@ button { transition: all 0.25s ease; }
   transform: translateY(0);
 }
 
-/* 진행 바 애니메이션 */
+/* 진행 바 애니메이션 (Hero 시뮬레이션 카드) */
 @keyframes progress-fill {
   from { width: 0%; }
   to { width: var(--p, 100%); }
@@ -255,30 +214,3 @@ button { transition: all 0.25s ease; }
 
 .tabular { font-variant-numeric: tabular-nums; }
 .text-balance { text-wrap: balance; }
-
-/* Hero 진입 애니메이션 (기존 컴포넌트 호환) */
-@keyframes hero-fade-up {
-  from { opacity: 0; transform: translateY(12px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.hero-fade-up {
-  animation: hero-fade-up 0.6s ease-out both;
-}
-.hero-fade-up-delay {
-  animation: hero-fade-up 0.6s ease-out 0.15s both;
-}
-
-/* 코드 블록 */
-pre {
-  background: var(--color-surface-2);
-  border-radius: 0.75rem;
-  padding: 1rem;
-  color: var(--color-navy-800);
-  font-family: "JetBrains Mono", monospace;
-  font-size: 0.9rem;
-  overflow-x: auto;
-  border: 1px solid rgba(var(--rgb-navy), 0.12);
-}
-code {
-  color: var(--color-navy);
-}

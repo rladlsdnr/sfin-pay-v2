@@ -56,7 +56,7 @@ export default function Contact(): JSX.Element {
     return (
         <section
             id="contact"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#ecfeff] via-[#f0fdfa] to-white"
+            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white"
         >
             {/* ───────────── 헤더 ───────────── */}
             <motion.div
@@ -69,13 +69,13 @@ export default function Contact(): JSX.Element {
                     <Mail size={16} /> 문의하기
                 </span>
 
-                <h2 className="mt-6 text-4xl md:text-5xl font-extrabold text-[#0b2723] leading-tight text-[clamp(30px,5vw,36px)]">
-                    <span className="text-[#00c89b]">SFIN PAY</span>와{" "}
+                <h2 className="mt-6 text-4xl md:text-5xl font-extrabold text-navy-900 leading-tight text-[clamp(30px,5vw,36px)]">
+                    <span className="text-navy">SFIN PAY</span>와{" "}
                     <br className="hidden md:block" />
-                    <span className="block md:mt-3 text-[#0b2723]">함께할 준비되셨나요?</span>
+                    <span className="block md:mt-3 text-navy-900">함께할 준비되셨나요?</span>
                 </h2>
 
-                <p className="mt-5 text-[#1f3b37]/70 text-lg leading-relaxed">
+                <p className="mt-5 text-navy-800/70 text-lg leading-relaxed">
                     정산, 유동성, 계약, 기술 연동 등 필요한 문의를 남겨주시면{" "}
                     <br className="hidden md:block" />
                     담당 매니저가 신속히 연락드립니다.
@@ -88,13 +88,13 @@ export default function Contact(): JSX.Element {
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.08 }}
                 onSubmit={handleSubmit}
-                className="max-w-3xl mx-auto rounded-2xl border border-emerald-200/70 bg-white/90 backdrop-blur-sm p-8 md:p-10 space-y-6 shadow-[0_8px_25px_rgba(16,185,129,0.12)]"
+                className="max-w-3xl mx-auto rounded-2xl border border-emerald-200/70 bg-white/90 backdrop-blur-sm p-8 md:p-10 space-y-6 shadow-[0_8px_25px_rgba(0,51,102,0.12)]"
             >
                 
                 <div>
                     <label
                         htmlFor="company"
-                        className="block text-sm font-medium text-[#0b2723] mb-2 flex items-center gap-2"
+                        className="block text-sm font-medium text-navy-900 mb-2 flex items-center gap-2"
                     >
                         <Building2 size={16} className="text-emerald-600" /> 회사명 / 상호명
                     </label>
@@ -106,7 +106,7 @@ export default function Contact(): JSX.Element {
                         value={form.company}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-xl bg-[#f0fdfa] border border-emerald-200 text-[#0b2723] px-4 py-3 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 outline-none placeholder-emerald-300 transition"
+                        className="w-full rounded-xl bg-paper border border-emerald-200 text-navy-900 px-4 py-3 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 outline-none placeholder-emerald-300 transition"
                     />
                 </div>
 
@@ -114,7 +114,7 @@ export default function Contact(): JSX.Element {
                 <div>
                     <label
                         htmlFor="email"
-                        className="block text-sm font-medium text-[#0b2723] mb-2 flex items-center gap-2"
+                        className="block text-sm font-medium text-navy-900 mb-2 flex items-center gap-2"
                     >
                         <Mail size={16} className="text-emerald-600" /> 이메일
                     </label>
@@ -126,7 +126,7 @@ export default function Contact(): JSX.Element {
                         value={form.email}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-xl bg-[#f0fdfa] border border-emerald-200 text-[#0b2723] px-4 py-3 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 outline-none placeholder-emerald-300 transition"
+                        className="w-full rounded-xl bg-paper border border-emerald-200 text-navy-900 px-4 py-3 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 outline-none placeholder-emerald-300 transition"
                     />
                 </div>
 
@@ -134,7 +134,7 @@ export default function Contact(): JSX.Element {
                 <div>
                     <label
                         htmlFor="category"
-                        className="block text-sm font-medium text-[#0b2723] mb-2 flex items-center gap-2"
+                        className="block text-sm font-medium text-navy-900 mb-2 flex items-center gap-2"
                     >
                         <MessageSquare size={16} className="text-emerald-600" /> 문의 유형
                     </label>
@@ -144,7 +144,7 @@ export default function Contact(): JSX.Element {
                         value={form.category}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-xl bg-[#f0fdfa] border border-emerald-200 text-[#0b2723] px-4 py-3 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 outline-none transition"
+                        className="w-full rounded-xl bg-paper border border-emerald-200 text-navy-900 px-4 py-3 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 outline-none transition"
                     >
                         <option value="">선택하세요</option>
                         <option>① 정산 관련 문의</option>
@@ -159,7 +159,7 @@ export default function Contact(): JSX.Element {
                 <div>
                     <label
                         htmlFor="message"
-                        className="block text-sm font-medium text-[#0b2723] mb-2"
+                        className="block text-sm font-medium text-navy-900 mb-2"
                     >
                         세부 내용
                     </label>
@@ -171,7 +171,7 @@ export default function Contact(): JSX.Element {
                         value={form.message}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-xl bg-[#f0fdfa] border border-emerald-200 text-[#0b2723] px-4 py-3 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 outline-none resize-none placeholder-emerald-300 transition"
+                        className="w-full rounded-xl bg-paper border border-emerald-200 text-navy-900 px-4 py-3 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-400 outline-none resize-none placeholder-emerald-300 transition"
                     />
                 </div>
 
@@ -180,12 +180,12 @@ export default function Contact(): JSX.Element {
                     whileHover={{ scale: 1.03 }}
                     whileTap={{ scale: 0.97 }}
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_25px_rgba(16,185,129,0.25)] "
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-900 font-semibold shadow-[0_8px_25px_rgba(255,184,0,0.3)] "
                 >
                     <Send size={18} /> 문의 보내기
                 </motion.button>
 
-                <p className="text-center text-[#1f3b37]/70 text-sm mt-2">
+                <p className="text-center text-navy-800/70 text-sm mt-2">
                     모든 문의 내용은 암호화되어 전송되며, 영업일 기준 24시간 이내 회신드립니다.
                 </p>
             </motion.form>
@@ -201,9 +201,9 @@ export default function Contact(): JSX.Element {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                 >
                     <Mail size={18} /> Gmail로 문의하기
                 </a>
@@ -214,9 +214,9 @@ export default function Contact(): JSX.Element {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                 >
                     <Mail size={18} /> Outlook으로 문의하기
                 </a>
@@ -229,8 +229,8 @@ export default function Contact(): JSX.Element {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                     border border-emerald-300 bg-white/80 
-                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    hover:bg-paper text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                 >
                     <MessageCircle size={18} /> 카카오톡 상담
                 </a>

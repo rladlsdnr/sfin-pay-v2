@@ -52,7 +52,7 @@ import {
 
 /**
  * SFIN PAY — TechSupportPro (Mint theme)
- * - 색상 팔레트: 민트/청록 기반 (mint main: #10b981 / #2dd4bf / accent soft #bbf7f0)
+ * - 색상 팔레트: 민트/청록 기반 (mint main: #003366 / #003366 / accent soft #d6e2ee)
  * - 모든 R+0 / R+1 표기는 D+0 / D+1 으로 통일 (이미 적용)
  * - 기존 구조를 확장해 더 많은 섹션과 상세 설명을 포함함
  * - Tailwind 클래스에는 기존 보라색을 모두 민트 계열로 변환함
@@ -79,15 +79,15 @@ export default function TechSupportProMint(): JSX.Element {
     const SectionTitle = ({ kicker, title, sub }: { kicker?: string; title: string; sub?: string }) => (
         <div className="text-center mb-10">
             {kicker && (
-                <div className="text-xs font-semibold tracking-wider text-[#059669] uppercase">{kicker}</div>
+                <div className="text-xs font-semibold tracking-wider text-navy-700 uppercase">{kicker}</div>
             )}
-            <h2 className="text-[26px] md:text-3xl font-bold text-[#0f766e] mt-1">{title}</h2>
+            <h2 className="text-[26px] md:text-3xl font-bold text-navy-700 mt-1">{title}</h2>
             {sub && <p className="text-[15px] text-gray-700 mt-2">{sub}</p>}
         </div>
     );
 
     const Pill = ({ children }: { children: React.ReactNode }) => (
-        <span className="px-2.5 py-1 rounded-lg border border-[#e6fffa] bg-white text-[#065f46] text-xs">
+        <span className="px-2.5 py-1 rounded-lg border border-paper bg-white text-navy-800 text-xs">
             {children}
         </span>
     );
@@ -104,7 +104,7 @@ export default function TechSupportProMint(): JSX.Element {
 
         return (
             <svg width={width} height={height} role="img" aria-label="추세 스파크라인" className="block">
-                <path d={path} fill="none" stroke="#059669" strokeWidth={strokeWidth} strokeLinecap="round" />
+                <path d={path} fill="none" stroke="#002b57" strokeWidth={strokeWidth} strokeLinecap="round" />
             </svg>
         );
     };
@@ -113,27 +113,27 @@ export default function TechSupportProMint(): JSX.Element {
         const isUp = delta >= 0;
         return (
             <span
-                className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] font-medium ${isUp ? "bg-[#ecfdf5] text-[#065f46]" : "bg-[#fff1f2] text-[#991b1b]"}`}
+                className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] font-medium ${isUp ? "bg-paper text-navy-800" : "bg-[#fff1f2] text-[#991b1b]"}`}
                 aria-label={`전월 대비 ${Math.abs(delta).toFixed(1)}% ${isUp ? "상승" : "하락"}`}
             >
-                {isUp ? <ArrowUpRight className="w-3.5 h-3.5 text-[#10b981]" /> : <ArrowDownRight className="w-3.5 h-3.5 text-[#ef4444]" />}
+                {isUp ? <ArrowUpRight className="w-3.5 h-3.5 text-navy" /> : <ArrowDownRight className="w-3.5 h-3.5 text-[#ef4444]" />}
                 {Math.abs(delta).toFixed(1)}%
             </span>
         );
     };
 
     const KPICard = ({ icon, label, value, unit, delta, sub, series }: { icon: React.ReactNode; label: string; value: string; unit?: string; delta?: number; sub?: string; series?: number[] }) => (
-        <div className="rounded-2xl border border-[#e6fff9] bg-white p-4 md:p-5">
+        <div className="rounded-2xl border border-paper bg-white p-4 md:p-5">
             <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
-                    <span className="text-[#059669]">{icon}</span>
+                    <span className="text-navy-700">{icon}</span>
                     <span className="text-[12px] text-gray-500">{label}</span>
                 </div>
                 <TrendBadge delta={delta ?? 0} />
             </div>
             <div className="flex items-end justify-between">
                 <div>
-                    <div className="text-[22px] md:text-[24px] leading-none font-extrabold text-[#0f172a]">
+                    <div className="text-[22px] md:text-[24px] leading-none font-extrabold text-navy-900">
                         {value}
                         {unit && <span className="text-[13px] font-semibold text-gray-500 ml-1">{unit}</span>}
                     </div>
@@ -145,9 +145,9 @@ export default function TechSupportProMint(): JSX.Element {
     );
 
     const InfoCard = ({ icon, title, children }: { icon: React.ReactNode; title: string; children: React.ReactNode }) => (
-        <div className="p-6 rounded-2xl border border-[#e8fdf8] bg-white hover:shadow-lg transition">
-            <div className="mb-4 text-[#064e3b]">{icon}</div>
-            <div className="text-[16px] font-semibold text-[#042f2e] mb-2">{title}</div>
+        <div className="p-6 rounded-2xl border border-paper bg-white hover:shadow-lg transition">
+            <div className="mb-4 text-navy-800">{icon}</div>
+            <div className="text-[16px] font-semibold text-navy-900 mb-2">{title}</div>
             <div className="text-[15px] text-gray-700">{children}</div>
         </div>
     );
@@ -223,32 +223,32 @@ export default function TechSupportProMint(): JSX.Element {
 
     const serviceSupports = [
         {
-            icon: <Receipt className="w-10 h-10 text-[#10b981]" />,
+            icon: <Receipt className="w-10 h-10 text-navy" />,
             title: "고지·납부 링크",
             bullets: ["문자/카톡 청구서", "원클릭 납부", "납부현황 대시보드"],
         },
         {
-            icon: <CalendarDays className="w-10 h-10 text-[#10b981]" />,
+            icon: <CalendarDays className="w-10 h-10 text-navy" />,
             title: "자동 리마인드",
             bullets: ["기한 전/당일/연체 알림", "템플릿 저장", "주기별 예약"],
         },
         {
-            icon: <Wallet className="w-10 h-10 text-[#10b981]" />,
+            icon: <Wallet className="w-10 h-10 text-navy" />,
             title: "분할 납부",
             bullets: ["월 분납/학기 분납", "무이자/수수료 안내", "일정표 자동 생성"],
         },
         {
-            icon: <ClipboardCheck className="w-10 h-10 text-[#10b981]" />,
+            icon: <ClipboardCheck className="w-10 h-10 text-navy" />,
             title: "미수 관리",
             bullets: ["연체 현황판", "부분 납부 처리", "자동 재고지"],
         },
         {
-            icon: <Building2 className="w-10 h-10 text-[#10b981]" />,
+            icon: <Building2 className="w-10 h-10 text-navy" />,
             title: "정산 스케줄",
             bullets: ["D+0/D+1 선택", "월 정산 옵션", "대리점/분배 정산"],
         },
         {
-            icon: <Megaphone className="w-10 h-10 text-[#10b981]" />,
+            icon: <Megaphone className="w-10 h-10 text-navy" />,
             title: "보호자/세입자 커뮤니케이션",
             bullets: ["안내장/영수증 PDF", "일괄 문자 발송", "응답 수집 폼"],
         },
@@ -256,37 +256,37 @@ export default function TechSupportProMint(): JSX.Element {
 
     const devSupports = [
         {
-            icon: <Code2 className="w-10 h-10 text-[#10b981]" />,
+            icon: <Code2 className="w-10 h-10 text-navy" />,
             title: "간단 연동",
             desc: "납부 링크 생성/확인/취소 등 핵심만 간결하게.",
             pills: ["Idempotency", "샘플 리포", "테스트 데이터"],
         },
         {
-            icon: <Server className="w-10 h-10 text-[#10b981]" />,
+            icon: <Server className="w-10 h-10 text-navy" />,
             title: "웹훅 알림",
             desc: "납부완료/부분납부/취소/연체 이벤트 수신.",
             pills: ["로그 조회", "재전송", "서명 검증"],
         },
         {
-            icon: <Lock className="w-10 h-10 text-[#10b981]" />,
+            icon: <Lock className="w-10 h-10 text-navy" />,
             title: "접근 제어",
             desc: "권한·역할 기반 접근, 최소 권한 원칙.",
             pills: ["감사로그", "토큰 수명", "IP 제한"],
         },
         {
-            icon: <Network className="w-10 h-10 text-[#10b981]" />,
+            icon: <Network className="w-10 h-10 text-navy" />,
             title: "외부 연계",
             desc: "학사/회계/임대관리 프로그램과 양방향 동기화.",
             pills: ["CSV/Excel 업로드", "Webhook→ETL", "간편 매핑"],
         },
         {
-            icon: <Bug className="w-10 h-10 text-[#10b981]" />,
+            icon: <Bug className="w-10 h-10 text-navy" />,
             title: "사전점검 & 모니터링",
             desc: "정책 변경/알림 중단/오탈자 등 자동 검수.",
             pills: ["알림 실패 탐지", "헬스체크", "릴리즈 캘린더"],
         },
         {
-            icon: <Cpu className="w-10 h-10 text-[#10b981]" />,
+            icon: <Cpu className="w-10 h-10 text-navy" />,
             title: "리스크 가드",
             desc: "오입금/중복 고지/오류 납부 사전 차단.",
             pills: ["명세 상계", "이상탐지", "리뷰 큐"],
@@ -295,25 +295,25 @@ export default function TechSupportProMint(): JSX.Element {
 
     const realtimeOps = [
         {
-            icon: <Bell className="w-8 h-8 text-[#10b981]" />,
+            icon: <Bell className="w-8 h-8 text-navy" />,
             title: "상태 페이지 & 구독 알림",
             lines: ["실시간 컴포넌트 상태", "SEV별 공지 템플릿", "구독자 대상 SMS/Email"],
             pills: ["Status", "Subscribe", "History"],
         },
         {
-            icon: <PlugZap className="w-8 h-8 text-[#10b981]" />,
+            icon: <PlugZap className="w-8 h-8 text-navy" />,
             title: "ChatOps / 슬래시 명령",
             lines: ["/sfin status", "/sfin rca last", "/sfin sev new"],
             pills: ["Slack", "Webhook", "온콜단축키"],
         },
         {
-            icon: <Zap className="w-8 h-8 text-[#10b981]" />,
+            icon: <Zap className="w-8 h-8 text-navy" />,
             title: "자동 에스컬레이션",
             lines: ["응답지연/오류율 임계치", "온콜 → L2 → 팀장", "중복 알림 억제"],
             pills: ["Pager", "Throttle", "Escalation"],
         },
         {
-            icon: <Rocket className="w-8 h-8 text-[#10b981]" />,
+            icon: <Rocket className="w-8 h-8 text-navy" />,
             title: "자동 복구 & 백필",
             lines: ["대기 큐 자동 소진", "증분 백필", "재시도 우선순위 정책"],
             pills: ["AutoFill", "Backfill", "Prioritize"],
@@ -416,19 +416,19 @@ export default function TechSupportProMint(): JSX.Element {
 
     const diffPoints = [
         {
-            icon: <BarChart3 className="w-6 h-6 text-[#10b981]" />,
+            icon: <BarChart3 className="w-6 h-6 text-navy" />,
             title: "실시간 우선 전략",
             lines: ["상태 공개/구독", "ChatOps 단축명령", "자동 에스컬레이션"],
             note: "문제 감지~커뮤니케이션~완화까지 분 단위로 연결.",
         },
         {
-            icon: <Globe2 className="w-6 h-6 text-[#10b981]" />,
+            icon: <Globe2 className="w-6 h-6 text-navy" />,
             title: "현장 친화 납부 흐름",
             lines: ["링크 결제", "분할 납부", "연체 리마인드"],
             note: "월세·학원비·과외비 등 실제 패턴 맞춤 구성.",
         },
         {
-            icon: <FileSignature className="w-6 h-6 text-[#10b981]" />,
+            icon: <FileSignature className="w-6 h-6 text-navy" />,
             title: "투명 보고 문화",
             lines: ["SEV 기준", "RCA 공개", "시정조치 공유"],
             note: "사후 학습 공유로 동일 장애 재발 방지.",
@@ -441,9 +441,9 @@ export default function TechSupportProMint(): JSX.Element {
     return (
         <section className="bg-white min-h-screen">
             {/* HERO */}
-            <div className="py-24 px-6 md:px-16 bg-gradient-to-b from-white via-[#f0fdfa] to-[#ecfdf3] text-center">
+            <div className="py-24 px-6 md:px-16 bg-gradient-to-b from-white via-paper to-paper text-center">
                 <motion.h1 initial={{ opacity: 0, y: 12 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-                    className="text-[34px] md:text-5xl font-extrabold text-[#047857] tracking-tight text-[clamp(30px,5vw,36px)]">
+                    className="text-[34px] md:text-5xl font-extrabold text-navy-700 tracking-tight text-[clamp(30px,5vw,36px)]">
                     기술 지원 안내{" "}
                     <br className="block md:hidden" />
                 </motion.h1>
@@ -455,17 +455,17 @@ export default function TechSupportProMint(): JSX.Element {
 
                 <div className="mt-8 flex flex-wrap justify-center gap-3">
                     {heroBadges.map((b, i) => (
-                        <motion.span key={i} {...fadeUp(i)} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#e6fffa] bg-white text-[13px] md:text-sm text-[#065f46]">
+                        <motion.span key={i} {...fadeUp(i)} className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-paper bg-white text-[13px] md:text-sm text-navy-800">
                             {b.icon} {b.text}
                         </motion.span>
                     ))}
                 </div>
 
                 <div className="mt-10 flex items-center justify-center gap-3">
-                    <Link href="/inquiry/contract" className="px-6 py-3 rounded-xl bg-[#10b981] text-white font-semibold hover:bg-[#059669] transition focus:ring-2 focus:ring-[#bbf7f0]">
+                    <Link href="/inquiry/contract" className="px-6 py-3 rounded-xl bg-navy text-white font-semibold hover:bg-navy-700 transition focus:ring-2 focus:ring-mist">
                         도입 상담 요청
                     </Link>
-                    <Link href="/inquiry/integration" className="px-6 py-3 rounded-xl bg-white border border-[#e6fff9] text-[#10b981] font-semibold hover:bg-[#f0fdfa] transition focus:ring-2 focus:ring-[#bbf7f0]">
+                    <Link href="/inquiry/integration" className="px-6 py-3 rounded-xl bg-white border border-paper text-navy font-semibold hover:bg-paper transition focus:ring-2 focus:ring-mist">
                         기술 문의하기
                     </Link>
                 </div>
@@ -477,9 +477,9 @@ export default function TechSupportProMint(): JSX.Element {
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                     {realtimeOps.map((r, i) => (
                         <motion.div key={r.title} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                            <div className="rounded-2xl border border-paper bg-white p-6">
                                 <div className="mb-3">{r.icon}</div>
-                                <div className="font-semibold text-[#042f2e]">{r.title}</div>
+                                <div className="font-semibold text-navy-900">{r.title}</div>
                                 <ul className="text-[15px] text-gray-700 mt-2 space-y-1.5">
                                     {r.lines.map((L) => <li key={L}>• {L}</li>)}
                                 </ul>
@@ -494,8 +494,8 @@ export default function TechSupportProMint(): JSX.Element {
                 {/* 상세 운영 정책 블록 (추가된 설명으로 길이 확대) */}
                 <div className="max-w-6xl mx-auto mt-8 grid md:grid-cols-2 gap-6">
                     <motion.div {...fadeUp(0)}>
-                        <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
-                            <div className="font-semibold text-[#042f2e] mb-2">감지 기준 및 알림 정책</div>
+                        <div className="rounded-2xl border border-paper bg-white p-6">
+                            <div className="font-semibold text-navy-900 mb-2">감지 기준 및 알림 정책</div>
                             <ol className="list-decimal list-inside space-y-2 text-gray-700">
                                 <li>Service Error Rate &gt; 1% 지속 시 자동 SEV-3 알림</li>
                                 <li>웹훅 5xx 비율 3% 초과 시 SEV-2, 10% 초과 시 SEV-1로 분류</li>
@@ -506,8 +506,8 @@ export default function TechSupportProMint(): JSX.Element {
                     </motion.div>
 
                     <motion.div {...fadeUp(1)}>
-                        <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
-                            <div className="font-semibold text-[#042f2e] mb-2">온콜/에스컬레이션 규칙</div>
+                        <div className="rounded-2xl border border-paper bg-white p-6">
+                            <div className="font-semibold text-navy-900 mb-2">온콜/에스컬레이션 규칙</div>
                             <div className="text-gray-700 space-y-2">
                                 <div>• L1: 1차 대응(로그 수집/휴먼 체크) — 목표 응답 5분</div>
                                 <div>• L2: 핫픽스/롤백 판단 — 목표 완화 15분</div>
@@ -519,17 +519,17 @@ export default function TechSupportProMint(): JSX.Element {
             </div>
 
             {/* 모니터링 보드 */}
-            <div className="py-18 md:py-20 px-6 md:px-16 bg-[#f7fffb]">
+            <div className="py-18 md:py-20 px-6 md:px-16 bg-paper">
                 <SectionTitle kicker="Observability" title="상태/모니터링 보드" sub="지연·오류·큐·정산 배치 등 핵심 신호를 한눈에." />
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                     {observability.map((m, i) => (
                         <motion.div key={m.k} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                            <div className="rounded-2xl border border-paper bg-white p-6">
                                 <div className="flex items-center justify-between">
                                     <div className="text-[15px] text-gray-600">{m.k}</div>
                                     <TrendBadge delta={m.delta} />
                                 </div>
-                                <div className="text-2xl font-extrabold text-[#042f2e] mt-1">{m.v}</div>
+                                <div className="text-2xl font-extrabold text-navy-900 mt-1">{m.v}</div>
                                 <div className="mt-3 flex flex-wrap gap-2">
                                     {m.tips.map((t) => <Pill key={t}>{t}</Pill>)}
                                 </div>
@@ -540,8 +540,8 @@ export default function TechSupportProMint(): JSX.Element {
 
                 {/* 모니터링 심화 가이드 (설명 확장) */}
                 <div className="max-w-6xl mx-auto mt-8">
-                    <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
-                        <h4 className="font-semibold text-[#042f2e] mb-3">모니터링 심화 가이드</h4>
+                    <div className="rounded-2xl border border-paper bg-white p-6">
+                        <h4 className="font-semibold text-navy-900 mb-3">모니터링 심화 가이드</h4>
                         <p className="text-gray-700 mb-3">
                             각 지표는 알림 임계값 및 자동화 대응 룰과 매핑되어 있으며, 주기적으로 SLI/SLO 재조정이 이루어집니다.
                             장애 발생시 자동 수집된 트레이스/스택트레이스는 포스트모템 템플릿에 포함되어 RCA 작성이 빠르게 진행됩니다.
@@ -577,8 +577,8 @@ export default function TechSupportProMint(): JSX.Element {
 
                 {/* KPI 해석 섹션 (추가적으로 상세 분석 제공) */}
                 <div className="max-w-6xl mx-auto mt-6">
-                    <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
-                        <h4 className="font-semibold text-[#042f2e] mb-2">KPI 해석과 권장 조치</h4>
+                    <div className="rounded-2xl border border-paper bg-white p-6">
+                        <h4 className="font-semibold text-navy-900 mb-2">KPI 해석과 권장 조치</h4>
                         <ul className="list-disc list-inside text-gray-700 space-y-2">
                             <li>납부 완료율이 95% 미만인 세그먼트에 대해 리마인드 템플릿 A/B 테스트 권장</li>
                             <li>가용성 99.9% 유지를 위해 롤링 배포와 헬스 체크 강화</li>
@@ -589,13 +589,13 @@ export default function TechSupportProMint(): JSX.Element {
             </div>
 
             {/* 경쟁사 비교 하이라이트 */}
-            <div className="py-18 md:py-20 px-6 md:px-16 bg-[#f7fffb]">
+            <div className="py-18 md:py-20 px-6 md:px-16 bg-paper">
                 <SectionTitle kicker="Highlights" title="경쟁사 대비 핵심 차별점" sub="대응 속도·현장 적합성·투명 보고로 차이를 만듭니다." />
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                     {diffPoints.map((d, i) => (
                         <motion.div key={d.title} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
-                                <div className="flex items-center gap-2 mb-2">{d.icon}<div className="font-semibold text-[#042f2e]">{d.title}</div></div>
+                            <div className="rounded-2xl border border-paper bg-white p-6">
+                                <div className="flex items-center gap-2 mb-2">{d.icon}<div className="font-semibold text-navy-900">{d.title}</div></div>
                                 <ul className="text-[15px] text-gray-700 space-y-1.5">{d.lines.map(x => <li key={x}>• {x}</li>)}</ul>
                                 <p className="text-[13px] text-gray-500 mt-3">{d.note}</p>
                             </div>
@@ -671,21 +671,21 @@ export default function TechSupportProMint(): JSX.Element {
             </div>
 
             {/* 개발 지원 (기술) */}
-            <div className="py-18 md:py-20 px-6 md:px-16 bg-[#f7fffb]">
+            <div className="py-18 md:py-20 px-6 md:px-16 bg-paper">
                 <SectionTitle title="개발자 중심 기술지원" sub="연동/운영에 꼭 필요한 것만 정교하게 제공합니다." />
                 <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
                     {devSupports.map((s, i) => (
                         <motion.div key={s.title} {...fadeUp(i)}>
-                            <div className="p-6 rounded-2xl border border-[#e6fff9] bg-white hover:shadow-lg transition">
-                                <div className="mb-3 text-[#042f2e]">{s.icon}</div>
-                                <div className="text-[16px] font-semibold text-[#042f2e] mb-1">{s.title}</div>
+                            <div className="p-6 rounded-2xl border border-paper bg-white hover:shadow-lg transition">
+                                <div className="mb-3 text-navy-900">{s.icon}</div>
+                                <div className="text-[16px] font-semibold text-navy-900 mb-1">{s.title}</div>
                                 <p className="text-[15px] text-gray-700 mb-2">{s.desc}</p>
                                 <div className="flex flex-wrap gap-2">
                                     {s.pills.map(p => <Pill key={p}>{p}</Pill>)}
                                 </div>
 
                                 {/* 개발자 전용 코드 스니펫(예시) */}
-                                <div className="mt-4 bg-[#f0fdfa] border border-[#e6fff9] rounded-md p-3 text-[13px] text-gray-700">
+                                <div className="mt-4 bg-paper border border-paper rounded-md p-3 text-[13px] text-gray-700">
                                     <div className="font-semibold mb-2">Webhook 검증 예시 (Node)</div>
                                     <pre className="whitespace-pre-wrap text-[12px]">
                                         {`// express 예시
@@ -707,33 +707,33 @@ app.post('/webhook', (req, res) => {
 
             {/* Quickstart */}
             <div className="py-14 px-6 md:px-16">
-                <div className="max-w-5xl mx-auto rounded-2xl border border-[#e6fff9] bg-white p-6">
+                <div className="max-w-5xl mx-auto rounded-2xl border border-paper bg-white p-6">
                     <div className="flex items-center gap-2 mb-3">
-                        <Rocket className="w-5 h-5 text-[#10b981]" />
-                        <h3 className="text-xl font-bold text-[#042f2e]">5분 만에 시작하기</h3>
+                        <Rocket className="w-5 h-5 text-navy" />
+                        <h3 className="text-xl font-bold text-navy-900">5분 만에 시작하기</h3>
                     </div>
                     <div className="grid md:grid-cols-3 gap-6 text-[13px] md:text-[14px]">
                         <div>
-                            <div className="text-[#10b981] font-bold text-xs mb-1">STEP 1</div>
+                            <div className="text-navy font-bold text-xs mb-1">STEP 1</div>
                             <div className="font-semibold mb-2">워크스페이스/키 발급</div>
-                            <pre className="bg-[#f0fdfa] border border-[#e6fff9] rounded-lg p-3 overflow-x-auto">{`관리자 대시보드 > 설정 > 테스트 키 발급
+                            <pre className="bg-paper border border-paper rounded-lg p-3 overflow-x-auto">{`관리자 대시보드 > 설정 > 테스트 키 발급
 알림 채널(문자/이메일/카톡) 연결`}</pre>
                         </div>
                         <div>
-                            <div className="text-[#10b981] font-bold text-xs mb-1">STEP 2</div>
+                            <div className="text-navy font-bold text-xs mb-1">STEP 2</div>
                             <div className="font-semibold mb-2">납부 링크 생성</div>
-                            <pre className="bg-[#f0fdfa] border border-[#e6fff9] rounded-lg p-3 overflow-x-auto">{`POST /v1/billing/links
+                            <pre className="bg-paper border border-paper rounded-lg p-3 overflow-x-auto">{`POST /v1/billing/links
 { amount: 250000, title: "10월 수강료", customer: "홍길동" }`}</pre>
                         </div>
                         <div>
-                            <div className="text-[#10b981] font-bold text-xs mb-1">STEP 3</div>
+                            <div className="text-navy font-bold text-xs mb-1">STEP 3</div>
                             <div className="font-semibold mb-2">웹훅 수신/검증</div>
-                            <pre className="bg-[#f0fdfa] border border-[#e6fff9] rounded-lg p-3 overflow-x-auto">{`이벤트: paid, partial_paid, overdue
+                            <pre className="bg-paper border border-paper rounded-lg p-3 overflow-x-auto">{`이벤트: paid, partial_paid, overdue
 서명 검증 후 내부 시스템 업데이트`}</pre>
                         </div>
                     </div>
                     <div className="mt-4 text-right">
-                        <Link href="/support" className="text-sm text-[#10b981] hover:underline">샘플/템플릿 더 보기 →</Link>
+                        <Link href="/support" className="text-sm text-navy hover:underline">샘플/템플릿 더 보기 →</Link>
                     </div>
                 </div>
             </div>
@@ -744,8 +744,8 @@ app.post('/webhook', (req, res) => {
                 <div className="max-w-5xl mx-auto grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                     {oncall.map((o, i) => (
                         <motion.div key={o.role} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
-                                <div className="font-semibold text-[#042f2e]">{o.role}</div>
+                            <div className="rounded-2xl border border-paper bg-white p-6">
+                                <div className="font-semibold text-navy-900">{o.role}</div>
                                 <div className="text-[15px] text-gray-700 mt-1">• 책임: {o.resp}</div>
                                 <div className="text-[13px] text-gray-500 mt-1">• 목표: {o.target}</div>
                             </div>
@@ -755,13 +755,13 @@ app.post('/webhook', (req, res) => {
             </div>
 
             {/* 장애 타임라인 샘플 */}
-            <div className="py-18 md:py-20 px-6 md:px-16 bg-[#f7fffb]">
+            <div className="py-18 md:py-20 px-6 md:px-16 bg-paper">
                 <SectionTitle kicker="Incident" title="장애 타임라인 샘플" sub="감지부터 정상화까지 외부 공개용 서술 가이드." />
-                <div className="max-w-4xl mx-auto rounded-2xl border border-[#e6fff9] bg-white p-6">
+                <div className="max-w-4xl mx-auto rounded-2xl border border-paper bg-white p-6">
                     <ol className="space-y-3 text-[15px] text-gray-700">
                         {timeline.map(row => (
                             <li key={row.t} className="flex items-start gap-3">
-                                <span className="mt-1 rounded-md bg-[#ecfdf5] text-[#065f46] px-2 py-0.5 text-xs font-semibold">{row.t}</span>
+                                <span className="mt-1 rounded-md bg-paper text-navy-800 px-2 py-0.5 text-xs font-semibold">{row.t}</span>
                                 <div>
                                     <div><b>이벤트:</b> {row.e}</div>
                                     <div><b>조치:</b> {row.a}</div>
@@ -770,7 +770,7 @@ app.post('/webhook', (req, res) => {
                         ))}
                     </ol>
                     <div className="text-right mt-4">
-                        <Link href="/transparency-report" className="text-sm text-[#10b981] hover:underline">상세 보고서 예시 보기 →</Link>
+                        <Link href="/transparency-report" className="text-sm text-navy hover:underline">상세 보고서 예시 보기 →</Link>
                     </div>
                 </div>
             </div>
@@ -812,12 +812,12 @@ app.post('/webhook', (req, res) => {
                         },
                     ].map((p, i) => (
                         <motion.div key={p.id} {...fadeUp(i)}>
-                            <div className="p-7 bg-white border border-[#e6fff9] rounded-2xl shadow-sm hover:shadow-md hover:scale-[1.01] transition">
+                            <div className="p-7 bg-white border border-paper rounded-2xl shadow-sm hover:shadow-md hover:scale-[1.01] transition">
                                 <div className="flex items-start justify-between mb-4">
-                                    <div className="text-[17px] font-bold text-[#042f2e] flex items-center gap-2">
+                                    <div className="text-[17px] font-bold text-navy-900 flex items-center gap-2">
                                         {p.icon} {p.name}
                                     </div>
-                                    <div className="text-4xl font-extrabold text-[#ecfdf5]">{p.id}</div>
+                                    <div className="text-4xl font-extrabold text-paper">{p.id}</div>
                                 </div>
                                 <ul className="text-[15px] text-gray-700 space-y-1.5">
                                     {p.desc.map(d => <li key={d}>• {d}</li>)}
@@ -833,15 +833,15 @@ app.post('/webhook', (req, res) => {
             </div>
 
             {/* 운영 시나리오(Playbooks) */}
-            <div className="py-18 md:py-20 px-6 md:px-16 bg-[#f7fffb]">
+            <div className="py-18 md:py-20 px-6 md:px-16 bg-paper">
                 <SectionTitle title="운영 시나리오 (Playbooks)" sub="현장에서 많이 쓰는 흐름만 간결하게 모았습니다." />
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                     {playbooks.map((p, i) => (
                         <motion.div key={p.title} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                            <div className="rounded-2xl border border-paper bg-white p-6">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <StickyNote className="w-5 h-5 text-[#10b981]" />
-                                    <div className="font-semibold text-[#042f2e]">{p.title}</div>
+                                    <StickyNote className="w-5 h-5 text-navy" />
+                                    <div className="font-semibold text-navy-900">{p.title}</div>
                                 </div>
                                 <ul className="text-[15px] text-gray-700 space-y-1.5">
                                     {p.points.map(pt => <li key={pt}>• {pt}</li>)}
@@ -857,15 +857,15 @@ app.post('/webhook', (req, res) => {
                 <SectionTitle title="온보딩 체크리스트" />
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
                     <motion.div {...fadeUp(0)}>
-                        <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                        <div className="rounded-2xl border border-paper bg-white p-6">
                             <div className="flex items-center gap-2 mb-3">
-                                <Users className="w-5 h-5 text-[#10b981]" />
-                                <div className="font-semibold text-[#042f2e]">비즈니스 준비</div>
+                                <Users className="w-5 h-5 text-navy" />
+                                <div className="font-semibold text-navy-900">비즈니스 준비</div>
                             </div>
                             <ul className="text-[15px] text-gray-700 space-y-2">
                                 {onboardingChecklist.biz.map(c => (
                                     <li key={c} className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-[#10b981]" /> {c}
+                                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-navy" /> {c}
                                     </li>
                                 ))}
                             </ul>
@@ -873,15 +873,15 @@ app.post('/webhook', (req, res) => {
                     </motion.div>
 
                     <motion.div {...fadeUp(1)}>
-                        <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                        <div className="rounded-2xl border border-paper bg-white p-6">
                             <div className="flex items-center gap-2 mb-3">
-                                <Code2 className="w-5 h-5 text-[#10b981]" />
-                                <div className="font-semibold text-[#042f2e]">개발/연동 준비</div>
+                                <Code2 className="w-5 h-5 text-navy" />
+                                <div className="font-semibold text-navy-900">개발/연동 준비</div>
                             </div>
                             <ul className="text-[15px] text-gray-700 space-y-2">
                                 {onboardingChecklist.dev.map(c => (
                                     <li key={c} className="flex items-start gap-2">
-                                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-[#10b981]" /> {c}
+                                        <CheckCircle2 className="w-4 h-4 mt-0.5 text-navy" /> {c}
                                     </li>
                                 ))}
                             </ul>
@@ -891,15 +891,15 @@ app.post('/webhook', (req, res) => {
             </div>
 
             {/* 투명 보고 & RCA 요약 */}
-            <div className="py-18 md:py-20 px-6 md:px-16 bg-[#f7fffb]">
+            <div className="py-18 md:py-20 px-6 md:px-16 bg-paper">
                 <SectionTitle title="투명 보고 & RCA 요약" sub="장애를 숨기지 않고 학습합니다. 반복 방지를 위해 설계와 프로세스를 고칩니다." />
                 <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-6">
                     {rcaSnapshots.map((r, i) => (
                         <motion.div key={r.sev + r.cause} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                            <div className="rounded-2xl border border-paper bg-white p-6">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <AlertTriangle className="w-5 h-5 text-[#10b981]" />
-                                    <div className="font-semibold text-[#042f2e]">{r.sev}</div>
+                                    <AlertTriangle className="w-5 h-5 text-navy" />
+                                    <div className="font-semibold text-navy-900">{r.sev}</div>
                                 </div>
                                 <div className="text-[15px] text-gray-700">
                                     <div><b>원인:</b> {r.cause}</div>
@@ -914,7 +914,7 @@ app.post('/webhook', (req, res) => {
                     ))}
                 </div>
                 <p className="text-center text-sm text-gray-600 mt-4">
-                    자세한 내역은 <Link href="/transparency-report" className="text-[#10b981] hover:underline">투명경영/사후보고서</Link> 에서 확인하세요.
+                    자세한 내역은 <Link href="/transparency-report" className="text-navy hover:underline">투명경영/사후보고서</Link> 에서 확인하세요.
                 </p>
             </div>
 
@@ -924,10 +924,10 @@ app.post('/webhook', (req, res) => {
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                     {comms.map((c, i) => (
                         <motion.div key={c.lvl} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                            <div className="rounded-2xl border border-paper bg-white p-6">
                                 <div className="flex items-center gap-2">
-                                    <Megaphone className="w-5 h-5 text-[#10b981]" />
-                                    <div className="font-semibold text-[#042f2e]">{c.lvl}</div>
+                                    <Megaphone className="w-5 h-5 text-navy" />
+                                    <div className="font-semibold text-navy-900">{c.lvl}</div>
                                 </div>
                                 <p className="text-[15px] text-gray-700 mt-2 whitespace-pre-wrap">{c.msg}</p>
                             </div>
@@ -937,7 +937,7 @@ app.post('/webhook', (req, res) => {
             </div>
 
             {/* SLA & 인시던트 */}
-            <div className="py-18 md:py-20 px-6 md:px-16 bg-[#f7fffb]">
+            <div className="py-18 md:py-20 px-6 md:px-16 bg-paper">
                 <SectionTitle title="SLA & 인시던트 대응" />
                 <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-6">
                     {[
@@ -946,10 +946,10 @@ app.post('/webhook', (req, res) => {
                         { level: "SEV-3", impact: "경미한 지연/오표기", action: "다음 배포 반영", target: "주간 리포트" },
                     ].map((r, i) => (
                         <motion.div key={r.level} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                            <div className="rounded-2xl border border-paper bg-white p-6">
                                 <div className="flex items-center gap-2 mb-2">
-                                    <AlertTriangle className="w-5 h-5 text-[#10b981]" />
-                                    <div className="font-semibold text-[#042f2e]">{r.level}</div>
+                                    <AlertTriangle className="w-5 h-5 text-navy" />
+                                    <div className="font-semibold text-navy-900">{r.level}</div>
                                 </div>
                                 <div className="text-[15px] text-gray-700">
                                     <div><b>영향:</b> {r.impact}</div>
@@ -968,13 +968,13 @@ app.post('/webhook', (req, res) => {
                 <div className="max-w-6xl mx-auto grid md:grid-cols-4 gap-6">
                     {contacts.map((c, i) => (
                         <motion.div key={c.label} {...fadeUp(i)}>
-                            <div className="rounded-2xl border border-[#e6fff9] bg-white p-6">
+                            <div className="rounded-2xl border border-paper bg-white p-6">
                                 <div className="flex items-center gap-2">
-                                    <div className="text-[#10b981]">{c.icon}</div>
-                                    <div className="font-semibold text-[#042f2e]">{c.label}</div>
+                                    <div className="text-navy">{c.icon}</div>
+                                    <div className="font-semibold text-navy-900">{c.label}</div>
                                 </div>
                                 <div className="text-[14px] text-gray-600 mt-1">{c.desc}</div>
-                                <Link href={c.to} className="inline-block mt-3 text-sm text-[#10b981] hover:underline">
+                                <Link href={c.to} className="inline-block mt-3 text-sm text-navy hover:underline">
                                     바로가기 →
                                 </Link>
                             </div>
@@ -984,9 +984,9 @@ app.post('/webhook', (req, res) => {
             </div>
 
             {/* 최종 CTA */}
-            <div className="text-center py-24 bg-gradient-to-r from-[#ecfdf5] to-[#bbf7f0]">
+            <div className="text-center py-24 bg-gradient-to-r from-paper to-mist">
                 <motion.h3 initial={{ opacity: 0, y: 8 }} whileInView={{ opacity: 1, y: 0 }} transition={{ duration: 0.45 }}
-                    className="text-3xl font-bold text-[#059669] mb-4 text-[clamp(30px,5vw,36px)]">
+                    className="text-3xl font-bold text-navy-700 mb-4 text-[clamp(30px,5vw,36px)]">
                     가맹점 운영과 기술, 함께 단순하게 — 그리고 실시간으로
                 </motion.h3>
                 <p className="text-[15px] text-gray-700 mb-8">
@@ -994,10 +994,10 @@ app.post('/webhook', (req, res) => {
                     템플릿 및 샘플 코드를 제공합니다.
                 </p>
                 <div className="flex justify-center gap-3">
-                    <Link href="/inquiry/integration" className="px-8 py-3 bg-[#10b981] text-white rounded-xl font-semibold hover:bg-[#059669] transition focus:ring-2 focus:ring-[#bbf7f0]">
+                    <Link href="/inquiry/integration" className="px-8 py-3 bg-navy text-white rounded-xl font-semibold hover:bg-navy-700 transition focus:ring-2 focus:ring-mist">
                         상담 요청하기
                     </Link>
-                    <Link href="/support" className="px-8 py-3 bg-white border border-[#e6fff9] text-[#10b981] rounded-xl font-semibold hover:bg-[#f0fdfa] transition focus:ring-2 focus:ring-[#bbf7f0]">
+                    <Link href="/support" className="px-8 py-3 bg-white border border-paper text-navy rounded-xl font-semibold hover:bg-paper transition focus:ring-2 focus:ring-mist">
                         기술 문의하기
                     </Link>
                 </div>

@@ -8,7 +8,7 @@ import { ShieldCheck, FileText, BookOpen } from "lucide-react";
 /**
  * 📘 SFIN PAY — 이용약관 (Mint Theme)
  * - TechSupportProMint의 전체 룩앤필(민트 기반, 글로벌 paddings, SectionTitle 스타일) 유지
- * - 페이지 내 모든 색상은 기존 mint theme (#10b981 / #059669 / #e6fff9 / #f0fdfa 등)으로 통일
+ * - 페이지 내 모든 색상은 기존 mint theme (#003366 / #002b57 / #fbfcfd / #fbfcfd 등)으로 통일
  * - SFIN PAY 서비스 구조에 맞춘 실제 PG 서비스 약관 양식
  */
 
@@ -31,11 +31,11 @@ export default function TermsOfService(): JSX.Element {
     }) => (
         <div className="text-center mb-10">
             {kicker && (
-                <div className="text-xs font-semibold tracking-wider text-[#059669] uppercase">
+                <div className="text-xs font-semibold tracking-wider text-navy-700 uppercase">
                     {kicker}
                 </div>
             )}
-            <h2 className="text-[26px] md:text-3xl font-bold text-[#0f766e] mt-1">
+            <h2 className="text-[26px] md:text-3xl font-bold text-navy-700 mt-1">
                 {title}
             </h2>
             {sub && (
@@ -53,17 +53,17 @@ export default function TermsOfService(): JSX.Element {
         title: string;
         children: React.ReactNode;
     }) => (
-        <div className="rounded-2xl border border-[#e6fff9] bg-white p-6 md:p-7 mb-8 shadow-sm">
+        <div className="rounded-2xl border border-paper bg-white p-6 md:p-7 mb-8 shadow-sm">
             <div className="flex items-center gap-2 mb-3">
-                <FileText className="w-5 h-5 text-[#10b981]" />
-                <div className="font-semibold text-[#042f2e] text-[17px]">{title}</div>
+                <FileText className="w-5 h-5 text-navy" />
+                <div className="font-semibold text-navy-900 text-[17px]">{title}</div>
             </div>
             <div className="text-[15px] text-gray-700 leading-[1.65]">{children}</div>
         </div>
     );
 
     return (
-        <section className="min-h-screen bg-gradient-to-b from-white via-[#f0fdfa] to-[#ecfdf3] px-6 md:px-14 py-20">
+        <section className="min-h-screen bg-gradient-to-b from-white via-paper to-paper px-6 md:px-14 py-20">
             {/* HEADER */}
             <motion.div
                 initial={{ opacity: 1, y: 14 }}
@@ -71,11 +71,11 @@ export default function TermsOfService(): JSX.Element {
                 transition={{ duration: 0.45 }}
                 className="text-center mb-14"
             >
-                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-[#ecfdf5] text-[#0f766e] text-xs font-semibold mb-3 border border-[#bbf7f0]">
+                <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-paper text-navy-700 text-xs font-semibold mb-3 border border-mist">
                     <ShieldCheck className="w-4 h-4" />
                     SFIN PAY 법적 고지
                 </div>
-                <h1 className="text-[32px] md:text-[40px] font-extrabold text-[#047857] tracking-tight">
+                <h1 className="text-[32px] md:text-[40px] font-extrabold text-navy-700 tracking-tight">
                     이용약관
                 </h1>
                 <p className="text-gray-700 mt-3 text-[15px] max-w-2xl mx-auto">
@@ -235,7 +235,7 @@ export default function TermsOfService(): JSX.Element {
             <div className="text-center mt-20">
                 <Link
                     href="/"
-                    className="inline-flex items-center gap-2 px-6 py-3 bg-[#10b981] text-white rounded-xl font-semibold hover:bg-[#059669] transition"
+                    className="inline-flex items-center gap-2 px-6 py-3 bg-navy text-white rounded-xl font-semibold hover:bg-navy-700 transition"
                 >
                     <BookOpen className="w-4 h-4" />
                     메인으로 돌아가기

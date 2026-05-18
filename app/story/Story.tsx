@@ -55,11 +55,11 @@ export default function CustomerStoriesMint(): JSX.Element {
                     {kicker}
                 </div>
             )}
-            <h2 className="text-[26px] md:text-3xl font-bold text-[#0b2723] mt-1">
+            <h2 className="text-[26px] md:text-3xl font-bold text-navy-900 mt-1">
                 {title}
             </h2>
             {sub && (
-                <p className="text-[15px] text-[#1e3a34]/80 mt-2 max-w-3xl mx-auto">
+                <p className="text-[15px] text-navy-800/80 mt-2 max-w-3xl mx-auto">
                     {sub}
                 </p>
             )}
@@ -106,7 +106,7 @@ export default function CustomerStoriesMint(): JSX.Element {
                 <path
                     d={path}
                     fill="none"
-                    stroke="#10b981"
+                    stroke="#003366"
                     strokeWidth={strokeWidth}
                     strokeLinecap="round"
                 />
@@ -121,7 +121,7 @@ export default function CustomerStoriesMint(): JSX.Element {
         return (
             <span
                 className={`inline-flex items-center gap-1.5 rounded-full px-2 py-0.5 text-[11px] font-medium ${isUp
-                    ? "bg-[#ecfdf3] text-emerald-800"
+                    ? "bg-paper text-emerald-800"
                     : "bg-[#fef2f2] text-red-800"
                     }`}
                 aria-label={`전월 대비 ${Math.abs(delta).toFixed(1)}% ${isUp ? "개선" : "악화"
@@ -150,25 +150,25 @@ export default function CustomerStoriesMint(): JSX.Element {
         sub?: string;
         series: number[];
     }) => (
-        <div className="rounded-2xl border border-[#a7f3d0]/70 bg-white p-4 md:p-5 hover:shadow-[0_0_25px_rgba(16,185,129,0.12)] transition">
+        <div className="rounded-2xl border border-mist/70 bg-white p-4 md:p-5 hover:shadow-[0_0_25px_rgba(0,51,102,0.12)] transition">
             <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                     <span className="text-emerald-700">{icon}</span>
-                    <span className="text-[12px] text-[#1e3a34]/80">{label}</span>
+                    <span className="text-[12px] text-navy-800/80">{label}</span>
                 </div>
                 <TrendBadge delta={delta} />
             </div>
             <div className="flex items-end justify-between">
                 <div>
-                    <div className="text-[22px] md:text-[24px] leading-none font-extrabold text-[#0b2723]">
+                    <div className="text-[22px] md:text-[24px] leading-none font-extrabold text-navy-900">
                         {value}
                         {unit && (
-                            <span className="text-[13px] font-semibold text-[#1e3a34]/70 ml-1">
+                            <span className="text-[13px] font-semibold text-navy-800/70 ml-1">
                                 {unit}
                             </span>
                         )}
                     </div>
-                    {sub && <div className="text-[11px] text-[#1e3a34]/60 mt-1">{sub}</div>}
+                    {sub && <div className="text-[11px] text-navy-800/60 mt-1">{sub}</div>}
                 </div>
                 <Sparkline data={series} />
             </div>
@@ -183,7 +183,7 @@ export default function CustomerStoriesMint(): JSX.Element {
         className?: string;
     }) => (
         <div
-            className={`rounded-2xl border border-[#a7f3d0]/70 bg-white/90 backdrop-blur-sm p-6 hover:shadow-[0_0_25px_rgba(16,185,129,0.12)] transition ${className}`}
+            className={`rounded-2xl border border-mist/70 bg-white/90 backdrop-blur-sm p-6 hover:shadow-[0_0_25px_rgba(0,51,102,0.12)] transition ${className}`}
         >
             {children}
         </div>
@@ -204,7 +204,7 @@ export default function CustomerStoriesMint(): JSX.Element {
                         return <Star key={i} className="w-4 h-4 text-gray-400" />;
                     return <Star key={i} className="w-4 h-4 text-gray-200" />;
                 })}
-                <span className="text-[12px] text-[#1e3a34]/70 ml-1">
+                <span className="text-[12px] text-navy-800/70 ml-1">
                     {score.toFixed(1)}/5.0
                 </span>
             </div>
@@ -313,9 +313,9 @@ export default function CustomerStoriesMint(): JSX.Element {
     ];
 
     return (
-        <section className="min-h-screen bg-[#ecfdf5] text-[#0b2723]">
+        <section className="min-h-screen bg-paper text-navy-900">
             {/* HERO */}
-            <div className="pt-32 pb-16 px-6 md:px-16 bg-gradient-to-b from-[#f0fdfa] to-[#ecfdf5] border-b border-[#a7f3d0]/50 text-center">
+            <div className="pt-32 pb-16 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/50 text-center">
                 <motion.h1
                     {...fadeUp(0)}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
@@ -324,7 +324,7 @@ export default function CustomerStoriesMint(): JSX.Element {
                 </motion.h1>
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto"
                 >
                     실제 가맹점에서 SFIN PAY를 사용해 본 경험을, 개인정보를 안전하게 비식별 처리하여 정리했습니다.
                     과장된 문구보다는 현장에서 자주 나오는 표현 그대로 담으려고 했습니다.
@@ -335,7 +335,7 @@ export default function CustomerStoriesMint(): JSX.Element {
                         <motion.span
                             key={b.text}
                             {...fadeUp(0.1 * i)}
-                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-[#a7f3d0]/70 bg-white/80 text-[13px] md:text-sm text-emerald-800"
+                            className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full border border-mist/70 bg-white/80 text-[13px] md:text-sm text-emerald-800"
                         >
                             <span className="text-emerald-700">{b.icon}</span>
                             {b.text}
@@ -347,15 +347,15 @@ export default function CustomerStoriesMint(): JSX.Element {
                     <Link
                         href="/support"
                         className="px-6 py-3 rounded-xl 
-              bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-              hover:from-[#00b894] hover:to-[#00a884]
+              bg-gradient-to-r from-navy to-navy 
+              hover:from-navy hover:to-navy
               text-white font-semibold transition focus:outline-none focus:ring-2 focus:ring-emerald-200"
                     >
                         우리 업종 사례 상담하기
                     </Link>
                     <Link
                         href="/inquiry/integration"
-                        className="px-6 py-3 rounded-xl bg-white border border-[#a7f3d0]/70 text-emerald-800 font-semibold hover:bg-[#f0fdfa] transition focus:outline-none focus:ring-2 focus:ring-emerald-200"
+                        className="px-6 py-3 rounded-xl bg-white border border-mist/70 text-emerald-800 font-semibold hover:bg-paper transition focus:outline-none focus:ring-2 focus:ring-emerald-200"
                     >
                         기술 연동 문의하기
                     </Link>
@@ -379,7 +379,7 @@ export default function CustomerStoriesMint(): JSX.Element {
             </div>
 
             {/* 페르소나 */}
-            <div className="py-24 px-6 md:px-16 bg-[#f0fdfa] border-y border-[#a7f3d0]/50">
+            <div className="py-24 px-6 md:px-16 bg-paper border-y border-mist/50">
                 <SectionTitle
                     kicker="Personas"
                     title="어떤 분들이 사용하고 있을까요?"
@@ -397,11 +397,11 @@ export default function CustomerStoriesMint(): JSX.Element {
                                         {p.label}
                                     </div>
                                 </div>
-                                <div className="text-[15px] font-semibold text-[#0b2723]">
+                                <div className="text-[15px] font-semibold text-navy-900">
                                     {p.name}
                                 </div>
-                                <div className="text-[13px] text-[#1e3a34]/70 mb-3">{p.region}</div>
-                                <p className="text-[14px] text-[#1e3a34]/80 mb-3">{p.quote}</p>
+                                <div className="text-[13px] text-navy-800/70 mb-3">{p.region}</div>
+                                <p className="text-[14px] text-navy-800/80 mb-3">{p.quote}</p>
                                 <div className="flex flex-wrap gap-2">
                                     {p.tags.map((t) => (
                                         <Pill key={t}>{t}</Pill>
@@ -423,7 +423,7 @@ export default function CustomerStoriesMint(): JSX.Element {
                 <div className="max-w-6xl mx-auto space-y-6">
                     {testimonialBlocks.map((b, i) => (
                         <motion.div key={b.id} {...fadeUp(0.1 * i)}>
-                            <div className="rounded-2xl border border-[#a7f3d0]/70 bg-white/90 p-6 md:p-7 hover:shadow-[0_0_25px_rgba(16,185,129,0.12)] transition">
+                            <div className="rounded-2xl border border-mist/70 bg-white/90 p-6 md:p-7 hover:shadow-[0_0_25px_rgba(0,51,102,0.12)] transition">
                                 <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-3 mb-4">
                                     <div>
                                         <div className="flex items-center gap-2 mb-1">
@@ -432,37 +432,37 @@ export default function CustomerStoriesMint(): JSX.Element {
                                                 {b.industry}
                                             </span>
                                         </div>
-                                        <h3 className="text-[17px] md:text-[18px] font-bold text-[#0b2723] leading-snug">
+                                        <h3 className="text-[17px] md:text-[18px] font-bold text-navy-900 leading-snug">
                                             {b.title}
                                         </h3>
                                     </div>
-                                    <div className="flex flex-col items-start md:items-end gap-1 text-[13px] text-[#1e3a34]/80">
+                                    <div className="flex flex-col items-start md:items-end gap-1 text-[13px] text-navy-800/80">
                                         <RatingStars score={b.score} />
                                         <div>
                                             <span className="font-medium">{b.nameMasked}</span> · {b.location}
                                         </div>
-                                        <div className="text-[12px] text-emerald-800 bg-[#ecfdf3] px-2 py-0.5 rounded-full border border-emerald-100">
+                                        <div className="text-[12px] text-emerald-800 bg-paper px-2 py-0.5 rounded-full border border-emerald-100">
                                             정산: {b.settlement}
                                         </div>
                                     </div>
                                 </div>
 
                                 <div className="grid md:grid-cols-2 gap-5 text-[14px]">
-                                    <div className="rounded-xl bg-[#f9fafb] border border-dashed border-gray-200 p-4">
+                                    <div className="rounded-xl bg-paper border border-dashed border-gray-200 p-4">
                                         <div className="text-[12px] font-semibold text-gray-500 mb-2">
                                             사용 전
                                         </div>
-                                        <ul className="space-y-1.5 text-[#1e3a34]/80">
+                                        <ul className="space-y-1.5 text-navy-800/80">
                                             {b.before.map((x) => (
                                                 <li key={x}>• {x}</li>
                                             ))}
                                         </ul>
                                     </div>
-                                    <div className="rounded-xl bg-[#ecfdf3] border border-emerald-200 p-4">
+                                    <div className="rounded-xl bg-paper border border-emerald-200 p-4">
                                         <div className="text-[12px] font-semibold text-emerald-800 mb-2">
                                             사용 후
                                         </div>
-                                        <ul className="space-y-1.5 text-[#0b2723]">
+                                        <ul className="space-y-1.5 text-navy-900">
                                             {b.after.map((x) => (
                                                 <li key={x}>• {x}</li>
                                             ))}
@@ -471,7 +471,7 @@ export default function CustomerStoriesMint(): JSX.Element {
                                 </div>
 
                                 <div className="mt-4 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
-                                    <div className="flex items-start gap-2 text-[14px] text-[#1e3a34]/90">
+                                    <div className="flex items-start gap-2 text-[14px] text-navy-800/90">
                                         <Quote className="w-4 h-4 mt-0.5 text-emerald-700" />
                                         <p>{b.highlight}</p>
                                     </div>
@@ -502,9 +502,9 @@ export default function CustomerStoriesMint(): JSX.Element {
                         href="https://mail.google.com/mail/?view=cm&fs=1&to=sfinpay@gmail.com&su=SFIN%20PAY%20상담요청&body=회사명:%0A문의유형:%0A문의내용:"
                         target="_blank"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-              bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-              hover:from-[#00b894] hover:to-[#00a884]
-              text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+              bg-gradient-to-r from-navy to-navy 
+              hover:from-navy hover:to-navy
+              text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Gmail로 문의하기
                     </Link>
@@ -514,8 +514,8 @@ export default function CustomerStoriesMint(): JSX.Element {
                         target="_blank"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
               border border-emerald-300 bg-white/80 
-              hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-              shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+              hover:bg-paper text-emerald-700 font-semibold 
+              shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                     >
                         <MessageSquare size={18} /> 카카오톡 상담
                     </Link>

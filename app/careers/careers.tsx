@@ -13,7 +13,7 @@ const fadeUp = (i = 0) => ({
 
 export default function CareersPage(): JSX.Element {
     return (
-        <div className="min-h-screen bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] pt-32 text-[#0b2723]">
+        <div className="min-h-screen bg-gradient-to-b from-paper to-paper pt-32 text-navy-900">
             {/* 헤더 */}
             <section className="text-center py-20 px-6 md:px-16">
                 <motion.h1
@@ -22,14 +22,14 @@ export default function CareersPage(): JSX.Element {
                 >
                     함께 만드는 결제 혁신,
                     <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY 팀에서 시작하세요
                     </span>
                 </motion.h1>
 
                 <motion.p
                     {...fadeUp(0.3)}
-                    className="text-lg text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     우리는 더 빠르고, 더 투명하며, 더 스마트한 결제 생태계를 만드는 팀입니다.
                     기술과 금융이 만나는 지점에서 새로운 표준을 세우는 여정에 합류하세요.
@@ -37,7 +37,7 @@ export default function CareersPage(): JSX.Element {
             </section>
 
             {/* 문화 섹션 */}
-            <section className="py-24 px-6 md:px-16 bg-[#ecfdf5]/80">
+            <section className="py-24 px-6 md:px-16 bg-paper/80">
                 <motion.h2
                     {...fadeUp(0)}
                     className="text-4xl font-bold text-center mb-16 text-[clamp(30px,5vw,36px)]"
@@ -66,11 +66,11 @@ export default function CareersPage(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl shadow-sm hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] "
+                            className="p-8 bg-white border border-mist/70 rounded-2xl shadow-sm hover:shadow-[0_10px_30px_rgba(0,51,102,0.12)] "
                         >
-                            <div className="text-[#10b981] mb-4">{item.icon}</div>
+                            <div className="text-navy mb-4">{item.icon}</div>
                             <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">{item.desc}</p>
+                            <p className="text-navy-800/80 leading-relaxed">{item.desc}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -80,7 +80,7 @@ export default function CareersPage(): JSX.Element {
             <section className="py-28 px-6 md:px-16 max-w-5xl mx-auto text-center">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold mb-10 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold mb-10 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     현재 모집 중인 포지션
                 </motion.h2>
@@ -107,18 +107,18 @@ export default function CareersPage(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl text-left hover:shadow-[0_8px_28px_rgba(16,185,129,0.12)] "
+                            className="p-8 bg-white border border-mist/60 rounded-2xl text-left hover:shadow-[0_8px_28px_rgba(0,51,102,0.12)] "
                         >
                             <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-xl font-semibold text-[#0b2723]">{job.title}</h3>
-                                <Briefcase className="text-[#10b981]" />
+                                <h3 className="text-xl font-semibold text-navy-900">{job.title}</h3>
+                                <Briefcase className="text-navy" />
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">{job.desc}</p>
+                            <p className="text-navy-800/80 leading-relaxed">{job.desc}</p>
                             {
                                 /*
                                 <Link
                                 href="/inquiry/careers"
-                                className="inline-flex items-center gap-1 text-[#10b981] font-semibold mt-4 hover:underline"
+                                className="inline-flex items-center gap-1 text-navy font-semibold mt-4 hover:underline"
                             >
                                 지원하기 <ArrowRight size={16} />
                             </Link>
@@ -130,20 +130,20 @@ export default function CareersPage(): JSX.Element {
             </section>
 
             {/* CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     당신의 전문성,{' '}
                     <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY에서 가치로
                     </span>
                 </motion.h2>
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     단순한 결제 시스템이 아닌, 기술과 데이터로 금융의 미래를 설계하는 여정입니다.
                     함께할 당신을 기다립니다.
@@ -155,7 +155,7 @@ export default function CareersPage(): JSX.Element {
                         {...fadeUp(0.4)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-md "
                     >
                         채용 문의하기 →
                     </motion.button>
@@ -172,9 +172,9 @@ export default function CareersPage(): JSX.Element {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-        bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-        hover:from-[#00b894] hover:to-[#00a884]
-        text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+        bg-gradient-to-r from-navy to-navy 
+        hover:from-navy hover:to-navy
+        text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Gmail로 문의하기
                     </a>
@@ -185,9 +185,9 @@ export default function CareersPage(): JSX.Element {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-        bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-        hover:from-[#00b894] hover:to-[#00a884]
-        text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+        bg-gradient-to-r from-navy to-navy 
+        hover:from-navy hover:to-navy
+        text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Outlook으로 문의하기
                     </a>
@@ -200,8 +200,8 @@ export default function CareersPage(): JSX.Element {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
         border border-emerald-300 bg-white/80 
-        hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-        shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+        hover:bg-paper text-emerald-700 font-semibold 
+        shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                     >
                         <MessageCircle size={18} /> 카카오톡 상담
                     </a>

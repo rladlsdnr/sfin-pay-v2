@@ -22,9 +22,9 @@ export default function Service(): JSX.Element {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#ecfdf5] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* HEADER */}
-            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#f0fdfa] to-[#ecfdf5] border-b border-[#a7f3d0]/60">
+            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/60">
                 <motion.h1
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
@@ -33,7 +33,7 @@ export default function Service(): JSX.Element {
                 >
                     서비스업 관리,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         정확하고 신속하게
                     </span>
                 </motion.h1>
@@ -42,7 +42,7 @@ export default function Service(): JSX.Element {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     미용실, 병원, 학원, 피트니스 등 다양한 서비스업 매출을 한눈에 관리하세요.<br />
                     예약·결제·정산이 하나의 프로세스로 자동 연결되어 인력과 시간을 절약합니다.
@@ -50,12 +50,12 @@ export default function Service(): JSX.Element {
             </section>
 
             {/* FLOW DIAGRAM */}
-            <section className="py-24 px-6 md:px-16 bg-[#f0fdfa] border-b border-[#a7f3d0]/50 relative overflow-hidden">
+            <section className="py-24 px-6 md:px-16 bg-paper border-b border-mist/50 relative overflow-hidden">
                 <motion.h2
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-center mb-12 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     서비스 결제 프로세스{" "}
                     <br className="block md:hidden" />
@@ -71,14 +71,14 @@ export default function Service(): JSX.Element {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.15 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0] flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-mist flex items-center justify-center text-navy text-3xl shadow-md">
                             <ClipboardCheck />
                         </div>
                         <p className="font-semibold mt-2">예약 접수</p>
-                        <p className="text-sm text-[#1e3a34]/70">고객 일정 및 예약 등록</p>
+                        <p className="text-sm text-navy-800/70">고객 일정 및 예약 등록</p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 결제 진행 */}
                     <motion.div
@@ -86,14 +86,14 @@ export default function Service(): JSX.Element {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-[#34d399] to-[#10b981] flex items-center justify-center text-white text-3xl shadow-[0_0_25px_rgba(16,185,129,0.25)]">
+                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-navy to-navy flex items-center justify-center text-white text-3xl shadow-[0_0_25px_rgba(0,51,102,0.25)]">
                             <CreditCard />
                         </div>
                         <p className="font-semibold mt-2">결제 진행</p>
-                        <p className="text-sm text-[#1e3a34]/70">QR / 온라인 자동 결제</p>
+                        <p className="text-sm text-navy-800/70">QR / 온라인 자동 결제</p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 고객 관리 */}
                     <motion.div
@@ -101,16 +101,16 @@ export default function Service(): JSX.Element {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.45 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0] flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-mist flex items-center justify-center text-navy text-3xl shadow-md">
                             <Users />
                         </div>
                         <p className="font-semibold mt-2">고객 관리</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             방문·결제 이력 확인 및 맞춤 혜택 제공
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 정산 완료 */}
                     <motion.div
@@ -118,11 +118,11 @@ export default function Service(): JSX.Element {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0] flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-mist flex items-center justify-center text-navy text-3xl shadow-md">
                             <Wallet />
                         </div>
                         <p className="font-semibold mt-2">정산 완료</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             D+0 또는 D+1 정산 자동 입금
                         </p>
                     </motion.div>
@@ -132,7 +132,7 @@ export default function Service(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.35 }}
-                    className="text-center mt-10 text-[#1e3a34]/70 max-w-3xl mx-auto leading-relaxed"
+                    className="text-center mt-10 text-navy-800/70 max-w-3xl mx-auto leading-relaxed"
                 >
                     예약부터 결제, 고객관리, 정산까지 하나의 프로세스로 통합되어
                     실시간 매출 파악과 고객 응대가 훨씬 효율적입니다.
@@ -147,12 +147,12 @@ export default function Service(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                    <h2 className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]">
                         서비스업을 위한{" "}
                         <br className="block md:hidden" />
                         스마트 기능
                     </h2>
-                    <p className="text-[#1e3a34]/80">
+                    <p className="text-navy-800/80">
                         결제와 고객관리가 한 번에 이루어지는,
                         서비스업 전용 맞춤형 결제·정산 플랫폼입니다.
                     </p>
@@ -202,15 +202,15 @@ export default function Service(): JSX.Element {
                                 duration: 0.6,
                                 delay: 0.15 * (i + 1),
                             }}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
+                            className="p-8 bg-white border border-mist/70 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.15)] "
                         >
-                            <div className="flex items-center gap-3 text-[#10b981] mb-4">
+                            <div className="flex items-center gap-3 text-navy mb-4">
                                 {f.icon}
-                                <h3 className="text-xl font-semibold text-[#0b2723]">
+                                <h3 className="text-xl font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">
+                            <p className="text-navy-800/80 leading-relaxed">
                                 {f.desc}
                             </p>
                         </motion.div>
@@ -219,16 +219,16 @@ export default function Service(): JSX.Element {
             </section>
 
             {/* CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center border-t border-[#a7f3d0]/50">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center border-t border-mist/50">
                 <motion.h2
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     서비스업 매출 관리도{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY 하나로
                     </span>
                 </motion.h2>
@@ -237,7 +237,7 @@ export default function Service(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     예약·결제·정산·고객관리를 완전히 자동화하세요. <br />
                     SFIN PAY는 현장 효율을 극대화하는 서비스업 전용 결제 인프라입니다.
@@ -250,7 +250,7 @@ export default function Service(): JSX.Element {
                         transition={{ duration: 0.6, delay: 0.25 }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)] "
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-[0_8px_25px_rgba(0,51,102,0.25)] "
                     >
                         도입 상담 받기 →
                     </motion.button>

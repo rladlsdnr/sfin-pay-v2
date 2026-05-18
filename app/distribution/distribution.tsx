@@ -23,9 +23,9 @@ const Distribution: React.FC = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* 🌿 Header */}
-            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa]">
+            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-paper to-paper">
                 <motion.h1
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
@@ -34,7 +34,7 @@ const Distribution: React.FC = () => {
                 >
                     커머스 정산,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         정확하고 신속하게
                     </span>
                 </motion.h1>
@@ -43,7 +43,7 @@ const Distribution: React.FC = () => {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     온라인몰, 오픈마켓, 예약 플랫폼 등
                     <br />
@@ -54,12 +54,12 @@ const Distribution: React.FC = () => {
             </section>
 
             {/* 🌿 Distribution Flow */}
-            <section className="py-24 px-6 md:px-16 bg-[#ecfdf5] relative overflow-hidden">
+            <section className="py-24 px-6 md:px-16 bg-paper relative overflow-hidden">
                 <motion.h2
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-center mb-12 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     주문부터 정산까지,{" "}
                     <br className="block md:hidden" />
@@ -75,18 +75,18 @@ const Distribution: React.FC = () => {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.15 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-mist/70 flex items-center justify-center text-navy text-3xl shadow-md">
                             <ShoppingBag />
                         </div>
                         <p className="font-semibold mt-2 text-base">
                             상품 주문 · 예약
                         </p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             온라인몰 · 오픈마켓 · 예약
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block " />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block " />
 
                     {/* 결제 처리 */}
                     <motion.div
@@ -94,18 +94,18 @@ const Distribution: React.FC = () => {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.3 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-[#34d399] to-[#10b981] shadow-[0_0_18px_rgba(16,185,129,0.22)] flex items-center justify-center text-white text-3xl">
+                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-navy to-navy shadow-[0_0_18px_rgba(0,51,102,0.22)] flex items-center justify-center text-white text-3xl">
                             <Wallet />
                         </div>
                         <p className="font-semibold mt-2 text-base">
                             각종 결제 시퀀스
                         </p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             카드 · 간편결제 · 정기결제 지원
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block " />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block " />
 
                     {/* 판매자/가맹점 정산 관리 */}
                     <motion.div
@@ -113,18 +113,18 @@ const Distribution: React.FC = () => {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.45 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-mist/70 flex items-center justify-center text-navy text-3xl shadow-md">
                             <Building2 />
                         </div>
                         <p className="font-semibold mt-2 text-base">
                             판매자 정산 관리
                         </p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             입점사 · 파트너별 자동 분배
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block " />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block " />
 
                     {/* D+0 / D+1 입금 완료 */}
                     <motion.div
@@ -132,13 +132,13 @@ const Distribution: React.FC = () => {
                         animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                         transition={{ duration: 0.6, delay: 0.6 }}
                         className="flex flex-col items-center gap-2 w-32">
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-mist/70 flex items-center justify-center text-navy text-3xl shadow-md">
                             <Wallet />
                         </div>
                         <p className="font-semibold mt-2 text-base">
                             D+0 · D+1 정산
                         </p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             빠른 입금 · 투명한 정산 내역
                         </p>
                     </motion.div>
@@ -148,7 +148,7 @@ const Distribution: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.35 }}
-                    className="text-center mt-10 text-[#1e3a34]/70 max-w-3xl mx-auto leading-relaxed"
+                    className="text-center mt-10 text-navy-800/70 max-w-3xl mx-auto leading-relaxed"
                 >
                     주문/예약, 결제, 판매자 정산까지 하나의 흐름으로 관리합니다.
                     <br />
@@ -165,12 +165,12 @@ const Distribution: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                    <h2 className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]">
                         쇼핑 · 판매 · 유통업을{" "}
                         <br className="block md:hidden" />
                         위한 핵심 기능
                     </h2>
-                    <p className="text-[#1e3a34]/80">
+                    <p className="text-navy-800/80">
                         온라인몰, 오픈마켓, 예약 플랫폼, 입점형 서비스 모두 하나의 정산
                         시스템으로 관리하세요.
                     </p>
@@ -214,15 +214,15 @@ const Distribution: React.FC = () => {
                             initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.15 * (i + 1) }}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]"
+                            className="p-8 bg-white border border-mist/60 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.15)]"
                         >
-                            <div className="flex items-center gap-3 text-[#10b981] mb-4">
+                            <div className="flex items-center gap-3 text-navy mb-4">
                                 {f.icon}
-                                <h3 className="text-xl font-semibold text-[#0b2723]">
+                                <h3 className="text-xl font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">
+                            <p className="text-navy-800/80 leading-relaxed">
                                 {f.desc}
                             </p>
                         </motion.div>
@@ -231,16 +231,16 @@ const Distribution: React.FC = () => {
             </section>
 
             {/* 🌿 CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center">
                 <motion.h2
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     쇼핑 · 판매 · 유통 비즈니스,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY 하나로
                     </span>
                 </motion.h2>
@@ -249,7 +249,7 @@ const Distribution: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     온라인몰, 오픈마켓, 예약·플랫폼까지
                     <br />
@@ -265,7 +265,7 @@ const Distribution: React.FC = () => {
                         transition={{ duration: 0.6, delay: 0.25 }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md"
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-md"
                     >
                         도입 상담 받기 →
                     </motion.button>
@@ -282,9 +282,9 @@ const Distribution: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Gmail로 문의하기
                     </a>
@@ -295,9 +295,9 @@ const Distribution: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Outlook으로 문의하기
                     </a>
@@ -310,8 +310,8 @@ const Distribution: React.FC = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                     border border-emerald-300 bg-white/80 
-                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    hover:bg-paper text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                     >
                         <MessageCircle size={18} /> 카카오톡 상담
                     </a>

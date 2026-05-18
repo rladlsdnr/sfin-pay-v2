@@ -24,9 +24,9 @@ export default function Travel(): JSX.Element {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* Header */}
-            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa]">
+            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-paper to-paper">
                 <motion.h1
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
@@ -35,7 +35,7 @@ export default function Travel(): JSX.Element {
                 >
                     여행 서비스,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         예약부터 환불까지 자동화
                     </span>
                 </motion.h1>
@@ -44,7 +44,7 @@ export default function Travel(): JSX.Element {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     예약금, 취소, 부분환불 등 복잡한 결제 흐름을 자동 처리해 <br />
                     효율적인 운영 환경을 제공합니다.
@@ -52,7 +52,7 @@ export default function Travel(): JSX.Element {
             </section>
 
             {/* Flow */}
-            <section className="py-24 px-6 md:px-16 bg-[#ecfdf5]">
+            <section className="py-24 px-6 md:px-16 bg-paper">
                 <motion.h2
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
@@ -70,16 +70,16 @@ export default function Travel(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-white border border-[#a7f3d0]/70 rounded-2xl flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 bg-white border border-mist/70 rounded-2xl flex items-center justify-center text-navy text-3xl shadow-md">
                             <CalendarClock />
                         </div>
                         <p className="font-semibold mt-2">예약 접수</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             고객 예약 및 결제 요청
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 예약금 결제 */}
                     <motion.div
@@ -88,16 +88,16 @@ export default function Travel(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-gradient-to-tr from-[#34d399] to-[#10b981] rounded-2xl flex justify-center items-center text-white text-3xl shadow-[0_0_25px_rgba(16,185,129,0.25)]">
+                        <div className="w-24 h-24 bg-gradient-to-tr from-navy to-navy rounded-2xl flex justify-center items-center text-white text-3xl shadow-[0_0_25px_rgba(0,51,102,0.25)]">
                             <Wallet />
                         </div>
                         <p className="font-semibold mt-2">예약금 결제</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             예약 시 카드 또는 간편결제
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 취소 / 부분환불 */}
                     <motion.div
@@ -106,11 +106,11 @@ export default function Travel(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-white border border-[#a7f3d0]/70 rounded-2xl flex justify-center items-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 bg-white border border-mist/70 rounded-2xl flex justify-center items-center text-navy text-3xl shadow-md">
                             <RefreshCw />
                         </div>
                         <p className="font-semibold mt-2">취소 / 부분환불</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             자동 처리 및 정산 반영
                         </p>
                     </motion.div>
@@ -120,7 +120,7 @@ export default function Travel(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.45 }}
-                    className="text-center mt-10 text-[#1e3a34]/70 max-w-3xl mx-auto leading-relaxed"
+                    className="text-center mt-10 text-navy-800/70 max-w-3xl mx-auto leading-relaxed"
                 >
                     예약부터 취소·환불까지, 복잡한 결제 절차를 자동화합니다.
                 </motion.p>
@@ -134,10 +134,10 @@ export default function Travel(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                    <h2 className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]">
                         숙박·여행 업종 특화 기능
                     </h2>
-                    <p className="text-[#1e3a34]/80">
+                    <p className="text-navy-800/80">
                         예약금, 부분환불, 기간제 정산을 자동 처리합니다.
                     </p>
                 </motion.div>
@@ -175,15 +175,15 @@ export default function Travel(): JSX.Element {
                             initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.15 * (i + 1) }}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
+                            className="p-8 bg-white border border-mist/70 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.15)] "
                         >
-                            <div className="flex items-center gap-3 text-[#10b981] mb-4">
+                            <div className="flex items-center gap-3 text-navy mb-4">
                                 {f.icon}
-                                <h3 className="text-xl font-semibold text-[#0b2723]">
+                                <h3 className="text-xl font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">
+                            <p className="text-navy-800/80 leading-relaxed">
                                 {f.desc}
                             </p>
                         </motion.div>
@@ -192,16 +192,16 @@ export default function Travel(): JSX.Element {
             </section>
 
             {/* CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center">
                 <motion.h2
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     숙박·여행 정산도{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY 하나로
                     </span>
                 </motion.h2>
@@ -210,7 +210,7 @@ export default function Travel(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     예약금, 취소, 부분환불까지 — 자동 정산으로 손쉬운 운영이 가능합니다.
                 </motion.p>
@@ -223,7 +223,7 @@ export default function Travel(): JSX.Element {
                         transition={{ duration: 0.6, delay: 0.25 }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>
@@ -240,9 +240,9 @@ export default function Travel(): JSX.Element {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Gmail로 문의하기
                     </a>
@@ -253,9 +253,9 @@ export default function Travel(): JSX.Element {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Outlook으로 문의하기
                     </a>
@@ -268,8 +268,8 @@ export default function Travel(): JSX.Element {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                     border border-emerald-300 bg-white/80 
-                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    hover:bg-paper text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                     >
                         <MessageCircle size={18} /> 카카오톡 상담
                     </a>

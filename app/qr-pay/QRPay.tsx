@@ -25,9 +25,9 @@ export default function QrPay(): JSX.Element {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#ecfdf5] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* 헤더 */}
-            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#f0fdfa] to-[#ecfdf5] border-b border-[#a7f3d0]/50">
+            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/50">
                 <motion.h1
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
@@ -36,7 +36,7 @@ export default function QrPay(): JSX.Element {
                 >
                     오프라인 · QR 결제,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         현장에서 더 빠르게
                     </span>
                 </motion.h1>
@@ -45,7 +45,7 @@ export default function QrPay(): JSX.Element {
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     QR, NFC, 단말기 결제까지 한 번에. <br />
                     POS 연동과 자동 정산으로 오프라인 결제의 효율을 극대화하세요.
@@ -53,7 +53,7 @@ export default function QrPay(): JSX.Element {
             </section>
 
             {/* 결제 흐름 */}
-            <section className="py-24 px-6 md:px-16 bg-[#f0fdfa]">
+            <section className="py-24 px-6 md:px-16 bg-paper">
                 <motion.h2
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
@@ -71,14 +71,14 @@ export default function QrPay(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-white border border-[#a7f3d0]/70 rounded-2xl flex justify-center items-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 bg-white border border-mist/70 rounded-2xl flex justify-center items-center text-navy text-3xl shadow-md">
                             <QrCode />
                         </div>
                         <p className="font-semibold mt-2">QR/NFC 인식</p>
-                        <p className="text-sm text-[#1e3a34]/70">고객이 스마트폰으로 결제</p>
+                        <p className="text-sm text-navy-800/70">고객이 스마트폰으로 결제</p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 단말기 승인 */}
                     <motion.div
@@ -87,14 +87,14 @@ export default function QrPay(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.2 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-gradient-to-tr from-[#34d399] to-[#10b981] rounded-2xl flex justify-center items-center text-white text-3xl shadow-[0_0_22px_rgba(16,185,129,0.23)]">
+                        <div className="w-24 h-24 bg-gradient-to-tr from-navy to-navy rounded-2xl flex justify-center items-center text-white text-3xl shadow-[0_0_22px_rgba(0,51,102,0.23)]">
                             <CreditCard />
                         </div>
                         <p className="font-semibold mt-2">단말기 승인</p>
-                        <p className="text-sm text-[#1e3a34]/70">POS와 자동 연동 승인 처리</p>
+                        <p className="text-sm text-navy-800/70">POS와 자동 연동 승인 처리</p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 정산 완료 */}
                     <motion.div
@@ -103,11 +103,11 @@ export default function QrPay(): JSX.Element {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 bg-white border border-[#a7f3d0]/70 rounded-2xl flex justify-center items-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 bg-white border border-mist/70 rounded-2xl flex justify-center items-center text-navy text-3xl shadow-md">
                             <Wallet />
                         </div>
                         <p className="font-semibold mt-2">정산 완료</p>
-                        <p className="text-sm text-[#1e3a34]/70">D+0 또는 D+1 자동 입금</p>
+                        <p className="text-sm text-navy-800/70">D+0 또는 D+1 자동 입금</p>
                     </motion.div>
                 </div>
 
@@ -115,7 +115,7 @@ export default function QrPay(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.4 }}
-                    className="text-center mt-10 text-[#1e3a34]/70 max-w-3xl mx-auto leading-relaxed"
+                    className="text-center mt-10 text-navy-800/70 max-w-3xl mx-auto leading-relaxed"
                 >
                     고객이 QR을 찍거나 카드를 터치하면 결제 → 승인 → 정산까지 자동으로 진행됩니다.
                 </motion.p>
@@ -129,10 +129,10 @@ export default function QrPay(): JSX.Element {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                    <h2 className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]">
                         오프라인 결제의 혁신
                     </h2>
-                    <p className="text-[#1e3a34]/80">
+                    <p className="text-navy-800/80">
                         하드웨어와 소프트웨어의 완벽한 조합으로 현장 결제 환경을 개선합니다.
                     </p>
                 </motion.div>
@@ -175,15 +175,15 @@ export default function QrPay(): JSX.Element {
                             initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.15 * (i + 1) }}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)]"
+                            className="p-8 bg-white border border-mist/70 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.15)]"
                         >
-                            <div className="flex items-center gap-3 text-[#10b981] mb-4">
+                            <div className="flex items-center gap-3 text-navy mb-4">
                                 {f.icon}
-                                <h3 className="text-xl font-semibold text-[#0b2723]">
+                                <h3 className="text-xl font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">
+                            <p className="text-navy-800/80 leading-relaxed">
                                 {f.desc}
                             </p>
                         </motion.div>
@@ -192,16 +192,16 @@ export default function QrPay(): JSX.Element {
             </section>
 
             {/* CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center border-t border-[#a7f3d0]/50">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center border-t border-mist/50">
                 <motion.h2
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     현장 결제도{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY 하나로
                     </span>
                 </motion.h2>
@@ -210,7 +210,7 @@ export default function QrPay(): JSX.Element {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.15 }}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     오프라인 결제의 모든 단계를 자동화하고, 매출 관리의 정확도를 높이세요.
                 </motion.p>
@@ -222,7 +222,7 @@ export default function QrPay(): JSX.Element {
                         transition={{ duration: 0.6, delay: 0.25 }}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)]"
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-[0_8px_25px_rgba(0,51,102,0.25)]"
                     >
                         도입 상담 받기 →
                     </motion.button>

@@ -91,22 +91,22 @@ export default function LiquidityInquiryClient(): JSX.Element {
     /* -------------------------- UI 본문 시작 -------------------------- */
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723]">
+        <div className="min-h-screen bg-paper text-navy-900">
             {/* 🌿 Hero */}
-            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] border-b border-[#a7f3d0]/40">
+            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/40">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         {...fadeUp(0)}
                         className="text-4xl md:text-6xl font-extrabold leading-tight text-[clamp(30px,5vw,36px)]"
                     >
                         유동성 지원 /{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                             운영 여유 문의
                         </span>
                     </motion.h1>
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="mt-5 text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto"
+                        className="mt-5 text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto"
                     >
                         매출과 정산 흐름을 참고해
                         <br className="hidden md:block" />
@@ -139,15 +139,15 @@ export default function LiquidityInquiryClient(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-6 rounded-2xl bg-white border border-[#a7f3d0]/60 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] transition"
+                            className="p-6 rounded-2xl bg-white border border-mist/60 hover:shadow-[0_10px_30px_rgba(0,51,102,0.12)] transition"
                         >
-                            <div className="flex items-center gap-3 text-[#10b981]">
+                            <div className="flex items-center gap-3 text-navy">
                                 {item.icon}
-                                <h3 className="text-lg font-semibold text-[#0b2723]">
+                                <h3 className="text-lg font-semibold text-navy-900">
                                     {item.title}
                                 </h3>
                             </div>
-                            <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">
+                            <p className="mt-3 text-navy-800/80 leading-relaxed">
                                 {item.desc}
                             </p>
                         </motion.div>
@@ -160,35 +160,35 @@ export default function LiquidityInquiryClient(): JSX.Element {
                 <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
                     <motion.div
                         {...fadeUp(0)}
-                        className="p-8 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        className="p-8 rounded-2xl bg-white border border-mist/60"
                     >
-                        <h2 className="text-2xl font-bold text-[#0b2723] flex items-center gap-2">
-                            <Coins className="text-[#10b981]" /> 이용을 위한 기본 참고 사항
+                        <h2 className="text-2xl font-bold text-navy-900 flex items-center gap-2">
+                            <Coins className="text-navy" /> 이용을 위한 기본 참고 사항
                         </h2>
-                        <ul className="mt-4 space-y-2 text-[#1e3a34]/80">
+                        <ul className="mt-4 space-y-2 text-navy-800/80">
                             <li>• 일정 기간 이상 매출 흐름이 확인되는 가맹점</li>
                             <li>• 카드·계좌·간편결제 등 다양한 결제 수단을 사용하는 매장</li>
                             <li>• D+0 / D+1 정산 흐름을 활용 중인 경우 더 자연스럽게 연계 가능</li>
                             <li>• 데이터 활용 및 내부 검토에 대한 동의가 필요할 수 있습니다.</li>
                         </ul>
-                        <p className="mt-4 text-xs text-[#1e3a34]/60">
+                        <p className="mt-4 text-xs text-navy-800/60">
                             위 내용은 일반적인 예시에 가깝고, 실제 적용 방식은 상황에 따라 조금씩 달라질 수 있습니다.
                         </p>
                     </motion.div>
 
                     <motion.div
                         {...fadeUp(0.1)}
-                        className="p-8 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        className="p-8 rounded-2xl bg-white border border-mist/60"
                     >
-                        <h2 className="text-2xl font-bold text-[#0b2723] flex items-center gap-2">
-                            <BarChart3 className="text-[#10b981]" /> 정산 연동 방식
+                        <h2 className="text-2xl font-bold text-navy-900 flex items-center gap-2">
+                            <BarChart3 className="text-navy" /> 정산 연동 방식
                         </h2>
-                        <ul className="mt-4 space-y-2 text-[#1e3a34]/80">
+                        <ul className="mt-4 space-y-2 text-navy-800/80">
                             <li>• 정산 주기와 매출 흐름을 함께 고려해 조정 방향을 설정합니다.</li>
                             <li>• 일매출 및 월 단위 흐름을 참고하여 부담이 과도하지 않도록 설계합니다.</li>
                             <li>• 필요 시, 일정 구간에서 탄력적으로 조정 폭을 완화하거나 줄일 수 있습니다.</li>
                         </ul>
-                        <p className="mt-4 text-xs text-[#1e3a34]/60">
+                        <p className="mt-4 text-xs text-navy-800/60">
                             구체적인 수치·비율 등은 가맹점 상황에 따라 별도로 안내되며,
                             이용 여부는 충분한 안내 이후에 결정하실 수 있습니다.
                         </p>
@@ -201,7 +201,7 @@ export default function LiquidityInquiryClient(): JSX.Element {
                 <div className="max-w-6xl mx-auto">
                     <motion.h2
                         {...fadeUp(0)}
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+                        className="text-2xl md:text-3xl font-bold text-navy-900 mb-6"
                     >
                         자주 묻는 질문
                     </motion.h2>
@@ -227,18 +227,18 @@ export default function LiquidityInquiryClient(): JSX.Element {
                             <motion.details
                                 key={i}
                                 {...fadeUp(i * 0.1)}
-                                className="group rounded-2xl bg-white border border-[#a7f3d0]/60 p-5 open:shadow-[0_10px_30px_rgba(16,185,129,0.10)] transition"
+                                className="group rounded-2xl bg-white border border-mist/60 p-5 open:shadow-[0_10px_30px_rgba(0,51,102,0.10)] transition"
                             >
-                                <summary className="flex items-center justify-between cursor-pointer select-none text-[#0b2723] font-semibold">
+                                <summary className="flex items-center justify-between cursor-pointer select-none text-navy-900 font-semibold">
                                     <span className="flex items-center gap-2">
-                                        <CheckCircle2 className="text-[#10b981]" size={18} />
+                                        <CheckCircle2 className="text-navy" size={18} />
                                         {faq.q}
                                     </span>
-                                    <span className="text-[#10b981] group-open:rotate-90 transition">
+                                    <span className="text-navy group-open:rotate-90 transition">
                                         <ChevronRight size={18} />
                                     </span>
                                 </summary>
-                                <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">
+                                <p className="mt-3 text-navy-800/80 leading-relaxed">
                                     {faq.a}
                                 </p>
                             </motion.details>
@@ -251,7 +251,7 @@ export default function LiquidityInquiryClient(): JSX.Element {
                 <div className="max-w-6xl mx-auto text-center">
                     <h2
 
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+                        className="text-2xl md:text-3xl font-bold text-navy-900 mb-6"
                     >
                         문의하실 내용이 있으신가요?
                     </h2>
@@ -265,9 +265,9 @@ export default function LiquidityInquiryClient(): JSX.Element {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                                hover:from-[#00b894] hover:to-[#00a884]
-                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                                bg-gradient-to-r from-navy to-navy 
+                                hover:from-navy hover:to-navy
+                                text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                         >
                             <Mail size={18} /> Gmail로 문의하기
                         </a>
@@ -278,9 +278,9 @@ export default function LiquidityInquiryClient(): JSX.Element {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                                hover:from-[#00b894] hover:to-[#00a884]
-                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                                bg-gradient-to-r from-navy to-navy 
+                                hover:from-navy hover:to-navy
+                                text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                         >
                             <Mail size={18} /> Outlook으로 문의하기
                         </a>
@@ -293,8 +293,8 @@ export default function LiquidityInquiryClient(): JSX.Element {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                                 border border-emerald-300 bg-white/80 
-                                hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                                shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                                hover:bg-paper text-emerald-700 font-semibold 
+                                shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                         >
                             <MessageCircle size={18} /> 카카오톡 상담
                         </a>
@@ -304,10 +304,10 @@ export default function LiquidityInquiryClient(): JSX.Element {
             </section>
 
             {/* 🌿 개인정보 안내 */}
-            <section className="py-8 px-6 md:px-16 bg-[#f0fdfa]">
-                <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-[#1e3a34]/70">
+            <section className="py-8 px-6 md:px-16 bg-paper">
+                <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-navy-800/70">
                     <p className="flex items-center gap-2">
-                        <Lock size={14} className="text-[#10b981]" />
+                        <Lock size={14} className="text-navy" />
                         상담을 위해 제공해 주신 정보는 최소한의 범위 내에서만 사용되며,
                         관련 법령과 내부 기준에 따라 안전하게 관리됩니다.
                     </p>

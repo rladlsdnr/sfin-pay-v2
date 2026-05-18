@@ -79,15 +79,15 @@ const StepCard = memo(function StepCard({
             tabIndex={0}
             role="article"
             aria-label={`${index + 1}단계: ${step.title}`}
-            className="group text-center rounded-2xl border border-brand-mint/40 bg-white/90 p-8 shadow-[0_8px_25px_rgba(16,185,129,0.08)] hover:shadow-[0_12px_35px_rgba(16,185,129,0.13)]  outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
+            className="group text-center rounded-2xl border border-brand-mint/40 bg-white/90 p-8 shadow-[0_8px_25px_rgba(0,51,102,0.08)] hover:shadow-[0_12px_35px_rgba(0,51,102,0.13)]  outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
         >
             <div className="flex justify-center mb-4 text-brand-mintDark">
                 {step.icon({ size: 28 })}
             </div>
-            <h3 className="text-xl font-semibold text-[#102a27] mb-2">
+            <h3 className="text-xl font-semibold text-navy-900 mb-2">
                 {step.title}
             </h3>
-            <p className="text-[#1f3b37]/70 text-sm leading-relaxed">{step.desc}</p>
+            <p className="text-navy-800/70 text-sm leading-relaxed">{step.desc}</p>
         </motion.article>
     );
 });
@@ -132,14 +132,14 @@ export default function API({
 
                 <h2
                     id={`${id}-heading`}
-                    className="mt-8 text-4xl md:text-5xl font-extrabold text-[#0b2723] leading-relaxed tracking-tight"
+                    className="mt-8 text-4xl md:text-5xl font-extrabold text-navy-900 leading-relaxed tracking-tight"
                 >
                     {titleLines[0]}
                     <br className="hidden md:block" />
                     <span className="block md:mt-3 text-brand-mintDark">{titleLines[1]}</span>
                 </h2>
 
-                <p className="mt-8 text-[#1f3b37]/70 text-lg leading-relaxed">
+                <p className="mt-8 text-navy-800/70 text-lg leading-relaxed">
                     {description}
                 </p>
             </motion.div>
@@ -162,7 +162,7 @@ export default function API({
                 transition={{ duration: 0.6, delay: 0.32 }}
                 className="max-w-3xl mx-auto text-center mt-16"
             >
-                <p className="text-[#1f3b37]/70 text-lg leading-relaxed">
+                <p className="text-navy-800/70 text-lg leading-relaxed">
                     SFIN PAY는 가맹점 등록, 정산 관리, 결제 모듈 제공을 하나의 프로세스로 통합했습니다.
                     <br />
                     별도 구축 없이, 안정적이고 빠르게 운영을 시작할 수 있습니다.
@@ -181,7 +181,7 @@ export default function API({
                         href={ctaHref}
                         onClick={onCtaClick}
                         /*원본 from-brand-mintDark to-emerald-400 hover:from-emerald-500 hover:to-emerald-400 */
-                        className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)]  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
+                        className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-navy to-navy hover:from-navy hover:to-navy text-white font-semibold shadow-[0_8px_20px_rgba(0,51,102,0.25)]  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
                     >
                         {ctaLabel}
                     </a>
@@ -189,7 +189,7 @@ export default function API({
                     <Link
                         href={ctaHref}
                         onClick={onCtaClick}
-                        className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)]  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
+                        className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-navy to-navy hover:from-navy hover:to-navy text-white font-semibold shadow-[0_8px_20px_rgba(0,51,102,0.25)]  focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-brand-mint/40"
                     >
                         {ctaLabel}
                     </Link>

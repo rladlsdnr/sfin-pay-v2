@@ -21,7 +21,6 @@ export default function Partners(): JSX.Element {
         { name: 'NH농협', logo: '/images/partners/nhbank.png' },
         { name: '신한은행', logo: '/images/partners/shinhan.png' },
         { name: '우리은행', logo: '/images/partners/woori.png' },
-        { name: '신한은행', logo: '/images/partners/shinhan.png' },
         { name: 'IBK기업은행', logo: '/images/partners/ibk.png' },
         { name: '하나은행', logo: '/images/partners/hana.png' },
         { name: '수협은행', logo: '/images/partners/Sh.png' },
@@ -71,17 +70,17 @@ export default function Partners(): JSX.Element {
 
     return (
         <section id="partners" className="relative py-24 px-6 md:px-16 overflow-hidden">
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_60%_40%,rgba(0,200,155,0.08),transparent_10%)]" />
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_60%_40%,rgba(0,51,102,0.08),transparent_10%)]" />
 
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy/[0.1] text-navy text-sm font-medium">
                     <Building2 size={16} /> 함께하는 파트너
                 </span>
 
-                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
+                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-navy-900 leading-snug">
                     신뢰할 수 있는{' '}
                     <br className="block md:hidden" />
-                    <span className="text-[#00b894]">결제 생태계</span>
+                    <span className="text-navy">결제 생태계</span>
                 </h2>
 
                 <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
@@ -102,8 +101,8 @@ export default function Partners(): JSX.Element {
                         <div
                             key={`r1-${i}`}
                             className="inline-flex items-center justify-center min-w-[150px] md:min-w-[180px] h-[100px]
-                            rounded-xl bg-white border border-[rgba(0,200,155,0.2)]
-                            hover:shadow-[0_4px_16px_rgba(0,200,155,0.1)] t1"
+                            rounded-xl bg-white border border-navy/[0.2]
+                            hover:shadow-[0_4px_16px_rgba(0,51,102,0.1)] t1"
                         >
                             <img
                                 src={p.logo}
@@ -125,8 +124,8 @@ export default function Partners(): JSX.Element {
                         <div
                             key={`r2-${i}`}
                             className="inline-flex items-center justify-center min-w-[150px] md:min-w-[180px] h-[100px]
-                            rounded-xl bg-white border border-[rgba(0,200,155,0.2)]
-                            hover:shadow-[0_4px_16px_rgba(0,200,155,0.1)] t1"
+                            rounded-xl bg-white border border-navy/[0.2]
+                            hover:shadow-[0_4px_16px_rgba(0,51,102,0.1)] t1"
                         >
                             <img
                                 src={p.logo}
@@ -148,8 +147,8 @@ export default function Partners(): JSX.Element {
                         <div
                             key={`r3-${i}`}
                             className="inline-flex items-center justify-center min-w-[150px] md:min-w-[180px] h-[100px]
-                            rounded-xl bg-white border border-[rgba(0,200,155,0.2)]
-                            hover:shadow-[0_4px_16px_rgba(0,200,155,0.1)] t1"
+                            rounded-xl bg-white border border-navy/[0.2]
+                            hover:shadow-[0_4px_16px_rgba(0,51,102,0.1)] t1"
                         >
                             <img
                                 src={p.logo}
@@ -163,17 +162,17 @@ export default function Partners(): JSX.Element {
 
             <motion.div
                 {...fadeUp(2)}
-                className="max-w-5xl mx-auto mt-20 rounded-2xl border border-[rgba(0,200,155,0.25)]
+                className="max-w-5xl mx-auto mt-20 rounded-2xl border border-navy/[0.25]
                     p-8 md:p-10 text-center bg-[#FFFFFF]
-                    shadow-[0_8px_30px_rgba(0,200,155,0.08)]"
+                    shadow-[0_8px_30px_rgba(0,51,102,0.08)]"
             >
                 {/*
-                <div className="inline-flex items-center gap-2 px-۴ py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm mb-4">
+                <div className="inline-flex items-center gap-2 px-۴ py-1.5 rounded-full bg-navy/[0.1] text-navy text-sm mb-4">
                     <Handshake size={14} /> PARTNERSHIP PROGRAM
                 </div>
                 */}
 
-                <h3 className="text-xl md:text-2xl font-semibold text-[#0f172a] mb-3">
+                <h3 className="text-xl md:text-2xl font-semibold text-navy-900 mb-3">
                     SFIN PAY와 함께 성장할 <br className="block md:hidden" />
                     파트너를 찾습니다
                 </h3>
@@ -186,9 +185,9 @@ export default function Partners(): JSX.Element {
                 <a
                     href="#contact"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
-                     bg-gradient-to-r from-[#00c89b] to-[#00b894]
-                     hover:from-[#00b894] hover:to-[#00a884]
-                     text-white font-semibold shadow-[0_8px_20px_rgba(0,200,155,0.25)] t1"
+                     bg-gradient-to-r from-navy to-navy
+                     hover:from-navy hover:to-navy
+                     text-white font-semibold shadow-[0_8px_20px_rgba(0,51,102,0.25)] t1"
                 >
                     제휴 문의하기 →
                 </a>

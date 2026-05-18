@@ -95,7 +95,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
 
             <motion.form
                 onSubmit={handleSubmit}
-                className="max-w-3xl mx-auto rounded-2xl border border-brand-mint/30 bg-white/90 backdrop-blur-sm p-8 md:p-10 space-y-6 shadow-[0_8px_25px_rgba(16,185,129,0.10)]"
+                className="max-w-3xl mx-auto rounded-2xl border border-brand-mint/30 bg-white/90 backdrop-blur-sm p-8 md:p-10 space-y-6 shadow-[0_8px_25px_rgba(0,51,102,0.10)]"
             >
                 <h2 className="text-3xl font-extrabold text-brand-mintDark text-center mb-6 text-[clamp(30px,5vw,36px)]">
                     문의 접수
@@ -103,7 +103,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
 
                 {/* 회사명 */}
                 <div>
-                    <label className="block text-sm font-medium text-[#0b2723]/80 mb-2 flex items-center gap-2">
+                    <label className="block text-sm font-medium text-navy-900/80 mb-2 flex items-center gap-2">
                         <Building2 size={16} className="text-brand-mintDark" />
                         회사명 / 상호명
                     </label>
@@ -113,13 +113,13 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
                         onChange={handleChange}
                         required
                         placeholder="예: 스핀페이"
-                        className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-[#0b2723] px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none transition"
+                        className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-navy-900 px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none transition"
                     />
                 </div>
 
                 {/* 이메일 */}
                 <div>
-                    <label className="block text-sm font-medium text-[#0b2723]/80 mb-2 flex items-center gap-2">
+                    <label className="block text-sm font-medium text-navy-900/80 mb-2 flex items-center gap-2">
                         <Mail size={16} className="text-brand-mintDark" /> 이메일
                     </label>
                     <input
@@ -129,13 +129,13 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
                         onChange={handleChange}
                         required
                         placeholder="you@company.co.kr"
-                        className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-[#0b2723] px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none transition"
+                        className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-navy-900 px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none transition"
                     />
                 </div>
 
                 {/* 문의 유형 */}
                 <div>
-                    <label className="block text-sm font-medium text-[#0b2723]/80 mb-2 flex items-center gap-2">
+                    <label className="block text-sm font-medium text-navy-900/80 mb-2 flex items-center gap-2">
                         <MessageSquare size={16} className="text-brand-mintDark" /> 문의 유형
                     </label>
                     <select
@@ -143,7 +143,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
                         value={form.type}
                         onChange={handleChange}
                         required
-                        className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-[#0b2723] px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none transition"
+                        className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-navy-900 px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none transition"
                     >
                         <option value="">선택하세요</option>
                         <option>정산 관련 문의</option>
@@ -157,7 +157,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
 
                 {/* 문의 내용 */}
                 <div>
-                    <label className="block text-sm font-medium text-[#0b2723]/80 mb-2">
+                    <label className="block text-sm font-medium text-navy-900/80 mb-2">
                         문의 내용
                     </label>
                     <textarea
@@ -167,7 +167,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
                         onChange={handleChange}
                         required
                         placeholder="문의 내용을 입력해주세요."
-                        className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-[#0b2723] px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none resize-none transition"
+                        className="w-full rounded-xl bg-brand-mintLight/20 border border-brand-mint/40 text-navy-900 px-4 py-3 focus:border-brand-mintDark focus:ring-2 focus:ring-brand-mint/40 outline-none resize-none transition"
                     />
                 </div>
 
@@ -177,7 +177,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
                     whileTap={{ scale: 0.97 }}
                     disabled={sending}
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-brand-mintDark to-emerald-400 hover:from-emerald-500 hover:to-emerald-400 text-white font-semibold shadow-[0_8px_25px_rgba(16,185,129,0.25)]  disabled:opacity-60"
+                    className="w-full flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-gold to-gold-dark hover:from-gold-dark hover:to-gold text-navy-900 font-semibold shadow-[0_8px_25px_rgba(255,184,0,0.3)]  disabled:opacity-60"
                 >
                     {sending ? (
                         '전송 중...'
@@ -192,7 +192,7 @@ const ContactFormCRM: React.FC<ContactFormCRMProps> = ({ defaultType = '' }) => 
                     )}
                 </motion.button>
 
-                <div className="flex justify-center items-center gap-2 text-[#0b2723]/50 text-xs mt-4">
+                <div className="flex justify-center items-center gap-2 text-navy-900/50 text-xs mt-4">
                     <ShieldCheck size={14} /> Google reCAPTCHA v3 보호 + Notion CRM 자동 기록
                 </div>
             </motion.form>

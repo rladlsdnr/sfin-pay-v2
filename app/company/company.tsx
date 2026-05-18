@@ -80,15 +80,15 @@ export default function CompanyIntro(): JSX.Element {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f9fafb] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* HEADER */}
-            <section className="text-center py-24 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f9fafb] border-b border-[#a7f3d0]">
+            <section className="text-center py-24 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist">
                 <motion.h1 {...fadeUp(0)} className="text-5xl md:text-6xl font-extrabold mb-6 text-[clamp(30px,5vw,36px)]">
-                    <span className="text-[#10b981]">SFIN PAY</span> 회사소개
+                    <span className="text-navy">SFIN PAY</span> 회사소개
                 </motion.h1>
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-lg md:text-xl text-[#1e3a34]/85 max-w-4xl mx-auto leading-snug"
+                    className="text-lg md:text-xl text-navy-800/85 max-w-4xl mx-auto leading-snug"
                 >
                     <strong>2025년 설립</strong> — SFIN PAY는 빠르고 투명한 정산 시스템을 핵심 가치로 하는
                     결제 전문 기업입니다.
@@ -106,12 +106,12 @@ export default function CompanyIntro(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.12)] "
+                            className="p-8 bg-white border border-mist/60 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.12)] "
                         >
                             <div className="flex flex-col items-center gap-4">
-                                <div className="p-3 rounded-full bg-[#10b981]/10 text-[#10b981]">{v.icon}</div>
+                                <div className="p-3 rounded-full bg-navy/10 text-navy">{v.icon}</div>
                                 <h3 className="text-lg font-semibold">{v.title}</h3>
-                                <p className="text-sm text-[#1e3a34]/80 leading-snug">{v.desc}</p>
+                                <p className="text-sm text-navy-800/80 leading-snug">{v.desc}</p>
                             </div>
                         </motion.div>
                     ))}
@@ -119,7 +119,7 @@ export default function CompanyIntro(): JSX.Element {
             </section>
 
             {/* BUSINESS STRUCTURE */}
-            <section className="py-28 px-6 md:px-16 bg-[#ffffff] border-t border-[#a7f3d0]">
+            <section className="py-28 px-6 md:px-16 bg-[#ffffff] border-t border-mist">
                 <motion.h2 {...fadeUp(0)} className="text-4xl font-bold mb-12 text-center text-[clamp(30px,5vw,36px)]">
                     사업 및 조직 구조
                 </motion.h2>
@@ -128,26 +128,26 @@ export default function CompanyIntro(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl shadow-sm hover:shadow-[0_6px_25px_rgba(16,185,129,0.08)] "
+                            className="p-8 bg-white border border-mist/60 rounded-2xl shadow-sm hover:shadow-[0_6px_25px_rgba(0,51,102,0.08)] "
                         >
-                            <div className="flex items-center gap-3 mb-3 text-[#10b981] font-semibold">
+                            <div className="flex items-center gap-3 mb-3 text-navy font-semibold">
                                 <Briefcase size={20} />
                                 {d.name}
                             </div>
-                            <p className="text-[#1e3a34]/85 leading-snug text-sm">{d.desc}</p>
+                            <p className="text-navy-800/85 leading-snug text-sm">{d.desc}</p>
                         </motion.div>
                     ))}
                 </div>
             </section>
 
             {/* CERTIFICATIONS */}
-            <section className="py-28 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] border-t border-[#a7f3d0] text-center">
+            <section className="py-28 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-t border-mist text-center">
                 <motion.h2 {...fadeUp(0)} className="text-4xl font-bold mb-8 text-[clamp(30px,5vw,36px)]">
                     보안·인증 체계
                 </motion.h2>
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-[#1e3a34]/85 max-w-3xl mx-auto mb-12 leading-snug"
+                    className="text-navy-800/85 max-w-3xl mx-auto mb-12 leading-snug"
                 >
                     금융 보안 기준을 엄격히 준수하며,
                     결제 데이터 보호와 개인정보 암호화를 최우선으로 합니다.
@@ -157,7 +157,7 @@ export default function CompanyIntro(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.1)}
-                            className="px-6 py-3 bg-white border border-[#a7f3d0]/70 rounded-full text-sm font-medium text-[#1e3a34]/90 hover:text-[#10b981] hover:shadow-md "
+                            className="px-6 py-3 bg-white border border-mist/70 rounded-full text-sm font-medium text-navy-800/90 hover:text-navy hover:shadow-md "
                         >
                             {c}
                         </motion.div>
@@ -166,18 +166,18 @@ export default function CompanyIntro(): JSX.Element {
 
             </section>
 
-            <div className="min-h-screen bg-mint-gradient text-[#0f2b26] pt-16 pb-24">
+            <div className="min-h-screen bg-mint-gradient text-navy-800 pt-16 pb-24">
                 {/* ────────────── ① HEADER ────────────── */}
                 <section className="text-center px-6 md:px-16 py-20 border-b border-brand-mint">
                     <motion.h1
                         {...fadeUp(0)}
-                        className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[#0f2b26] text-[clamp(30px,5vw,36px)]"
+                        className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-navy-800 text-[clamp(30px,5vw,36px)]"
                     >
                         SFIN PAY <span className="text-brand-mintDark">VISION 2025</span>
                     </motion.h1>
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="text-lg md:text-xl text-[#145C52]/85 max-w-3xl mx-auto leading-relaxed"
+                        className="text-lg md:text-xl text-navy-700/85 max-w-3xl mx-auto leading-relaxed"
                     >
                         “모든 결제는 <strong>신뢰</strong> 위에 세워져야 한다.”
                         <br />
@@ -190,14 +190,14 @@ export default function CompanyIntro(): JSX.Element {
                 <section className="py-24 px-6 md:px-16 bg-white border-b border-brand-mint">
                     <motion.h2
                         {...fadeUp(0)}
-                        className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-[#0f2b26] "
+                        className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-navy-800 "
                     >
                         우리의 미션
                     </motion.h2>
 
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="max-w-4xl mx-auto text-center text-[#145C52]/90 leading-relaxed text-[15.5px]"
+                        className="max-w-4xl mx-auto text-center text-navy-700/90 leading-relaxed text-[15.5px]"
                     >
                         SFIN PAY는 단순한 결제 솔루션이 아니라, <strong>신뢰 기반 금융 인프라</strong>를
                         구축하는 기업입니다.
@@ -226,16 +226,16 @@ export default function CompanyIntro(): JSX.Element {
                             <motion.div
                                 key={i}
                                 {...fadeUp(i + 1)}
-                                className="p-8 rounded-2xl border border-brand-mintLight bg-[#F9FFFE] hover:shadow-[0_8px_25px_rgba(0,201,167,0.15)]  duration-500"
+                                className="p-8 rounded-2xl border border-brand-mintLight bg-paper hover:shadow-[0_8px_25px_rgba(0,51,102,0.15)]  duration-500"
                             >
                                 <div className="flex flex-col items-center text-center gap-4">
                                     <div className="p-4 rounded-full bg-brand-mint/20 text-brand-mintDark">
                                         {item.icon}
                                     </div>
-                                    <h3 className="text-lg font-semibold text-[#0f2b26]">
+                                    <h3 className="text-lg font-semibold text-navy-800">
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm text-[#145C52]/80 leading-relaxed">
+                                    <p className="text-sm text-navy-700/80 leading-relaxed">
                                         {item.desc}
                                     </p>
                                 </div>
@@ -248,14 +248,14 @@ export default function CompanyIntro(): JSX.Element {
                 <section className="py-24 px-6 md:px-16 bg-mint-gradient border-b border-brand-mint">
                     <motion.h2
                         {...fadeUp(0)}
-                        className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-[#0f2b26]"
+                        className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-navy-800"
                     >
                         우리의 미래
                     </motion.h2>
 
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="max-w-4xl mx-auto text-center text-[#145C52]/90 leading-relaxed text-[15.5px]"
+                        className="max-w-4xl mx-auto text-center text-navy-700/90 leading-relaxed text-[15.5px]"
                     >
                         SFIN PAY는 2025년까지 아시아 전역의 결제 인프라를 연결하여{" "}
                         <strong>국경 없는 정산 네트워크</strong>를 구축하고자 합니다.
@@ -284,16 +284,16 @@ export default function CompanyIntro(): JSX.Element {
                             <motion.div
                                 key={i}
                                 {...fadeUp(i + 1)}
-                                className="p-8 rounded-2xl border border-brand-mintDark/20 bg-white hover:shadow-[0_8px_25px_rgba(0,201,167,0.15)]  duration-500"
+                                className="p-8 rounded-2xl border border-brand-mintDark/20 bg-white hover:shadow-[0_8px_25px_rgba(0,51,102,0.15)]  duration-500"
                             >
                                 <div className="flex flex-col items-center text-center gap-4">
                                     <div className="p-4 rounded-full bg-brand-mintDark/15 text-brand-mintDark">
                                         {item.icon}
                                     </div>
-                                    <h3 className="text-lg font-semibold text-[#0f2b26]">
+                                    <h3 className="text-lg font-semibold text-navy-800">
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm text-[#145C52]/80 leading-relaxed">
+                                    <p className="text-sm text-navy-700/80 leading-relaxed">
                                         {item.desc}
                                     </p>
                                 </div>
@@ -303,7 +303,7 @@ export default function CompanyIntro(): JSX.Element {
                 </section>
 
                 {/* ────────────── ④ FOOTNOTE ────────────── */}
-                <div className="text-center py-16 text-[#145C52]/75 text-sm">
+                <div className="text-center py-16 text-navy-700/75 text-sm">
                     <motion.p {...fadeUp(0)}>
                         © 2026 SFIN PAY — 모든 비전은 <strong>신뢰</strong>에서 출발합니다.
                     </motion.p>
@@ -314,7 +314,7 @@ export default function CompanyIntro(): JSX.Element {
                     <motion.div {...fadeUp(0.4)}>
                         <Link
                             href="/careers"
-                            className="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-gradient-to-r from-[#34d399] to-[#10b981] hover:from-[#10b981] hover:to-[#059669] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)] "
+                            className="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-gradient-to-r from-navy to-navy hover:from-navy hover:to-navy-700 text-white font-semibold text-lg shadow-[0_8px_25px_rgba(0,51,102,0.25)] "
                         >
                             채용 문의 →
                         </Link>
@@ -323,7 +323,7 @@ export default function CompanyIntro(): JSX.Element {
                     <motion.div {...fadeUp(0.4)}>
                         <Link
                             href="/inquiry/contract"
-                            className="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-gradient-to-r from-[#34d399] to-[#10b981] hover:from-[#10b981] hover:to-[#059669] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)] "
+                            className="inline-flex items-center justify-center px-10 py-5 rounded-xl bg-gradient-to-r from-navy to-navy hover:from-navy hover:to-navy-700 text-white font-semibold text-lg shadow-[0_8px_25px_rgba(0,51,102,0.25)] "
                         >
                             가맹 문의 →
                         </Link>
@@ -332,9 +332,9 @@ export default function CompanyIntro(): JSX.Element {
             </div>
 
             {/* FOOTER COMPANY INFO */}
-            <section className="py-16 px-6 md:px-16 bg-white border-t border-[#a7f3d0]/60 text-center text-sm text-[#1e3a34]/75">
+            <section className="py-16 px-6 md:px-16 bg-white border-t border-mist/60 text-center text-sm text-navy-800/75">
                 <div className="max-w-4xl mx-auto leading-relaxed space-y-2">
-                    <p className="font-semibold text-[#0b2723]">법인 정보</p>
+                    <p className="font-semibold text-navy-900">법인 정보</p>
                     <p>상호명: 스핀페이 SFIN PAY {/*| 대표이사: 장지영*/}</p>
                     {/*<p>사업자등록번호: 421-88-02504</p>*/}
                     {/*<p>주소: 서울특별시 영등포구 여의대방로 67길11 5층 에이 5-41호</p>*/}

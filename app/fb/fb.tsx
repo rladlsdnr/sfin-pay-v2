@@ -33,22 +33,22 @@ const FB: React.FC = () => {
     }, []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* 🌿 Header */}
-            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa]">
+            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-paper to-paper">
                 <motion.h1
                     {...fadeUp(0)}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     F&B 사업,{' '}
                     <br className='block md:hidden' />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         결제와 정산을 더욱 빠르게
                     </span>
                 </motion.h1>
                 <motion.p
                     {...fadeUp(0.3)}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     하루 매출을 직접 정리하지 않아도 됩니다. <br />
                     카드 결제부터 입금까지, SFIN PAY가 알아서 처리해드립니다.
@@ -56,12 +56,12 @@ const FB: React.FC = () => {
             </section>
 
             {/* 🌿 결제 흐름 시각화 */}
-            <section className="py-24 px-6 md:px-16 bg-[#ecfdf5] relative overflow-hidden">
+            <section className="py-24 px-6 md:px-16 bg-paper relative overflow-hidden">
                 <motion.h2
                     initial={{ opacity: 1, y: 30 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 30 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold text-center mb-12 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-center mb-12 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     F&B 결제 흐름{' '}
                     <br />
@@ -76,14 +76,14 @@ const FB: React.FC = () => {
                         transition={{ duration: 0.5, delay: 0.1 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-mist/70 flex items-center justify-center text-navy text-3xl shadow-md">
                             <Coffee />
                         </div>
                         <p className="font-semibold mt-2">매장 (POS)</p>
-                        <p className="text-sm text-[#1e3a34]/70">결제 발생</p>
+                        <p className="text-sm text-navy-800/70">결제 발생</p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* SFIN PAY */}
                     <motion.div
@@ -92,16 +92,16 @@ const FB: React.FC = () => {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-[#34d399] to-[#10b981] shadow-[0_0_25px_rgba(16,185,129,0.25)] flex items-center justify-center text-white text-3xl">
+                        <div className="w-24 h-24 rounded-2xl bg-gradient-to-tr from-navy to-navy shadow-[0_0_25px_rgba(0,51,102,0.25)] flex items-center justify-center text-white text-3xl">
                             <Wallet />
                         </div>
                         <p className="font-semibold mt-2">SFIN PAY</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             결제 승인 · 정산 자동 처리
                         </p>
                     </motion.div>
 
-                    <ArrowRight className="text-[#10b981] w-10 h-10 hidden md:block" />
+                    <ArrowRight className="text-navy w-10 h-10 hidden md:block" />
 
                     {/* 가맹점 계좌 */}
                     <motion.div
@@ -110,11 +110,11 @@ const FB: React.FC = () => {
                         transition={{ duration: 0.5, delay: 0.5 }}
                         className="flex flex-col items-center gap-2 w-32"
                     >
-                        <div className="w-24 h-24 rounded-2xl bg-white border border-[#a7f3d0]/70 flex items-center justify-center text-[#10b981] text-3xl shadow-md">
+                        <div className="w-24 h-24 rounded-2xl bg-white border border-mist/70 flex items-center justify-center text-navy text-3xl shadow-md">
                             <Building2 />
                         </div>
                         <p className="font-semibold mt-2">가맹점 계좌</p>
-                        <p className="text-sm text-[#1e3a34]/70">
+                        <p className="text-sm text-navy-800/70">
                             D+0 또는 D+1 입금 완료
                         </p>
                     </motion.div>
@@ -124,7 +124,7 @@ const FB: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6, delay: 0.6 }}
-                    className="text-center mt-10 text-[#1e3a34]/70 max-w-3xl mx-auto leading-relaxed"
+                    className="text-center mt-10 text-navy-800/70 max-w-3xl mx-auto leading-relaxed"
                 >
                     결제 → 승인 → 정산 → 입금까지 모든 절차가 자동으로 연결됩니다. <br />
                     복잡한 정산표 대신 SFIN PAY가 모든 과정을 관리합니다.
@@ -139,10 +139,10 @@ const FB: React.FC = () => {
                     transition={{ duration: 0.6 }}
                     className="text-center mb-10"
                 >
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">
+                    <h2 className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]">
                         꼭 필요한 기능만 담았습니다
                     </h2>
-                    <p className="text-[#1e3a34]/80">
+                    <p className="text-navy-800/80">
                         바쁜 점주님을 위해 실제 현장에서 가장 자주 쓰이는 기능만 모았습니다.
                     </p>
                 </motion.div>
@@ -180,31 +180,31 @@ const FB: React.FC = () => {
                             initial={{ opacity: 1, y: 20 }}
                             animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                             transition={{ duration: 0.6, delay: 0.2 * i }}
-                            className="p-8 bg-white border border-[#a7f3d0]/60 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
+                            className="p-8 bg-white border border-mist/60 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.15)] "
                         >
-                            <div className="flex items-center gap-3 text-[#10b981] mb-4">
+                            <div className="flex items-center gap-3 text-navy mb-4">
                                 {f.icon}
-                                <h3 className="text-xl font-semibold text-[#0b2723]">
+                                <h3 className="text-xl font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">{f.desc}</p>
+                            <p className="text-navy-800/80 leading-relaxed">{f.desc}</p>
                         </motion.div>
                     ))}
                 </div>
             </section>
 
             {/* 🌿 CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center">
                 <motion.h2
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.6 }}
-                    className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     결제부터 입금까지,{' '}
                     <br className='block md:hidden' />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         SFIN PAY 하나로
                     </span>
                 </motion.h2>
@@ -212,7 +212,7 @@ const FB: React.FC = () => {
                     initial={{ opacity: 1, y: 20 }}
                     animate={{ opacity: mounted ? 1 : 0, y: mounted ? 0 : 20 }}
                     transition={{ duration: 0.7, delay: 0.2 }}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     복잡한 매출 관리, 이제 버튼 한 번으로 끝냅니다. <br />
                     오늘 결제한 금액을 오늘 바로 입금받아보세요.
@@ -224,7 +224,7 @@ const FB: React.FC = () => {
                         {...fadeUp(0.4)}
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>
@@ -241,9 +241,9 @@ const FB: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Gmail로 문의하기
                     </a>
@@ -254,9 +254,9 @@ const FB: React.FC = () => {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Outlook으로 문의하기
                     </a>
@@ -269,8 +269,8 @@ const FB: React.FC = () => {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                     border border-emerald-300 bg-white/80 
-                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    hover:bg-paper text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                     >
                         <MessageCircle size={18} /> 카카오톡 상담
                     </a>

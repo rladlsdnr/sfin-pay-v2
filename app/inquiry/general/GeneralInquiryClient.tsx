@@ -131,11 +131,11 @@ function GeneralFormInline(): JSX.Element {
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-[#ecfdf5] border border-[#a7f3d0]/60 p-10 text-center"
+                    className="rounded-2xl bg-paper border border-mist/60 p-10 text-center"
                 >
-                    <CheckCircle2 className="w-12 h-12 text-[#10b981] mx-auto mb-3" />
-                    <h3 className="text-2xl font-bold text-[#0b2723]">문의 접수 완료</h3>
-                    <p className="mt-2 text-[#1e3a34]/80 leading-relaxed">
+                    <CheckCircle2 className="w-12 h-12 text-navy mx-auto mb-3" />
+                    <h3 className="text-2xl font-bold text-navy-900">문의 접수 완료</h3>
+                    <p className="mt-2 text-navy-800/80 leading-relaxed">
                         담당 부서에서 문의 내용을 확인 후,<br />
                         남겨주신 연락처로 빠르게 회신드리겠습니다.
                     </p>
@@ -145,12 +145,12 @@ function GeneralFormInline(): JSX.Element {
                     onSubmit={handleSubmit}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-white border border-[#a7f3d0]/60 p-8 md:p-10 shadow-sm"
+                    className="rounded-2xl bg-white border border-mist/60 p-8 md:p-10 shadow-sm"
                 >
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-2">
                         일반 문의 / 제휴 · 광고 · 기타
                     </h2>
-                    <p className="text-sm text-[#1e3a34]/70 mb-6">
+                    <p className="text-sm text-navy-800/70 mb-6">
                         제휴·광고·PR·서비스 문의를 남겨주시면 빠르게 검토 후 연락드립니다.
                     </p>
 
@@ -166,7 +166,7 @@ function GeneralFormInline(): JSX.Element {
                                 value={form.company}
                                 onChange={handleChange}
                                 placeholder="예: SFIN Studio, OO미디어"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 text-[#0b2723] focus:ring-2 focus:ring-[#34d399] outline-none"
+                                className="w-full rounded-xl bg-paper border border-mist px-4 py-3 text-navy-900 focus:ring-2 focus:ring-navy outline-none"
                             />
                         </div>
 
@@ -180,7 +180,7 @@ function GeneralFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="홍길동"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 text-[#0b2723] focus:ring-2 focus:ring-[#34d399] outline-none"
+                                className="w-full rounded-xl bg-paper border border-mist px-4 py-3 text-navy-900 focus:ring-2 focus:ring-navy outline-none"
                             />
                         </div>
 
@@ -194,7 +194,7 @@ function GeneralFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="010-0000-0000"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 text-[#0b2723] focus:ring-2 focus:ring-[#34d399] outline-none"
+                                className="w-full rounded-xl bg-paper border border-mist px-4 py-3 text-navy-900 focus:ring-2 focus:ring-navy outline-none"
                             />
                         </div>
 
@@ -209,7 +209,7 @@ function GeneralFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="you@company.co.kr"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 text-[#0b2723] focus:ring-2 focus:ring-[#34d399] outline-none"
+                                className="w-full rounded-xl bg-paper border border-mist px-4 py-3 text-navy-900 focus:ring-2 focus:ring-navy outline-none"
                             />
                         </div>
                     </div>
@@ -223,7 +223,7 @@ function GeneralFormInline(): JSX.Element {
                             name="type"
                             value={form.type}
                             onChange={handleChange}
-                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 text-[#0b2723] focus:ring-2 focus:ring-[#34d399] outline-none"
+                            className="w-full rounded-xl bg-paper border border-mist px-4 py-3 text-navy-900 focus:ring-2 focus:ring-navy outline-none"
                         >
                             <option>제휴 / 파트너십 문의</option>
                             <option>광고 / 마케팅 / 캠페인 제안</option>
@@ -247,7 +247,7 @@ function GeneralFormInline(): JSX.Element {
                             placeholder={
                                 "제휴 목적, 브랜드/서비스 소개, 원하는 협업 범위, 일정 등을 자유롭게 입력해 주세요."
                             }
-                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0] px-4 py-3 text-[#0b2723] resize-none focus:ring-2 focus:ring-[#34d399] outline-none"
+                            className="w-full rounded-xl bg-paper border border-mist px-4 py-3 text-navy-900 resize-none focus:ring-2 focus:ring-navy outline-none"
                         />
                     </div>
 
@@ -255,7 +255,7 @@ function GeneralFormInline(): JSX.Element {
                     <button
                         type="submit"
                         disabled={sending}
-                        className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold shadow-[0_10px_30px_rgba(16,185,129,0.18)] transition disabled:opacity-60"
+                        className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-semibold shadow-[0_10px_30px_rgba(255,184,0,0.28)] transition disabled:opacity-60"
                     >
                         {sending ? (
                             <>
@@ -267,7 +267,7 @@ function GeneralFormInline(): JSX.Element {
                         )}
                     </button>
 
-                    <p className="mt-3 text-[12px] text-[#1e3a34]/60">
+                    <p className="mt-3 text-[12px] text-navy-800/60">
                         상담 목적 외 다른 용도로는 사용되지 않습니다.
                     </p>
                 </motion.form>
@@ -329,23 +329,23 @@ export default function GeneralInquiryClient(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723]">
+        <div className="min-h-screen bg-paper text-navy-900">
 
             {/* ========================== HERO ========================== */}
-            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] border-b border-[#a7f3d0]/40">
+            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/40">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         {...fadeUp(0)}
                         className="text-4xl md:text-6xl font-extrabold leading-tight text-[clamp(30px,5vw,36px)]"
                     >
                         일반 문의{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                             / 제휴 · 광고 · 기타
                         </span>
                     </motion.h1>
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="mt-5 text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto"
+                        className="mt-5 text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto"
                     >
                         제휴, 미디어, 마케팅, 서비스 운영 등 전반의 문의를 남겨주시면
                         <br className="hidden md:block" />
@@ -377,13 +377,13 @@ export default function GeneralInquiryClient(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-6 rounded-2xl bg-white border border-[#a7f3d0]/60 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] transition"
+                            className="p-6 rounded-2xl bg-white border border-mist/60 hover:shadow-[0_10px_30px_rgba(0,51,102,0.12)] transition"
                         >
-                            <div className="flex items-center gap-3 text-[#10b981]">
+                            <div className="flex items-center gap-3 text-navy">
                                 {item.icon}
-                                <h3 className="text-lg font-semibold text-[#0b2723]">{item.title}</h3>
+                                <h3 className="text-lg font-semibold text-navy-900">{item.title}</h3>
                             </div>
-                            <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">
+                            <p className="mt-3 text-navy-800/80 leading-relaxed">
                                 {item.desc}
                             </p>
                         </motion.div>
@@ -395,7 +395,7 @@ export default function GeneralInquiryClient(): JSX.Element {
             <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl font-bold text-center mb-10 text-[#0b2723]"
+                    className="text-3xl font-bold text-center mb-10 text-navy-900"
                 >
                     자주 묻는 질문 (FAQ)
                 </motion.h2>
@@ -404,13 +404,13 @@ export default function GeneralInquiryClient(): JSX.Element {
                     <motion.details
                         key={i}
                         {...fadeUp(i * 0.1)}
-                        className="group border-b border-[#a7f3d0]/50 py-6"
+                        className="group border-b border-mist/50 py-6"
                     >
-                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#0b2723] hover:text-[#10b981]">
+                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-navy-900 hover:text-navy">
                             {f.q}
-                            <ChevronDown className="text-[#10b981] group-open:rotate-180 transition-transform" />
+                            <ChevronDown className="text-navy group-open:rotate-180 transition-transform" />
                         </summary>
-                        <div className="mt-3 text-[#1e3a34]/80 leading-relaxed text-[15px] space-y-2">
+                        <div className="mt-3 text-navy-800/80 leading-relaxed text-[15px] space-y-2">
                             {f.a}
                         </div>
                     </motion.details>
@@ -421,7 +421,7 @@ export default function GeneralInquiryClient(): JSX.Element {
                 <div className="max-w-6xl mx-auto text-center">
                     <h2
 
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+                        className="text-2xl md:text-3xl font-bold text-navy-900 mb-6"
                     >
                         문의하실 내용이 있으신가요?
                     </h2>
@@ -435,9 +435,9 @@ export default function GeneralInquiryClient(): JSX.Element {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                                hover:from-[#00b894] hover:to-[#00a884]
-                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                                bg-gradient-to-r from-navy to-navy 
+                                hover:from-navy hover:to-navy
+                                text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                         >
                             <Mail size={18} /> Gmail로 문의하기
                         </a>
@@ -448,9 +448,9 @@ export default function GeneralInquiryClient(): JSX.Element {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                                hover:from-[#00b894] hover:to-[#00a884]
-                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                                bg-gradient-to-r from-navy to-navy 
+                                hover:from-navy hover:to-navy
+                                text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                         >
                             <Mail size={18} /> Outlook으로 문의하기
                         </a>
@@ -463,8 +463,8 @@ export default function GeneralInquiryClient(): JSX.Element {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                                 border border-emerald-300 bg-white/80 
-                                hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                                shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                                hover:bg-paper text-emerald-700 font-semibold 
+                                shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                         >
                             <MessageCircle size={18} /> 카카오톡 상담
                         </a>
@@ -474,10 +474,10 @@ export default function GeneralInquiryClient(): JSX.Element {
             </section>
 
             {/* ========================== 개인정보 안내 ========================== */}
-            <section className="py-8 px-6 md:px-16 bg-[#f0fdfa]">
-                <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-[#1e3a34]/70">
+            <section className="py-8 px-6 md:px-16 bg-paper">
+                <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-navy-800/70">
                     <p className="flex items-center gap-2">
-                        <Lock size={14} className="text-[#10b981]" />
+                        <Lock size={14} className="text-navy" />
                         제공된 모든 정보는 문의 처리 목적에만 사용되며, 관련 법령에 따라 안전하게 관리됩니다.
                     </p>
                 </div>

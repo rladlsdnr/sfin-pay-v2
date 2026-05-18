@@ -186,7 +186,7 @@ export default function Settlement(): JSX.Element {
     return (
         <section
             id="settlement"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#EFFFF9] via-[#F8FFFD] to-white overflow-hidden"
+            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white overflow-hidden"
         >
             {/* 배경: reduceMotion이면 정적 */}
             <motion.div
@@ -209,7 +209,7 @@ export default function Settlement(): JSX.Element {
                 className="absolute inset-0 -z-10 opacity-60"
                 style={{
                     backgroundImage:
-                        'linear-gradient(115deg, rgba(0,184,148,0.18), rgba(10,206,177,0.1), rgba(0,168,132,0.18))',
+                        'linear-gradient(115deg, rgba(0,51,102,0.18), rgba(0,51,102,0.1), rgba(255,184,0,0.18))',
                     backgroundSize: '400% 400%',
                     filter: 'blur(80px)',
                 }}
@@ -223,17 +223,17 @@ export default function Settlement(): JSX.Element {
                 viewport={{ once: true }}
                 className="max-w-3xl mx-auto text-center mb-20"
             >
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00c8b4]/10 text-[#00c8b4] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy/10 text-navy text-sm font-medium">
                     <Wallet size={16} /> 실시간 자동 정산
                 </span>
-                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0C3C35] leading-tight">
+                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-navy-800 leading-tight">
                     결제 후{' '}
-                    <span className="text-[#00c8b4]">
+                    <span className="text-navy">
                         입금까지 <br className="block md:hidden" />
                         단 15분
                     </span>
                 </h2>
-                <p className="mt-5 text-[#2E5C54]/80 text-lg leading-relaxed">
+                <p className="mt-5 text-navy-700/80 text-lg leading-relaxed">
                     결제 승인 → 검증 → 입금
                     <br />
                     모든 과정이 자동으로 연결됩니다.
@@ -252,8 +252,8 @@ export default function Settlement(): JSX.Element {
                         'min-h-[180px] m md:h-auto md:min-h-[220px]';
 
                     const cardClass = isActive
-                        ? `${baseCard} border-[#00c8b4]/60 bg-white shadow-[0_10px_30px_rgba(0,200,155,0.14)] md:scale-[1.02]`
-                        : `${baseCard} border-[#C4F7EC] bg-[#F8FFFD] opacity-85`;
+                        ? `${baseCard} border-navy/60 bg-white shadow-[0_10px_30px_rgba(0,51,102,0.14)] md:scale-[1.02]`
+                        : `${baseCard} border-mist bg-paper opacity-85`;
 
                     return (
                         <motion.div
@@ -277,17 +277,17 @@ export default function Settlement(): JSX.Element {
                                         repeat: Infinity,
                                         ease: 'easeInOut',
                                     }}
-                                    className="absolute inset-0 -z-10 rounded-2xl bg-[#00c8b4]/24 blur-2xl"
+                                    className="absolute inset-0 -z-10 rounded-2xl bg-navy/24 blur-2xl"
                                 />
                             )}
 
                             {/* 상단 아이콘 + 타이틀 */}
                             <div
-                                className={`flex items-center gap-3 ${isActive ? 'text-[#00c8b4]' : 'text-[#2E5C54]/60'
+                                className={`flex items-center gap-3 ${isActive ? 'text-navy' : 'text-navy-700/60'
                                     }`}
                             >
                                 <div
-                                    className={`p-3 rounded-xl ${isActive ? 'bg-[#00c8b4]/10' : 'bg-[#C4F7EC]/30'
+                                    className={`p-3 rounded-xl ${isActive ? 'bg-navy/10' : 'bg-mist/30'
                                         }`}
                                 >
                                     {s.icon}
@@ -296,7 +296,7 @@ export default function Settlement(): JSX.Element {
                             </div>
 
                             {/* 본문 설명 (위쪽 고정 영역) */}
-                            <p className="mt-3 pr-2 text-[#2E5C54]/80 text-sm leading-relaxed">
+                            <p className="mt-3 pr-2 text-navy-700/80 text-sm leading-relaxed">
                                 {s.desc}
                             </p>
 
@@ -304,14 +304,14 @@ export default function Settlement(): JSX.Element {
                             <div className="absolute left-6 right-6 bottom-4 space-y-1 text-[11px] leading-snug">
                                 {/* 3단계 전용 수수료 안내 */}
                                 {i === 2 && (
-                                    <p className="text-[#00a884] font-semibold">
+                                    <p className="text-navy font-semibold">
                                         ※ PG 수수료 {feeRate.toFixed(2)}% 차감 후 입금됩니다.
                                     </p>
                                 )}
 
                                 {/* 활성 카드에서만 단계 상태 문구 */}
                                 {isActive && (
-                                    <p className="text-[#00c8b4] font-semibold tracking-wide">
+                                    <p className="text-navy font-semibold tracking-wide">
                                         {s.sub}
                                     </p>
                                 )}
@@ -322,7 +322,7 @@ export default function Settlement(): JSX.Element {
                                 <div className="hidden md:block absolute right-[-20px] top-1/2 -translate-y-1/2">
                                     <ArrowRight
                                         size={20}
-                                        className={isActive ? 'text-[#00c8b4]' : 'text-[#A7ECDD]'}
+                                        className={isActive ? 'text-navy' : 'text-mist'}
                                     />
                                 </div>
                             )}
@@ -347,11 +347,11 @@ export default function Settlement(): JSX.Element {
                             : { scale: 1, filter: 'brightness(1)' }
                     }
                     transition={{ duration: 0.7 }}
-                    className="inline-block text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-[#00c8b4] via-[#00d0aa] to-[#00a884] bg-clip-text text-transparent drop-shadow-sm"
+                    className="inline-block text-5xl md:text-6xl font-extrabold bg-gradient-to-r from-navy via-navy to-navy bg-clip-text text-transparent drop-shadow-sm"
                 >
                     <span ref={amountRef}>₩0</span>
                 </motion.div>
-                <p className="mt-3 text-[#2E5C54]/70 text-base">
+                <p className="mt-3 text-navy-700/70 text-base">
                     {['결제 승인 중', '정산 검증 중', '입금 완료'][step]}
                 </p>
             </div>
@@ -362,16 +362,16 @@ export default function Settlement(): JSX.Element {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.2 }}
                 viewport={{ once: true }}
-                className="mt-20 max-w-4xl mx-auto text-center rounded-2xl border border-[#C4F7EC] bg-gradient-to-r from-[#EFFFF9] to-white p-10 shadow-[0_6px_30px_rgba(0,200,155,0.08)]"
+                className="mt-20 max-w-4xl mx-auto text-center rounded-2xl border border-mist bg-gradient-to-r from-paper to-white p-10 shadow-[0_6px_30px_rgba(0,51,102,0.08)]"
             >
-                <p className="text-[#2E5C54]/80 text-lg mb-5">
+                <p className="text-navy-700/80 text-lg mb-5">
                     결제에서 입금까지 단 15분.
                     <br />
                     현금 흐름을 끊김 없이 이어드립니다.
                 </p>
                 <a
                     href="#contact"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_20px_rgba(0,184,148,0.25)]"
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-navy to-navy hover:from-navy hover:to-navy text-white font-semibold shadow-[0_8px_20px_rgba(0,51,102,0.25)]"
                 >
                     빠른 정산 문의하기 <ArrowRight size={16} />
                 </a>

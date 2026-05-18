@@ -21,7 +21,7 @@ export default function Footer(): JSX.Element {
         <footer
             id="footer"
             className="relative py-20 px-6 md:px-16 overflow-hidden
-            bg-gradient-to-b from-[#e8fff6] to-[#f2fffb]"
+            bg-gradient-to-b from-paper to-paper"
             aria-label="사이트 하단 정보"
         >
             <div className="relative z-10 max-w-6xl mx-auto">
@@ -31,7 +31,7 @@ export default function Footer(): JSX.Element {
                     className="grid md:grid-cols-3 gap-10 text-[#334155]/80 text-center md:text-left"
                 >
                     <div>
-                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-[#00b894] font-semibold">
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy font-semibold">
                             <Building2 size={18} aria-hidden />
                             SFIN PAY
                         </div>
@@ -41,7 +41,7 @@ export default function Footer(): JSX.Element {
                     </div>
 
                     <div>
-                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-[#00b894] font-semibold">
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy font-semibold">
                             <Mail size={18} aria-hidden />
                             문의 메일
                         </div>
@@ -49,7 +49,7 @@ export default function Footer(): JSX.Element {
                     </div>
 
                     <div>
-                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-[#00b894] font-semibold">
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy font-semibold">
                             <Phone size={18} aria-hidden />
                             대표 전화
                         </div>
@@ -66,7 +66,7 @@ export default function Footer(): JSX.Element {
                         {/* 🔥 정확한 라우트로 수정됨 */}
                         <Link
                             href="/termsofuse"
-                            className="hover:text-[#00b894] transition"
+                            className="hover:text-navy transition"
                             aria-label="이용약관"
                         >
                             이용약관
@@ -74,7 +74,7 @@ export default function Footer(): JSX.Element {
 
                         <Link
                             href="/privacy"
-                            className="hover:text-[#00b894] transition"
+                            className="hover:text-navy transition"
                             aria-label="개인정보처리방침"
                         >
                             개인정보처리방침
@@ -82,7 +82,7 @@ export default function Footer(): JSX.Element {
 
                         <Link
                             href="/security"
-                            className="hover:text-[#00b894] transition"
+                            className="hover:text-navy transition"
                             aria-label="보안정책"
                         >
                             보안정책
@@ -91,7 +91,7 @@ export default function Footer(): JSX.Element {
                 </motion.div>
 
                 {/* 👣 저작권 */}
-                <div className="mt-10 border-t border-[rgba(0,200,155,0.25)] 
+                <div className="mt-10 border-t border-navy/[0.25] 
                     pt-6 text-center text-[#475569]/70 text-sm flex flex-col 
                     md:flex-row items-center justify-center gap-2">
                     <Copyright size={14} aria-hidden />

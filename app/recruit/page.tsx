@@ -47,9 +47,9 @@ export default function Recruit(): JSX.Element {
     };
 
     return (
-        <div className="min-h-screen bg-[#ecfdf5] text-[#0b2723] pt-32 ">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32 ">
             {/* HEADER */}
-            <section className="text-center py-24 px-6 md:px-16 bg-gradient-to-b from-[#f0fdfa] to-[#ecfdf5] border-b border-[#a7f3d0]">
+            <section className="text-center py-24 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist">
                 <motion.h1
                     {...fadeUp(0)}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
@@ -58,10 +58,10 @@ export default function Recruit(): JSX.Element {
                 </motion.h1>
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
                 >
                     SFIN PAY는{" "}
-                    <strong className="text-[#059669]">기술 중심의 결제 혁신</strong>을 함께
+                    <strong className="text-navy-700">기술 중심의 결제 혁신</strong>을 함께
                     만들어갈 인재와 파트너를 찾고 있습니다.
                     <br />
                     민트빛 성장, 지금 함께하세요.
@@ -69,13 +69,13 @@ export default function Recruit(): JSX.Element {
             </section>
 
             {/* TAB BUTTONS */}
-            <section className="py-10 text-center bg-[#ecfdf5]/70 border-b border-[#a7f3d0]">
-                <div className="inline-flex bg-[#ffffff] border border-[#a7f3d0]/60 rounded-full p-1 shadow-sm">
+            <section className="py-10 text-center bg-paper/70 border-b border-mist">
+                <div className="inline-flex bg-[#ffffff] border border-mist/60 rounded-full p-1 shadow-sm">
                     <button
                         onClick={() => setTab("job")}
                         className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold  ${tab === "job"
-                            ? "bg-gradient-to-r from-[#34d399] to-[#10b981] text-white shadow-md"
-                            : "bg-transparent text-[#1e3a34]/80 hover:bg-[#d1fae5]/60 hover:text-[#059669]"
+                            ? "bg-gradient-to-r from-navy to-navy text-white shadow-md"
+                            : "bg-transparent text-navy-800/80 hover:bg-mist/60 hover:text-navy-700"
                             }`}
                     >
                         채용 문의
@@ -83,15 +83,15 @@ export default function Recruit(): JSX.Element {
                     <button
                         onClick={() => setTab("partner")}
                         className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold  ${tab === "partner"
-                            ? "bg-gradient-to-r from-[#34d399] to-[#10b981] text-white shadow-md"
-                            : "bg-transparent text-[#1e3a34]/80 hover:bg-[#d1fae5]/60 hover:text-[#059669]"
+                            ? "bg-gradient-to-r from-navy to-navy text-white shadow-md"
+                            : "bg-transparent text-navy-800/80 hover:bg-mist/60 hover:text-navy-700"
                             }`}
                     >
                         파트너 문의
                     </button>
                 </div>
 
-                <p className="text-[#1e3a34]/70 mt-4 text-sm md:text-base">
+                <p className="text-navy-800/70 mt-4 text-sm md:text-base">
                     {tab === "job"
                         ? "SFIN PAY와 함께 성장할 민트빛 인재를 기다립니다."
                         : "함께 시너지를 낼 수 있는 파트너십을 제안해주세요."}
@@ -99,19 +99,19 @@ export default function Recruit(): JSX.Element {
             </section>
 
             {/* FORM */}
-            <section className="pb-28 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#ffffff] text-center">
+            <section className="pb-28 px-6 md:px-16 bg-gradient-to-b from-paper to-[#ffffff] text-center">
                 <motion.form
                     {...fadeUp(0.3)}
                     onSubmit={handleSubmit}
-                    className="max-w-3xl mx-auto bg-white rounded-2xl shadow-[0_6px_25px_rgba(16,185,129,0.1)] border border-[#a7f3d0]/70 p-10 text-left"
+                    className="max-w-3xl mx-auto bg-white rounded-2xl shadow-[0_6px_25px_rgba(0,51,102,0.1)] border border-mist/70 p-10 text-left"
                 >
-                    <h2 className="text-3xl font-bold mb-8 text-center text-[#0b2723]">
+                    <h2 className="text-3xl font-bold mb-8 text-center text-navy-900">
                         {tab === "job" ? "채용 문의" : "파트너 문의"}
                     </h2>
 
                     {tab === "partner" && (
                         <div className="mb-6">
-                            <label className="block text-[#0b2723] font-medium mb-2">회사명</label>
+                            <label className="block text-navy-900 font-medium mb-2">회사명</label>
                             <input
                                 type="text"
                                 name="company"
@@ -119,13 +119,13 @@ export default function Recruit(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="회사 또는 단체명을 입력하세요"
-                                className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
+                                className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy"
                             />
                         </div>
                     )}
 
                     <div className="mb-6">
-                        <label className="block text-[#0b2723] font-medium mb-2">이름</label>
+                        <label className="block text-navy-900 font-medium mb-2">이름</label>
                         <input
                             type="text"
                             name="name"
@@ -133,12 +133,12 @@ export default function Recruit(): JSX.Element {
                             onChange={handleChange}
                             required
                             placeholder="성함을 입력하세요"
-                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
+                            className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy"
                         />
                     </div>
 
                     <div className="mb-6">
-                        <label className="block text-[#0b2723] font-medium mb-2">이메일</label>
+                        <label className="block text-navy-900 font-medium mb-2">이메일</label>
                         <input
                             type="email"
                             name="email"
@@ -146,12 +146,12 @@ export default function Recruit(): JSX.Element {
                             onChange={handleChange}
                             required
                             placeholder="sfinpay@gmail.com"
-                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
+                            className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy"
                         />
                     </div>
 
                     <div className="mb-6">
-                        <label className="block text-[#0b2723] font-medium mb-2">
+                        <label className="block text-navy-900 font-medium mb-2">
                             {tab === "job" ? "지원 분야" : "제휴 분야"}
                         </label>
                         <input
@@ -162,12 +162,12 @@ export default function Recruit(): JSX.Element {
                             placeholder={
                                 tab === "job" ? "예: 개발, 디자인, 운영 등" : "예: 금융기관, 가맹점, VAN 등"
                             }
-                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981]"
+                            className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy"
                         />
                     </div>
 
                     <div className="mb-8">
-                        <label className="block text-[#0b2723] font-medium mb-2">
+                        <label className="block text-navy-900 font-medium mb-2">
                             {tab === "job" ? "자기소개 / 경력 요약" : "제안 내용"}
                         </label>
                         <textarea
@@ -181,13 +181,13 @@ export default function Recruit(): JSX.Element {
                                     ? "자신의 경력, 관심 분야 등을 간단히 소개해주세요."
                                     : "제안 또는 문의 내용을 작성해주세요."
                             }
-                            className="w-full px-4 py-3 border border-[#a7f3d0] rounded-lg focus:border-[#10b981] resize-none"
+                            className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy resize-none"
                         />
                     </div>
 
                     {tab === "job" && (
                         <div className="mb-8">
-                            <label className="block text-[#0b2723] font-medium mb-2">
+                            <label className="block text-navy-900 font-medium mb-2">
                                 이력서 / 포트폴리오 (선택)
                             </label>
                             <input
@@ -195,7 +195,7 @@ export default function Recruit(): JSX.Element {
                                 name="file"
                                 onChange={handleFile}
                                 accept=".pdf,.doc,.docx"
-                                className="w-full border border-dashed border-[#a7f3d0] rounded-lg px-4 py-3 text-[#1e3a34]/70 cursor-pointer"
+                                className="w-full border border-dashed border-mist rounded-lg px-4 py-3 text-navy-800/70 cursor-pointer"
                             />
                         </div>
                     )}
@@ -204,7 +204,7 @@ export default function Recruit(): JSX.Element {
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                         type="submit"
-                        className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-[#34d399] to-[#10b981] text-white font-semibold text-lg shadow-[0_8px_25px_rgba(16,185,129,0.25)]"
+                        className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-gold to-gold-dark text-navy-900 font-semibold text-lg shadow-[0_8px_25px_rgba(255,184,0,0.3)]"
                     >
                         {tab === "job" ? <FileText size={20} /> : <Send size={20} />}
                         {tab === "job" ? "제출하기" : "문의 보내기"}
@@ -213,16 +213,16 @@ export default function Recruit(): JSX.Element {
             </section>
 
             {/* CONTACT INFO */}
-            <section className="py-20 px-6 md:px-16 bg-[#ffffff] border-t border-[#a7f3d0] text-center">
+            <section className="py-20 px-6 md:px-16 bg-[#ffffff] border-t border-mist text-center">
                 <motion.div {...fadeUp(0)} className="max-w-4xl mx-auto">
-                    <h3 className="text-2xl font-bold text-[#0b2723] mb-8">기타 문의</h3>
-                    <div className="flex flex-wrap justify-center gap-8 text-[#1e3a34]/85 text-lg">
+                    <h3 className="text-2xl font-bold text-navy-900 mb-8">기타 문의</h3>
+                    <div className="flex flex-wrap justify-center gap-8 text-navy-800/85 text-lg">
                         <div className="flex items-center gap-3">
-                            <Mail className="text-[#10b981]" size={22} />
+                            <Mail className="text-navy" size={22} />
                             <span>sfinpay@gmail.com</span>
                         </div>
                         <div className="flex items-center gap-3">
-                            <Phone className="text-[#10b981]" size={22} />
+                            <Phone className="text-navy" size={22} />
                             <span>010-2740-1530</span>
                         </div>
                     </div>

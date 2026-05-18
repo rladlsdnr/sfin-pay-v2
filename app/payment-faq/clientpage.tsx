@@ -79,11 +79,11 @@ export default function PaymentFAQ(): JSX.Element {
     ];
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] pt-28 pb-20 px-6 md:px-16">
+        <div className="min-h-screen bg-paper text-navy-900 pt-28 pb-20 px-6 md:px-16">
             {/* 🟢 Hero Section */}
             <motion.section
                 {...fadeUp(0)}
-                className="text-center mb-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] py-16 rounded-2xl border border-[#a7f3d0]/50"
+                className="text-center mb-16 bg-gradient-to-b from-paper to-paper py-16 rounded-2xl border border-mist/50"
             >
                 <div className="max-w-4xl mx-auto">
                     <motion.h1
@@ -91,13 +91,13 @@ export default function PaymentFAQ(): JSX.Element {
                         className="text-4xl md:text-6xl font-extrabold mb-4 leading-tight text-[clamp(30px,5vw,36px)]"
                     >
                         결제 관련{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                             자주 묻는 질문
                         </span>
                     </motion.h1>
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="text-lg md:text-xl text-[#1e3a34]/80"
+                        className="text-lg md:text-xl text-navy-800/80"
                     >
                         승인부터 정산까지, 결제 과정의 모든 핵심 질문에 대한 답변을 확인하세요.
                     </motion.p>
@@ -111,20 +111,20 @@ export default function PaymentFAQ(): JSX.Element {
                         key={i}
                         id={item.id}
                         {...fadeUp(i * 0.1)}
-                        className="scroll-mt-24 group rounded-2xl bg-white border border-[#a7f3d0]/60 p-5 open:shadow-[0_10px_25px_rgba(16,185,129,0.1)] transition"
+                        className="scroll-mt-24 group rounded-2xl bg-white border border-mist/60 p-5 open:shadow-[0_10px_25px_rgba(0,51,102,0.1)] transition"
                     >
-                        <summary className="flex items-center justify-between cursor-pointer select-none text-[#0b2723] font-semibold">
+                        <summary className="flex items-center justify-between cursor-pointer select-none text-navy-900 font-semibold">
                             <span className="flex items-center gap-3">
-                                <div className="flex items-center justify-center w-10 h-10 text-[#10b981]">
+                                <div className="flex items-center justify-center w-10 h-10 text-navy">
                                     {item.icon}
                                 </div>
                                 {item.q}
                             </span>
-                            <span className="text-[#10b981] group-open:rotate-90 transition">
+                            <span className="text-navy group-open:rotate-90 transition">
                                 <ChevronRight size={18} />
                             </span>
                         </summary>
-                        <p className="mt-3 text-[#1e3a34]/80 leading-relaxed whitespace-pre-line">
+                        <p className="mt-3 text-navy-800/80 leading-relaxed whitespace-pre-line">
                             {item.a}
                         </p>
                     </motion.details>
@@ -134,17 +134,17 @@ export default function PaymentFAQ(): JSX.Element {
             {/* 🟢 CTA */}
             <motion.section
                 {...fadeUp(0.3)}
-                className="mt-20 text-center py-14 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] rounded-2xl"
+                className="mt-20 text-center py-14 bg-gradient-to-tr from-mist to-mist rounded-2xl"
             >
-                <h2 className="text-3xl font-bold text-[#0b2723] mb-4">
+                <h2 className="text-3xl font-bold text-navy-900 mb-4">
                     더 자세한 결제 지원이 필요하신가요?
                 </h2>
-                <p className="text-[#1e3a34]/80 mb-8">
+                <p className="text-navy-800/80 mb-8">
                     결제 오류, 정산 지연, API 연동 등 기술적 문의는 기술지원 센터 또는 계약 담당자를 통해 상담하실 수 있습니다.
                 </p>
                 <a
                     href="/inquiry/integration"
-                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold "
+                    className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold "
                 >
                     기술 지원 문의하기 <ChevronRight size={18} />
                 </a>

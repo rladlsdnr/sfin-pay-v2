@@ -135,13 +135,13 @@ function ContractFormInline(): JSX.Element {
                 <motion.div
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-[#ecfdf5] border border-[#a7f3d0]/60 p-10 text-center"
+                    className="rounded-2xl bg-paper border border-mist/60 p-10 text-center"
                 >
-                    <CheckCircle2 className="w-12 h-12 text-[#10b981] mx-auto mb-3" />
-                    <h3 className="text-2xl font-bold text-[#0b2723]">
+                    <CheckCircle2 className="w-12 h-12 text-navy mx-auto mb-3" />
+                    <h3 className="text-2xl font-bold text-navy-900">
                         문의가 접수되었습니다
                     </h3>
-                    <p className="mt-2 text-[#1e3a34]/80">
+                    <p className="mt-2 text-navy-800/80">
                         담당 매니저가 내용을 확인한 뒤,
                         <br className="hidden md:block" />
                         남겨주신 연락처로 빠르게 연락드리겠습니다.
@@ -152,12 +152,12 @@ function ContractFormInline(): JSX.Element {
                     onSubmit={handleSubmit}
                     initial={{ opacity: 0, y: 16 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="rounded-2xl bg-white border border-[#a7f3d0]/60 p-8 md:p-10 shadow-sm"
+                    className="rounded-2xl bg-white border border-mist/60 p-8 md:p-10 shadow-sm"
                 >
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-2">
+                    <h2 className="text-2xl md:text-3xl font-bold text-navy-900 mb-2">
                         가맹 계약 / 수수료 협의 문의서
                     </h2>
-                    <p className="text-sm text-[#1e3a34]/70 mb-6">
+                    <p className="text-sm text-navy-800/70 mb-6">
                         아래 정보를 입력해주시면, 업종·매출 규모·리스크를 종합하여
                         <br className="hidden md:block" />
                         최적의 수수료 및 정산 조건을 제안드립니다.
@@ -166,7 +166,7 @@ function ContractFormInline(): JSX.Element {
                     {/* 상단 2열 */}
                     <div className="grid md:grid-cols-2 gap-5">
                         <div>
-                            <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                            <label className="block text-sm font-semibold text-navy-900 mb-1">
                                 상호명 / 회사명
                             </label>
                             <input
@@ -175,12 +175,12 @@ function ContractFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="예: 주식회사 에스핀, SFIN 학원"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                                className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 text-navy-900 outline-none focus:ring-2 focus:ring-navy focus:border-navy transition"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                            <label className="block text-sm font-semibold text-navy-900 mb-1">
                                 담당자 이름
                             </label>
                             <input
@@ -189,12 +189,12 @@ function ContractFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="홍길동"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                                className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 text-navy-900 outline-none focus:ring-2 focus:ring-navy focus:border-navy transition"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                            <label className="block text-sm font-semibold text-navy-900 mb-1">
                                 연락처
                             </label>
                             <input
@@ -203,12 +203,12 @@ function ContractFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="010-0000-0000"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                                className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 text-navy-900 outline-none focus:ring-2 focus:ring-navy focus:border-navy transition"
                             />
                         </div>
 
                         <div>
-                            <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                            <label className="block text-sm font-semibold text-navy-900 mb-1">
                                 이메일
                             </label>
                             <input
@@ -218,21 +218,21 @@ function ContractFormInline(): JSX.Element {
                                 onChange={handleChange}
                                 required
                                 placeholder="you@company.co.kr"
-                                className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                                className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 text-navy-900 outline-none focus:ring-2 focus:ring-navy focus:border-navy transition"
                             />
                         </div>
                     </div>
 
                     {/* 문의 유형 */}
                     <div className="mt-5">
-                        <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                        <label className="block text-sm font-semibold text-navy-900 mb-1">
                             문의 유형
                         </label>
                         <select
                             name="type"
                             value={form.type}
                             onChange={handleChange}
-                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition"
+                            className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 text-navy-900 outline-none focus:ring-2 focus:ring-navy focus:border-navy transition"
                         >
                             <option>가맹점 계약 / 수수료 협의</option>
                             <option>D+0 / D+1 정산 조건 문의</option>
@@ -244,7 +244,7 @@ function ContractFormInline(): JSX.Element {
 
                     {/* 메시지 */}
                     <div className="mt-5">
-                        <label className="block text-sm font-semibold text-[#0b2723] mb-1">
+                        <label className="block text-sm font-semibold text-navy-900 mb-1">
                             상세 문의 내용
                         </label>
                         <textarea
@@ -256,9 +256,9 @@ function ContractFormInline(): JSX.Element {
                             placeholder={
                                 "업종, 월 매출(대략), 주요 결제수단, 희망 수수료/정산 조건 등\n자유롭게 작성해 주세요."
                             }
-                            className="w-full rounded-xl bg-[#f0fdfa] border border-[#a7f3d0]/70 px-4 py-3 text-[#0b2723] outline-none focus:ring-2 focus:ring-[#34d399] focus:border-[#34d399] transition resize-none"
+                            className="w-full rounded-xl bg-paper border border-mist/70 px-4 py-3 text-navy-900 outline-none focus:ring-2 focus:ring-navy focus:border-navy transition resize-none"
                         />
-                        <p className="mt-2 text-xs text-[#1e3a34]/60">
+                        <p className="mt-2 text-xs text-navy-800/60">
                             예) 월 매출 1억 내외, 온라인 70% / 오프라인 30%, D+0 정산 위주,
                             기존 PG사 대비 요율 비교 등
                         </p>
@@ -268,7 +268,7 @@ function ContractFormInline(): JSX.Element {
                     <button
                         type="submit"
                         disabled={sending}
-                        className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold shadow-[0_10px_30px_rgba(16,185,129,0.18)] transition disabled:opacity-60"
+                        className="mt-8 w-full inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gold hover:bg-gold-dark text-navy-900 font-semibold shadow-[0_10px_30px_rgba(255,184,0,0.28)] transition disabled:opacity-60"
                     >
                         {sending ? (
                             <>
@@ -280,7 +280,7 @@ function ContractFormInline(): JSX.Element {
                         )}
                     </button>
 
-                    <p className="mt-3 text-[12px] text-[#1e3a34]/60">
+                    <p className="mt-3 text-[12px] text-navy-800/60">
                         입력하신 연락처로만 회신드리며, 상담 목적 외 다른 용도로는
                         사용되지 않습니다.
                     </p>
@@ -350,7 +350,7 @@ export default function ContractInquiryClient(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723]">
+        <div className="min-h-screen bg-paper text-navy-900">
             {/* 🌿 Breadcrumb + JSON-LD (SEO) */}
             <script
                 type="application/ld+json"
@@ -383,21 +383,21 @@ export default function ContractInquiryClient(): JSX.Element {
             />
 
             {/* 🌿 Hero */}
-            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-[#ecfdf5] to-[#f0fdfa] border-b border-[#a7f3d0]/40">
+            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/40">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         {...fadeUp(0)}
                         className="text-4xl md:text-6xl font-extrabold leading-tight text-[clamp(30px,5vw,36px)]"
                     >
                         가맹 계약 ·{" "}
-                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                        <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                             수수료 협의
                         </span>{" "}
                         문의
                     </motion.h1>
                     <motion.p
                         {...fadeUp(0.2)}
-                        className="mt-5 text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto"
+                        className="mt-5 text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto"
                     >
                         D+0 · D+1 정산, 투명한 수수료, 민트 톤 UI. <br className="hidden md:block" />
                         가맹점 규모와 업종에 맞춘 최적 조건을 제안드립니다.
@@ -416,7 +416,7 @@ export default function ContractInquiryClient(): JSX.Element {
                         ].map((b, i) => (
                             <span
                                 key={i}
-                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-[#a7f3d0]/70 bg-white/80 text-[#0b2723]"
+                                className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-mist/70 bg-white/80 text-navy-900"
                             >
                                 {b.icon}
                                 {b.label}
@@ -449,15 +449,15 @@ export default function ContractInquiryClient(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i)}
-                            className="p-6 rounded-2xl bg-white border border-[#a7f3d0]/60 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] transition"
+                            className="p-6 rounded-2xl bg-white border border-mist/60 hover:shadow-[0_10px_30px_rgba(0,51,102,0.12)] transition"
                         >
-                            <div className="flex items-center gap-3 text-[#10b981]">
+                            <div className="flex items-center gap-3 text-navy">
                                 {card.icon}
-                                <h3 className="text-lg font-semibold text-[#0b2723]">
+                                <h3 className="text-lg font-semibold text-navy-900">
                                     {card.title}
                                 </h3>
                             </div>
-                            <p className="mt-3 text-[#1e3a34]/80 leading-relaxed">
+                            <p className="mt-3 text-navy-800/80 leading-relaxed">
                                 {card.desc}
                             </p>
                         </motion.div>
@@ -470,19 +470,19 @@ export default function ContractInquiryClient(): JSX.Element {
                 <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-10">
                     <motion.div
                         {...fadeUp(0)}
-                        className="p-8 rounded-2xl bg-white border border-[#a7f3d0]/60"
+                        className="p-8 rounded-2xl bg-white border border-mist/60"
                     >
-                        <h2 className="text-2xl font-bold text-[#0b2723] flex items-center gap-2">
-                            <FileText className="text-[#10b981]" /> 심사를 위한 기본 서류
+                        <h2 className="text-2xl font-bold text-navy-900 flex items-center gap-2">
+                            <FileText className="text-navy" /> 심사를 위한 기본 서류
                         </h2>
-                        <ul className="mt-4 space-y-2 text-[#1e3a34]/80">
+                        <ul className="mt-4 space-y-2 text-navy-800/80">
                             <li>• 사업자등록증 사본</li>
                             <li>• 대표자 신분증 사본</li>
                             <li>• 통신판매업 신고증(해당 시)</li>
                             <li>• 통장 사본(정산 계좌)</li>
                             <li>• 가맹점 기본 정보(상호/주소/업종/월 매출/수수료 희망범위)</li>
                         </ul>
-                        <p className="mt-4 text-sm text-[#1e3a34]/60">
+                        <p className="mt-4 text-sm text-navy-800/60">
                             업종/리스크 특성에 따라 추가자료(상품권, 선불충전형, 해외청구 등) 요청될 수
                             있습니다.
                         </p>
@@ -490,18 +490,18 @@ export default function ContractInquiryClient(): JSX.Element {
 
                     <motion.div
                         {...fadeUp(0.15)}
-                        className="p-8 rounded-2xl bg:white bg-white border border-[#a7f3d0]/60"
+                        className="p-8 rounded-2xl bg:white bg-white border border-mist/60"
                     >
-                        <h2 className="text-2xl font-bold text-[#0b2723] flex items-center gap-2">
-                            <ShieldCheck className="text-[#10b981]" /> 보안 · 컴플라이언스
+                        <h2 className="text-2xl font-bold text-navy-900 flex items-center gap-2">
+                            <ShieldCheck className="text-navy" /> 보안 · 컴플라이언스
                         </h2>
-                        <ul className="mt-4 space-y-2 text-[#1e3a34]/80">
+                        <ul className="mt-4 space-y-2 text-navy-800/80">
                             <li>• 전 구간 TLS, 민감정보 분리보관 및 암호화, 접근통제</li>
                             <li>• 결제정보 최소수집, 로그 감사, 키 수명주기 관리</li>
                             <li>• 카드사·밴·정산 기관 연계 리스크 모니터링</li>
                             <li>• ISMS 단계적 충족, PCI-DSS 요구사항 준수</li>
                         </ul>
-                        <p className="mt-4 text-sm text-[#1e3a34]/60">
+                        <p className="mt-4 text-sm text-navy-800/60">
                             가맹 심사 및 개통 과정에서 기술/보안 점검 가이드를 제공해 드립니다.
                         </p>
                     </motion.div>
@@ -512,14 +512,14 @@ export default function ContractInquiryClient(): JSX.Element {
             <section className="py-6 px-6 md:px-16">
                 <motion.div
                     {...fadeUp(0)}
-                    className="max-w-6xl mx-auto rounded-2xl p-6 md:p-8 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] border border-[#a7f3d0]"
+                    className="max-w-6xl mx-auto rounded-2xl p-6 md:p-8 bg-gradient-to-tr from-mist to-mist border border-mist"
                 >
                     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
                         <div>
-                            <h3 className="text-2xl font-extrabold text-[#0b2723] ">
+                            <h3 className="text-2xl font-extrabold text-navy-900 ">
                                 요율 & 정산 조건, 이렇게 제안됩니다
                             </h3>
-                            <p className="mt-1 text-[#1e3a34]/80">
+                            <p className="mt-1 text-navy-800/80">
                                 월매출, 결제수단 비중(카드/간편), 환불/차지백 리스크 등 종합 고려.
                                 D+0 · D+1 정산 가용성 및 주말/공휴일 옵션 상담 가능.
                             </p>
@@ -528,7 +528,7 @@ export default function ContractInquiryClient(): JSX.Element {
                             /*
                             <Link
                             href="/online-pay"
-                            className="inline-flex items-center gap-2 self-start md:self-auto px-5 py-3 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold shadow-md transition"
+                            className="inline-flex items-center gap-2 self-start md:self-auto px-5 py-3 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold shadow-md transition"
                         >
                             결제수단 & API 살펴보기 <ChevronRight size={18} />
                         </Link>
@@ -542,7 +542,7 @@ export default function ContractInquiryClient(): JSX.Element {
             <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl font-bold text-center mb-10 text-[#0b2723]"
+                    className="text-3xl font-bold text-center mb-10 text-navy-900"
                 >
                     자주 묻는 질문 (FAQ)
                 </motion.h2>
@@ -551,13 +551,13 @@ export default function ContractInquiryClient(): JSX.Element {
                     <motion.details
                         key={i}
                         {...fadeUp(i * 0.1)}
-                        className="group border-b border-[#a7f3d0]/50 py-6"
+                        className="group border-b border-mist/50 py-6"
                     >
-                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#0b2723] hover:text-[#10b981]">
+                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-navy-900 hover:text-navy">
                             {f.q}
-                            <ChevronDown className="text-[#10b981] group-open:rotate-180 transition-transform" />
+                            <ChevronDown className="text-navy group-open:rotate-180 transition-transform" />
                         </summary>
-                        <div className="mt-3 text-[#1e3a34]/80 leading-relaxed text-[15px] space-y-2">
+                        <div className="mt-3 text-navy-800/80 leading-relaxed text-[15px] space-y-2">
                             {f.a}
                         </div>
                     </motion.details>
@@ -568,7 +568,7 @@ export default function ContractInquiryClient(): JSX.Element {
                 <div className="max-w-6xl mx-auto text-center">
                     <h2
 
-                        className="text-2xl md:text-3xl font-bold text-[#0b2723] mb-6"
+                        className="text-2xl md:text-3xl font-bold text-navy-900 mb-6"
                     >
                         문의하실 내용이 있으신가요?
                     </h2>
@@ -582,9 +582,9 @@ export default function ContractInquiryClient(): JSX.Element {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                                hover:from-[#00b894] hover:to-[#00a884]
-                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                                bg-gradient-to-r from-navy to-navy 
+                                hover:from-navy hover:to-navy
+                                text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                         >
                             <Mail size={18} /> Gmail로 문의하기
                         </a>
@@ -595,9 +595,9 @@ export default function ContractInquiryClient(): JSX.Element {
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                                bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                                hover:from-[#00b894] hover:to-[#00a884]
-                                text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                                bg-gradient-to-r from-navy to-navy 
+                                hover:from-navy hover:to-navy
+                                text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                         >
                             <Mail size={18} /> Outlook으로 문의하기
                         </a>
@@ -610,8 +610,8 @@ export default function ContractInquiryClient(): JSX.Element {
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                                 border border-emerald-300 bg-white/80 
-                                hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                                shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                                hover:bg-paper text-emerald-700 font-semibold 
+                                shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                         >
                             <MessageCircle size={18} /> 카카오톡 상담
                         </a>
@@ -621,10 +621,10 @@ export default function ContractInquiryClient(): JSX.Element {
             </section>
 
             {/* 🌿 개인정보/법적 고지 */}
-            <section className="py-8 px-6 md:px-16 bg-[#f0fdfa]">
-                <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-[#1e3a34]/70">
+            <section className="py-8 px-6 md:px-16 bg-paper">
+                <div className="max-w-6xl mx-auto text-[13px] leading-relaxed text-navy-800/70">
                     <p className="flex items-center gap-2">
-                        <Lock size={14} className="text-[#10b981]" />
+                        <Lock size={14} className="text-navy" />
                         문의 접수 시 수집되는 정보는 문의 처리 및 상담 목적에만 사용되며, 내부 규정 및
                         관련 법령에 따라 안전하게 관리됩니다. 저장·보관 기간, 제3자 제공, 파기 절차 등은
                         개인정보 처리방침을 따릅니다.

@@ -62,24 +62,24 @@ export default function Insights(): JSX.Element {
         <section
             id="insights"
             className="relative py-28 px-6 md:px-16
-                 bg-gradient-to-b from-[#e8fff6] to-[#f2fffb]"
+                 bg-gradient-to-b from-paper to-paper"
         >
             {/* 💡 헤더 */}
             <motion.div {...fadeUp(0)} className="text-center max-w-3xl mx-auto mb-20">
                 <span
                     className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full
-                     bg-[rgba(0,200,155,0.10)] text-[#00b894] text-sm font-medium"
+                     bg-navy/[0.10] text-navy text-sm font-medium"
                 >
                     <Activity size={16} /> 정산 인사이트
                 </span>
 
                 <h2
                     className="mt-8 text-4xl md:text-5xl font-extrabold
-                     text-[#0f172a] leading-relaxed tracking-tight text-[clamp(30px,5vw,36px)]"
+                     text-navy-900 leading-relaxed tracking-tight text-[clamp(30px,5vw,36px)]"
                 >
                     안정화와 성장을 함께하는
                     <br className="hidden md:block" />
-                    <span className="block md:mt-3 text-[#00c89b]">
+                    <span className="block md:mt-3 text-navy">
                         데이터 기반 정산 시스템
                     </span>
                 </h2>
@@ -97,51 +97,51 @@ export default function Insights(): JSX.Element {
                 {/* ✅ 정산 안정성 */}
                 <motion.div
                     {...fadeUp(1)}
-                    className="rounded-2xl border border-[rgba(0,200,155,0.25)]
+                    className="rounded-2xl border border-navy/[0.25]
                      bg-white p-6 md:p-8
-                     shadow-[0_8px_25px_rgba(0,200,155,0.08)]"
+                     shadow-[0_8px_25px_rgba(0,51,102,0.08)]"
                 >
-                    <div className="flex items-center gap-2 mb-4 text-[#00b894]">
+                    <div className="flex items-center gap-2 mb-4 text-navy">
                         <ShieldCheck size={18} />
-                        <h3 className="text-lg font-semibold text-[#0f172a]">
+                        <h3 className="text-lg font-semibold text-navy-900">
                             월별 안정 정산율
                         </h3>
                     </div>
                     <ResponsiveContainer width="100%" height={260}>
                         <LineChart data={stabilityData}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="#d2fbea" />
+                            <CartesianGrid strokeDasharray="3 3" stroke="#d6e2ee" />
                             <XAxis
                                 dataKey="month"
-                                stroke="#a5f3d8"
+                                stroke="#d6e2ee"
                                 tickLine={false}
                                 axisLine={false}
-                                tick={{ fontSize: 12, fill: '#047857' }}
+                                tick={{ fontSize: 12, fill: '#002b57' }}
                             />
                             <YAxis
-                                stroke="#a5f3d8"
+                                stroke="#d6e2ee"
                                 domain={[97, 100]}
                                 tickLine={false}
                                 axisLine={false}
-                                tick={{ fontSize: 12, fill: '#047857' }}
+                                tick={{ fontSize: 12, fill: '#002b57' }}
                             />
                             <Tooltip
-                                cursor={{ fill: 'rgba(0,200,155,0.05)' }}
+                                cursor={{ fill: 'rgba(0,51,102,0.05)' }}
                                 contentStyle={{
                                     backgroundColor: '#ffffff',
-                                    border: '1px solid rgba(0,200,155,0.25)',
+                                    border: '1px solid rgba(0,51,102,0.25)',
                                     borderRadius: '8px',
-                                    color: '#0f172a',
+                                    color: '#000a1a',
                                 }}
                             />
                             <Line
                                 type="monotone"
                                 dataKey="rate"
-                                stroke="#00c89b"
+                                stroke="#003366"
                                 strokeWidth={3}
                                 dot={{
                                     r: 4,
-                                    fill: '#00b894',
-                                    stroke: '#00a884',
+                                    fill: '#003366',
+                                    stroke: '#003366',
                                     strokeWidth: 1,
                                 }}
                             />
@@ -149,52 +149,52 @@ export default function Insights(): JSX.Element {
                     </ResponsiveContainer>
                     <p className="text-sm text-[#334155]/70 mt-3">
                         * 최근 6개월 평균 안정 정산율{' '}
-                        <span className="font-semibold text-[#00b894]">98.9%</span>
+                        <span className="font-semibold text-navy">98.9%</span>
                     </p>
                 </motion.div>
 
                 {/* ✅ 거래 성장률 */}
                 <motion.div
                     {...fadeUp(2)}
-                    className="rounded-2xl border border-[rgba(0,200,155,0.25)]
+                    className="rounded-2xl border border-navy/[0.25]
                      bg-white p-6 md:p-8
-                     shadow-[0_8px_25px_rgba(0,200,155,0.08)]"
+                     shadow-[0_8px_25px_rgba(0,51,102,0.08)]"
                 >
-                    <div className="flex items-center gap-2 mb-4 text-[#00b894]">
+                    <div className="flex items-center gap-2 mb-4 text-navy">
                         <TrendingUp size={18} />
-                        <h3 className="text-lg font-semibold text-[#0f172a]">
+                        <h3 className="text-lg font-semibold text-navy-900">
                             월별 결제 총액 증감률
                         </h3>
                     </div>
                     <ResponsiveContainer width="100%" height={260}>
                         <BarChart data={growthData}>
-                            <CartesianGrid strokeDasharray="3 3" stroke="#d2fbea" />
+                            <CartesianGrid strokeDasharray="3 3" stroke="#d6e2ee" />
                             <XAxis
                                 dataKey="month"
-                                stroke="#a5f3d8"
+                                stroke="#d6e2ee"
                                 tickLine={false}
                                 axisLine={false}
-                                tick={{ fontSize: 12, fill: '#047857' }}
+                                tick={{ fontSize: 12, fill: '#002b57' }}
                             />
                             <YAxis
-                                stroke="#a5f3d8"
+                                stroke="#d6e2ee"
                                 tickLine={false}
                                 axisLine={false}
-                                tick={{ fontSize: 12, fill: '#047857' }}
+                                tick={{ fontSize: 12, fill: '#002b57' }}
                             />
                             <Tooltip
-                                cursor={{ fill: 'rgba(0,200,155,0.05)' }}
+                                cursor={{ fill: 'rgba(0,51,102,0.05)' }}
                                 contentStyle={{
                                     backgroundColor: '#ffffff',
-                                    border: '1px solid rgba(0,200,155,0.25)',
+                                    border: '1px solid rgba(0,51,102,0.25)',
                                     borderRadius: '8px',
-                                    color: '#0f172a',
+                                    color: '#000a1a',
                                 }}
                             />
                             <defs>
                                 <linearGradient id="barGradient" x1="0" y1="0" x2="0" y2="1">
-                                    <stop offset="0%" stopColor="#00c89b" stopOpacity={0.9} />
-                                    <stop offset="100%" stopColor="#00b894" stopOpacity={0.7} />
+                                    <stop offset="0%" stopColor="#003366" stopOpacity={0.9} />
+                                    <stop offset="100%" stopColor="#003366" stopOpacity={0.7} />
                                 </linearGradient>
                             </defs>
                             <Bar
@@ -206,7 +206,7 @@ export default function Insights(): JSX.Element {
                     </ResponsiveContainer>
                     <p className="text-sm text-[#334155]/70 mt-3">
                         * 상반기 평균 월 성장률{' '}
-                        <span className="font-semibold text-[#00b894]">+15.5%</span>
+                        <span className="font-semibold text-navy">+15.5%</span>
                     </p>
                 </motion.div>
             </div>
@@ -215,11 +215,11 @@ export default function Insights(): JSX.Element {
             <motion.div {...fadeUp(3)} className="text-center max-w-2xl mx-auto mt-20">
                 <p className="text-[#334155]/80 text-lg leading-relaxed">
                     SFIN PAY의 데이터 분석 엔진은{' '}
-                    <span className="text-[#00b894] font-semibold">안정성</span>과{' '}
-                    <span className="text-[#00b894] font-semibold">성장성</span>을 균형 있게 측정합니다.
+                    <span className="text-navy font-semibold">안정성</span>과{' '}
+                    <span className="text-navy font-semibold">성장성</span>을 균형 있게 측정합니다.
                     <br />
                     매출 흐름을 실시간으로 파악하고,
-                    <span className="text-[#00c89b] font-semibold">
+                    <span className="text-navy font-semibold">
                         {' '}정확한 정산·예측을 기반으로{' '}
                     </span>
                     비즈니스 결정을 내리세요.

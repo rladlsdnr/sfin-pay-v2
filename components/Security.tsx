@@ -24,18 +24,18 @@ export default function Security(): JSX.Element {
     return (
         <section
             id="security"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#e8fff6] via-[#f2fffb] to-white overflow-hidden"
+            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white overflow-hidden"
         >
             {/* ✨ 헤더 */}
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy/[0.1] text-navy text-sm font-medium">
                     <ShieldCheck size={16} /> 보안 · 컴플라이언스
                 </span>
 
-                <h2 className="mt-6 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-tight">
+                <h2 className="mt-6 text-4xl md:text-5xl font-extrabold text-navy-900 leading-tight">
                     금융 보안 수준의{' '}
                     <br className="hidden md:block" />
-                    <span className="text-[#00b894] md:mt-3 block">데이터 보호 체계</span>
+                    <span className="text-navy md:mt-3 block">데이터 보호 체계</span>
                 </h2>
 
                 <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
@@ -84,16 +84,16 @@ export default function Security(): JSX.Element {
                     <motion.div
                         key={i}
                         {...fadeUp(i + 1)}
-                        className="group relative rounded-2xl border border-[rgba(0,200,155,0.25)]
-                       bg-white p-6 hover:shadow-[0_10px_30px_rgba(0,200,155,0.15)]
+                        className="group relative rounded-2xl border border-navy/[0.25]
+                       bg-white p-6 hover:shadow-[0_10px_30px_rgba(0,51,102,0.15)]
                         duration-500"
                     >
                         <div className="flex items-start gap-4">
-                            <div className="p-3 rounded-xl bg-[rgba(0,200,155,0.08)] text-[#00b894]">
+                            <div className="p-3 rounded-xl bg-navy/[0.08] text-navy">
                                 {f.icon}
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-[#0f172a]">
+                                <h3 className="text-lg font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                                 <p className="mt-2 text-sm text-[#334155]/80 leading-relaxed">
@@ -110,9 +110,9 @@ export default function Security(): JSX.Element {
                 {...fadeUp(7)}
                 className="max-w-4xl mx-auto mt-24 mb-20 text-center"
             >
-                <h3 className="text-2xl font-bold text-[#0f172a] mb-10">
+                <h3 className="text-2xl font-bold text-navy-900 mb-10">
                     SFIN PAY의{' '}
-                    <span className="text-[#00b894]">보안 계층 구조</span>
+                    <span className="text-navy">보안 계층 구조</span>
                 </h3>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-6">
@@ -126,13 +126,13 @@ export default function Security(): JSX.Element {
                             key={i}
                             whileHover={{ scale: 1.05 }}
                             className="flex flex-col items-center gap-3 bg-white p-5 rounded-xl
-                         border border-[rgba(0,200,155,0.25)]
-                         shadow-[0_6px_20px_rgba(0,200,155,0.1)] w-[180px]"
+                         border border-navy/[0.25]
+                         shadow-[0_6px_20px_rgba(0,51,102,0.1)] w-[180px]"
                         >
-                            <div className="p-3 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894]">
+                            <div className="p-3 rounded-full bg-navy/[0.1] text-navy">
                                 {layer.icon}
                             </div>
-                            <p className="text-sm font-medium text-[#0f172a]">
+                            <p className="text-sm font-medium text-navy-900">
                                 {layer.label}
                             </p>
                         </motion.div>
@@ -143,8 +143,8 @@ export default function Security(): JSX.Element {
             {/* 🧾 하단 배너 */}
             <motion.div
                 {...fadeUp(8)}
-                className="max-w-5xl mx-auto text-center rounded-2xl border border-[rgba(0,200,155,0.25)]
-                   bg-white p-10 shadow-[0_6px_25px_rgba(0,200,155,0.1)]"
+                className="max-w-5xl mx-auto text-center rounded-2xl border border-navy/[0.25]
+                   bg-white p-10 shadow-[0_6px_25px_rgba(0,51,102,0.1)]"
             >
                 <p className="text-[#334155]/80 text-lg mb-4 leading-relaxed">
                     모든 결제 데이터는 암호화되어 저장되며,
@@ -157,10 +157,10 @@ export default function Security(): JSX.Element {
                 <Link
                     href="/security"
                     className="inline-flex items-center gap-2 px-6 py-3 rounded-xl
-                     bg-gradient-to-r from-[#00c89b] to-[#00b894]
-                     hover:from-[#00b894] hover:to-[#00a884]
+                     bg-gradient-to-r from-navy to-navy
+                     hover:from-navy hover:to-navy
                      text-white font-semibold 
-                     shadow-[0_8px_20px_rgba(0,200,155,0.25)]"
+                     shadow-[0_8px_20px_rgba(0,51,102,0.25)]"
                 >
                     보안 정책 전문 보기
                 </Link>

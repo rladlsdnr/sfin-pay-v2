@@ -33,7 +33,7 @@ export default function HomePage(): JSX.Element {
           key={i}
           className="
             relative
-            border-t border-[#b7f3de]/40
+            border-t border-mist/40
             bg-gradient-to-b from-brand-mintLight/60 to-white/60
             backdrop-blur-[2px]
             transition-colors duration-700

@@ -72,7 +72,7 @@ export default function Compliance(): JSX.Element {
     return (
         <section
             id="compliance"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#ecfeff] via-[#f0fdfa] to-white overflow-hidden"
+            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white overflow-hidden"
         >
             {/* 💎 헤더 */}
             <motion.div
@@ -85,13 +85,13 @@ export default function Compliance(): JSX.Element {
                     <ShieldCheck size={16} /> 컴플라이언스 · 내부통제
                 </span>
 
-                <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-[#0b2723] text-[clamp(30px,5vw,36px)] leading-relaxed tracking-tight">
-                    <span className="text-[#00c89b]">신뢰 가능한 법적 기반</span> 위의
+                <h2 className="mt-8 text-4xl md:text-5xl font-extrabold text-navy-900 text-[clamp(30px,5vw,36px)] leading-relaxed tracking-tight">
+                    <span className="text-navy">신뢰 가능한 법적 기반</span> 위의
                     <br className="hidden md:block" />
-                    <span className="block md:mt-3 text-[#0b2723]">투명한 결제 인프라</span>
+                    <span className="block md:mt-3 text-navy-900">투명한 결제 인프라</span>
                 </h2>
 
-                <p className="mt-8 text-[#1f3b37]/70 text-lg leading-relaxed">
+                <p className="mt-8 text-navy-800/70 text-lg leading-relaxed">
                     SFIN PAY는 전자금융거래법과 여신전문금융업법 등 주요 금융 규제를 완벽히 준수하며,
                     데이터 보호·리스크 통제를 결제 인프라에 내재화했습니다.
                 </p>
@@ -105,17 +105,17 @@ export default function Compliance(): JSX.Element {
                         {...fadeUp(i + 1)}
                         viewport={{ once: true, amount: 0.2 }}
                         transition={{ duration: 0.6, delay: 0.08 * i }}
-                        className="group relative rounded-2xl border border-emerald-200/60 bg-white/90 p-7 hover:shadow-[0_10px_30px_rgba(16,185,129,0.12)] hover:border-emerald-300  duration-500"
+                        className="group relative rounded-2xl border border-emerald-200/60 bg-white/90 p-7 hover:shadow-[0_10px_30px_rgba(0,51,102,0.12)] hover:border-emerald-300  duration-500"
                     >
                         <div className="flex items-start gap-4">
                             <div className="p-3 rounded-xl bg-emerald-100 text-emerald-600">
                                 {item.icon}
                             </div>
                             <div>
-                                <h3 className="text-lg font-semibold text-[#0b2723]">
+                                <h3 className="text-lg font-semibold text-navy-900">
                                     {item.title}
                                 </h3>
-                                <p className="mt-2 text-sm text-[#1f3b37]/70 leading-relaxed">
+                                <p className="mt-2 text-sm text-navy-800/70 leading-relaxed">
                                     {item.desc}
                                 </p>
                             </div>
@@ -131,10 +131,10 @@ export default function Compliance(): JSX.Element {
                 transition={{ duration: 0.6, delay: 0.4 }}
                 className="max-w-4xl mx-auto mt-28 text-center"
             >
-                <h3 className="text-2xl font-bold text-[#0b2723] mb-12">
+                <h3 className="text-2xl font-bold text-navy-900 mb-12">
                     SFIN PAY의{" "}
                     <br className="block md:hidden" />
-                    <span className="text-[#00c89b]">내부통제 3단계 체계</span>
+                    <span className="text-navy">내부통제 3단계 체계</span>
                 </h3>
 
                 <div className="flex flex-col md:flex-row items-center justify-center gap-8">
@@ -142,12 +142,12 @@ export default function Compliance(): JSX.Element {
                         <motion.div
                             key={i}
                             whileHover={{ scale: 1.05 }}
-                            className="flex flex-col items-center gap-3 bg-gradient-to-b from-[#ecfdf5] to-white p-6 rounded-xl border border-emerald-200 shadow-[0_6px_20px_rgba(16,185,129,0.08)] w-[230px]"
+                            className="flex flex-col items-center gap-3 bg-gradient-to-b from-paper to-white p-6 rounded-xl border border-emerald-200 shadow-[0_6px_20px_rgba(0,51,102,0.08)] w-[230px]"
                         >
                             <div className="p-3 rounded-full bg-emerald-100 text-emerald-600">
                                 {item.icon}
                             </div>
-                            <p className="text-sm font-medium text-[#0b2723] leading-relaxed">
+                            <p className="text-sm font-medium text-navy-900 leading-relaxed">
                                 {item.label}
                             </p>
                         </motion.div>
@@ -160,16 +160,16 @@ export default function Compliance(): JSX.Element {
                 {...fadeUp(8)}
                 viewport={{ once: true, amount: 0.2 }}
                 transition={{ duration: 0.6, delay: 0.6 }}
-                className="text-center max-w-3xl mx-auto mt-24 rounded-2xl border border-emerald-200 bg-[#FFFFFF] p-10 shadow-[0_6px_25px_rgba(16,185,129,0.08)]"
+                className="text-center max-w-3xl mx-auto mt-24 rounded-2xl border border-emerald-200 bg-[#FFFFFF] p-10 shadow-[0_6px_25px_rgba(0,51,102,0.08)]"
             >
-                <p className="text-[#1f3b37]/70 text-lg mb-8 leading-relaxed">
+                <p className="text-navy-800/70 text-lg mb-8 leading-relaxed">
                     모든 데이터와 정산 내역은 암호화되어 저장되며,
                     내부 감사 결과는 주기적으로 외부 기관에 공개됩니다.
                     SFIN PAY는 <b>투명성과 법적 신뢰</b>를 결제 서비스의 핵심 가치로 둡니다.
                 </p>
                 <Link
                     href="/transparency-report"
-                    className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-[#00c89b] to-[#00b894] hover:from-[#00b894] hover:to-[#00a884] text-white font-semibold shadow-[0_8px_20px_rgba(16,185,129,0.25)] "
+                    className="inline-flex items-center gap-2 px-8 py-3 rounded-xl bg-gradient-to-r from-navy to-navy hover:from-navy hover:to-navy text-white font-semibold shadow-[0_8px_20px_rgba(0,51,102,0.25)] "
                 >
                     투명경영 보고서 보기
                 </Link>

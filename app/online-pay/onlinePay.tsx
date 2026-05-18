@@ -30,25 +30,25 @@ export default function OnlinePay(): JSX.Element {
     });
 
     return (
-        <div className="min-h-screen bg-[#f0fdfa] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* ────────────────────────────────
         🟩 Hero Section
       ──────────────────────────────── */}
-            <section className="text-center px-6 md:px-16 py-20 bg-gradient-to-br from-[#ecfdf5] via-[#f0fdfa] to-[#d1fae5]">
+            <section className="text-center px-6 md:px-16 py-20 bg-gradient-to-br from-paper via-paper to-mist">
                 <motion.h1
                     {...fadeUp(0)}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
                 >
                     온라인 결제,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         한 번의 API로 끝
                     </span>
                 </motion.h1>
 
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto"
                 >
                     카드, 간편결제, 수기결제까지 — 단일 인터페이스에서 통합 관리하세요.
                 </motion.p>
@@ -66,7 +66,7 @@ export default function OnlinePay(): JSX.Element {
                         <motion.div
                             key={i}
                             whileHover={{ scale: 1.05 }}
-                            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-[#a7f3d0]/60 text-[#10b981] shadow-sm cursor-default"
+                            className="flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-mist/60 text-navy shadow-sm cursor-default"
                         >
                             {f.icon}
                             <span className="font-medium">{f.label}</span>
@@ -78,10 +78,10 @@ export default function OnlinePay(): JSX.Element {
             {/* ────────────────────────────────
         🟩 자동결제 vs 수기결제 비교
       ──────────────────────────────── */}
-            <section className="py-24 px-6 md:px-16 text-center bg-[#ecfdf5]">
+            <section className="py-24 px-6 md:px-16 text-center bg-paper">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold mb-10 text-[#0b2723] text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold mb-10 text-navy-900 text-[clamp(30px,5vw,36px)]"
                 >
                     결제 방식 선택
                 </motion.h2>
@@ -92,8 +92,8 @@ export default function OnlinePay(): JSX.Element {
                             key={t}
                             onClick={() => setActiveTab(t)}
                             className={`px-8 py-3 rounded-full text-lg font-medium  ${activeTab === t
-                                ? "bg-[#10b981] text-white shadow-md"
-                                : "bg-white border border-[#a7f3d0]/70 text-[#1e3a34] hover:text-[#059669]"
+                                ? "bg-navy text-white shadow-md"
+                                : "bg-white border border-mist/70 text-navy-800 hover:text-navy-700"
                                 }`}
                         >
                             {t === "auto" ? "자동결제" : "수기결제"}
@@ -107,17 +107,17 @@ export default function OnlinePay(): JSX.Element {
                             key="auto"
                             {...fadeUp(0)}
                             exit={{ opacity: 1 }}
-                            className="max-w-4xl mx-auto p-8 bg-white rounded-2xl border border-[#a7f3d0]/60 shadow-sm text-left"
+                            className="max-w-4xl mx-auto p-8 bg-white rounded-2xl border border-mist/60 shadow-sm text-left"
                         >
-                            <h3 className="text-2xl font-bold text-[#059669] mb-4">
+                            <h3 className="text-2xl font-bold text-navy-700 mb-4">
                                 자동결제 (Recurring Payment)
                             </h3>
-                            <p className="text-[#1e3a34]/80 mb-6 leading-relaxed">
+                            <p className="text-navy-800/80 mb-6 leading-relaxed">
                                 고객이 한 번 결제 정보를 등록하면, 매월 혹은 지정 주기마다 자동으로
                                 청구됩니다. 구독 서비스, 렌탈, 멤버십 등 반복 결제 비즈니스에
                                 최적화되어 있습니다.
                             </p>
-                            <ul className="space-y-3 text-[#1e3a34]/80">
+                            <ul className="space-y-3 text-navy-800/80">
                                 <li>• 카드 / 계좌 자동 청구 및 승인</li>
                                 <li>• 주기별 자동 세금계산서 발행</li>
                                 <li>• 실패 시 재청구 로직 자동 처리</li>
@@ -128,17 +128,17 @@ export default function OnlinePay(): JSX.Element {
                             key="manual"
                             {...fadeUp(0)}
                             exit={{ opacity: 1 }}
-                            className="max-w-4xl mx-auto p-8 bg-white rounded-2xl border border-[#a7f3d0]/60 shadow-sm text-left"
+                            className="max-w-4xl mx-auto p-8 bg-white rounded-2xl border border-mist/60 shadow-sm text-left"
                         >
-                            <h3 className="text-2xl font-bold text-[#059669] mb-4">
+                            <h3 className="text-2xl font-bold text-navy-700 mb-4">
                                 수기결제 (Manual Payment)
                             </h3>
-                            <p className="text-[#1e3a34]/80 mb-6 leading-relaxed">
+                            <p className="text-navy-800/80 mb-6 leading-relaxed">
                                 고객의 결제 정보를 입력하여 직접 결제를 처리할 수 있습니다. 전화
                                 주문, 예약금, 오프라인 후결제 등 다양한 비대면 결제 상황에
                                 활용됩니다.
                             </p>
-                            <ul className="space-y-3 text-[#1e3a34]/80">
+                            <ul className="space-y-3 text-navy-800/80">
                                 <li>• 카드 정보 직접 입력 후 승인 처리</li>
                                 <li>• 3D Secure 및 PCI-DSS 준수</li>
                                 <li>• 결제내역 자동 정산 및 리포트 반영</li>
@@ -153,8 +153,8 @@ export default function OnlinePay(): JSX.Element {
       ──────────────────────────────── */}
             <section className="py-28 px-6 md:px-16 max-w-6xl mx-auto space-y-20">
                 <motion.div {...fadeUp(0)} className="text-center mb-10">
-                    <h2 className="text-4xl font-bold mb-4 text-[#0b2723] text-[clamp(30px,5vw,36px)]">핵심 기능</h2>
-                    <p className="text-[#1e3a34]/80">
+                    <h2 className="text-4xl font-bold mb-4 text-navy-900 text-[clamp(30px,5vw,36px)]">핵심 기능</h2>
+                    <p className="text-navy-800/80">
                         단일 API로 모든 결제 프로세스를 통합 관리하세요.
                     </p>
                 </motion.div>
@@ -195,15 +195,15 @@ export default function OnlinePay(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.1)}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
+                            className="p-8 bg-white border border-mist/70 rounded-2xl hover:shadow-[0_0_25px_rgba(0,51,102,0.15)] "
                         >
-                            <div className="flex items-center gap-3 text-[#10b981] mb-4">
+                            <div className="flex items-center gap-3 text-navy mb-4">
                                 {f.icon}
-                                <h3 className="text-xl font-semibold text-[#0b2723]">
+                                <h3 className="text-xl font-semibold text-navy-900">
                                     {f.title}
                                 </h3>
                             </div>
-                            <p className="text-[#1e3a34]/80 leading-relaxed">{f.desc}</p>
+                            <p className="text-navy-800/80 leading-relaxed">{f.desc}</p>
                         </motion.div>
                     ))}
                 </div>
@@ -212,21 +212,21 @@ export default function OnlinePay(): JSX.Element {
             {/* ────────────────────────────────
         🟩 CTA 섹션
       ──────────────────────────────── */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-[#d1fae5] to-[#a7f3d0] text-center">
+            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-4xl font-bold text-[#0b2723] mb-4 text-[clamp(30px,5vw,36px)]"
+                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
                 >
                     온라인 결제,{" "}
                     <br className="block md:hidden" />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#34d399] to-[#10b981]">
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
                         더 스마트하게
                     </span>
                 </motion.h2>
 
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-[#1e3a34]/90 text-lg mb-10 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
                 >
                     자동·수기결제 모두 지원하는 통합 결제 솔루션으로 고객 경험을
                     혁신하세요.
@@ -236,7 +236,7 @@ export default function OnlinePay(): JSX.Element {
                     <motion.button
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-[#10b981] hover:bg-[#059669] text-white font-semibold text-lg shadow-md "
+                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-md "
                     >
                         도입 상담 받기 →
                     </motion.button>

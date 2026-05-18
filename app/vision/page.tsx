@@ -19,18 +19,18 @@ export default function VisionPage(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
     return (
-        <div className="min-h-screen bg-mint-gradient text-[#0f2b26] pt-32 pb-24">
+        <div className="min-h-screen bg-mint-gradient text-navy-800 pt-32 pb-24">
             {/* ────────────── ① HEADER ────────────── */}
             <section className="text-center px-6 md:px-16 py-20 border-b border-brand-mint">
                 <motion.h1
                     {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[#0f2b26] text-[clamp(30px,5vw,36px)]"
+                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-navy-800 text-[clamp(30px,5vw,36px)]"
                 >
                     SFIN PAY <span className="text-brand-mintDark">VISION 2025</span>
                 </motion.h1>
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-lg md:text-xl text-[#145C52]/85 max-w-3xl mx-auto leading-relaxed"
+                    className="text-lg md:text-xl text-navy-700/85 max-w-3xl mx-auto leading-relaxed"
                 >
                     “모든 결제는 <strong>신뢰</strong> 위에 세워져야 한다.”
                     <br />
@@ -43,14 +43,14 @@ export default function VisionPage(): JSX.Element {
             <section className="py-24 px-6 md:px-16 bg-white border-b border-brand-mint">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-[#0f2b26] "
+                    className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-navy-800 "
                 >
                     우리의 미션
                 </motion.h2>
 
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="max-w-4xl mx-auto text-center text-[#145C52]/90 leading-relaxed text-[15.5px]"
+                    className="max-w-4xl mx-auto text-center text-navy-700/90 leading-relaxed text-[15.5px]"
                 >
                     SFIN PAY는 단순한 결제 솔루션이 아니라, <strong>신뢰 기반 금융 인프라</strong>를
                     구축하는 기업입니다.
@@ -79,16 +79,16 @@ export default function VisionPage(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i + 1)}
-                            className="p-8 rounded-2xl border border-brand-mintLight bg-[#F9FFFE] hover:shadow-[0_8px_25px_rgba(0,201,167,0.15)]  duration-500"
+                            className="p-8 rounded-2xl border border-brand-mintLight bg-paper hover:shadow-[0_8px_25px_rgba(0,51,102,0.15)]  duration-500"
                         >
                             <div className="flex flex-col items-center text-center gap-4">
                                 <div className="p-4 rounded-full bg-brand-mint/20 text-brand-mintDark">
                                     {item.icon}
                                 </div>
-                                <h3 className="text-lg font-semibold text-[#0f2b26]">
+                                <h3 className="text-lg font-semibold text-navy-800">
                                     {item.title}
                                 </h3>
-                                <p className="text-sm text-[#145C52]/80 leading-relaxed">
+                                <p className="text-sm text-navy-700/80 leading-relaxed">
                                     {item.desc}
                                 </p>
                             </div>
@@ -101,14 +101,14 @@ export default function VisionPage(): JSX.Element {
             <section className="py-24 px-6 md:px-16 bg-mint-gradient border-b border-brand-mint">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-[#0f2b26]"
+                    className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-navy-800"
                 >
                     우리의 미래
                 </motion.h2>
 
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="max-w-4xl mx-auto text-center text-[#145C52]/90 leading-relaxed text-[15.5px]"
+                    className="max-w-4xl mx-auto text-center text-navy-700/90 leading-relaxed text-[15.5px]"
                 >
                     SFIN PAY는 2025년까지 아시아 전역의 결제 인프라를 연결하여
                     <strong>국경 없는 정산 네트워크</strong>를 구축하고자 합니다.
@@ -137,16 +137,16 @@ export default function VisionPage(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i + 1)}
-                            className="p-8 rounded-2xl border border-brand-mintDark/20 bg-white hover:shadow-[0_8px_25px_rgba(0,201,167,0.15)]  duration-500"
+                            className="p-8 rounded-2xl border border-brand-mintDark/20 bg-white hover:shadow-[0_8px_25px_rgba(0,51,102,0.15)]  duration-500"
                         >
                             <div className="flex flex-col items-center text-center gap-4">
                                 <div className="p-4 rounded-full bg-brand-mintDark/15 text-brand-mintDark">
                                     {item.icon}
                                 </div>
-                                <h3 className="text-lg font-semibold text-[#0f2b26]">
+                                <h3 className="text-lg font-semibold text-navy-800">
                                     {item.title}
                                 </h3>
-                                <p className="text-sm text-[#145C52]/80 leading-relaxed">
+                                <p className="text-sm text-navy-700/80 leading-relaxed">
                                     {item.desc}
                                 </p>
                             </div>
@@ -156,7 +156,7 @@ export default function VisionPage(): JSX.Element {
             </section>
 
             {/* ────────────── ④ FOOTNOTE ────────────── */}
-            <footer className="text-center py-16 text-[#145C52]/75 text-sm">
+            <footer className="text-center py-16 text-navy-700/75 text-sm">
                 <motion.p {...fadeUp(0)}>
                     © 2026 SFIN PAY — 모든 비전은 <strong>신뢰</strong>에서 출발합니다.
                 </motion.p>

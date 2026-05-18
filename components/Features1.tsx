@@ -92,17 +92,17 @@ export default function Features1(): JSX.Element {
     return (
         <section
             id="features1"
-            className="relative py-24 px-6 md:px-16 bg-gradient-to-b from-[#e8fff6] via-[#f2fffb] to-white overflow-hidden"
+            className="relative py-24 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white overflow-hidden"
         >
             {/* 💫 상단 시그니처 */}
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-20">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(0,200,155,0.1)] text-[#00b894] text-sm font-medium">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-navy/[0.1] text-navy text-sm font-medium">
                     <Building2 size={16} /> 결제 방식별 솔루션
                 </span>
-                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-[#0f172a] leading-snug">
+                <h2 className="mt-5 text-4xl md:text-5xl font-extrabold text-navy-900 leading-snug">
                     어떤 결제 방식이든{" "}
                     <br className="block md:hidden" />
-                    <span className="text-[#00b894]">한 플랫폼</span>에서
+                    <span className="text-navy">한 플랫폼</span>에서
                 </h2>
                 <p className="mt-5 text-[#334155]/80 text-lg leading-relaxed">
                     카드·간편결제·계좌이체·단말·QR을 한곳에.
@@ -120,11 +120,11 @@ export default function Features1(): JSX.Element {
                             key={b.title}
                             {...fadeUp(i + 1)}
                             onClick={() => goTo(b.href)}
-                            className={`rounded-2xl border border-[rgba(0,200,155,0.22)]
+                            className={`rounded-2xl border border-navy/[0.22]
                                 bg-white/95 backdrop-blur-sm p-7 flex flex-col md:flex-row items-center gap-6
-                                cursor-pointer group  shadow-[0_4px_16px_rgba(0,200,155,0.06)]
+                                cursor-pointer group  shadow-[0_4px_16px_rgba(0,51,102,0.06)]
                                 ${isActive
-                                    ? 'hover:bg-[#f3fffc] hover:shadow-[0_10px_28px_rgba(0,200,155,0.15)] hover:-translate-y-0.5'
+                                    ? 'hover:bg-paper hover:shadow-[0_10px_28px_rgba(0,51,102,0.15)] hover:-translate-y-0.5'
                                     : 'opacity-60 pointer-events-none'}`}
                         >
                             <div className="w-full md:w-[38%] flex justify-center">
@@ -133,13 +133,13 @@ export default function Features1(): JSX.Element {
 
                             <div className="flex-1 text-left">
                                 <div className="flex items-center gap-2 mb-3">
-                                    <div className="p-2 rounded-lg bg-[#00b894]/10 text-[#00b894]">
+                                    <div className="p-2 rounded-lg bg-navy/10 text-navy">
                                         {b.icon}
                                     </div>
-                                    <h3 className="text-xl font-bold text-[#0C3C35]">{b.title}</h3>
+                                    <h3 className="text-xl font-bold text-navy-800">{b.title}</h3>
                                 </div>
 
-                                <p className="text-[15px] text-[#2e5c54]/80 leading-relaxed mb-4">
+                                <p className="text-[15px] text-navy-700/80 leading-relaxed mb-4">
                                     {b.desc}
                                 </p>
 
@@ -147,14 +147,14 @@ export default function Features1(): JSX.Element {
                                     {b.points.map((p) => (
                                         <span
                                             key={p}
-                                            className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-md bg-[#EFFFF9] border border-[#C4F7EC] text-[#0b4d45]"
+                                            className="inline-flex items-center gap-1 text-xs px-2.5 py-1 rounded-md bg-paper border border-mist text-navy-700"
                                         >
                                             <CheckCircle2 size={13} /> {p}
                                         </span>
                                     ))}
                                 </div>
 
-                                <div className="inline-flex items-center gap-1 text-[#00b894] font-semibold group-hover:underline">
+                                <div className="inline-flex items-center gap-1 text-navy font-semibold group-hover:underline">
                                     자세히 보기 <ArrowRight size={14} />
                                 </div>
                             </div>
@@ -164,7 +164,7 @@ export default function Features1(): JSX.Element {
             </div>
 
             {/* 🌿 라이트 민트 배경 효과 */}
-            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_70%_60%,rgba(0,200,155,0.07),transparent_70%)]" />
+            <div className="absolute inset-0 -z-10 bg-[radial-gradient(ellipse_at_70%_60%,rgba(0,51,102,0.07),transparent_70%)]" />
         </section>
     );
 }

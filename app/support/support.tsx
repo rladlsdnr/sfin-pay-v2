@@ -99,7 +99,7 @@ export default function Support(): JSX.Element {
                     🔹 <b>확인 1</b> — Client ID / Secret Key가 운영 환경과 일치하는지 점검
                     <br />
                     🔹 <b>확인 2</b> — 도메인{" "}
-                    <code className="bg-[#d1fae5] px-1.5 rounded">api.sfinpay.co.kr</code> 을
+                    <code className="bg-mist px-1.5 rounded">api.sfinpay.co.kr</code> 을
                     화이트리스트에 등록
                     <br />
                     🔹 <b>확인 3</b> — 401/403 오류 시 Authorization 헤더 누락 여부 확인
@@ -148,9 +148,9 @@ export default function Support(): JSX.Element {
     ];
 
     return (
-        <div className="min-h-screen bg-[#ecfdf5] text-[#0b2723] pt-32">
+        <div className="min-h-screen bg-paper text-navy-900 pt-32">
             {/* HEADER */}
-            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-[#f0fdfa] to-[#ecfdf5] border-b border-[#a7f3d0]/50">
+            <section className="text-center py-20 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/50">
                 <motion.h1
                     {...fadeUp(0)}
                     className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
@@ -159,7 +159,7 @@ export default function Support(): JSX.Element {
                 </motion.h1>
                 <motion.p
                     {...fadeUp(0.2)}
-                    className="text-lg md:text-xl text-[#1e3a34]/80 max-w-3xl mx-auto"
+                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto"
                 >
                     정산, 가맹, 기술, 제휴 등 모든 문의는 아래 메뉴를 통해 접수할 수 있습니다.
                 </motion.p>
@@ -169,7 +169,7 @@ export default function Support(): JSX.Element {
             <section className="py-24 px-6 md:px-16 max-w-6xl mx-auto">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl font-bold text-center mb-12 text-[#0b2723] "
+                    className="text-3xl font-bold text-center mb-12 text-navy-900 "
                 >
                     문의 유형 선택
                 </motion.h2>
@@ -178,16 +178,16 @@ export default function Support(): JSX.Element {
                         <motion.div
                             key={i}
                             {...fadeUp(i * 0.1)}
-                            className="p-8 bg-white border border-[#a7f3d0]/70 rounded-2xl text-center hover:shadow-[0_0_25px_rgba(16,185,129,0.15)] "
+                            className="p-8 bg-white border border-mist/70 rounded-2xl text-center hover:shadow-[0_0_25px_rgba(0,51,102,0.15)] "
                         >
-                            <div className="flex justify-center mb-4 text-[#10b981]">
+                            <div className="flex justify-center mb-4 text-navy">
                                 {item.icon}
                             </div>
                             <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                            <p className="text-[#1e3a34]/80 mb-4">{item.desc}</p>
+                            <p className="text-navy-800/80 mb-4">{item.desc}</p>
                             <button
                                 onClick={() => router.push(item.link)}
-                                className="inline-block mt-2 px-5 py-2 rounded-lg bg-gradient-to-r from-[#34d399] to-[#10b981] hover:from-[#10b981] hover:to-[#059669] text-white text-sm font-medium transition"
+                                className="inline-block mt-2 px-5 py-2 rounded-lg bg-gradient-to-r from-navy to-navy hover:from-navy hover:to-navy-700 text-white text-sm font-medium transition"
                             >
                                 바로 문의하기 →
                             </button>
@@ -200,7 +200,7 @@ export default function Support(): JSX.Element {
             <section className="py-20 px-6 md:px-16 max-w-4xl mx-auto">
                 <motion.h2
                     {...fadeUp(0)}
-                    className="text-3xl font-bold text-center mb-10 text-[#0b2723] "
+                    className="text-3xl font-bold text-center mb-10 text-navy-900 "
                 >
                     자주 묻는 질문 (FAQ)
                 </motion.h2>
@@ -208,13 +208,13 @@ export default function Support(): JSX.Element {
                     <motion.details
                         key={i}
                         {...fadeUp(i * 0.1)}
-                        className="group border-b border-[#a7f3d0]/50 py-6"
+                        className="group border-b border-mist/50 py-6"
                     >
-                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-[#0b2723] hover:text-[#10b981]">
+                        <summary className="flex justify-between items-center cursor-pointer text-lg font-semibold text-navy-900 hover:text-navy">
                             {f.q}
-                            <ChevronDown className="text-[#10b981] group-open:rotate-180 transition-transform" />
+                            <ChevronDown className="text-navy group-open:rotate-180 transition-transform" />
                         </summary>
-                        <div className="mt-3 text-[#1e3a34]/80 leading-relaxed text-[15px] space-y-2">
+                        <div className="mt-3 text-navy-800/80 leading-relaxed text-[15px] space-y-2">
                             {f.a}
                         </div>
                     </motion.details>
@@ -222,10 +222,10 @@ export default function Support(): JSX.Element {
             </section>
 
             {/* CTA */}
-            <section className="py-24 px-6 md:px-16 text-center border-t border-[#a7f3d0]/50">
+            <section className="py-24 px-6 md:px-16 text-center border-t border-mist/50">
                 <motion.p
                     {...fadeUp(0)}
-                    className="text-[#1e3a34]/90 text-lg mb-6 leading-relaxed"
+                    className="text-navy-800/90 text-lg mb-6 leading-relaxed"
                 >
                     추가 문의나 상세 상담이 필요하신가요?
                     담당자가 직접 빠르게 도와드립니다.
@@ -243,9 +243,9 @@ export default function Support(): JSX.Element {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Gmail로 문의하기
                     </a>
@@ -256,9 +256,9 @@ export default function Support(): JSX.Element {
                         target="_blank"
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-                    bg-gradient-to-r from-[#00c89b] to-[#00b894] 
-                    hover:from-[#00b894] hover:to-[#00a884]
-                    text-white font-semibold shadow-[0_6px_20px_rgba(16,185,129,0.25)]"
+                    bg-gradient-to-r from-navy to-navy 
+                    hover:from-navy hover:to-navy
+                    text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
                     >
                         <Mail size={18} /> Outlook으로 문의하기
                     </a>
@@ -271,8 +271,8 @@ export default function Support(): JSX.Element {
                         rel="noopener noreferrer"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
                     border border-emerald-300 bg-white/80 
-                    hover:bg-[#f0fdfa] text-emerald-700 font-semibold 
-                    shadow-[0_6px_15px_rgba(16,185,129,0.15)]"
+                    hover:bg-paper text-emerald-700 font-semibold 
+                    shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
                     >
                         <MessageCircle size={18} /> 카카오톡 상담
                     </a>
@@ -280,9 +280,9 @@ export default function Support(): JSX.Element {
             </section>
 
             {/* CONTACT INFO
-            <section className="py-16 bg-[#f0fdfa] text-center border-t border-[#a7f3d0]/50">
-                <div className="flex flex-col items-center gap-3 text-[#1e3a34]/80">
-                    <Headphones size={32} className="text-[#10b981]" />
+            <section className="py-16 bg-paper text-center border-t border-mist/50">
+                <div className="flex flex-col items-center gap-3 text-navy-800/80">
+                    <Headphones size={32} className="text-navy" />
                     <p className="font-medium">
                         고객센터 : 1544-7788 | support@sfinpay.co.kr
                     </p>

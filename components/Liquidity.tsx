@@ -20,8 +20,8 @@ const fadeUp = (i = 0) => ({
 // 사용 예시
 export default function Liquidity(): JSX.Element {
     return (
-        <section className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-[#E9FFF6] via-[#F4FFFC] to-white">
-            <motion.div {...fadeUp(0)} className="max-w-5xl mx-auto mb-20 rounded-2xl border border-[rgba(0,200,155,0.22)] bg-white shadow-[0_8px_28px_rgba(0,200,155,0.09)]">
+        <section className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white">
+            <motion.div {...fadeUp(0)} className="max-w-5xl mx-auto mb-20 rounded-2xl border border-navy/[0.22] bg-white shadow-[0_8px_28px_rgba(0,51,102,0.09)]">
                 {/* ... */}
             </motion.div>
 

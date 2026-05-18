@@ -80,7 +80,7 @@ export default function Chatbot(): JSX.Element {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 onClick={() => setIsChatOpen(p => !p)}
-                className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-[#00b894] flex items-center justify-center shadow-lg text-white hover:shadow-xl"
+                className="w-12 h-12 sm:w-16 sm:h-16 rounded-full bg-navy flex items-center justify-center shadow-lg text-white hover:shadow-xl"
                 aria-label="SFIN PAY 상담 열기"
             >
                 {isChatOpen ? <X size={24} /> : <MessageSquare size={24} />}
@@ -97,12 +97,12 @@ export default function Chatbot(): JSX.Element {
                         className={`
               fixed inset-0 w-screen h-[calc(100dvh-84px)] rounded-none border-none
               sm:inset-auto sm:bottom-28 sm:right-6 sm:w-[420px] sm:max-h-[620px]
-              sm:rounded-2xl sm:border sm:border-[#a6f2df]
+              sm:rounded-2xl sm:border sm:border-mist
               flex flex-col bg-white shadow-[0_8px_40px_rgba(0,0,0,0.12)] overflow-hidden
             `}
                     >
                         {/* 헤더 (고정 높이) */}
-                        <div className="bg-[#00b894] text-white px-4 py-2.5 sm:px-5 sm:py-3 flex items-center justify-between text-sm sm:text-base font-semibold">
+                        <div className="bg-navy text-white px-4 py-2.5 sm:px-5 sm:py-3 flex items-center justify-between text-sm sm:text-base font-semibold">
                             <span>💬 SFIN PAY 자동상담</span>
                             <button onClick={() => setIsChatOpen(false)} className="hover:opacity-80 transition" aria-label="닫기">
                                 <X size={18} />
@@ -116,7 +116,7 @@ export default function Chatbot(): JSX.Element {
                 flex-1 overflow-y-auto space-y-3
                 px-3 sm:px-5 py-3 sm:py-4
                 text-[13px] sm:text-[15px] leading-relaxed
-                scrollbar-thin scrollbar-thumb-[#36ffc6]/50 scrollbar-track-transparent
+                scrollbar-thin scrollbar-thumb-navy/50 scrollbar-track-transparent
               "
                         >
                             {messages.map((msg, idx) => (
@@ -126,8 +126,8 @@ export default function Chatbot(): JSX.Element {
                       px-3 py-2.5 sm:px-4 sm:py-3 rounded-xl shadow-sm max-w-[84%]
                       text-[12px] sm:text-[14px]
                       ${msg.from === "user"
-                                                ? "bg-[#36ffc6]/90 text-[#004d3f] whitespace-pre-line"
-                                                : "bg-[#f5fffd] text-[#004d3f] border border-[#c5fff0]"}
+                                                ? "bg-navy/90 text-navy-800 whitespace-pre-line"
+                                                : "bg-paper text-navy-800 border border-mist"}
                     `}
                                     >
                                         {msg.text}
@@ -142,7 +142,7 @@ export default function Chatbot(): JSX.Element {
                             <div
                                 className="
                   px-3 py-2.5 sm:px-4 sm:py-4
-                  bg-[#f0fff9] border-b border-gray-200
+                  bg-paper border-b border-gray-200
                 "
                             >
                                 <div className="flex flex-wrap gap-1.5 sm:gap-2">
@@ -153,12 +153,12 @@ export default function Chatbot(): JSX.Element {
                                             className="
                         px-3.5 py-2 text-[13px]
                         sm:px-3 sm:py-1.5 sm:text-xs
-                        rounded-full border border-[#36ffc6]/40 bg-white
-                        hover:bg-[#36ffc6]/10 text-[#007a65] font-medium
+                        rounded-full border border-navy/40 bg-white
+                        hover:bg-navy/10 text-navy-700 font-medium
                         transition flex items-center
                       "
                                         >
-                                            <HelpCircle size={14} className="mr-1 text-[#00d8b8] sm:w-3 sm:h-3" />
+                                            <HelpCircle size={14} className="mr-1 text-navy sm:w-3 sm:h-3" />
                                             {faq.keywords[0]}
                                         </button>
                                     ))}
@@ -176,15 +176,15 @@ export default function Chatbot(): JSX.Element {
                                         placeholder="문의 내용을 입력하세요..."
                                         className="
                       flex-1 px-3 py-2 text-[13px] sm:text-sm
-                      border border-[#a6f2df] rounded-lg
-                      focus:ring-1 focus:ring-[#36ffc6]/70 outline-none
+                      border border-mist rounded-lg
+                      focus:ring-1 focus:ring-navy/70 outline-none
                     "
                                     />
                                     <button
                                         onClick={handleSend}
                                         className="
-                      p-2.5 sm:p-3 rounded-full bg-[#00b894]
-                      hover:bg-[#00d8b8] text-white transition
+                      p-2.5 sm:p-3 rounded-full bg-navy
+                      hover:bg-navy text-white transition
                       flex items-center justify-center
                     "
                                     >

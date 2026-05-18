@@ -38,16 +38,16 @@ export default function SettlementComparison({
     return (
         <div className="grid md:grid-cols-2 gap-8">
             {/* 📈 라인차트 */}
-            <div className="h-72 bg-white rounded-xl border border-[#C4F7EC] shadow-[0_6px_20px_rgba(0,184,148,0.08)] p-4">
+            <div className="h-72 bg-white rounded-xl border border-mist shadow-[0_6px_20px_rgba(0,51,102,0.08)] p-4">
                 <ResponsiveContainer width="100%" height="100%">
                     <LineChart data={sample}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#E6FFFA" />
-                        <XAxis dataKey="name" tick={{ fill: '#0B4D45' }} />
-                        <YAxis tick={{ fill: '#0B4D45' }} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#fbfcfd" />
+                        <XAxis dataKey="name" tick={{ fill: '#002b57' }} />
+                        <YAxis tick={{ fill: '#002b57' }} />
                         <Tooltip
                             contentStyle={{
-                                backgroundColor: '#F3FFFC',
-                                border: '1px solid #C4F7EC',
+                                backgroundColor: '#fbfcfd',
+                                border: '1px solid #d6e2ee',
                             }}
                         />
                         <Legend />
@@ -55,46 +55,46 @@ export default function SettlementComparison({
                             type="monotone"
                             dataKey="ours"
                             name="SFIN 정산"
-                            stroke="#00b894"
+                            stroke="#003366"
                             strokeWidth={3}
-                            dot={{ r: 5, stroke: '#00c89b', fill: '#00b894' }}
+                            dot={{ r: 5, stroke: '#003366', fill: '#003366' }}
                         />
                         <Line
                             type="monotone"
                             dataKey="others"
                             name="타사 정산"
-                            stroke="#A7ECDD"
+                            stroke="#d6e2ee"
                             strokeWidth={2}
-                            dot={{ r: 4, stroke: '#A7ECDD', fill: '#A7ECDD' }}
+                            dot={{ r: 4, stroke: '#d6e2ee', fill: '#d6e2ee' }}
                         />
                     </LineChart>
                 </ResponsiveContainer>
             </div>
 
             {/* 📊 막대차트 */}
-            <div className="h-72 bg-white rounded-xl border border-[#C4F7EC] shadow-[0_6px_20px_rgba(0,184,148,0.08)] p-4">
+            <div className="h-72 bg-white rounded-xl border border-mist shadow-[0_6px_20px_rgba(0,51,102,0.08)] p-4">
                 <ResponsiveContainer width="100%" height="100%">
                     <BarChart data={sample}>
-                        <CartesianGrid strokeDasharray="3 3" stroke="#E6FFFA" />
-                        <XAxis dataKey="name" tick={{ fill: '#0B4D45' }} />
-                        <YAxis tick={{ fill: '#0B4D45' }} />
+                        <CartesianGrid strokeDasharray="3 3" stroke="#fbfcfd" />
+                        <XAxis dataKey="name" tick={{ fill: '#002b57' }} />
+                        <YAxis tick={{ fill: '#002b57' }} />
                         <Tooltip
                             contentStyle={{
-                                backgroundColor: '#F3FFFC',
-                                border: '1px solid #C4F7EC',
+                                backgroundColor: '#fbfcfd',
+                                border: '1px solid #d6e2ee',
                             }}
                         />
                         <Legend />
                         <Bar
                             dataKey="ours"
                             name="SFIN 정산"
-                            fill="#00b894"
+                            fill="#003366"
                             radius={[6, 6, 0, 0]}
                         />
                         <Bar
                             dataKey="others"
                             name="타사 정산"
-                            fill="#A7ECDD"
+                            fill="#d6e2ee"
                             radius={[6, 6, 0, 0]}
                         />
                     </BarChart>
