@@ -215,7 +215,7 @@ function HeroVisual(): JSX.Element {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img
-              src="/new_logo.png"
+              src="/sfinpayment.png"
               alt=""
               aria-hidden
               className="h-7 w-7 object-contain"

@@ -54,9 +54,9 @@ export const metadata = {
     images: ["/sfinpay.png"],
   },
   icons: {
-    icon: "/new_logo.png",
-    shortcut: "/new_logo.png",
-    apple: "/new_logo.png",
+    icon: "/sfinpayment.png",
+    shortcut: "/sfinpayment.png",
+    apple: "/sfinpayment.png",
   },
 };
 
@@ -90,7 +90,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href="/favicon.ico" />
         <link rel="apple-touch-icon" href="/favicon.ico" />
         */}
-        <link rel="icon" type="image/png" href="/new_logo.png" />
+        <link rel="icon" type="image/png" href="/sfinpayment.png" />
         {/* ✅ Schema.org 구조화 데이터 */}
         <script
           type="application/ld+json"

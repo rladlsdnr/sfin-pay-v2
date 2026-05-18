@@ -235,7 +235,7 @@ export default function Navbar(): JSX.Element {
                         style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
                         <img
-                            src='/new_logo.png'
+                            src='/sfinpayment.png'
                             alt="SFIN PAY"
                             className="w-11 h-11 object-contain"
                         />
