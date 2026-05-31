@@ -1,62 +1,25 @@
-﻿'use client';
-import React, { useState } from 'react';
+'use client';
+import React from 'react';
 
-interface SecurityPolicyPDFGeneratorProps {
-    targetSelector?: string;
-}
-
-export default function SecurityPolicyPDFGenerator({
-    targetSelector = '#security-policy',
-}: SecurityPolicyPDFGeneratorProps): JSX.Element {
-    const [busy, setBusy] = useState(false);
-
-    const handleGenerate = async (): Promise<void> => {
-        setBusy(true);
-        try {
-            const [{ default: html2canvas }, { jsPDF }] = await Promise.all([
-                import('html2canvas'),
-                import('jspdf'),
-            ]);
-
-            const el = document.querySelector(targetSelector);
-            if (!el) throw new Error('대상 요소를 찾을 수 없습니다.');
-
-            const canvas = await html2canvas(el as HTMLElement, {
-                scale: 2,
-                useCORS: true,
-            });
-
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF('p', 'mm', 'a4');
-
-            const pageWidth = pdf.internal.pageSize.getWidth();
-            const imgWidth = pageWidth;
-            const imgHeight = (canvas.height * imgWidth) / canvas.width;
-
-            let remaining = imgHeight;
-
-            while (remaining > 0) {
-                pdf.addImage(imgData, 'PNG', 0, 0, imgWidth, imgHeight);
-                remaining -= pdf.internal.pageSize.getHeight();
-                if (remaining > 0) pdf.addPage();
-            }
-
-            pdf.save('security-policy.pdf');
-        } catch (error) {
-            console.error(error);
-            alert('PDF 생성 중 오류가 발생했습니다.');
-        } finally {
-            setBusy(false);
-        }
+/**
+ * 보안정책 PDF 저장 버튼
+ * --------------------------------------------------
+ * 브라우저 기본 인쇄 기능(window.print)을 사용합니다.
+ * 인쇄 대화상자에서 "PDF로 저장"을 선택하면 됩니다.
+ * 네비게이션·푸터·이 버튼은 인쇄 전용 스타일(globals.css의 @media print)에서
+ * 숨겨지므로 본문만 깔끔하게 출력됩니다. 텍스트는 선택·복사가 가능합니다.
+ */
+export default function SecurityPolicyPDFGenerator(): JSX.Element {
+    const handlePrint = (): void => {
+        if (typeof window !== 'undefined') window.print();
     };
 
     return (
         <button
-            onClick={handleGenerate}
-            disabled={busy}
-            className="bg-navy text-white px-4 py-2 rounded-lg hover:bg-navy disabled:opacity-60 transition"
+            onClick={handlePrint}
+            className="no-print bg-navy text-white px-5 py-2.5 rounded-lg hover:opacity-90 transition"
         >
-            {busy ? '생성 중...' : 'PDF로 저장'}
+            PDF로 저장
         </button>
     );
 }

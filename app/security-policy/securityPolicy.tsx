@@ -7,12 +7,13 @@ import SecurityPolicyPDFGenerator from "../../components/SecurityPolicyPDFGenera
 export default function SecurityPolicy() {
     return (
         <motion.main
-            id="security-policy-content"
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
             className="min-h-screen text-navy-900 px-6 md:px-16 py-28"
         >
+          {/* ✅ PDF 캡처 대상 — 본문만 감싸 여백/버튼이 안 잡히도록 함 */}
+          <div id="security-policy-content">
             {/* 제목 영역 */}
             <div className="max-w-4xl mx-auto text-center mb-16">
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(168,85,247,0.1)] text-[#6d3bd1] text-sm font-semibold ">
@@ -113,8 +114,10 @@ export default function SecurityPolicy() {
                     SFIN PAY는 서비스 환경 및 법규 변경에 따라 보안정책을 지속적으로 갱신합니다.
                 </p>
             </div>
+          </div>
+          {/* /PDF 캡처 대상 끝 */}
 
-            {/* ✅ PDF 다운로드 버튼 */}
+            {/* ✅ PDF 다운로드 버튼 (캡처 영역 바깥) */}
             <div className="mt-16 text-center">
                 <SecurityPolicyPDFGenerator />
             </div>

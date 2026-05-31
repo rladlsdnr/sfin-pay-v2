@@ -493,3 +493,55 @@ code {
   background: linear-gradient(135deg, #8ea7ff 0%, #6c8bff 50%, #5566e8 100%);
   box-shadow: 0 40px 70px -34px rgba(60,40,160,0.5);
 }
+
+/* ============================================================
+   🖨️ 인쇄(PDF 저장) 전용 스타일
+   - 네비게이션·푸터·인쇄 버튼은 숨김
+   - 배경은 흰색, 본문 여백은 인쇄에 알맞게 축소
+   - 텍스트는 그대로 선택·복사 가능
+   ============================================================ */
+@media print {
+  /* 전역 배경/색상 강제 출력 */
+  html, body {
+    background: #ffffff !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* 네비게이션·푸터·스크롤 버튼·인쇄 버튼 숨김 */
+  nav,
+  footer,
+  .no-print {
+    display: none !important;
+  }
+
+  /* 본문 컨테이너 여백 정리 */
+  #security-policy-content {
+    padding: 0 !important;
+    margin: 0 auto !important;
+    max-width: 100% !important;
+  }
+
+  /* 본문을 감싼 main의 과한 상하 여백 축소 */
+  main {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* 섹션이 페이지 경계에서 잘리지 않도록 */
+  #security-policy-content section {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* 인쇄 시 색상이 흐려지지 않도록 */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* 페이지 여백 */
+  @page {
+    margin: 14mm;
+  }
+}
