@@ -24,7 +24,7 @@ export default function Security(): JSX.Element {
     return (
         <section
             id="security"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white overflow-hidden"
+            className="relative py-28 px-6 md:px-16  overflow-hidden"
         >
             {/* ✨ 헤더 */}
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-16">

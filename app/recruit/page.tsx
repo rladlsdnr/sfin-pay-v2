@@ -1,233 +1,77 @@
-﻿"use client";
-import React, { useEffect, useState, ChangeEvent, FormEvent } from "react";
+"use client";
+import React, { useState, ChangeEvent, FormEvent } from "react";
 import { motion } from "framer-motion";
-import { Mail, Send, Phone, FileText } from "lucide-react";
+import { Briefcase, Handshake, Send, CheckCircle2, Loader2 } from "lucide-react";
+import PageHero from "../../components/PageHero";
+
+const EASE = [0.16, 1, 0.3, 1] as const;
 
 export default function Recruit(): JSX.Element {
-    useEffect(() => window.scrollTo(0, 0), []);
+  const [tab, setTab] = useState<"job" | "partner">("job");
+  const [form, setForm] = useState({ name: "", email: "", company: "", field: "", message: "" });
+  const [status, setStatus] = useState<"idle" | "loading" | "done">("idle");
 
-    const [tab, setTab] = useState<"job" | "partner">("job");
-    const [form, setForm] = useState({
-        name: "",
-        email: "",
-        company: "",
-        field: "",
-        message: "",
-        file: null as File | null,
-    });
+  const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
+    setForm((f) => ({ ...f, [e.target.name]: e.target.value }));
 
-    const fadeUp = (i = 0) => ({
-        initial: { opacity: 1, y: 25 },
-        whileInView: { opacity: 1, y: 0 },
-        viewport: { once: true, amount: 0 },
-        transition: { duration: 0.6, delay: i * 0.1 },
-    });
+  const onSubmit = (e: FormEvent) => {
+    e.preventDefault();
+    setStatus("loading");
+    const subject = encodeURIComponent(`[${tab === "job" ? "채용 지원" : "파트너 제휴"}] ${form.name}`);
+    const body = encodeURIComponent(`이름: ${form.name}\n이메일: ${form.email}\n회사/소속: ${form.company}\n분야: ${form.field}\n\n${form.message}`);
+    setTimeout(() => {
+      window.location.href = `mailto:sfinpay@gmail.com?subject=${subject}&body=${body}`;
+      setStatus("done");
+    }, 600);
+  };
 
-    const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) =>
-        setForm({ ...form, [e.target.name]: e.target.value });
+  const input = "w-full rounded-xl px-4 py-3 text-[15px] text-navy-900 bg-white/70 border border-[rgba(124,108,255,0.2)] outline-none focus:border-[rgba(124,108,255,0.55)] transition placeholder:text-ink-soft";
 
-    const handleFile = (e: ChangeEvent<HTMLInputElement>) =>
-        setForm({ ...form, file: e.target.files ? e.target.files[0] : null });
+  return (
+    <div className="relative z-10">
+      <PageHero icon={Briefcase} kicker="JOIN US" bg="/photos/p18.png"
+        title={<>SFIN PAY와 <span className="heading-gradient">함께하기</span></>}
+        subtitle="채용 지원과 파트너 제휴를 한 곳에서. 아래 양식을 작성하시면 담당자가 빠르게 연락드립니다." />
 
-    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        alert(
-            tab === "job"
-                ? "채용 문의가 접수되었습니다. 담당자가 검토 후 연락드리겠습니다."
-                : "파트너 문의가 접수되었습니다. 담당 부서에서 확인 후 연락드리겠습니다."
-        );
-        setForm({
-            name: "",
-            email: "",
-            company: "",
-            field: "",
-            message: "",
-            file: null,
-        });
-    };
+      <section className="relative py-16 md:py-20 px-6">
+        <div className="max-w-2xl mx-auto">
+          {/* 탭 */}
+          <div className="flex gap-2 p-1.5 rounded-2xl glass-light w-full sm:w-fit mx-auto">
+            {([["job", "채용 지원", Briefcase], ["partner", "파트너 제휴", Handshake]] as const).map(([k, label, Icon]) => (
+              <button key={k} onClick={() => setTab(k)} className={`flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-2.5 rounded-xl text-[14px] font-bold transition ${tab === k ? "text-white" : "text-ink-muted hover:text-navy-900"}`}
+                style={tab === k ? { background: "var(--brand-grad)", boxShadow: "0 8px 20px -6px rgba(124,108,255,0.55)" } : {}}>
+                <Icon size={16} /> {label}
+              </button>
+            ))}
+          </div>
 
-    return (
-        <div className="min-h-screen bg-paper text-navy-900 pt-32 ">
-            {/* HEADER */}
-            <section className="text-center py-24 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist">
-                <motion.h1
-                    {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
-                >
-                    채용 및 파트너 문의
-                </motion.h1>
-                <motion.p
-                    {...fadeUp(0.2)}
-                    className="text-lg md:text-xl text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
-                >
-                    SFIN PAY는{" "}
-                    <strong className="text-navy-700">기술 중심의 결제 혁신</strong>을 함께
-                    만들어갈 인재와 파트너를 찾고 있습니다.
-                    <br />
-                    민트빛 성장, 지금 함께하세요.
-                </motion.p>
-            </section>
-
-            {/* TAB BUTTONS */}
-            <section className="py-10 text-center bg-paper/70 border-b border-mist">
-                <div className="inline-flex bg-[#ffffff] border border-mist/60 rounded-full p-1 shadow-sm">
-                    <button
-                        onClick={() => setTab("job")}
-                        className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold  ${tab === "job"
-                            ? "bg-gradient-to-r from-navy to-navy text-white shadow-md"
-                            : "bg-transparent text-navy-800/80 hover:bg-mist/60 hover:text-navy-700"
-                            }`}
-                    >
-                        채용 문의
-                    </button>
-                    <button
-                        onClick={() => setTab("partner")}
-                        className={`w-36 md:w-44 px-6 py-3 rounded-full font-semibold  ${tab === "partner"
-                            ? "bg-gradient-to-r from-navy to-navy text-white shadow-md"
-                            : "bg-transparent text-navy-800/80 hover:bg-mist/60 hover:text-navy-700"
-                            }`}
-                    >
-                        파트너 문의
-                    </button>
+          <motion.form key={tab} initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, ease: EASE }}
+            onSubmit={onSubmit} className="mt-8 glass-light-strong rounded-3xl p-7 md:p-9 space-y-4">
+            {status === "done" ? (
+              <div className="text-center py-10">
+                <span className="grid place-items-center mx-auto h-16 w-16 rounded-full text-white" style={{ background: "var(--brand-grad)" }}><CheckCircle2 size={30} /></span>
+                <h3 className="mt-5 text-xl font-extrabold text-navy-900">접수되었습니다</h3>
+                <p className="mt-2 text-[14.5px] text-ink-muted">메일 작성 창이 열립니다. 빠르게 검토 후 연락드리겠습니다.</p>
+              </div>
+            ) : (
+              <>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div><label className="text-[13px] font-semibold text-navy-900">이름</label><input name="name" required value={form.name} onChange={onChange} className={`mt-1.5 ${input}`} placeholder="홍길동" /></div>
+                  <div><label className="text-[13px] font-semibold text-navy-900">이메일</label><input name="email" type="email" required value={form.email} onChange={onChange} className={`mt-1.5 ${input}`} placeholder="you@email.com" /></div>
                 </div>
-
-                <p className="text-navy-800/70 mt-4 text-sm md:text-base">
-                    {tab === "job"
-                        ? "SFIN PAY와 함께 성장할 민트빛 인재를 기다립니다."
-                        : "함께 시너지를 낼 수 있는 파트너십을 제안해주세요."}
-                </p>
-            </section>
-
-            {/* FORM */}
-            <section className="pb-28 px-6 md:px-16 bg-gradient-to-b from-paper to-[#ffffff] text-center">
-                <motion.form
-                    {...fadeUp(0.3)}
-                    onSubmit={handleSubmit}
-                    className="max-w-3xl mx-auto bg-white rounded-2xl shadow-[0_6px_25px_rgba(0,51,102,0.1)] border border-mist/70 p-10 text-left"
-                >
-                    <h2 className="text-3xl font-bold mb-8 text-center text-navy-900">
-                        {tab === "job" ? "채용 문의" : "파트너 문의"}
-                    </h2>
-
-                    {tab === "partner" && (
-                        <div className="mb-6">
-                            <label className="block text-navy-900 font-medium mb-2">회사명</label>
-                            <input
-                                type="text"
-                                name="company"
-                                value={form.company}
-                                onChange={handleChange}
-                                required
-                                placeholder="회사 또는 단체명을 입력하세요"
-                                className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy"
-                            />
-                        </div>
-                    )}
-
-                    <div className="mb-6">
-                        <label className="block text-navy-900 font-medium mb-2">이름</label>
-                        <input
-                            type="text"
-                            name="name"
-                            value={form.name}
-                            onChange={handleChange}
-                            required
-                            placeholder="성함을 입력하세요"
-                            className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy"
-                        />
-                    </div>
-
-                    <div className="mb-6">
-                        <label className="block text-navy-900 font-medium mb-2">이메일</label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={form.email}
-                            onChange={handleChange}
-                            required
-                            placeholder="sfinpay@gmail.com"
-                            className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy"
-                        />
-                    </div>
-
-                    <div className="mb-6">
-                        <label className="block text-navy-900 font-medium mb-2">
-                            {tab === "job" ? "지원 분야" : "제휴 분야"}
-                        </label>
-                        <input
-                            type="text"
-                            name="field"
-                            value={form.field}
-                            onChange={handleChange}
-                            placeholder={
-                                tab === "job" ? "예: 개발, 디자인, 운영 등" : "예: 금융기관, 가맹점, VAN 등"
-                            }
-                            className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy"
-                        />
-                    </div>
-
-                    <div className="mb-8">
-                        <label className="block text-navy-900 font-medium mb-2">
-                            {tab === "job" ? "자기소개 / 경력 요약" : "제안 내용"}
-                        </label>
-                        <textarea
-                            name="message"
-                            value={form.message}
-                            onChange={handleChange}
-                            rows={5}
-                            required
-                            placeholder={
-                                tab === "job"
-                                    ? "자신의 경력, 관심 분야 등을 간단히 소개해주세요."
-                                    : "제안 또는 문의 내용을 작성해주세요."
-                            }
-                            className="w-full px-4 py-3 border border-mist rounded-lg focus:border-navy resize-none"
-                        />
-                    </div>
-
-                    {tab === "job" && (
-                        <div className="mb-8">
-                            <label className="block text-navy-900 font-medium mb-2">
-                                이력서 / 포트폴리오 (선택)
-                            </label>
-                            <input
-                                type="file"
-                                name="file"
-                                onChange={handleFile}
-                                accept=".pdf,.doc,.docx"
-                                className="w-full border border-dashed border-mist rounded-lg px-4 py-3 text-navy-800/70 cursor-pointer"
-                            />
-                        </div>
-                    )}
-
-                    <motion.button
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        type="submit"
-                        className="w-full flex items-center justify-center gap-2 px-6 py-4 rounded-xl bg-gradient-to-r from-gold to-gold-dark text-navy-900 font-semibold text-lg shadow-[0_8px_25px_rgba(255,184,0,0.3)]"
-                    >
-                        {tab === "job" ? <FileText size={20} /> : <Send size={20} />}
-                        {tab === "job" ? "제출하기" : "문의 보내기"}
-                    </motion.button>
-                </motion.form>
-            </section>
-
-            {/* CONTACT INFO */}
-            <section className="py-20 px-6 md:px-16 bg-[#ffffff] border-t border-mist text-center">
-                <motion.div {...fadeUp(0)} className="max-w-4xl mx-auto">
-                    <h3 className="text-2xl font-bold text-navy-900 mb-8">기타 문의</h3>
-                    <div className="flex flex-wrap justify-center gap-8 text-navy-800/85 text-lg">
-                        <div className="flex items-center gap-3">
-                            <Mail className="text-navy" size={22} />
-                            <span>sfinpay@gmail.com</span>
-                        </div>
-                        <div className="flex items-center gap-3">
-                            <Phone className="text-navy" size={22} />
-                            <span>010-2740-1530</span>
-                        </div>
-                    </div>
-                </motion.div>
-            </section>
+                <div className="grid sm:grid-cols-2 gap-4">
+                  <div><label className="text-[13px] font-semibold text-navy-900">{tab === "job" ? "현재 소속" : "회사명"}</label><input name="company" value={form.company} onChange={onChange} className={`mt-1.5 ${input}`} placeholder={tab === "job" ? "재직 중인 회사 (선택)" : "회사명"} /></div>
+                  <div><label className="text-[13px] font-semibold text-navy-900">{tab === "job" ? "지원 분야" : "제휴 분야"}</label><input name="field" value={form.field} onChange={onChange} className={`mt-1.5 ${input}`} placeholder={tab === "job" ? "예: 개발 / 영업 / 운영" : "예: 단말기 / 영업 / 기술"} /></div>
+                </div>
+                <div><label className="text-[13px] font-semibold text-navy-900">메시지</label><textarea name="message" rows={5} value={form.message} onChange={onChange} className={`mt-1.5 ${input} resize-none`} placeholder={tab === "job" ? "간단한 자기소개와 지원 동기를 남겨주세요." : "제휴 제안 내용을 남겨주세요."} /></div>
+                <button type="submit" disabled={status === "loading"} className="btn-brand w-full inline-flex items-center justify-center gap-2 py-4 rounded-2xl font-bold text-base text-white disabled:opacity-70">
+                  {status === "loading" ? <><Loader2 size={18} className="animate-spin" /> 처리 중...</> : <><Send size={17} /> 제출하기</>}
+                </button>
+              </>
+            )}
+          </motion.form>
         </div>
-    );
+      </section>
+    </div>
+  );
 }

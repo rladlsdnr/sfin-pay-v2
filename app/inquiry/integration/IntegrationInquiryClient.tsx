@@ -344,10 +344,10 @@ export default function IntegrationInquiryClient(): JSX.Element {
     useEffect(() => window.scrollTo(0, 0), []);
 
     return (
-        <div className="min-h-screen bg-paper text-navy-900">
+        <div className="min-h-screen text-navy-900">
 
             {/* ========================== HERO ========================== */}
-            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/40">
+            <section className="pt-28 pb-16 px-6 md:px-16  border-b border-mist/40">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         {...fadeUp(0)}
@@ -362,7 +362,7 @@ export default function IntegrationInquiryClient(): JSX.Element {
                         {...fadeUp(0.2)}
                         className="mt-6 text-lg md:text-xl text-navy-700/80 max-w-3xl mx-auto leading-relaxed"
                     >
-                        PG 연동, 결제 모듈, Webhook, SDK, 테스트 환경 등
+                        결제 연동, 결제 모듈, 테스트 환경 등
                         <br />모든 기술 문의를 담당 개발팀이 직접 답변합니다.
                     </motion.p>
                 </div>

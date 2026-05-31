@@ -92,7 +92,7 @@ export default function Features1(): JSX.Element {
     return (
         <section
             id="features1"
-            className="relative py-24 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white overflow-hidden"
+            className="relative py-24 px-6 md:px-16  overflow-hidden"
         >
             {/* 💫 상단 시그니처 */}
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-20">

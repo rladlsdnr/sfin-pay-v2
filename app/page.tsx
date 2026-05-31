@@ -1,47 +1,21 @@
-﻿import Hero from "../components/Hero";
-import Partners from "../components/Partners";
-import Features1 from "../components/Features1";
-import Features2 from "../components/Features2";
-import Settlement from "../components/Settlement";
-import Liquidity from "../components/Liquidity";
-import Security from "../components/Security";
-import API from "../components/API";
-import Insights from "../components/Insights";
-import Compliance from "../components/Compliance";
-import Contact from "../components/Contact";
+import Hero from "../components/Hero";
+import Marquee from "../components/home/Marquee";
+import ValueBento from "../components/home/ValueBento";
+import Positioning from "../components/home/Positioning";
+import SettlementShowcase from "../components/home/SettlementShowcase";
+import Industries from "../components/home/Industries";
+import CTASection from "../components/home/CTASection";
 
 export default function HomePage(): JSX.Element {
-  /** ✅ Features1, Features2 로 분리 반영 */
-  const sections = [
-    Hero,
-    Partners,
-    Features1,
-    Features2,
-    Settlement,
-    Liquidity,
-    Security,
-    API,
-    //Insights,
-    Compliance,
-    Contact,
-  ];
-
   return (
-    <main className="relative z-10">
-      {sections.map((Component, i) => (
-        <section
-          key={i}
-          className="
-            relative
-            border-t border-mist/40
-            bg-gradient-to-b from-brand-mintLight/60 to-white/60
-            backdrop-blur-[2px]
-            transition-colors duration-700
-          "
-        >
-          <Component />
-        </section>
-      ))}
-    </main>
+    <div className="relative z-10">
+      <Hero />
+      <Marquee />
+      <ValueBento />
+      <Positioning />
+      <SettlementShowcase />
+      <Industries />
+      <CTASection />
+    </div>
   );
 }

@@ -24,15 +24,21 @@ export default function Footer(): JSX.Element {
             bg-gradient-to-b from-paper to-paper"
             aria-label="사이트 하단 정보"
         >
+            <div className="pointer-events-none absolute -top-24 left-1/2 -translate-x-1/2 h-64 w-[42rem] max-w-[90vw] rounded-full blur-[100px]" style={{ background: 'radial-gradient(circle, rgba(124,108,255,0.16), transparent 70%)' }} />
             <div className="relative z-10 max-w-6xl mx-auto">
+                {/* 브랜드 마크 */}
+                <div className="flex items-center justify-center md:justify-start gap-3 mb-10">
+                    <span className="grid place-items-center w-11 h-11 rounded-full bg-white ring-1 ring-[rgba(124,108,255,0.35)] shadow-[0_6px_18px_-6px_rgba(124,108,255,0.55)]"><img src="/sfin-mark.png" alt="" className="w-full h-full object-contain p-[3px]" /></span>
+                    <span className="text-xl font-extrabold text-navy-900 tracking-tight">SFIN PAY</span>
+                </div>
                 {/* 📞 회사 정보 */}
                 <motion.div
                     {...fadeUp(0)}
                     className="grid md:grid-cols-3 gap-10 text-[#334155]/80 text-center md:text-left"
                 >
                     <div>
-                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy font-semibold">
-                            <Building2 size={18} aria-hidden />
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy-900 font-semibold">
+                            <Building2 size={18} aria-hidden  className="text-[#6d3bd1]" />
                             SFIN PAY
                         </div>
                         {/*<p className="text-sm leading-relaxed">
@@ -41,16 +47,16 @@ export default function Footer(): JSX.Element {
                     </div>
 
                     <div>
-                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy font-semibold">
-                            <Mail size={18} aria-hidden />
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy-900 font-semibold">
+                            <Mail size={18} aria-hidden  className="text-[#6d3bd1]" />
                             문의 메일
                         </div>
                         <p className="text-sm leading-relaxed">sfinpay@gmail.com</p>
                     </div>
 
                     <div>
-                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy font-semibold">
-                            <Phone size={18} aria-hidden />
+                        <div className="flex items-center justify-center md:justify-start gap-2 mb-2 text-navy-900 font-semibold">
+                            <Phone size={18} aria-hidden  className="text-[#6d3bd1]" />
                             대표 전화
                         </div>
                         <p className="text-sm leading-relaxed">010-2740-1530</p>
@@ -66,7 +72,7 @@ export default function Footer(): JSX.Element {
                         {/* 🔥 정확한 라우트로 수정됨 */}
                         <Link
                             href="/termsofuse"
-                            className="hover:text-navy transition"
+                            className="hover:text-[#6d3bd1] transition"
                             aria-label="이용약관"
                         >
                             이용약관
@@ -74,7 +80,7 @@ export default function Footer(): JSX.Element {
 
                         <Link
                             href="/privacy"
-                            className="hover:text-navy transition"
+                            className="hover:text-[#6d3bd1] transition"
                             aria-label="개인정보처리방침"
                         >
                             개인정보처리방침
@@ -82,7 +88,7 @@ export default function Footer(): JSX.Element {
 
                         <Link
                             href="/security"
-                            className="hover:text-navy transition"
+                            className="hover:text-[#6d3bd1] transition"
                             aria-label="보안정책"
                         >
                             보안정책
@@ -91,7 +97,7 @@ export default function Footer(): JSX.Element {
                 </motion.div>
 
                 {/* 👣 저작권 */}
-                <div className="mt-10 border-t border-navy/[0.25] 
+                <div className="mt-10 border-t border-[rgba(124,108,255,0.18)] 
                     pt-6 text-center text-[#475569]/70 text-sm flex flex-col 
                     md:flex-row items-center justify-center gap-2">
                     <Copyright size={14} aria-hidden />

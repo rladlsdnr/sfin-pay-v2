@@ -103,8 +103,8 @@ export default function Features2(): JSX.Element {
             lottie: personalAnim,
             title: '개인 · 프리랜서',
             sub: '결제링크 · 1인사업자 · 인플루언서',
-            desc: '사업자등록 없이도 결제 링크를 생성해 대금을 받을 수 있는 비사업자 맞춤형 결제 솔루션입니다.',
-            keywords: ['결제링크', '비사업자결제', '1인창작자'],
+            desc: '결제 링크를 생성해 대금을 손쉽게 받을 수 있는 프리랜서·1인 사업자 맞춤형 결제 솔루션입니다.',
+            keywords: ['결제링크', '간편수금', '1인창작자'],
             href: '/personal',
         },
     ];
@@ -112,7 +112,7 @@ export default function Features2(): JSX.Element {
     return (
         <section
             id="features2"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-paper overflow-hidden"
+            className="relative py-28 px-6 md:px-16  overflow-hidden"
         >
             {/* 💫 헤더 */}
             <motion.div {...fadeUp(0)} className="max-w-3xl mx-auto text-center mb-20">

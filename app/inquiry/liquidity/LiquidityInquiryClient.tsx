@@ -91,9 +91,9 @@ export default function LiquidityInquiryClient(): JSX.Element {
     /* -------------------------- UI 본문 시작 -------------------------- */
 
     return (
-        <div className="min-h-screen bg-paper text-navy-900">
+        <div className="min-h-screen text-navy-900">
             {/* 🌿 Hero */}
-            <section className="pt-28 pb-16 px-6 md:px-16 bg-gradient-to-b from-paper to-paper border-b border-mist/40">
+            <section className="pt-28 pb-16 px-6 md:px-16  border-b border-mist/40">
                 <div className="max-w-6xl mx-auto text-center">
                     <motion.h1
                         {...fadeUp(0)}

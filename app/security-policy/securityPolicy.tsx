@@ -11,11 +11,11 @@ export default function SecurityPolicy() {
             initial={{ opacity: 1 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="min-h-screen bg-paper text-navy-900 px-6 md:px-16 py-28"
+            className="min-h-screen text-navy-900 px-6 md:px-16 py-28"
         >
             {/* 제목 영역 */}
             <div className="max-w-4xl mx-auto text-center mb-16">
-                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-mist text-navy text-sm font-medium ">
+                <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[rgba(168,85,247,0.1)] text-[#6d3bd1] text-sm font-semibold ">
                     <ShieldCheck size={16} /> SFIN PAY 보안 정책
                 </span>
                 <h1 className="mt-6 text-4xl md:text-5xl font-extrabold leading-tight text-navy-900 text-[clamp(30px,5vw,36px)]">

@@ -72,7 +72,7 @@ export default function Compliance(): JSX.Element {
     return (
         <section
             id="compliance"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white overflow-hidden"
+            className="relative py-28 px-6 md:px-16  overflow-hidden"
         >
             {/* 💎 헤더 */}
             <motion.div

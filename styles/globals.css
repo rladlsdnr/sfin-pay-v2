@@ -139,14 +139,14 @@ button { transition: all 0.25s ease; }
 
 /* 그라데이션 (골드) */
 .heading-gradient {
-  background: linear-gradient(135deg, var(--color-gold) 0%, var(--color-gold-dark) 50%, var(--color-gold-deep) 100%);
+  background: linear-gradient(120deg, #a855f7 0%, #7c6bff 48%, #4f7cff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   color: transparent;
 }
 .heading-gradient-light {
-  background: linear-gradient(135deg, var(--color-gold-light) 0%, var(--color-gold) 100%);
+  background: linear-gradient(120deg, #b983ff 0%, #6c8bff 100%);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -281,4 +281,215 @@ pre {
 }
 code {
   color: var(--color-navy);
+}
+
+/* ============================================================
+   SFIN PAY — 퍼플·블루 글래스 다크 브랜드 시스템 (골드 대체)
+   ============================================================ */
+:root {
+  --brand-purple: #a855f7;
+  --brand-violet: #8b6cff;
+  --brand-indigo: #6366f1;
+  --brand-blue:   #4f7cff;
+  --rgb-purple: 168, 85, 247;
+  --rgb-violet: 139, 108, 255;
+  --rgb-blue:   79, 124, 255;
+  /* 다크 표면 */
+  --ink-base:    #080a1c;
+  --ink-panel:   #0e1230;
+  --ink-panel-2: #141937;
+  --brand-grad: linear-gradient(120deg, #b983ff 0%, #8b6cff 46%, #4f7cff 100%);
+}
+
+/* 브랜드 그라데이션 텍스트 */
+.text-gradient-brand {
+  background: var(--brand-grad);
+  -webkit-background-clip: text; background-clip: text;
+  -webkit-text-fill-color: transparent; color: transparent;
+}
+
+/* 브랜드 버튼 (퍼플→블루 글래스) */
+.btn-brand {
+  background: linear-gradient(120deg, #a855f7 0%, #6c63ff 52%, #4f7cff 100%);
+  color: #fff;
+  box-shadow: 0 10px 34px -8px rgba(124,108,255,0.6), inset 0 1px 0 rgba(255,255,255,0.28);
+  transition: transform var(--t-fast) var(--ease-spring), box-shadow var(--t-base) var(--ease-spring), filter var(--t-fast);
+}
+.btn-brand:hover { transform: translateY(-1px); box-shadow: 0 16px 46px -8px rgba(124,108,255,0.78), inset 0 1px 0 rgba(255,255,255,0.34); filter: brightness(1.05); }
+.btn-brand:active { transform: translateY(0); }
+
+/* 글래스 표면 */
+.glass {
+  background: rgba(255,255,255,0.045);
+  border: 1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+}
+.glass-panel {
+  background: linear-gradient(160deg, rgba(28,32,66,0.62), rgba(12,15,38,0.62));
+  border: 1px solid rgba(140,120,255,0.2);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  box-shadow: 0 36px 90px -34px rgba(0,0,0,0.78), inset 0 1px 0 rgba(255,255,255,0.08);
+}
+.glow-brand { box-shadow: 0 0 70px -12px rgba(124,108,255,0.55); }
+.ring-brand { box-shadow: 0 0 0 1px rgba(140,120,255,0.3), 0 0 40px -8px rgba(124,108,255,0.45); }
+
+/* 다크 그리드 배경 */
+.grid-dark {
+  background-image:
+    linear-gradient(rgba(140,120,255,0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(140,120,255,0.06) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 75% 60% at 50% 40%, #000 40%, transparent 100%);
+  mask-image: radial-gradient(ellipse 75% 60% at 50% 40%, #000 40%, transparent 100%);
+}
+
+/* 모션 */
+@keyframes float-y { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+.anim-float { animation: float-y 6s var(--ease-smooth) infinite; }
+@keyframes glow-pulse { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: .9; transform: scale(1.06); } }
+.anim-glow { animation: glow-pulse 5s ease-in-out infinite; }
+@keyframes aurora-drift {
+  0%   { transform: translate(0,0) scale(1); }
+  33%  { transform: translate(6%, -4%) scale(1.12); }
+  66%  { transform: translate(-5%, 5%) scale(0.95); }
+  100% { transform: translate(0,0) scale(1); }
+}
+.anim-aurora { animation: aurora-drift 18s ease-in-out infinite; }
+@keyframes marquee-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+.anim-marquee { animation: marquee-x 36s linear infinite; }
+
+/* ============================================================
+   LIGHT 모드 — 밝은 배경 + 퍼플/블루 글래스 (라이트 하이브리드)
+   ============================================================ */
+:root {
+  --light-base: #f7f6fd;     /* 페이지 베이스 (아주 옅은 라벤더 화이트) */
+  --light-panel: #ffffff;
+  --lilac: #f1edff;
+}
+
+/* 밝은 메쉬 배경 (퍼플·블루 소프트 블롭) */
+.mesh-light {
+  background:
+    radial-gradient(ellipse 50% 45% at 12% 8%, rgba(168,85,247,0.14), transparent 60%),
+    radial-gradient(ellipse 55% 50% at 92% 18%, rgba(79,124,255,0.14), transparent 60%),
+    radial-gradient(ellipse 60% 50% at 50% 110%, rgba(124,108,255,0.12), transparent 60%),
+    var(--light-base);
+}
+.section-light { background: var(--light-base); }
+
+/* 밝은 글래스 카드 */
+.glass-light {
+  background: rgba(255,255,255,0.72);
+  border: 1px solid rgba(124,108,255,0.16);
+  backdrop-filter: blur(18px) saturate(135%);
+  -webkit-backdrop-filter: blur(18px) saturate(135%);
+  box-shadow: 0 22px 60px -28px rgba(80,60,200,0.28), inset 0 1px 0 rgba(255,255,255,0.7);
+}
+.glass-light-strong {
+  background: rgba(255,255,255,0.85);
+  border: 1px solid rgba(124,108,255,0.22);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+  box-shadow: 0 36px 90px -34px rgba(80,60,200,0.34), inset 0 1px 0 rgba(255,255,255,0.85);
+}
+
+/* 라이트용 그리드 */
+.grid-light {
+  background-image:
+    linear-gradient(rgba(124,108,255,0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124,108,255,0.07) 1px, transparent 1px);
+  background-size: 56px 56px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 35%, transparent 100%);
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 35%, #000 35%, transparent 100%);
+}
+
+/* 퍼플 글래스 pill (배지) */
+.pill-brand {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  padding: 0.4rem 0.95rem; border-radius: 9999px;
+  font-size: 12.5px; font-weight: 700; letter-spacing: 0.01em;
+  color: #6d3bd1;
+  background: rgba(168,85,247,0.09);
+  border: 1px solid rgba(124,108,255,0.22);
+}
+
+/* 글로우 텍스트 강조용 점 */
+.dot-brand { display:inline-block; width:6px; height:6px; border-radius:9999px; background: var(--brand-violet); box-shadow: 0 0 10px var(--brand-violet); }
+
+/* 카드 hover 리프트(브랜드 글로우) */
+.lift {
+  transition: transform .35s var(--ease-spring), box-shadow .35s var(--ease-spring), border-color .35s var(--ease-smooth);
+}
+.lift:hover { transform: translateY(-4px); box-shadow: 0 30px 70px -28px rgba(80,60,200,0.4); border-color: rgba(124,108,255,0.4); }
+
+/* 라이트 히어로 — 퍼스펙티브 그리드 / 시머 */
+@keyframes grid-scroll { from { background-position: 0 0; } to { background-position: 0 56px; } }
+.anim-grid { animation: grid-scroll 5s linear infinite; }
+@keyframes shimmer-x { 0% { transform: translateX(-160%) skewX(-14deg); } 55%, 100% { transform: translateX(260%) skewX(-14deg); } }
+.anim-shimmer { animation: shimmer-x 4.5s ease-in-out infinite; }
+
+/* ============================================================
+   HERO — 시네마틱 3D 결제 카드 씬 (라이트 프리미엄)
+   ============================================================ */
+
+/* 카드 표면 정반사 스윕 */
+@keyframes hero-sweep {
+  0%   { transform: translateX(-130%) rotate(8deg); opacity: 0; }
+  18%  { opacity: 1; }
+  62%  { opacity: 1; }
+  100% { transform: translateX(360%) rotate(8deg); opacity: 0; }
+}
+.hero-sweep { animation: hero-sweep 6s cubic-bezier(0.4,0,0.2,1) 1.2s infinite; }
+
+/* 카드 / 패널 부드러운 부유 (개별 위상) */
+@keyframes hero-bob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-16px); } }
+.hero-bob { animation: hero-bob 7s var(--ease-smooth) infinite; }
+
+/* 천천히 도는 컨택리스 글로우 */
+@keyframes ring-pulse { 0%,100% { opacity: .35; transform: scale(0.92); } 50% { opacity: .8; transform: scale(1.08); } }
+.ring-pulse { animation: ring-pulse 3.4s ease-in-out infinite; }
+
+/* 상단 볼류메트릭 라이트 콘 */
+@keyframes beam-breathe { 0%,100% { opacity: .42; } 50% { opacity: .72; } }
+.hero-beam { animation: beam-breathe 7s ease-in-out infinite; }
+
+/* 카드 본체 — 글로시 퍼플블루 */
+.hero-card-face {
+  background:
+    linear-gradient(135deg, #c79bff 0%, #8b6cff 42%, #4f7cff 100%);
+  box-shadow:
+    0 2px 0 rgba(255,255,255,0.35) inset,
+    0 -18px 40px -20px rgba(40,20,90,0.55) inset,
+    0 60px 80px -30px rgba(99,72,220,0.55),
+    0 30px 50px -28px rgba(40,20,90,0.45);
+}
+/* 카드 위 정반사/시트 오버레이 */
+.hero-card-sheen {
+  background:
+    radial-gradient(120% 90% at 18% 0%, rgba(255,255,255,0.55), transparent 42%),
+    radial-gradient(100% 120% at 100% 100%, rgba(40,16,90,0.35), transparent 55%);
+}
+/* 메탈릭 칩 */
+.hero-chip {
+  background: linear-gradient(135deg, #f4f0ff 0%, #c9c4e8 38%, #efeaff 60%, #b9b3da 100%);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.6), 0 1px 2px rgba(0,0,0,0.25);
+}
+.hero-chip-lines {
+  background-image:
+    linear-gradient(90deg, transparent 32%, rgba(120,100,160,0.5) 32% 34%, transparent 34%),
+    linear-gradient(0deg, transparent 30%, rgba(120,100,160,0.45) 30% 32%, transparent 32%, transparent 64%, rgba(120,100,160,0.45) 64% 66%, transparent 66%);
+}
+
+/* 글로시 바닥 (반사면) */
+.hero-floor {
+  background:
+    linear-gradient(to bottom, rgba(247,246,253,0) 0%, rgba(241,237,255,0.55) 60%, rgba(255,255,255,0.85) 100%);
+}
+
+/* 뒤 카드 (스택 깊이용) — 쿨 블루 톤 */
+.hero-card-back {
+  background: linear-gradient(135deg, #8ea7ff 0%, #6c8bff 50%, #5566e8 100%);
+  box-shadow: 0 40px 70px -34px rgba(60,40,160,0.5);
 }

@@ -1,166 +1,67 @@
-﻿"use client";
-import React, { useEffect } from "react";
+"use client";
+import React from "react";
+import Link from "next/link";
 import { motion } from "framer-motion";
-import { Target, Lightbulb, HeartHandshake, Rocket, Globe2, Users } from "lucide-react";
+import { Rocket, Target, Lightbulb, Globe2, Users, ArrowRight } from "lucide-react";
+import PageHero from "../../components/PageHero";
 
-/*export const metadata = {
-    title: "Vision | SFIN PAY",
-    description: "SFIN PAY의 비전과 핵심 가치",
-};*/
+const EASE = [0.16, 1, 0.3, 1] as const;
+const rise = (i = 0) => ({ initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.2 }, transition: { duration: 0.7, delay: i * 0.07, ease: EASE } });
 
-const fadeUp = (i = 0) => ({
-    initial: { opacity: 1, y: 25 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.6, delay: 0.08 * i },
-});
+const AIMS = [
+  { icon: Target, t: "결제의 단순화", d: "복잡한 결제 환경를 하나로 묶어, 누구나 쉽게 결제를 시작하도록." },
+  { icon: Lightbulb, t: "기술로 만드는 신뢰", d: "실시간 분석과 보안 기술로 모든 거래를 안심할 수 있게." },
+  { icon: Globe2, t: "경계 없는 결제", d: "온·오프라인, 국내·해외를 가리지 않는 결제 경험을 지향합니다." },
+  { icon: Users, t: "함께 성장하는 파트너", d: "가맹점의 성장이 곧 SFIN PAY의 성장이라 믿습니다." },
+];
 
 export default function VisionPage(): JSX.Element {
-    useEffect(() => window.scrollTo(0, 0), []);
+  return (
+    <div className="relative z-10">
+      <PageHero icon={Rocket} kicker="VISION" bg="/photos/p15.png"
+        title={<>모든 비즈니스가 <span className="heading-gradient">결제로 성장</span>하도록</>}
+        subtitle="SFIN PAY는 결제를 가장 쉽고 안전한 경험으로 만들어, 모든 사업자가 본업에만 집중할 수 있는 세상을 지향합니다."
+        primary={{ label: "가맹 문의", href: "/inquiry/contract" }} secondary={{ label: "회사 소개", href: "/company" }} />
 
-    return (
-        <div className="min-h-screen bg-mint-gradient text-navy-800 pt-32 pb-24">
-            {/* ────────────── ① HEADER ────────────── */}
-            <section className="text-center px-6 md:px-16 py-20 border-b border-brand-mint">
-                <motion.h1
-                    {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-navy-800 text-[clamp(30px,5vw,36px)]"
-                >
-                    SFIN PAY <span className="text-brand-mintDark">VISION 2025</span>
-                </motion.h1>
-                <motion.p
-                    {...fadeUp(0.2)}
-                    className="text-lg md:text-xl text-navy-700/85 max-w-3xl mx-auto leading-relaxed"
-                >
-                    “모든 결제는 <strong>신뢰</strong> 위에 세워져야 한다.”
-                    <br />
-                    기술보다 투명성, 속도보다 신뢰를 우선하는 것이
-                    SFIN PAY의 비전입니다.
-                </motion.p>
-            </section>
+      {/* 미션 (다크 피처) */}
+      <section className="relative py-24 md:py-28 px-6">
+        <motion.div {...rise(0)} className="relative max-w-5xl mx-auto rounded-[2.2rem] px-7 py-16 md:px-16 md:py-20 text-center overflow-hidden" style={{ background: "linear-gradient(150deg, #1a1340 0%, #221a52 45%, #182a66 100%)" }}>
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 h-80 w-[40rem] max-w-[90vw] rounded-full blur-[110px]" style={{ background: "radial-gradient(circle, rgba(139,108,255,0.5), transparent 65%)" }} />
+          <div className="absolute inset-0 grid-dark opacity-60" />
+          <div className="relative">
+            <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-[12.5px] font-bold text-white/90" style={{ background: "rgba(255,255,255,0.08)", border: "1px solid rgba(255,255,255,0.18)" }}><span className="h-1.5 w-1.5 rounded-full bg-[#b983ff]" /> MISSION</span>
+            <h2 className="mt-6 text-2xl md:text-4xl font-extrabold text-white leading-[1.4]">
+              "결제의 복잡함은 우리가,<br /><span className="text-gradient-brand">성장의 기회는 가맹점이.</span>"
+            </h2>
+            <p className="mt-6 text-[16px] leading-[1.8] text-white/70 max-w-xl mx-auto">
+              단말기·PG·정산이라는 장벽을 SFIN PAY가 대신 넘어, 사업자가 결제 걱정 없이 본업에 집중하게 만드는 것. 그것이 우리의 미션입니다.
+            </p>
+          </div>
+        </motion.div>
+      </section>
 
-            {/* ────────────── ② OUR MISSION ────────────── */}
-            <section className="py-24 px-6 md:px-16 bg-white border-b border-brand-mint">
-                <motion.h2
-                    {...fadeUp(0)}
-                    className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-navy-800 "
-                >
-                    우리의 미션
-                </motion.h2>
-
-                <motion.p
-                    {...fadeUp(0.2)}
-                    className="max-w-4xl mx-auto text-center text-navy-700/90 leading-relaxed text-[15.5px]"
-                >
-                    SFIN PAY는 단순한 결제 솔루션이 아니라, <strong>신뢰 기반 금융 인프라</strong>를
-                    구축하는 기업입니다.
-                    우리는 투명한 정산, 공정한 수수료, 그리고 ESG 중심의 기술로
-                    소상공인부터 글로벌 브랜드까지 모두가 공평한 금융 생태계에 참여할 수 있도록 만듭니다.
-                </motion.p>
-
-                <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto">
-                    {[
-                        {
-                            icon: <Target size={28} />,
-                            title: "고객 신뢰 우선",
-                            desc: "모든 서비스는 고객의 데이터와 결제 신뢰를 최우선 가치로 설계합니다.",
-                        },
-                        {
-                            icon: <Lightbulb size={28} />,
-                            title: "투명한 기술 혁신",
-                            desc: "혁신은 검증 가능해야 합니다. SFIN PAY의 모든 알고리즘은 투명한 기준에 따라 운영됩니다.",
-                        },
-                        {
-                            icon: <HeartHandshake size={28} />,
-                            title: "지속가능한 성장",
-                            desc: "우리는 사회적 책임을 다하며, ESG 기반의 지속가능한 결제 생태계를 확장합니다.",
-                        },
-                    ].map((item, i) => (
-                        <motion.div
-                            key={i}
-                            {...fadeUp(i + 1)}
-                            className="p-8 rounded-2xl border border-brand-mintLight bg-paper hover:shadow-[0_8px_25px_rgba(0,51,102,0.15)]  duration-500"
-                        >
-                            <div className="flex flex-col items-center text-center gap-4">
-                                <div className="p-4 rounded-full bg-brand-mint/20 text-brand-mintDark">
-                                    {item.icon}
-                                </div>
-                                <h3 className="text-lg font-semibold text-navy-800">
-                                    {item.title}
-                                </h3>
-                                <p className="text-sm text-navy-700/80 leading-relaxed">
-                                    {item.desc}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
-
-            {/* ────────────── ③ OUR FUTURE ────────────── */}
-            <section className="py-24 px-6 md:px-16 bg-mint-gradient border-b border-brand-mint">
-                <motion.h2
-                    {...fadeUp(0)}
-                    className="text-3xl md:text-4xl font-extrabold text-center mb-12 text-navy-800"
-                >
-                    우리의 미래
-                </motion.h2>
-
-                <motion.p
-                    {...fadeUp(0.2)}
-                    className="max-w-4xl mx-auto text-center text-navy-700/90 leading-relaxed text-[15.5px]"
-                >
-                    SFIN PAY는 2025년까지 아시아 전역의 결제 인프라를 연결하여
-                    <strong>국경 없는 정산 네트워크</strong>를 구축하고자 합니다.
-                    이를 통해 금융 소외 계층의 디지털 접근성을 높이고,
-                    공정한 유동성 흐름을 만들어가는 것이 우리의 미래 비전입니다.
-                </motion.p>
-
-                <div className="grid md:grid-cols-3 gap-8 mt-16 max-w-6xl mx-auto">
-                    {[
-                        {
-                            icon: <Rocket size={28} />,
-                            title: "Global Expansion",
-                            desc: "2025년까지 5개국 결제 네트워크 통합 및 해외 가맹점 정산 인프라 구축.",
-                        },
-                        {
-                            icon: <Globe2 size={28} />,
-                            title: "Cross-border Finance",
-                            desc: "환율, 세금, 수수료를 실시간 자동처리하는 글로벌 결제 표준화 추진.",
-                        },
-                        {
-                            icon: <Users size={28} />,
-                            title: "Inclusive Ecosystem",
-                            desc: "스타트업, 프리랜서, 소상공인 누구나 접근 가능한 개방형 금융 플랫폼 실현.",
-                        },
-                    ].map((item, i) => (
-                        <motion.div
-                            key={i}
-                            {...fadeUp(i + 1)}
-                            className="p-8 rounded-2xl border border-brand-mintDark/20 bg-white hover:shadow-[0_8px_25px_rgba(0,51,102,0.15)]  duration-500"
-                        >
-                            <div className="flex flex-col items-center text-center gap-4">
-                                <div className="p-4 rounded-full bg-brand-mintDark/15 text-brand-mintDark">
-                                    {item.icon}
-                                </div>
-                                <h3 className="text-lg font-semibold text-navy-800">
-                                    {item.title}
-                                </h3>
-                                <p className="text-sm text-navy-700/80 leading-relaxed">
-                                    {item.desc}
-                                </p>
-                            </div>
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
-
-            {/* ────────────── ④ FOOTNOTE ────────────── */}
-            <footer className="text-center py-16 text-navy-700/75 text-sm">
-                <motion.p {...fadeUp(0)}>
-                    © 2026 SFIN PAY — 모든 비전은 <strong>신뢰</strong>에서 출발합니다.
-                </motion.p>
-            </footer>
+      {/* 지향점 */}
+      <section className="relative py-12 md:py-16 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div {...rise(0)} className="max-w-2xl">
+            <span className="pill-brand"><span className="dot-brand" /> WHAT WE AIM</span>
+            <h2 className="display-2 mt-5 text-navy-900">우리가 향하는 <span className="heading-gradient">방향.</span></h2>
+          </motion.div>
+          <div className="mt-12 grid sm:grid-cols-2 gap-5">
+            {AIMS.map((c, i) => (
+              <motion.div key={c.t} {...rise(i + 1)} className="glass-light lift rounded-3xl p-7 relative overflow-hidden">
+                <div className="absolute -top-14 -right-14 h-40 w-40 rounded-full blur-[60px]" style={{ background: "radial-gradient(circle, rgba(124,108,255,0.16), transparent 65%)" }} />
+                <div className="inline-flex items-center justify-center rounded-2xl text-white" style={{ width: 52, height: 52, background: "var(--brand-grad)" }}><c.icon size={22} /></div>
+                <h3 className="mt-5 text-lg font-extrabold text-navy-900">{c.t}</h3>
+                <p className="mt-2 text-[14.5px] leading-[1.7] text-ink-muted">{c.d}</p>
+              </motion.div>
+            ))}
+          </div>
+          <motion.div {...rise(2)} className="mt-10 text-center">
+            <Link href="/inquiry/contract" className="inline-flex items-center gap-2 font-semibold text-[#6d3bd1] group">SFIN PAY와 함께하기 <ArrowRight size={17} className="transition-transform group-hover:translate-x-1" /></Link>
+          </motion.div>
         </div>
-    );
+      </section>
+    </div>
+  );
 }

@@ -186,7 +186,7 @@ export default function Settlement(): JSX.Element {
     return (
         <section
             id="settlement"
-            className="relative py-28 px-6 md:px-16 bg-gradient-to-b from-paper via-paper to-white overflow-hidden"
+            className="relative py-28 px-6 md:px-16  overflow-hidden"
         >
             {/* 배경: reduceMotion이면 정적 */}
             <motion.div

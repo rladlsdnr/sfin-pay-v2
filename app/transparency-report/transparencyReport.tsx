@@ -77,9 +77,9 @@ export default function TransparencyReport(): JSX.Element {
     );
 
     return (
-        <div className="min-h-screen bg-paper text-navy-800 pt-24 pb-24">
+        <div className="min-h-screen text-navy-800 pt-24 pb-24">
             {/* ──────────────────────── ① HEADER SECTION ──────────────────────── */}
-            <section className="text-center px-6 md:px-16 py-24 bg-gradient-to-b from-paper to-paper border-b border-mist">
+            <section className="text-center px-6 md:px-16 py-24  border-b border-mist">
                 <motion.div
                     {...fadeUp(0)}
                     className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/70 border border-mist text-navy-700 text-xs font-semibold mb-5"

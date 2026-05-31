@@ -114,7 +114,7 @@ export default function API({
             aria-labelledby={`${id}-heading`}
             className={[
                 "relative py-28 px-6 md:px-16",
-                "bg-gradient-to-b from-brand-mintLight/60 to-white/60",
+                "",
                 className,
             ].join(" ")}
         >

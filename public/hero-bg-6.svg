@@ -1,0 +1,35 @@
+<svg viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <linearGradient id="f" x1="0" y1="0.1" x2="1" y2="1"><stop offset="0" stop-color="#c79bff"/><stop offset="0.45" stop-color="#8b6cff"/><stop offset="1" stop-color="#4f7cff"/></linearGradient>
+    <linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9bb0ff"/><stop offset="0.5" stop-color="#6c8bff"/><stop offset="1" stop-color="#5566e8"/></linearGradient>
+    <linearGradient id="t" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#a855f7"/><stop offset="1" stop-color="#4f7cff"/></linearGradient>
+    <linearGradient id="sh" x1="0" y1="0" x2="0.7" y2="1"><stop offset="0" stop-color="#fff" stop-opacity="0.5"/><stop offset="0.5" stop-color="#fff" stop-opacity="0.05"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></linearGradient>
+    <linearGradient id="chip" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6f1ff"/><stop offset="0.45" stop-color="#cfc8ee"/><stop offset="0.62" stop-color="#efeaff"/><stop offset="1" stop-color="#bcb4df"/></linearGradient>
+    <radialGradient id="gp" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#a855f7" stop-opacity="0.65"/><stop offset="1" stop-color="#a855f7" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gb" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#4f7cff" stop-opacity="0.6"/><stop offset="1" stop-color="#4f7cff" stop-opacity="0"/></radialGradient>
+    <radialGradient id="gv" cx="0.5" cy="0.5" r="0.5"><stop offset="0" stop-color="#8b6cff" stop-opacity="0.55"/><stop offset="1" stop-color="#8b6cff" stop-opacity="0"/></radialGradient>
+    <filter id="ds" x="-40%" y="-40%" width="180%" height="180%"><feDropShadow dx="0" dy="34" stdDeviation="40" flood-color="#4b2fb0" flood-opacity="0.38"/></filter>
+    <filter id="dss" x="-60%" y="-60%" width="220%" height="220%"><feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#4b2fb0" flood-opacity="0.32"/></filter>
+  </defs>
+  <circle cx="250" cy="170" r="430" fill="url(#gp)"/>
+  <circle cx="1220" cy="220" r="450" fill="url(#gb)"/>
+  <ellipse cx="720" cy="580" rx="580" ry="430" fill="url(#gv)"/>
+  <g opacity="0.45" stroke="#8b6cff" stroke-width="1.4">
+    <line x1="720" y1="560" x2="-380" y2="900"/><line x1="720" y1="560" x2="160" y2="900"/><line x1="720" y1="560" x2="470" y2="900"/><line x1="720" y1="560" x2="680" y2="900"/><line x1="720" y1="560" x2="760" y2="900"/><line x1="720" y1="560" x2="970" y2="900"/><line x1="720" y1="560" x2="1280" y2="900"/><line x1="720" y1="560" x2="1820" y2="900"/>
+    <line x1="60" y1="660" x2="1380" y2="660" opacity="0.7"/><line x1="-60" y1="760" x2="1500" y2="760" opacity="0.7"/><line x1="-180" y1="870" x2="1620" y2="870" opacity="0.7"/>
+  </g>
+  <g fill="#a855f7"><circle cx="430" cy="270" r="5" opacity="0.6"/><circle cx="1010" cy="700" r="6" opacity="0.5"/><circle cx="260" cy="600" r="4" opacity="0.5"/><circle cx="1180" cy="430" r="4" opacity="0.55"/><circle cx="700" cy="220" r="4" opacity="0.5"/></g>
+  <g filter="url(#ds)">
+    <path d="M720 280 L 880 340 V 470 C 880 580 810 650 720 690 C 630 650 560 580 560 470 V 340 Z" fill="url(#f)"/>
+    <path d="M720 280 L 880 340 V 470 C 880 580 810 650 720 690 C 630 650 560 580 560 470 V 340 Z" fill="url(#sh)"/>
+    <path d="M672 480 l34 34 64 -74" stroke="#fff" stroke-width="11" fill="none" stroke-linecap="round" stroke-linejoin="round"/></g>
+  <g stroke="url(#t)" stroke-width="2" opacity="0.5" fill="none"><circle cx="720" cy="470" r="230" stroke-dasharray="3 10"/><circle cx="720" cy="470" r="300" stroke-dasharray="3 10" opacity="0.6"/></g>
+  <g filter="url(#dss)" transform="translate(360 400)"><rect width="80" height="80" rx="22" fill="#fff" fill-opacity="0.9"/><g transform="translate(28 24)" stroke="url(#t)" stroke-width="3.6" fill="none" stroke-linecap="round" stroke-linejoin="round"><rect x="0" y="14" width="26" height="20" rx="4" fill="url(#t)" stroke="none"/><path d="M4 14v-4a9 9 0 0 1 18 0v4"/><circle cx="13" cy="24" r="2.6" fill="#fff" stroke="none"/></g></g><g filter="url(#dss)" transform="translate(1020 300)"><circle cx="40" cy="40" r="40" fill="#fff" fill-opacity="0.9"/><circle cx="40" cy="40" r="26" fill="url(#t)"/><path d="M30 40l7 7 13-15" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/></g><g filter="url(#dss)" transform="translate(1060 540)"><circle cx="44" cy="44" r="44" fill="#fff" fill-opacity="0.9"/><circle cx="44" cy="44" r="32" fill="none" stroke="url(#t)" stroke-width="2" stroke-dasharray="3 4" opacity="0.6"/><text x="44" y="58" font-family="Pretendard,sans-serif" font-size="37" font-weight="800" fill="url(#t)" text-anchor="middle">₩</text></g><g filter="url(#dss)" transform="translate(300 580)"><rect width="100" height="100" rx="24" fill="#fff" fill-opacity="0.9"/><g transform="translate(24 24) scale(1.0)" fill="url(#t)">
+      <rect width="15" height="15" rx="2"/><rect x="22" width="9" height="9" rx="1.5"/><rect x="37" width="15" height="15" rx="2"/>
+      <rect y="22" width="9" height="9" rx="1.5"/><rect x="24" y="24" width="7" height="7"/><rect x="43" y="22" width="9" height="9" rx="1.5"/>
+      <rect y="37" width="15" height="15" rx="2"/><rect x="24" y="39" width="7" height="7"/><rect x="37" y="37" width="15" height="15" rx="2"/></g></g>
+  <g filter="url(#dss)" transform="translate(560 720)"><rect width="320" height="62" rx="18" fill="#fff" fill-opacity="0.92"/>
+    <circle cx="36" cy="31" r="15" fill="url(#t)"/><path d="M29 31l5 5 8-9" stroke="#fff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+    <text x="62" y="27" font-family="Pretendard,sans-serif" font-size="12" font-weight="600" fill="#5b6478">PCI-DSS · 암호화 · FDS</text>
+    <text x="62" y="48" font-family="Pretendard,sans-serif" font-size="16" font-weight="800" fill="#0b1a3a">금융권 수준 보안</text></g>
+</svg>

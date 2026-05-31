@@ -1,212 +1,60 @@
-'use client';
-import React from 'react';
-import { motion } from 'framer-motion';
-import Link from 'next/link';
-import { Users, Rocket, HeartHandshake, Briefcase, ArrowRight, Mail, MessageCircle } from 'lucide-react';
+"use client";
+import React from "react";
+import Link from "next/link";
+import { motion } from "framer-motion";
+import { Users, Rocket, HeartHandshake, Lightbulb, Scale, Sparkles, ArrowRight, Mail } from "lucide-react";
+import PageHero from "../../components/PageHero";
 
-const fadeUp = (i = 0) => ({
-    initial: { opacity: 1, y: 30 },
-    whileInView: { opacity: 1, y: 0 },
-    transition: { duration: 0.6, delay: i * 0.15 },
-    viewport: { once: true, amount: 0 },
-});
+const EASE = [0.16, 1, 0.3, 1] as const;
+const rise = (i = 0) => ({ initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, amount: 0.2 }, transition: { duration: 0.7, delay: i * 0.07, ease: EASE } });
+
+const CULTURE = [
+  { icon: Rocket, t: "빠르게 실행한다", d: "완벽한 계획보다 빠른 실행과 개선을 믿습니다." },
+  { icon: HeartHandshake, t: "신뢰로 일한다", d: "동료와 가맹점 모두에게 정직하고 투명하게." },
+  { icon: Lightbulb, t: "주도적으로 푼다", d: "문제를 발견하면 스스로 정의하고 해결합니다." },
+  { icon: Scale, t: "임팩트로 평가한다", d: "직급이 아닌 만들어낸 가치로 이야기합니다." },
+];
 
 export default function CareersPage(): JSX.Element {
-    return (
-        <div className="min-h-screen bg-gradient-to-b from-paper to-paper pt-32 text-navy-900">
-            {/* 헤더 */}
-            <section className="text-center py-20 px-6 md:px-16">
-                <motion.h1
-                    {...fadeUp(0)}
-                    className="text-5xl md:text-6xl font-extrabold mb-6 leading-tight text-[clamp(30px,5vw,36px)]"
-                >
-                    함께 만드는 결제 혁신,
-                    <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
-                        SFIN PAY 팀에서 시작하세요
-                    </span>
-                </motion.h1>
+  return (
+    <div className="relative z-10">
+      <PageHero icon={Users} kicker="CAREERS" bg="/photos/p11.png"
+        title={<>결제의 미래를 <span className="heading-gradient">함께 만들 사람</span></>}
+        subtitle="SFIN PAY는 결제를 더 쉽고 안전하게 만드는 일에 진심인 동료를 찾습니다. 당신의 임팩트가 곧 우리의 성장입니다."
+        primary={{ label: "지원/제휴 문의", href: "/recruit" }} secondary={{ label: "회사 소개", href: "/company" }} />
 
-                <motion.p
-                    {...fadeUp(0.3)}
-                    className="text-lg text-navy-800/80 max-w-3xl mx-auto leading-relaxed"
-                >
-                    우리는 더 빠르고, 더 투명하며, 더 스마트한 결제 생태계를 만드는 팀입니다.
-                    기술과 금융이 만나는 지점에서 새로운 표준을 세우는 여정에 합류하세요.
-                </motion.p>
-            </section>
-
-            {/* 문화 섹션 */}
-            <section className="py-24 px-6 md:px-16 bg-paper/80">
-                <motion.h2
-                    {...fadeUp(0)}
-                    className="text-4xl font-bold text-center mb-16 text-[clamp(30px,5vw,36px)]"
-                >
-                    우리의 문화와 가치
-                </motion.h2>
-
-                <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto">
-                    {[
-                        {
-                            icon: <Rocket size={36} />,
-                            title: '빠른 실행',
-                            desc: '완벽보다 실행을 우선시합니다. 아이디어를 빠르게 실험하고 개선합니다.',
-                        },
-                        {
-                            icon: <HeartHandshake size={36} />,
-                            title: '신뢰와 투명성',
-                            desc: '모든 의사결정과 데이터는 투명하게 공유됩니다. 신뢰가 곧 성장의 기반입니다.',
-                        },
-                        {
-                            icon: <Users size={36} />,
-                            title: '팀 중심의 성장',
-                            desc: '각자의 전문성을 존중하며, 함께 성장하는 팀워크를 중시합니다.',
-                        },
-                    ].map((item, i) => (
-                        <motion.div
-                            key={i}
-                            {...fadeUp(i)}
-                            className="p-8 bg-white border border-mist/70 rounded-2xl shadow-sm hover:shadow-[0_10px_30px_rgba(0,51,102,0.12)] "
-                        >
-                            <div className="text-navy mb-4">{item.icon}</div>
-                            <h3 className="text-xl font-semibold mb-3">{item.title}</h3>
-                            <p className="text-navy-800/80 leading-relaxed">{item.desc}</p>
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
-
-            {/* 채용 포지션 섹션 */}
-            <section className="py-28 px-6 md:px-16 max-w-5xl mx-auto text-center">
-                <motion.h2
-                    {...fadeUp(0)}
-                    className="text-4xl font-bold mb-10 text-navy-900 text-[clamp(30px,5vw,36px)]"
-                >
-                    현재 모집 중인 포지션
-                </motion.h2>
-
-                <div className="grid md:grid-cols-2 gap-10">
-                    {[
-                        {
-                            title: 'Frontend Engineer',
-                            desc: 'Next.js / React 기반으로 SFIN PAY 웹 플랫폼을 설계 및 구현합니다.',
-                        },
-                        {
-                            title: 'Backend Engineer',
-                            desc: '결제 인프라 및 정산 API, Fraud Detection 시스템을 개발합니다.',
-                        },
-                        {
-                            title: 'Product Designer',
-                            desc: 'SFIN 브랜드의 UX/UI 디자인 시스템을 개선하고 새로운 경험을 만듭니다.',
-                        },
-                        {
-                            title: 'Business / Partnerships',
-                            desc: '가맹점, PG사, 금융기관 등과의 전략적 파트너십을 이끌어갑니다.',
-                        },
-                    ].map((job, i) => (
-                        <motion.div
-                            key={i}
-                            {...fadeUp(i)}
-                            className="p-8 bg-white border border-mist/60 rounded-2xl text-left hover:shadow-[0_8px_28px_rgba(0,51,102,0.12)] "
-                        >
-                            <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-xl font-semibold text-navy-900">{job.title}</h3>
-                                <Briefcase className="text-navy" />
-                            </div>
-                            <p className="text-navy-800/80 leading-relaxed">{job.desc}</p>
-                            {
-                                /*
-                                <Link
-                                href="/inquiry/careers"
-                                className="inline-flex items-center gap-1 text-navy font-semibold mt-4 hover:underline"
-                            >
-                                지원하기 <ArrowRight size={16} />
-                            </Link>
-                                */
-                            }
-                        </motion.div>
-                    ))}
-                </div>
-            </section>
-
-            {/* CTA */}
-            <section className="py-24 px-6 md:px-16 bg-gradient-to-tr from-mist to-mist text-center">
-                <motion.h2
-                    {...fadeUp(0)}
-                    className="text-4xl font-bold text-navy-900 mb-4 text-[clamp(30px,5vw,36px)]"
-                >
-                    당신의 전문성,{' '}
-                    <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-navy to-navy">
-                        SFIN PAY에서 가치로
-                    </span>
-                </motion.h2>
-                <motion.p
-                    {...fadeUp(0.2)}
-                    className="text-navy-800/90 text-lg mb-10 leading-relaxed"
-                >
-                    단순한 결제 시스템이 아닌, 기술과 데이터로 금융의 미래를 설계하는 여정입니다.
-                    함께할 당신을 기다립니다.
-                </motion.p>
-
-                {/*
-                <Link href="/recruit">
-                    <motion.button
-                        {...fadeUp(0.4)}
-                        whileHover={{ scale: 1.05 }}
-                        whileTap={{ scale: 0.95 }}
-                        className="px-8 py-4 rounded-xl bg-navy hover:bg-navy-700 text-white font-semibold text-lg shadow-md "
-                    >
-                        채용 문의하기 →
-                    </motion.button>
-                </Link>
-                */}
-
-                {/* 하단 CTA */}
-                <div
-                    className="mt-14 flex flex-col md:flex-row items-center justify-center gap-4 md:gap-8"
-                >
-                    {/* Gmail */}
-                    <a
-                        href="https://mail.google.com/mail/?view=cm&fs=1&to=sfinpay@gmail.com&su=SFIN%20PAY%20문의&body=문의유형:%0A문의내용:"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-        bg-gradient-to-r from-navy to-navy 
-        hover:from-navy hover:to-navy
-        text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
-                    >
-                        <Mail size={18} /> Gmail로 문의하기
-                    </a>
-
-                    {/* Outlook 
-                    <a
-                        href="https://outlook.office.com/mail/deeplink/compose?to=sfinpay@gmail.com&subject=SFIN%20PAY%20문의&body=문의유형:%0A문의내용:"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-        bg-gradient-to-r from-navy to-navy 
-        hover:from-navy hover:to-navy
-        text-white font-semibold shadow-[0_6px_20px_rgba(0,51,102,0.25)]"
-                    >
-                        <Mail size={18} /> Outlook으로 문의하기
-                    </a>
-                    */}
-
-                    {/* 카카오톡 */}
-                    <a
-                        href="http://pf.kakao.com/_dqyYn/friend"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-6 py-3 rounded-xl 
-        border border-emerald-300 bg-white/80 
-        hover:bg-paper text-emerald-700 font-semibold 
-        shadow-[0_6px_15px_rgba(0,51,102,0.15)]"
-                    >
-                        <MessageCircle size={18} /> 카카오톡 상담
-                    </a>
-                </div>
-            </section>
+      <section className="relative py-24 md:py-28 px-6">
+        <div className="max-w-6xl mx-auto">
+          <motion.div {...rise(0)} className="max-w-2xl">
+            <span className="pill-brand"><span className="dot-brand" /> CULTURE</span>
+            <h2 className="display-2 mt-5 text-navy-900">우리가 일하는 <span className="heading-gradient">방식.</span></h2>
+          </motion.div>
+          <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            {CULTURE.map((c, i) => (
+              <motion.div key={c.t} {...rise(i + 1)} className="glass-light lift rounded-3xl p-7 relative overflow-hidden">
+                <div className="absolute -top-14 -right-14 h-40 w-40 rounded-full blur-[60px]" style={{ background: "radial-gradient(circle, rgba(124,108,255,0.16), transparent 65%)" }} />
+                <div className="inline-flex items-center justify-center rounded-2xl text-white" style={{ width: 52, height: 52, background: "var(--brand-grad)" }}><c.icon size={22} /></div>
+                <h3 className="mt-5 text-lg font-extrabold text-navy-900">{c.t}</h3>
+                <p className="mt-2 text-[14px] leading-[1.7] text-ink-muted">{c.d}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
-    );
+      </section>
+
+      <section className="relative py-12 md:py-20 px-6">
+        <motion.div {...rise(0)} className="relative max-w-5xl mx-auto rounded-[2.2rem] p-10 md:p-16 text-center overflow-hidden" style={{ background: "linear-gradient(135deg, #6d3bd1 0%, #6c63ff 50%, #4f7cff 100%)" }}>
+          <div className="absolute -top-24 -left-16 h-72 w-72 rounded-full blur-[90px]" style={{ background: "rgba(255,255,255,0.25)" }} />
+          <div className="absolute -bottom-28 -right-10 h-80 w-80 rounded-full blur-[100px]" style={{ background: "rgba(168,85,247,0.45)" }} />
+          <Sparkles size={36} className="relative mx-auto text-white" />
+          <h2 className="relative mt-5 display-2 text-white">함께할 준비가<br />되셨나요?</h2>
+          <p className="relative mt-5 text-[16px] text-white/85 max-w-lg mx-auto">포지션 지원과 파트너 제휴 모두 환영합니다.</p>
+          <div className="relative mt-9 flex flex-col sm:flex-row gap-3 justify-center">
+            <Link href="/recruit"><button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-bold text-base bg-white text-[#5a2db8] hover:bg-white/90 transition shadow-lg">지원하기 <ArrowRight size={18} /></button></Link>
+            <a href="mailto:sfinpay@gmail.com"><button className="inline-flex items-center justify-center gap-2 px-8 py-4 rounded-2xl font-semibold text-base text-white border border-white/35 hover:bg-white/10 transition"><Mail size={17} /> 이메일 문의</button></a>
+          </div>
+        </motion.div>
+      </section>
+    </div>
+  );
 }

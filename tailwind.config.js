@@ -38,10 +38,10 @@ module.exports = {
           900: "#000a1a",
         },
         gold: {
-          DEFAULT: "#ffb800",
-          light: "#ffd24a",
-          dark: "#e89a00",
-          deep: "#c88500",
+          DEFAULT: "#7c6bff",
+          light: "#a855f7",
+          dark: "#6366f1",
+          deep: "#4f7cff",
         },
         ink: {
           DEFAULT: "#003366",
@@ -59,6 +59,10 @@ module.exports = {
           mint: "#003366",
           mintLight: "#f2f6fb",
           mintDark: "#001a33",
+          purple: "#a855f7",
+          violet: "#8b6cff",
+          indigo: "#6366f1",
+          blue: "#4f7cff",
         },
       },
       backgroundImage: {

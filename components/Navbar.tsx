@@ -81,14 +81,14 @@ export default function Navbar(): JSX.Element {
                     icon: <QrCode size={18} />,
                 },
                 {
-                    label: '수기 결제(MOTO)',
+                    label: '전화·수기 결제',
                     desc: '전화·원격 주문용 안전한 결제 방식',
                     link: '/moto',
                     icon: <ShieldCheck size={18} />,
                 },
                 {
-                    label: 'POS / MPOS 단말기',
-                    desc: '매장별 단말기·MPOS 관리 시스템',
+                    label: '카드 단말기',
+                    desc: '매장 카드 단말기·휴대용 단말 관리',
                     link: '/device',
                     icon: <MonitorSmartphone size={18} />,
                 },
@@ -142,7 +142,7 @@ export default function Navbar(): JSX.Element {
                 },
                 {
                     label: '개인·프리랜서',
-                    desc: '결제링크, 비사업자결제, 1인창작자',
+                    desc: '결제링크, 간편 수금, 1인 창작자',
                     link: '/personal',
                     icon: <FileUser size={18} />,
                 },
@@ -151,7 +151,7 @@ export default function Navbar(): JSX.Element {
         /*{
             label: '기술 지원',
             link: '/tech-support',
-            categoryDesc: 'API 연동 / 개발자 문서 / 테스트 샌드박스',
+            categoryDesc: '간편 연동 / 개발자 문서 / 테스트 샌드박스',
         },*/
         {
             label: '고객 지원',
@@ -231,17 +231,11 @@ export default function Navbar(): JSX.Element {
                     {/* 🔵 LOGO */}
                     <button
                         onClick={handleLogoClick}
-                        className="flex items-center gap-2.5 select-none group"
+                        className="flex items-center gap-2.5 select-none group focus:outline-none"
                         style={{ WebkitTapHighlightColor: 'transparent' }}
                     >
-                        <img
-                            src='/sfinpayment.png'
-                            alt="SFIN PAY"
-                            className="w-11 h-11 object-contain"
-                        />
-                        <span className="text-2xl font-extrabold text-navy tracking-tight transition-colors group-hover:text-navy-700">
-                            SFIN PAY
-                        </span>
+                        <span className="grid place-items-center w-12 h-12 rounded-full bg-white ring-1 ring-[rgba(124,108,255,0.35)] shadow-[0_6px_16px_-6px_rgba(124,108,255,0.55)] transition-transform group-hover:scale-105"><img src='/sfin-mark.png' alt="SFIN PAY" className="w-full h-full object-contain p-[3px]" /></span>
+                        <span className="text-[25px] tracking-tight leading-none"><span className="font-extrabold text-navy-900">SFIN</span> <span className="font-semibold text-ink-soft group-hover:text-[#6d3bd1] transition-colors">PAY</span></span>
                     </button>
 
                     {/* 💻 데스크탑 메뉴 */}
@@ -255,7 +249,7 @@ export default function Navbar(): JSX.Element {
                             >
                                 {item.submenu ? (
                                     <>
-                                        <button className="flex items-center gap-1 text-navy-900 font-medium hover:text-navy transition">
+                                        <button className="flex items-center gap-1 text-navy-900 font-medium hover:text-[#6d3bd1] transition">
                                             {item.label}
                                             <ChevronDown size={16} className="ml-1" />
                                         </button>
@@ -269,7 +263,7 @@ export default function Navbar(): JSX.Element {
                                                     animate="visible"
                                                     exit="exit"
                                                     className={[
-                                                        "absolute top-10 bg-white shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-2xl border border-navy/20 p-6 gap-4",
+                                                        "absolute top-10 bg-white shadow-[0_8px_32px_rgba(0,0,0,0.08)] rounded-2xl border border-[rgba(124,108,255,0.18)] p-6 gap-4",
                                                         item.label == '결제 방식' ? "w-[320px] max-w-[92vw]" : "w-[600px] max-w-[90vw]",
                                                         item.label == '결제 방식' ? "flex flex-col" : "grid grid-cols-2"
                                                     ].join(" ")}
@@ -283,9 +277,9 @@ export default function Navbar(): JSX.Element {
                                                         <Link
                                                             key={i}
                                                             href={sub.link}
-                                                            className="flex items-start gap-3 rounded-lg p-3 hover:bg-paper "
+                                                            className="flex items-start gap-3 rounded-xl p-3 hover:bg-[rgba(124,108,255,0.06)] "
                                                         >
-                                                            <div className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-lg bg-navy/10 text-navy">
+                                                            <div className="flex-shrink-0 w-9 h-9 flex items-center justify-center rounded-xl text-white" style={{ background: 'var(--brand-grad)' }}>
                                                                 {sub.icon}
                                                             </div>
                                                             <div className="flex flex-col">
@@ -302,7 +296,7 @@ export default function Navbar(): JSX.Element {
                                                     {/* 우측 하단 브랜드 설명 */}
                                                     {item.categoryDesc && (
                                                         <div className="col-span-2 mt-4 border-t border-surface-2 pt-3 text-sm text-[#334155]/80 flex items-center gap-2">
-                                                            <ShieldCheck size={16} className="text-navy" />
+                                                            <ShieldCheck size={16} className="text-[#6d3bd1]" />
                                                             {item.categoryDesc}
                                                         </div>
                                                     )}
@@ -313,7 +307,7 @@ export default function Navbar(): JSX.Element {
                                 ) : (
                                     <Link
                                         href={item.link ?? '/'}
-                                        className="text-navy-900 font-medium hover:text-navy transition"
+                                        className="text-navy-900 font-medium hover:text-[#6d3bd1] transition"
                                     >
                                         {item.label}
                                     </Link>
@@ -325,7 +319,7 @@ export default function Navbar(): JSX.Element {
                         <div className="flex items-center gap-3 ml-4">
                             <Link
                                 href="/inquiry/contract"
-                                className="px-4 py-2 text-sm font-semibold rounded-lg border border-navy text-navy hover:bg-navy hover:text-white "
+                                className="btn-brand px-5 py-2.5 text-sm font-semibold rounded-xl text-white"
                             >
                                 가맹 문의
                             </Link>
@@ -357,7 +351,10 @@ export default function Navbar(): JSX.Element {
                     >
                         {/* 🧭 상단 헤더 (로고 + 닫기버튼) */}
                         <div className="flex justify-between items-center px-6 py-5 border-b border-surface-2">
-                            <span className="text-xl font-extrabold text-navy select-none">SFIN PAY</span>
+                            <span className="flex items-center gap-2.5 select-none">
+                                <span className="grid place-items-center w-11 h-11 rounded-full bg-white ring-1 ring-[rgba(124,108,255,0.35)] shadow-[0_5px_14px_-5px_rgba(124,108,255,0.5)]"><img src="/sfin-mark.png" alt="" className="w-full h-full object-contain p-[3px]" /></span>
+                                <span className="text-[23px] tracking-tight"><span className="font-extrabold text-navy-900">SFIN</span> <span className="font-semibold text-ink-soft">PAY</span></span>
+                            </span>
                             <button
                                 onClick={() => setMenuOpen(false)}
                                 className="text-navy-900 hover:text-navy transition"
@@ -396,7 +393,7 @@ export default function Navbar(): JSX.Element {
                                                         animate={{ height: 'auto', opacity: 1 }}
                                                         exit={{ height: 0, opacity: 0 }}
                                                         transition={{ duration: 0.25 }}
-                                                        className="pl-3 border-l border-navy/30 mt-2 space-y-2"
+                                                        className="pl-3 border-l border-[rgba(124,108,255,0.3)] mt-2 space-y-2"
                                                     >
                                                         {item.submenu.map((sub) => (
                                                             <Link
@@ -436,7 +433,7 @@ export default function Navbar(): JSX.Element {
                             <Link
                                 href="/inquiry/contract"
                                 onClick={() => setMenuOpen(false)}
-                                className="w-full text-center py-3 rounded-lg border border-navy text-navy font-semibold hover:bg-navy hover:text-white "
+                                className="btn-brand w-full text-center py-3 rounded-xl text-white font-semibold"
                             >
                                 가맹 문의
                             </Link>
