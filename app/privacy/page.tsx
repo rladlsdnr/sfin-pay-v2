@@ -287,7 +287,7 @@ export default function PrivacyPolicy(): JSX.Element {
                                 <b>이메일:</b> sfinpay@gmail.com
                             </li>
                             <li>
-                                <b>대표번호:</b> 010-2740-1530
+                                <b>대표번호:</b> 010-7261-3755
                             </li>
                             <li>
                                 {/*<b>주소:</b> 서울특별시 영등포구 여의대방로 67길11 5층 에이 5-41호*/}

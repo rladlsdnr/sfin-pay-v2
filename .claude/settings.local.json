@@ -40,7 +40,9 @@
       "Bash(node -e \"let d='';process.stdin.on\\('data',c=>d+=c\\).on\\('end',\\(\\)=>console.log\\('jspdf', JSON.parse\\(d\\).version\\)\\)\")",
       "Bash(node -e \"const m=require\\('./node_modules/jspdf/package.json'\\); console.log\\('main:', m.main, '| module:', m.module, '| types:', m.types\\)\")",
       "Bash(curl -s -o /dev/null -w \"홈: %{http_code}\\\\n\" http://localhost:3000/)",
-      "Bash(curl -s -o /dev/null -w \"보안정책: %{http_code}\\\\n\" http://localhost:3000/security-policy)"
+      "Bash(curl -s -o /dev/null -w \"보안정책: %{http_code}\\\\n\" http://localhost:3000/security-policy)",
+      "Bash(ls app/inquiry)",
+      "Bash(ls app/inquiry/contract)"
     ]
   }
 }
